@@ -15,11 +15,9 @@ class HttpServices(IHttpBaseServices):
         headers["Authorization"] = "Bearer " + token
         resp=""
         try:
-            # async with session.get(url, headers=headers) as resp:
-            #     resp.raise_for_status()
-            #     await resp.json()
-            resp = await session.get(url, headers=headers, cookies=cookie)
-            resp.raise_for_status()
+            async with session.get(url, headers=headers) as resp:
+                resp.raise_for_status()
+                await resp.json()
         except HTTPError as err:  
             print("Http request error: " + err)
         except Exception as err:
@@ -32,8 +30,9 @@ class HttpServices(IHttpBaseServices):
         headers["Authorization"] = "Bearer " + token
         resp=""
         try:
-            resp = await session.post(url, headers=headers, data=data, cookies=cookie, token=token)
-            resp.raise_for_status()
+            async with session.post(url, headers=headers, data=data, cookies=cookie, token=token) as resp:
+                resp.raise_for_status()
+                resp.json()
         except HTTPError as err:  
             print("Http request error: " + err)
         except Exception as err:
@@ -46,8 +45,9 @@ class HttpServices(IHttpBaseServices):
         headers["Authorization"] = "Bearer " + token
         resp=""
         try:
-            resp = await session.put(url, headers=headers, data=data, token=token)
-            resp.raise_for_status()
+            async with session.put(url, headers=headers, data=data, token=token) as resp:
+                resp.raise_for_status()
+                resp.json()
         except HTTPError as err:  
             print("Http request error: " + err)
         except Exception as err:
@@ -60,8 +60,9 @@ class HttpServices(IHttpBaseServices):
         headers["Authorization"] = "Bearer " + token
         resp=""
         try:
-            resp = await session.delete(url, headers=headers, data=data, token=token)
-            resp.raise_for_status()
+            async with session.delete(url, headers=headers, data=data, token=token) as resp:
+                resp.raise_for_status()
+                resp.json()
         except HTTPError as err:  
             print("Http request error: " + err)
         except Exception as err:
