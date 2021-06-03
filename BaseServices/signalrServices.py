@@ -18,8 +18,11 @@ class SignalrClient(ISignalrBaseServices):
         self.hub.on(event, call_back)
         return self
 
-    async def SendMesageToServer(self, username, mess):
-        await self.hub.send("Send", [username, mess])
+    async def SendMesageToServer(self, username="", mess=""):
+        if username == "":
+            await self.hub.send("Send", [mess])
+        else:
+            await self.hub.send("Send", [username, mess])
         return self
         
     
