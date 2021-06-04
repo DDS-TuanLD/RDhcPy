@@ -58,3 +58,6 @@ class MqttServices():
 
     def MqttStopLoop(self):
         self.__client.loop_stop()
+
+    def MqttLoopForever(self):
+        self.__client.loop_forever()

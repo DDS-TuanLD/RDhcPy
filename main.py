@@ -8,25 +8,27 @@ import requests
 import dotenv
 from pathlib import Path
 import os
-from BaseServices.mqttServices import MqttServices
-
-start_time = time.time()
 
 env_path = Path('.')/'.env'
 config = dotenv.load_dotenv(dotenv_path=env_path)
 
-async def test2():
+async def other_coroutine(hc):
     while True:
         await asyncio.sleep(1)
+        print("This is other coroutine")
+
+async def mqtt_coroutine(hc):
+    mqtt = hc.mqttServices
+    mqtt.MqttConnect()
+    while True:
+        await asyncio.sleep(0.1)
+        mqtt.MqttStartLoop()
 
 async def main():
-    mqtt = MqttServices()
-    mqtt.MqttConnect()
-    mqtt.MqttStartLoop()
-
-    task1 = asyncio.ensure_future(test2())
-    await task1
+    hc = HcController()
+    task1 = asyncio.ensure_future(mqtt_coroutine(hc))
+    task2 = asyncio.ensure_future(other_coroutine(hc))
+    await asyncio.gather(task1, task2)
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
-# asyncio.run(main())
