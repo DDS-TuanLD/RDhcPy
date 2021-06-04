@@ -1,8 +1,7 @@
 import signalrcore.hub_connection_builder as SignalrBuilder
-from Contract.ISignalrServices import ISignalrBaseServices
 import asyncio
 
-class SignalrClient(ISignalrBaseServices):
+class SignalrClient():
     
     def __init__(self):
         self.hub = SignalrBuilder.HubConnectionBuilder().build()

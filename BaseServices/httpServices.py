@@ -4,10 +4,9 @@ from requests.exceptions import HTTPError
 from requests.structures import CaseInsensitiveDict
 import asyncio
 import aiohttp
-from Contract.IHttpServices import IHttpBaseServices
 import os
 
-class HttpServices(IHttpBaseServices):
+class HttpServices():
 
     async def UseGetRequest(self, session, url="", cookie="", token=""):
         headers = CaseInsensitiveDict();
@@ -15,7 +14,7 @@ class HttpServices(IHttpBaseServices):
         headers["Authorization"] = "Bearer " + token
         resp=""
         try:
-            async with session.get(url, headers=headers) as resp:
+            async with session.get(url, cookies=cookie, headers=headers) as resp:
                 resp.raise_for_status()
                 await resp.json()
         except HTTPError as err:  

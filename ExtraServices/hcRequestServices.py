@@ -1,32 +1,38 @@
-from Contract.IHcRequestServices import IHCRequestServices
 from BaseServices.httpServices import HttpServices
 import aiohttp
 import os
 
-class HcRequestServices(IHCRequestServices):
-
-    async def GetRefestToken(self):
+class HcRequestServices():
+    RefreshToken=""
+    Token=""
+    async def GetRefeshToken(self):
         rTokenUrl = os.getenv('REFRESH_TOKEN_URL')
         session = aiohttp.ClientSession()
+        if rTokenUrl == "":
+            self.RefreshToken ==  os.getenv("REFRESH_TOKEN")
+            await session.close()
+            return self
         res = await HttpServices().UseGetRequest(session, url=rTokenUrl)
         try:
             rTokenJson = await res.json()
-            self.RefeshToken = rTokenJson["RefreshToken"]
+            self.RefreshToken = rTokenJson["RefreshToken"]
         except Exception as err:
             print(f"Exception when get refresh token: {err}")
-        session.close()
+        await session.close()
         return self
 
     async def GetToken(self):
-        rTokenUrl = os.getenv('TOKEN_URL')
+        TokenUrl = os.getenv('TOKEN_URL')
         session = aiohttp.ClientSession()
-        res = await HttpServices().UseGetRequest(session, url=rTokenUrl, cookie=self.RefeshToken)
+        cookie = {"RefreshToken": os.getenv('REFRESH_TOKEN')}
+        print(cookie)
+        res = await HttpServices().UseGetRequest(session, url=TokenUrl, cookie=cookie)
         try:
             TokenJson = await res.json()
             self.Token = TokenJson["Token"]
         except Exception as err:
-            print(f"Exception when get refresh token: {err}")
-        session.close()
+            print(f"Exception when get token: {err}")
+        await session.close()
         return self
 
     async def GetServerRequest(self, url):
