@@ -1,7 +1,7 @@
 import paho.mqtt.client as mqtt
 import os
 import asyncio
-
+import queue
 class MqttConfig():
     host = ""
     port = ""
@@ -24,10 +24,14 @@ class MqttConfig():
 class MqttServices():
     __mqttConfig = MqttConfig()
     __client = mqtt.Client()
-    future = ""
+    __queue = queue.Queue()
 
     def __on_message(self, client, userdata, msg):
-        print(msg.payload.decode("utf-8"))
+        item = msg.payload.decode("utf-8")
+        try:
+            self.__queue.put_nowait(item)
+        except Exception as err:
+            print(f"Err when put subcribe data in queue: {err}")
         return
         
     # def __on_public(self, client, userdata, mid):
@@ -61,3 +65,12 @@ class MqttServices():
 
     def MqttLoopForever(self):
         self.__client.loop_forever()
+
+    async def MqttHandlerData(self):
+        while True:
+            await asyncio.sleep(1)
+            item = self.__queue.get()
+            print(item)
+            self.__queue.task_done()
+        self.__queue.join()
+        return self

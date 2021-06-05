@@ -20,14 +20,16 @@ async def other_coroutine(hc):
 async def mqtt_coroutine(hc):
     mqtt = hc.mqttServices
     mqtt.MqttConnect()
-    while True:
-        await asyncio.sleep(0.1)
-        mqtt.MqttStartLoop()
+    # while True:
+    #     await asyncio.sleep(0.1)
+    #     mqtt.MqttStartLoop()
+    mqtt.MqttStartLoop()
 
 async def main():
     hc = HcController()
     task1 = asyncio.ensure_future(mqtt_coroutine(hc))
     task2 = asyncio.ensure_future(other_coroutine(hc))
+    #task3 = asyncio.ensure_future(hc.mqttServices.MqttHandlerData())
     await asyncio.gather(task1, task2)
 
 loop = asyncio.get_event_loop()
