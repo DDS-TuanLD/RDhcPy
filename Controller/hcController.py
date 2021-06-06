@@ -13,7 +13,7 @@ class HcController:
         self.__signalServices = SignalrServices()
         self.__mqttServices = MqttServices()
     
-    async def __on_OtherCoroutine():
+    async def __on_OtherCoroutine(self):
         while True:
             await asyncio.sleep(1)
             print("This is other coroutine")
