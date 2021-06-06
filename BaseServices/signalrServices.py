@@ -2,7 +2,7 @@ import signalrcore.hub_connection_builder as SignalrBuilder
 import asyncio
 import queue
 import os
-class SignalrClient():
+class SignalrServices():
     __hub=SignalrBuilder.HubConnectionBuilder
     __queue = queue.Queue()
     def ConnectToServer(self):
