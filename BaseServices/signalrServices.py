@@ -5,6 +5,7 @@ import os
 class SignalrServices():
     __hub=SignalrBuilder.HubConnectionBuilder
     __queue = queue.Queue()
+    
     def ConnectToServer(self):
         try:
             self.__hub = SignalrBuilder.HubConnectionBuilder()\
@@ -18,7 +19,7 @@ class SignalrServices():
             print(f"Exception when connect with signalr server: {err}")
         return self
     
-    def Start(self):
+    def StartServices(self):
         self.__hub.start()
 
     def OnReceiveData(self):
@@ -27,10 +28,21 @@ class SignalrServices():
     def DisConnectWithServer(self):
         self.__hub.stop()
 
-    def SendMesageToServer(self, username="RdHcDefault", mess=""):
+    def SendMesageToServer(
+        self, username: str = "RdGateway", mess: str = ""):
+        """ This is function support send data to server
+
+        Args:
+            username (str, optional): [name of gateway]. Defaults to "RdGateway".
+            mess (str, optional): [string need to send]. Defaults to "".
+        """
+        
         self.__hub.send("SendMessage", [username, mess])
         
     async def OnHandlerReceiveData(self):
+        """ function handler receive data
+        """
+        
         while True:
             await asyncio.sleep(0.5)
             if self.__queue.empty() == False:

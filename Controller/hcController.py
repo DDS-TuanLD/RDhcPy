@@ -23,7 +23,7 @@ class HcController:
         self.__mqttServices.MqttStartLoop()
 
         self.__signalServices.ConnectToServer()
-        self.__signalServices.Start()
+        self.__signalServices.StartServices()
         self.__signalServices.OnReceiveData()
 
         task1 = asyncio.ensure_future(self.__on_OtherCoroutine())
