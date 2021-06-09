@@ -16,6 +16,18 @@ class HcController:
         self.__mqttServices = MqttServices()
         self.__Db = Db(DbContext)
     
+    @property
+    def HcHttpServices(self):
+        return self.__httpServices
+    
+    @property 
+    def HcMqttServices(self):
+        return self.__mqttServices
+    
+    @property
+    def HcSignalrServices(self):
+        return self.__signalServices
+      
     def HcServicesStart(self):
         self.__mqttServices.MqttConnect()
         self.__mqttServices.MqttStartLoop()
