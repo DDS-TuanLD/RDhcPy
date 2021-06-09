@@ -2,25 +2,35 @@ import signalrcore.hub_connection_builder as SignalrBuilder
 import asyncio
 import queue
 import os
-class SignalrServices():
+
+class MetaSignalServices(type):
+    _instances = {}
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls._instances:
+            cls._instances[cls] = super(MetaSignalServices, cls).__call__(*args, **kwargs)
+        return cls._instances[cls]
+class SignalrServices(metaclass=MetaSignalServices):
     __hub=SignalrBuilder.HubConnectionBuilder
     __queue = queue.Queue()
     
     def ConnectToServer(self):
-        try:
-            self.__hub = SignalrBuilder.HubConnectionBuilder()\
-            .with_url(os.getenv("SIGNALR_SERVER_URL"), options={"verify_ssl": False}) \
-            .with_automatic_reconnect({
-                    "type": "interval",
-                    "keep_alive_interval": 10,
-                    "intervals": [1, 3, 5, 6, 7, 87, 3]
-                }).build()
-        except Exception as err:
-            print(f"Exception when connect with signalr server: {err}")
+        self.__hub = SignalrBuilder.HubConnectionBuilder()\
+        .with_url(os.getenv("SIGNALR_SERVER_URL"), options={"verify_ssl": False}) \
+        .with_automatic_reconnect({
+                "type": "interval",
+                "keep_alive_interval": 10,
+                "intervals": [1, 3, 5, 6, 7, 87, 3]
+            }).build()
         return self
     
     def StartServices(self):
-        self.__hub.start()
+        startSuccess = False
+        try:
+            self.__hub.start()
+            startSuccess = True
+        except Exception as err:
+            print(f"Exception when connect with signalr server: {err}")
+        return startSuccess
 
     def OnReceiveData(self):
        self.__hub.on("ReceiveMessage", lambda data: self.__queue.put_nowait(data))

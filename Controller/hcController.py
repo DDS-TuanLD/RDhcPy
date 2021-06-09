@@ -1,20 +1,25 @@
-from BaseServices.httpServices import HttpServices
+from BaseServices.httpServices import HttpAsyncServices
 from BaseServices.signalrServices import SignalrServices
 from BaseServices.mqttServices import MqttServices
 import asyncio
 from Database.Db import Db
 from Context.DbContext import MySqlDbContext, IContext
+import os
+import aiohttp
+from Cache.HcCache import HcCache
 class HcController:
-    __httpServices: HttpServices
+    __httpServices: HttpAsyncServices
     __signalServices: SignalrServices
     __mqttServices: MqttServices
     __db: Db
+    __cache : HcCache
     
     def __init__(self, DbContext: IContext):
-        self.__httpServices = HttpServices()
+        self.__httpServices = HttpAsyncServices()
         self.__signalServices = SignalrServices()
         self.__mqttServices = MqttServices()
         self.__Db = Db(DbContext)
+        self.__cache = HcCache()
     
     @property
     def HcHttpServices(self):
@@ -27,14 +32,46 @@ class HcController:
     @property
     def HcSignalrServices(self):
         return self.__signalServices
-      
-    def HcServicesStart(self):
+    
+    async def __getAndSaveRefreshToken(self):
+        refreshTokenHeader = self.HcHttpServices.CreateNewHttpHeader()
+        refreshTokenUrl = os.getenv("SERVER_HOST") + os.getenv("REFRESH_TOKEN_URL")
+        refreshTokenBody = {
+            "username": os.getenv("USERNAME"),
+            "password": os.getenv("PASSWORD"),
+            "deviceName": os.getenv("DEVICENAME")
+            }
+        refreshTokenReq = self.HcHttpServices.CreateNewHttpRequest(url= refreshTokenUrl, body_data= refreshTokenBody)
+        session = aiohttp.ClientSession()
+        res = await self.HcHttpServices.UsePostRequest(session, refreshTokenReq)
+        data = await res.json()
+        refreshToken = data["RefreshToken"]
+        self.__cache.SaveRefreshToken(refreshToken)
+    
+    async def __getToken(self):
+        pass
+    
+    async def __HcSignalrServicesInit(self):
+        self.__signalServices.ConnectToServer()
+        startSuccess = False
+        while startSuccess == False:
+            await asyncio.sleep(5)
+            startSuccess = self.__signalServices.StartServices()
+        self.__signalServices.OnReceiveData()
+
+    def __HcMqttServicesInit(self):
         self.__mqttServices.MqttConnect()
         self.__mqttServices.MqttStartLoop()
 
-        self.__signalServices.ConnectToServer()
-        self.__signalServices.StartServices()
-        self.__signalServices.OnReceiveData()
+    async def HcServicesInit(self):
+        self.__HcMqttServicesInit()
+        await self.__HcSignalrServicesInit()
+        
+    async def __HcCheckConnectWithCloud(self):
+        count = 0
+        while True:
+            await asyncio.sleep(60)
+        pass
     
     async def HcServicesRun(self):
         task2 = asyncio.ensure_future(self.__mqttServices.MqttHandlerData())

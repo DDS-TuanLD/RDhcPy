@@ -10,6 +10,7 @@ class HttpRequest():
     __header: CaseInsensitiveDict
     __body: dict
     __url: str
+    __cookie: dict
     
     @property
     def Body(self):
@@ -22,6 +23,10 @@ class HttpRequest():
     @property 
     def Url(self):
         return self.__url
+    
+    @property
+    def Cookie(self):
+        return self.__cookie
         
     @Header.setter
     def Header(self, header: CaseInsensitiveDict):
@@ -38,29 +43,36 @@ class HttpRequest():
         self.__url = url
         return self
     
-  
-class HttpServices():
+    @Cookie.setter
+    def Cookie(self, cookie: dict):
+        self.__cookie = cookie
+        return self
+class HttpAsyncServices():
 
+    def CreateNewHttpHeader(self, token: str = "", EndUserProfileId: int = 20):
+        newHttpHeader = CaseInsensitiveDict()
+        newHttpHeader["Accept"] = "application/json"
+        newHttpHeader["Authorization"] = "Bearer " + token
+        newHttpHeader["X-EndUserProfileId"] = EndUserProfileId
+        return newHttpHeader
+    
     def CreateNewHttpRequest(
-        self, url: str = None, token: str = "", body_data: dict = {}):
+        self, url: str = None, token: str = "", body_data: dict = {}, cookie: dict = {}, header: CaseInsensitiveDict = {}):
         """ Create new http request
 
         Args:
             url (str): [url want to request]
-            token (str): [jwt token of request]
             body_data (dict): [body of request]
-
+            cookie (dict): [cookie of request] 
         Returns:
             [HttpRequest]: [new HttpRequest instance]
         """
-        newHttpHeader = CaseInsensitiveDict()
-        newHttpHeader["Accept"] = "application/json"
-        newHttpHeader["Authorization"] = "Bearer " + token
         
         newHttpRequest = HttpRequest()
         newHttpRequest.Body = body_data
-        newHttpRequest.Header = newHttpHeader
+        newHttpRequest.Header = header
         newHttpRequest.Url = url
+        newHttpRequest.Cookie = cookie
         
         return newHttpRequest
 
@@ -152,4 +164,40 @@ class HttpServices():
             print(f"Other exception: {err}")
         return resp
 
+class HttpSyncServices():
+    def CreateNewHttpHeader(self, token: str = "", EndUserProfileId: int = 20):
+        newHttpHeader = CaseInsensitiveDict()
+        newHttpHeader["Accept"] = "application/json"
+        newHttpHeader["Authorization"] = "Bearer " + token
+        newHttpHeader["X-EndUserProfileId"] = EndUserProfileId
+        return newHttpHeader
+    
+    def CreateNewHttpRequest(
+        self, url: str = None, token: str = "", body_data: dict = {}, header: CaseInsensitiveDict = {}):
+        """ Create new http request
+
+        Args:
+            url (str): [url want to request]
+            body_data (dict): [body of request]
+
+        Returns:
+            [HttpRequest]: [new HttpRequest instance]
+        """
+        newHttpRequest = HttpRequest()
+        newHttpRequest.Body = body_data
+        newHttpRequest.Header = header
+        newHttpRequest.Url = url
         
+        return newHttpRequest 
+    
+    def UseGetRequest(self, req: HttpRequest):
+        pass
+
+    def UsePostRequest(self, req: HttpRequest):
+        pass
+
+    def UseDeleteRequest(self, req: HttpRequest):
+        pass
+
+    def UsePutRequest(self, req: HttpRequest):
+        pass
