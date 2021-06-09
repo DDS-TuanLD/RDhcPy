@@ -9,28 +9,24 @@ class MetaSignalServices(type):
         if cls not in cls._instances:
             cls._instances[cls] = super(MetaSignalServices, cls).__call__(*args, **kwargs)
         return cls._instances[cls]
+    
 class SignalrServices(metaclass=MetaSignalServices):
     __hub=SignalrBuilder.HubConnectionBuilder
     __queue = queue.Queue()
     
-    def ConnectToServer(self):
+    def BuildConnection(self):
         self.__hub = SignalrBuilder.HubConnectionBuilder()\
-        .with_url(os.getenv("SERVER_TEST"), options={"verify_ssl": False}) \
-        .with_automatic_reconnect({
-                "type": "interval",
-                "keep_alive_interval": 10,
-                "intervals": [1, 3, 5, 6, 7, 87, 3]
-            }).build()
+        .with_url(os.getenv("SERVER_TEST"), options={
+            "verify_ssl": False,
+            }) \
+        .build()
         return self
     
-    def StartServices(self):
-        startSuccess = False
+    def StartConnect(self):
         try:
             self.__hub.start()
-            startSuccess = True
         except Exception as err:
-            print(f"Exception when connect with signalr server: {err}")
-        return startSuccess
+            pass
 
     def OnReceiveData(self):
        self.__hub.on("ReceiveMessage", lambda data: self.__queue.put_nowait(data))
@@ -46,9 +42,20 @@ class SignalrServices(metaclass=MetaSignalServices):
             username (str, optional): [name of gateway]. Defaults to "RdGateway".
             mess (str, optional): [string need to send]. Defaults to "".
         """
-        
         self.__hub.send("SendMessage", [username, mess])
-        
+    
+    async def SignalrServicesInit(self):
+        self.BuildConnection()
+        startSuccess = False
+        while startSuccess == False:
+            await asyncio.sleep(5)
+            try:
+                self.__hub.start()
+                startSuccess = True
+            except Exception as err:
+                print(f"Exception when connect with signalr server: {err}")
+        self.OnReceiveData()
+
     async def OnHandlerReceiveData(self):
         """ function handler receive data
         """

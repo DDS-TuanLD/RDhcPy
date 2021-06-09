@@ -1,6 +1,6 @@
-from BaseServices.httpServices import HttpAsyncServices
-from BaseServices.signalrServices import SignalrServices
-from BaseServices.mqttServices import MqttServices
+from Services.httpServices import HttpAsyncServices
+from Services.signalrServices import SignalrServices
+from Services.mqttServices import MqttServices
 import asyncio
 from Database.Db import Db
 from Context.DbContext import MySqlDbContext, IContext
@@ -51,33 +51,30 @@ class HcController:
     async def __getToken(self):
         pass
     
-    async def __HcSignalrServicesInit(self):
-        self.__signalServices.ConnectToServer()
-        startSuccess = False
-        while startSuccess == False:
-            await asyncio.sleep(2)
-            startSuccess = self.__signalServices.StartServices()
-        self.__signalServices.OnReceiveData()
-
-    async def __HcMqttServicesInit(self):
-        startSuccess = False
-        while startSuccess == False:
-            await asyncio.sleep(2)
-            startSuccess = self.__mqttServices.MqttConnect()
-        self.__mqttServices.MqttStartLoop()
-
     async def __HcCheckConnectWithCloud(self):
-        count = 0
         while True:
-            await asyncio.sleep(60)
-        pass
+            try:
+                self.HcSignalrServices.SendMesageToServer(mess="OnConnect")
+                await asyncio.sleep(5)
+            except Exception as err:
+                self.__cache.SignalrConnectStatus = False
+            await asyncio.sleep(10)
+            if self.__cache.SignalrConnectStatus == False:
+                self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1
+                self.__signalServices.StartConnect()
+                print(self.__cache.SignalrDisconnectCount)
+                print(self.__cache.SignalrDisconnectStatusUpdate)
+                if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
+                    self.__cache.SignalrDisconnectStatusUpdate = True
+                    self.__cache.SignalrDisconnectCount = 0
+                    
     
     async def HcServicesRun(self):
-        task0 = asyncio.ensure_future(self.__HcMqttServicesInit())
-        task1 = asyncio.ensure_future(self.__HcSignalrServicesInit())
+        task = asyncio.ensure_future(self.__mqttServices.MqttServicesInit())
+        task1 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())
         task2 = asyncio.ensure_future(self.__mqttServices.MqttHandlerData())
         task3 = asyncio.ensure_future(self.__signalServices.OnHandlerReceiveData())
-         
-        tasks = [task2, task3, task1]
+        task4 = asyncio.ensure_future(self.__HcCheckConnectWithCloud())
+        tasks = [task, task1, task2, task3, task4]
         await asyncio.gather(*tasks)
         return
