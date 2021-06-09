@@ -15,7 +15,7 @@ class SignalrServices(metaclass=MetaSignalServices):
     
     def ConnectToServer(self):
         self.__hub = SignalrBuilder.HubConnectionBuilder()\
-        .with_url(os.getenv("SIGNALR_SERVER_URL"), options={"verify_ssl": False}) \
+        .with_url(os.getenv("SERVER_TEST"), options={"verify_ssl": False}) \
         .with_automatic_reconnect({
                 "type": "interval",
                 "keep_alive_interval": 10,

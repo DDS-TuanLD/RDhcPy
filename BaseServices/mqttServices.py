@@ -2,7 +2,6 @@ import paho.mqtt.client as mqtt
 import os
 import asyncio
 import queue
-import threading
 class MqttConfig():
     host = ""
     port = ""
@@ -31,7 +30,6 @@ class MqttServices():
     __mqttConfig = MqttConfig()
     __client = mqtt.Client()
     __queue = queue.Queue()
-    __lock = threading.Lock()
 
     def __on_message(self, client, userdata, msg):
         """[summary]
@@ -43,10 +41,8 @@ class MqttServices():
         """
         
         item = msg.payload.decode("utf-8")
-        print(item)
         try:
-            with self.__lock:
-                self.__queue.put_nowait(item)
+            self.__queue.put_nowait(item)
         except Exception as err:
             print(f"Err when put subcribe data in queue: {err}")
         return
@@ -57,12 +53,13 @@ class MqttServices():
     #     return
    
     def MqttConnect(self):
-        """[summary]
+        """  Connect to mqtt broker
 
         Returns:
-            [type]: [description]
+            [bool]: [connect status: false/true]
         """
         
+        connectSuccess = False
         self.__mqttConfig.GetMqttConfig()
         self.__client.on_message = self.__on_message
         # self.__client.on_publish = self.__on_public
@@ -70,9 +67,11 @@ class MqttServices():
         try:
             self.__client.connect(self.__mqttConfig.host, int(self.__mqttConfig.port))
             self.__client.subscribe(topic=self.__mqttConfig.sub_topic, qos=int(self.__mqttConfig.qos))
+            connectSuccess = True
         except Exception as err:
             print(f"Exception in connect to mqtt: {err}")
-        return self
+            connectSuccess = False
+        return connectSuccess
 
     def MqttPublish(
         self, send_data, qos: int = 0):
@@ -101,10 +100,8 @@ class MqttServices():
     async def MqttHandlerData(self):
         """ This function handler data received in queue
         """
-        
         while True:
             await asyncio.sleep(0.5)
             if self.__queue.empty() == False:
-                with self.__lock:
-                    item = self.__queue.get()
-                    print(item)
+                item = self.__queue.get()
+                print(item)

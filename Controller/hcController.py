@@ -55,18 +55,17 @@ class HcController:
         self.__signalServices.ConnectToServer()
         startSuccess = False
         while startSuccess == False:
-            await asyncio.sleep(5)
+            await asyncio.sleep(2)
             startSuccess = self.__signalServices.StartServices()
         self.__signalServices.OnReceiveData()
 
-    def __HcMqttServicesInit(self):
-        self.__mqttServices.MqttConnect()
+    async def __HcMqttServicesInit(self):
+        startSuccess = False
+        while startSuccess == False:
+            await asyncio.sleep(2)
+            startSuccess = self.__mqttServices.MqttConnect()
         self.__mqttServices.MqttStartLoop()
 
-    async def HcServicesInit(self):
-        self.__HcMqttServicesInit()
-        await self.__HcSignalrServicesInit()
-        
     async def __HcCheckConnectWithCloud(self):
         count = 0
         while True:
@@ -74,8 +73,11 @@ class HcController:
         pass
     
     async def HcServicesRun(self):
+        task0 = asyncio.ensure_future(self.__HcMqttServicesInit())
+        task1 = asyncio.ensure_future(self.__HcSignalrServicesInit())
         task2 = asyncio.ensure_future(self.__mqttServices.MqttHandlerData())
         task3 = asyncio.ensure_future(self.__signalServices.OnHandlerReceiveData())
-        tasks = [task2, task3]
+         
+        tasks = [task2, task3, task1]
         await asyncio.gather(*tasks)
         return
