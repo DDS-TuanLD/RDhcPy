@@ -44,7 +44,7 @@ class MqttServices():
         try:
             self.__queue.put_nowait(item)
         except Exception as err:
-            print(f"Err when put subcribe data in queue: {err}")
+            print(f"Error when put subcribe data in queue: {err}")
         return
         
     # def __on_public(self, client, userdata, mid):
@@ -100,8 +100,8 @@ class MqttServices():
     async def MqttServicesInit(self):
         startSuccess = False
         while startSuccess == False:
-            await asyncio.sleep(5)
             startSuccess = self.MqttConnect()
+            await asyncio.sleep(5)
         self.MqttStartLoop()
         
     async def MqttHandlerData(self):

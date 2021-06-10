@@ -33,7 +33,7 @@ class HcController:
     def HcSignalrServices(self):
         return self.__signalServices
     
-    async def getAndSaveRefreshToken(self):
+    async def __getAndSaveRefreshToken(self):
         refreshTokenHeader = self.HcHttpServices.CreateNewHttpHeader()
         refreshTokenUrl = os.getenv("SERVER_HOST") + os.getenv("REFRESH_TOKEN_URL")
         refreshTokenBody = {
@@ -45,9 +45,10 @@ class HcController:
         session = aiohttp.ClientSession()
         res = await self.HcHttpServices.UsePostRequest(session, refreshTokenReq)
         data = await res.json()
-        refreshToken = data['refreshToken']
-        self.__cache.RefreshToken = refreshToken
+        self.__cache.RefreshToken = data['refreshToken']
+        self.__cache.EndUserId = str(data['endUserProfiles'][0]['id'])
         await session.close()
+        return
     
     async def getToken(self):
         refreshToken = self.__cache.RefreshToken
@@ -56,34 +57,34 @@ class HcController:
         header = self.HcHttpServices.CreateNewHttpHeader(cookie = cookie)
         req = self.HcHttpServices.CreateNewHttpRequest(url=tokenUrl, header=header)
         session = aiohttp.ClientSession()
+        res = ""
         try:
             res = await self.HcHttpServices.UsePostRequest(session, req)
+            data = await res.json()
+            res = data['token']
         except Exception as err:
             print(err)
-        data = await res.json()
         await session.close()
-        return data['token']
+        return res
     
     async def __HcCheckConnectWithCloud(self):
         while True:
+            endUser = self.__cache.EndUserId
             try:
-                self.HcSignalrServices.SendMesageToServer(mess="OnConnect")
+                self.HcSignalrServices.SendMesageToServer(endUserProfileId=endUser,entity= "Heardbeat", message= "ping")
                 await asyncio.sleep(5)
             except Exception as err:
                 self.__cache.SignalrConnectStatus = False
-            await asyncio.sleep(10)
+            await asyncio.sleep(5)
             if self.__cache.SignalrConnectStatus == False:
                 self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1
-                self.__signalServices.BuildConnection()
                 self.__signalServices.StartConnect()
-                print(self.__cache.SignalrDisconnectCount)
-                print(self.__cache.SignalrDisconnectStatusUpdate)
                 if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                     self.__cache.SignalrDisconnectStatusUpdate = True
-                    self.__cache.SignalrDisconnectCount = 0
-                    
+                    self.__cache.SignalrDisconnectCount = 0   
     
     async def HcServicesRun(self):
+        await self.__getAndSaveRefreshToken()
         task = asyncio.ensure_future(self.__mqttServices.MqttServicesInit())
         task1 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())
         task2 = asyncio.ensure_future(self.__mqttServices.MqttHandlerData())

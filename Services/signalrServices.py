@@ -2,17 +2,25 @@ import signalrcore.hub_connection_builder as SignalrBuilder
 import asyncio
 import queue
 import os
+import requests
+from Cache.HcCache import HcCache
+from Handler.dataHandler import DataHandlerService
 
-def get_token():
-    return 
-class MetaSignalServices(type):
-    _instances = {}
-    def __call__(cls, *args, **kwargs):
-        if cls not in cls._instances:
-            cls._instances[cls] = super(MetaSignalServices, cls).__call__(*args, **kwargs)
-        return cls._instances[cls]
-    
-class SignalrServices(metaclass=MetaSignalServices):
+def getToken():
+    cache = HcCache()
+    try:
+        renew_token = "https://iot-dev.truesight.asia/rpc/iot-ebe/account/renew-token"
+        headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+        headers['X-EndUserProfileId'] = cache.EndUserId
+        headers['Cookie'] = "RefreshToken={refresh_token}".format(refresh_token=cache.RefreshToken)
+        response = requests.post(renew_token, json=None, headers=headers).json()
+        token = response['token']
+        headers['Cookie'] = "Token={token}".format(token=token)
+      
+        return token
+    except Exception as e:
+        return None
+class SignalrServices():
     __hub=SignalrBuilder.HubConnectionBuilder
     __queue = queue.Queue()
     
@@ -20,7 +28,7 @@ class SignalrServices(metaclass=MetaSignalServices):
         self.__hub = SignalrBuilder.HubConnectionBuilder()\
         .with_url(os.getenv("SERVER_HOST") + os.getenv("SIGNALR_SERVER_URL"), 
                 options={
-                        "access_token_factory": get_token,
+                        "access_token_factory": getToken,
                         "headers": {
                         }
                     }) \
@@ -31,43 +39,44 @@ class SignalrServices(metaclass=MetaSignalServices):
         try:
             self.__hub.start()
         except Exception as err:
-            pass
+            print(f"Exception when start signal server {err}")
 
     def OnReceiveData(self):
-       self.__hub.on("ReceiveMessage", lambda data: self.__queue.put_nowait(data))
+       self.__hub.on("Receive", lambda data: self.__queue.put_nowait(data))
 
     def DisConnectWithServer(self):
         self.__hub.stop()
 
     def SendMesageToServer(
-        self, endUserProfileId: str ="10039", entity: str = "device", message: str = ""):
+        self, endUserProfileId: str ="", entity: str="", message: str=""):
         """ This is function support send data to server
 
         Args:
             username (str, optional): [name of gateway]. Defaults to "RdGateway".
             mess (str, optional): [string need to send]. Defaults to "".
         """
-        self.__hub.send("Send", [endUserProfileId, entity , message])
+        self.__hub.send("Send", ["10033", entity , message])
     
     async def SignalrServicesInit(self):
-        self.BuildConnection()
         startSuccess = False
         while startSuccess == False:
-            await asyncio.sleep(5)
             try:
+                self.BuildConnection()
                 self.__hub.start()
                 startSuccess = True
             except Exception as err:
                 print(f"Exception when connect with signalr server: {err}")
+                await asyncio.sleep(5)
         self.OnReceiveData()
 
     async def OnHandlerReceiveData(self):
         """ function handler receive data
         """
         
+        hander = DataHandlerService()
         while True:
             await asyncio.sleep(0.5)
             if self.__queue.empty() == False:
                 item = self.__queue.get()
-                print(str(item))
+                hander.SignalrDataHandler(item)
            

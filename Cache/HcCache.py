@@ -7,16 +7,18 @@ class MetaCache(type):
     
 class HcCache(metaclass=MetaCache):
     __refreshToken: str
+    __endUserId: str
     __signalrOnConnect: bool
     __signalrDisconnectCount: int
     __signalrDisconnectStatusUpdate: bool
+    __token: str
     
     def __init__(self):
         self.__refreshToken = ""
         self.__signalrOnConnect = True
         self.__signalrDisconnectCount = 0
         self.__signalrDisconnectStatusUpdate = False
-        
+        self.__endUserId = ""
     @property
     def RefreshToken(self):
         return self.__refreshToken
@@ -49,3 +51,18 @@ class HcCache(metaclass=MetaCache):
     def SignalrDisconnectStatusUpdate(self, updateStatus: bool):
         self.__signalrDisconnectStatusUpdate = updateStatus
            
+    @property
+    def EndUserId(self):
+        return self.__endUserId
+    
+    @EndUserId.setter
+    def EndUserId(self, EndUserId: str):
+        self.__endUserId = EndUserId
+        
+    @property
+    def Token(self):
+        return self.__token
+    
+    @EndUserId.setter
+    def Token(self, token: str):
+        self.__token = token
