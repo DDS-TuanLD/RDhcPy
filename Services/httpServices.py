@@ -40,7 +40,7 @@ class HttpRequest():
         return self
 class HttpAsyncServices():
 
-    def CreateNewHttpHeader(self, token: str = "", EndUserProfileId: int = 20, cookie: dict = {}):
+    def CreateNewHttpHeader(self, token: str = "", EndUserProfileId: str="20", cookie: str = ""):
         newHttpHeader = CaseInsensitiveDict()
         newHttpHeader["Accept"] = "application/json"
         newHttpHeader["Authorization"] = "Bearer " + token
@@ -155,40 +155,40 @@ class HttpAsyncServices():
             print(f"Other exception: {err}")
         return resp
 
-class HttpSyncServices():
-    def CreateNewHttpHeader(self, token: str = "", EndUserProfileId: int = 20):
-        newHttpHeader = CaseInsensitiveDict()
-        newHttpHeader["Accept"] = "application/json"
-        newHttpHeader["Authorization"] = "Bearer " + token
-        newHttpHeader["X-EndUserProfileId"] = EndUserProfileId
-        return newHttpHeader
+# class HttpSyncServices():
+#     def CreateNewHttpHeader(self, token: str = "", EndUserProfileId: int = 20):
+#         newHttpHeader = CaseInsensitiveDict()
+#         newHttpHeader["Accept"] = "application/json"
+#         newHttpHeader["Authorization"] = "Bearer " + token
+#         newHttpHeader["X-EndUserProfileId"] = EndUserProfileId
+#         return newHttpHeader
     
-    def CreateNewHttpRequest(
-        self, url: str = None, token: str = "", body_data: dict = {}, header: CaseInsensitiveDict = {}):
-        """ Create new http request
+#     def CreateNewHttpRequest(
+#         self, url: str = None, token: str = "", body_data: dict = {}, header: CaseInsensitiveDict = {}):
+#         """ Create new http request
 
-        Args:
-            url (str): [url want to request]
-            body_data (dict): [body of request]
+#         Args:
+#             url (str): [url want to request]
+#             body_data (dict): [body of request]
 
-        Returns:
-            [HttpRequest]: [new HttpRequest instance]
-        """
-        newHttpRequest = HttpRequest()
-        newHttpRequest.Body = body_data
-        newHttpRequest.Header = header
-        newHttpRequest.Url = url
+#         Returns:
+#             [HttpRequest]: [new HttpRequest instance]
+#         """
+#         newHttpRequest = HttpRequest()
+#         newHttpRequest.Body = body_data
+#         newHttpRequest.Header = header
+#         newHttpRequest.Url = url
         
-        return newHttpRequest 
+#         return newHttpRequest 
     
-    def UseGetRequest(self, req: HttpRequest):
-        pass
+#     def UseGetRequest(self, req: HttpRequest):
+#         pass
 
-    def UsePostRequest(self, req: HttpRequest):
-        pass
+#     def UsePostRequest(self, req: HttpRequest):
+#         pass
 
-    def UseDeleteRequest(self, req: HttpRequest):
-        pass
+#     def UseDeleteRequest(self, req: HttpRequest):
+#         pass
 
-    def UsePutRequest(self, req: HttpRequest):
-        pass
+#     def UsePutRequest(self, req: HttpRequest):
+#         pass
