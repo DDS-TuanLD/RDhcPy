@@ -80,7 +80,7 @@ class HttpAsyncServices():
         """
         resp = None
         try:
-            async with session.get(req.Url, headers=req.Header, data=req.Body) as resp:
+            async with session.get(req.Url, headers=req.Header, json=req.Body) as resp:
                 resp.raise_for_status()
                 await resp.json()
         except HTTPError as err:  
@@ -102,7 +102,7 @@ class HttpAsyncServices():
         """
         resp = None
         try:
-            async with session.post(req.Url, headers=req.Header, data=req.Body) as resp:
+            async with session.post(req.Url, headers=req.Header, json=req.Body) as resp:
                 resp.raise_for_status()
                 await resp.json()
         except HTTPError as err:  
@@ -124,7 +124,7 @@ class HttpAsyncServices():
         """
         resp = None
         try:
-            async with session.put(req.Url, headers=req.Header, data=req.Body) as resp:
+            async with session.put(req.Url, headers=req.Header, json=req.Body) as resp:
                 resp.raise_for_status()
                 await resp.json()
         except HTTPError as err:  
@@ -146,7 +146,7 @@ class HttpAsyncServices():
         """
         resp = None
         try:
-            async with session.delete(req.Url, headers=req.Header, data=req.Body) as resp:
+            async with session.delete(req.Url, headers=req.Header, json=req.Body) as resp:
                 resp.raise_for_status()
                 await resp.json()
         except HTTPError as err:  
@@ -154,41 +154,5 @@ class HttpAsyncServices():
         except Exception as err:
             print(f"Other exception: {err}")
         return resp
-
-# class HttpSyncServices():
-#     def CreateNewHttpHeader(self, token: str = "", EndUserProfileId: int = 20):
-#         newHttpHeader = CaseInsensitiveDict()
-#         newHttpHeader["Accept"] = "application/json"
-#         newHttpHeader["Authorization"] = "Bearer " + token
-#         newHttpHeader["X-EndUserProfileId"] = EndUserProfileId
-#         return newHttpHeader
     
-#     def CreateNewHttpRequest(
-#         self, url: str = None, token: str = "", body_data: dict = {}, header: CaseInsensitiveDict = {}):
-#         """ Create new http request
-
-#         Args:
-#             url (str): [url want to request]
-#             body_data (dict): [body of request]
-
-#         Returns:
-#             [HttpRequest]: [new HttpRequest instance]
-#         """
-#         newHttpRequest = HttpRequest()
-#         newHttpRequest.Body = body_data
-#         newHttpRequest.Header = header
-#         newHttpRequest.Url = url
-        
-#         return newHttpRequest 
     
-#     def UseGetRequest(self, req: HttpRequest):
-#         pass
-
-#     def UsePostRequest(self, req: HttpRequest):
-#         pass
-
-#     def UseDeleteRequest(self, req: HttpRequest):
-#         pass
-
-#     def UsePutRequest(self, req: HttpRequest):
-#         pass

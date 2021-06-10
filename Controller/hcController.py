@@ -6,6 +6,7 @@ from Database.Db import Db
 import os
 import aiohttp
 from Cache.HcCache import HcCache
+
 class HcController:
     __httpServices: HttpAsyncServices
     __signalServices: SignalrServices
@@ -32,23 +33,36 @@ class HcController:
     def HcSignalrServices(self):
         return self.__signalServices
     
-    async def __getAndSaveRefreshToken(self):
+    async def getAndSaveRefreshToken(self):
         refreshTokenHeader = self.HcHttpServices.CreateNewHttpHeader()
         refreshTokenUrl = os.getenv("SERVER_HOST") + os.getenv("REFRESH_TOKEN_URL")
         refreshTokenBody = {
-            "username": os.getenv("USERNAME"),
-            "password": os.getenv("PASSWORD"),
+            "username": os.getenv("USER"),
+            "password": os.getenv("PASS"),
             "deviceName": os.getenv("DEVICENAME")
             }
-        refreshTokenReq = self.HcHttpServices.CreateNewHttpRequest(url= refreshTokenUrl, body_data= refreshTokenBody)
+        refreshTokenReq = self.HcHttpServices.CreateNewHttpRequest(url= refreshTokenUrl, body_data=refreshTokenBody)
         session = aiohttp.ClientSession()
         res = await self.HcHttpServices.UsePostRequest(session, refreshTokenReq)
         data = await res.json()
-        refreshToken = data["RefreshToken"]
-        self.__cache.SaveRefreshToken(refreshToken)
+        refreshToken = data['refreshToken']
+        self.__cache.RefreshToken = refreshToken
+        await session.close()
     
-    async def __getToken(self):
-        pass
+    async def getToken(self):
+        refreshToken = self.__cache.RefreshToken
+        tokenUrl = os.getenv("SERVER_HOST") + os.getenv("TOKEN_URL")
+        cookie = f"RefreshToken={refreshToken}"
+        header = self.HcHttpServices.CreateNewHttpHeader(cookie = cookie)
+        req = self.HcHttpServices.CreateNewHttpRequest(url=tokenUrl, header=header)
+        session = aiohttp.ClientSession()
+        try:
+            res = await self.HcHttpServices.UsePostRequest(session, req)
+        except Exception as err:
+            print(err)
+        data = await res.json()
+        await session.close()
+        return data['token']
     
     async def __HcCheckConnectWithCloud(self):
         while True:
@@ -60,6 +74,7 @@ class HcController:
             await asyncio.sleep(10)
             if self.__cache.SignalrConnectStatus == False:
                 self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1
+                self.__signalServices.BuildConnection()
                 self.__signalServices.StartConnect()
                 print(self.__cache.SignalrDisconnectCount)
                 print(self.__cache.SignalrDisconnectStatusUpdate)

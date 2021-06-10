@@ -49,6 +49,3 @@ class HcCache(metaclass=MetaCache):
     def SignalrDisconnectStatusUpdate(self, updateStatus: bool):
         self.__signalrDisconnectStatusUpdate = updateStatus
            
-    def SaveRefreshToken(self, token :str):
-        self.__refreshToken = str
-        

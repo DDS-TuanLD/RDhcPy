@@ -3,6 +3,8 @@ import asyncio
 import queue
 import os
 
+def get_token():
+    return 
 class MetaSignalServices(type):
     _instances = {}
     def __call__(cls, *args, **kwargs):
@@ -16,9 +18,12 @@ class SignalrServices(metaclass=MetaSignalServices):
     
     def BuildConnection(self):
         self.__hub = SignalrBuilder.HubConnectionBuilder()\
-        .with_url(os.getenv("SERVER_TEST"), options={
-            "verify_ssl": False,
-            }) \
+        .with_url(os.getenv("SERVER_HOST") + os.getenv("SIGNALR_SERVER_URL"), 
+                options={
+                        "access_token_factory": get_token,
+                        "headers": {
+                        }
+                    }) \
         .build()
         return self
     
@@ -35,14 +40,14 @@ class SignalrServices(metaclass=MetaSignalServices):
         self.__hub.stop()
 
     def SendMesageToServer(
-        self, username: str = "RdGateway", mess: str = ""):
+        self, endUserProfileId: str ="10039", entity: str = "device", message: str = ""):
         """ This is function support send data to server
 
         Args:
             username (str, optional): [name of gateway]. Defaults to "RdGateway".
             mess (str, optional): [string need to send]. Defaults to "".
         """
-        self.__hub.send("SendMessage", [username, mess])
+        self.__hub.send("Send", [endUserProfileId, entity , message])
     
     async def SignalrServicesInit(self):
         self.BuildConnection()
