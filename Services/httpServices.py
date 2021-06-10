@@ -23,11 +23,7 @@ class HttpRequest():
     @property 
     def Url(self):
         return self.__url
-    
-    @property
-    def Cookie(self):
-        return self.__cookie
-        
+
     @Header.setter
     def Header(self, header: CaseInsensitiveDict):
         self.__header = header
@@ -42,22 +38,18 @@ class HttpRequest():
     def Url(self, url: str):
         self.__url = url
         return self
-    
-    @Cookie.setter
-    def Cookie(self, cookie: dict):
-        self.__cookie = cookie
-        return self
 class HttpAsyncServices():
 
-    def CreateNewHttpHeader(self, token: str = "", EndUserProfileId: int = 20):
+    def CreateNewHttpHeader(self, token: str = "", EndUserProfileId: int = 20, cookie: dict = {}):
         newHttpHeader = CaseInsensitiveDict()
         newHttpHeader["Accept"] = "application/json"
         newHttpHeader["Authorization"] = "Bearer " + token
         newHttpHeader["X-EndUserProfileId"] = EndUserProfileId
+        newHttpHeader["Cookie"] = cookie
         return newHttpHeader
     
     def CreateNewHttpRequest(
-        self, url: str = None, token: str = "", body_data: dict = {}, cookie: dict = {}, header: CaseInsensitiveDict = {}):
+        self, url: str = None, token: str = "", body_data: dict = {}, header: CaseInsensitiveDict = {}):
         """ Create new http request
 
         Args:
@@ -72,7 +64,6 @@ class HttpAsyncServices():
         newHttpRequest.Body = body_data
         newHttpRequest.Header = header
         newHttpRequest.Url = url
-        newHttpRequest.Cookie = cookie
         
         return newHttpRequest
 

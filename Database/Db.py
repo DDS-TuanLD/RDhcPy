@@ -1,5 +1,12 @@
-from databases import Database
 import asyncio
+from sqlalchemy import Column, Integer, String
+from sqlalchemy import create_engine
+from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
+from sqlalchemy.sql import select, Select
+from sqlalchemy import insert
+from Model.users import usersTable
+from databases import Database
+import os
 class MetaDb(type):
     _instances = {}
     def __call__(cls, *args, **kwargs):
@@ -7,25 +14,27 @@ class MetaDb(type):
             cls._instances[cls] = super(MetaDb, cls).__call__(*args, **kwargs)
         return cls._instances[cls]
 
-
 class Db(metaclass= MetaDb):
-    __context: Database
+    __metadata = MetaData()
+    __engine: create_engine
+    __usersTable = usersTable
+    __database: Database
+    
+    def createTable(self):
+        self.__engine = create_engine('sqlite:///' + os.getenv("DB_NAME"), echo=True)
+        self.__usersTable = usersTable(self.__metadata)
+        self.__metadata.create_all( self.__engine)
+    
+    async def DbConnect(self):
+        self.__database = Database('sqlite:///' + os.getenv("DB_NAME"))
+        await self.__database.connect()
     
     @property
     def DbContext(self):
-        return self.__context
+        return self.__database
     
-    async def connectToDb(self):
-        DATABASE_URL = "sqlite:///Testing.db"
-        self.__context = Database(DATABASE_URL)
-        await self.__context.connect()
-        return self
+    @property
+    def DbUserTable(self):
+        return self.__usersTable.userTable
     
-    async def query(self):
-        query = "INSERT INTO HighScores(name, score) VALUES (:name, :score)"
-        values = [
-            {"name": "mai", "score": 92},
-            {"name": "dfds", "score": 87},
-            {"name": "Cardsfdol", "score": 43},
-        ]
-        await self.__context.execute_many(query=query, values=values)
+ 
