@@ -8,14 +8,12 @@ import requests
 import dotenv
 from pathlib import Path
 import os
-from Context.DbContext import MySqlDbContext
 
 env_path = Path('.')/'.env'
 config = dotenv.load_dotenv(dotenv_path=env_path)
 
 async def main():  
-    context = MySqlDbContext()
-    hc = HcController(context) 
+    hc = HcController() 
     await hc.HcServicesRun()
     
 loop = asyncio.new_event_loop()

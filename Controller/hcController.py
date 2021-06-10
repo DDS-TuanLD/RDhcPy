@@ -3,7 +3,6 @@ from Services.signalrServices import SignalrServices
 from Services.mqttServices import MqttServices
 import asyncio
 from Database.Db import Db
-from Context.DbContext import MySqlDbContext, IContext
 import os
 import aiohttp
 from Cache.HcCache import HcCache
@@ -14,11 +13,11 @@ class HcController:
     __db: Db
     __cache : HcCache
     
-    def __init__(self, DbContext: IContext):
+    def __init__(self):
         self.__httpServices = HttpAsyncServices()
         self.__signalServices = SignalrServices()
         self.__mqttServices = MqttServices()
-        self.__Db = Db(DbContext)
+        self.__Db = Db()
         self.__cache = HcCache()
     
     @property

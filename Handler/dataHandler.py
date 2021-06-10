@@ -1,15 +1,10 @@
-class MqttDataHandler():
-    pass
-
-class SignalRDataHandler():
-    pass
-
-class DataHandlerService():
-    __mqttHandler: MqttDataHandler
-    __signalrHandler: SignalRDataHandler
+class DataHandlerService():  
+    @staticmethod
+    def MqttDataHandler(*args):
+        pass
     
-    def __init__(self):
-        self.__mqttHandler = MqttDataHandler()
-        self.__signalrHandler = MqttDataHandler()
+    @staticmethod
+    def SignalrDataHandler(*args):
+        pass
         
     
