@@ -94,11 +94,11 @@ class HcController:
     
     async def HcServicesRun(self):
         await self.__getAndSaveRefreshToken()
-        task = asyncio.ensure_future(self.__mqttServices.MqttServicesInit())
-        task1 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())
-        task2 = asyncio.ensure_future(self.__mqttServices.MqttHandlerData())
-        task3 = asyncio.ensure_future(self.__signalServices.OnHandlerReceiveData())
-        task4 = asyncio.ensure_future(self.__HcCheckConnectWithCloud())
-        tasks = [task, task1, task2, task3, task4]
+        task1 = asyncio.ensure_future(self.__mqttServices.MqttServicesInit())
+        task2 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())
+        task3 = asyncio.ensure_future(self.__mqttServices.MqttHandlerData())
+        task4 = asyncio.ensure_future(self.__signalServices.OnHandlerReceiveData())
+        task5 = asyncio.ensure_future(self.__HcCheckConnectWithCloud())
+        tasks = [task1, task2, task3, task4, task5]
         await asyncio.gather(*tasks)
         return

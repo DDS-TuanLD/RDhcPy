@@ -25,7 +25,7 @@ async def main():
     
     hc = HcController()
     await hc.HcServicesRun()
-    
+
 loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
 
