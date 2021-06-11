@@ -46,11 +46,13 @@ class MqttServices():
         except Exception as err:
             print(f"Error when put subcribe data in queue: {err}")
         return
-        
+    
+    def __on_connect(self, client, userdata, flags, rc):
+            self.__client.subscribe(topic=self.__mqttConfig.sub_topic, qos=int(self.__mqttConfig.qos))
+            
     # def __on_public(self, client, userdata, mid):
     #     return
-    # def __on_connect(self, client, userdata, flags, rc, properties=None):
-    #     return
+
    
     def MqttConnect(self):
         """  Connect to mqtt broker
@@ -63,14 +65,14 @@ class MqttServices():
         self.__mqttConfig.GetMqttConfig()
         self.__client.on_message = self.__on_message
         # self.__client.on_publish = self.__on_public
-        # self.__client.on_connect = self.__on_connect
+        self.__client.on_connect = self.__on_connect
         try:
             self.__client.connect(self.__mqttConfig.host, int(self.__mqttConfig.port))
-            self.__client.subscribe(topic=self.__mqttConfig.sub_topic, qos=int(self.__mqttConfig.qos))
+            # self.__client.subscribe(topic=self.__mqttConfig.sub_topic, qos=int(self.__mqttConfig.qos))
+            self.__client.loop_start()
             connectSuccess = True
         except Exception as err:
             print(f"Exception in connect to mqtt: {err}")
-            connectSuccess = False
         return connectSuccess
 
     def MqttPublish(
@@ -100,9 +102,8 @@ class MqttServices():
     async def MqttServicesInit(self):
         startSuccess = False
         while startSuccess == False:
-            startSuccess = self.MqttConnect()
+            startSuccess =  self.MqttConnect()
             await asyncio.sleep(5)
-        self.MqttStartLoop()
         
     async def MqttHandlerData(self):
         """ This function handler data received in queue

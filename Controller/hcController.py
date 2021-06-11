@@ -6,7 +6,7 @@ from Database.Db import Db
 import os
 import aiohttp
 from Cache.HcCache import HcCache
-
+from Model.systemConfiguration import systemConfiguration
 class HcController:
     __httpServices: HttpAsyncServices
     __signalServices: SignalrServices
@@ -80,6 +80,9 @@ class HcController:
                 self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1
                 self.__signalServices.StartConnect()
                 if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
+                    print("Update cloud disconnect status to db")
+                    s = systemConfiguration(isConnect=False)
+                    await self.__Db.DbSystemConfigurationRepo.Create(s)
                     self.__cache.SignalrDisconnectStatusUpdate = True
                     self.__cache.SignalrDisconnectCount = 0   
     

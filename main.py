@@ -18,10 +18,11 @@ config = dotenv.load_dotenv(dotenv_path=env_path)
          
 async def main():  
     db = Db()
-    hc = HcController()
-
     db.createTable()
     await db.DbConnect()
+    db.DbRepoUpdate()
+    
+    hc = HcController()
     await hc.HcServicesRun()
     
 loop = asyncio.get_event_loop()
