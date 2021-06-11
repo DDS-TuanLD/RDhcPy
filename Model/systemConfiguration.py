@@ -9,6 +9,8 @@ import time
 class systemConfiguration():
     __id: int
     __isConnect: bool
+    __disconnectTime: datetime.datetime
+    __reconnectTime: datetime.datetime
     
     def __init__(self, isConnect: bool):
         self.__isConnect = isConnect
@@ -28,10 +30,30 @@ class systemConfiguration():
     @IsConnect.setter
     def IsConnect(self, IsConnect: bool):
         self.__isConnect = IsConnect
+    
+    @property
+    def DisconnectTime(self):
+        return self.__disconnectTime
+    
+    @DisconnectTime.setter
+    def DisconnectTime(self, DisconnectTime: bool):
+        self.__disconnectTime = DisconnectTime
+    
+    @property
+    def ReconnectTime(self):
+        return self.__reconnectTime
+    
+    @ReconnectTime.setter
+    def ReconnectTime(self, ReconnectTime: bool):
+        self.__reconnectTime = ReconnectTime
+        
 class systemConfigurationTable():
     def __init__(self, metadata: MetaData):
         self.systemConfigurationTable = Table('SystemConfiguration', metadata,
-                        Column('id', Integer, primary_key=True, nullable=False),
+                        Column('Id', Integer, primary_key=True, nullable=False),
                         Column('IsConnect', String),
-                        Column('CreateAt', DateTime, server_default = func.now()),
-                        )  
+                        Column('DisconnectTime', DateTime),
+                        Column('ReconnectTime', DateTime),
+                        Column('CreateAt', DateTime),
+                        Column('UpdateAt', DateTime),
+                        ) 

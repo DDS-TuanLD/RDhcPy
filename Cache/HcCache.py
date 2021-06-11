@@ -1,3 +1,4 @@
+import datetime
 class MetaCache(type):
     _instances = {}
     def __call__(cls, *args, **kwargs):
@@ -11,7 +12,7 @@ class HcCache(metaclass=MetaCache):
     __signalrOnConnect: bool
     __signalrDisconnectCount: int
     __signalrDisconnectStatusUpdate: bool
-    __token: str
+    __disconectTime: datetime.datetime
     
     def __init__(self):
         self.__refreshToken = ""
@@ -19,6 +20,7 @@ class HcCache(metaclass=MetaCache):
         self.__signalrDisconnectCount = 0
         self.__signalrDisconnectStatusUpdate = False
         self.__endUserId = ""
+        self.__disconectTime = None
     @property
     def RefreshToken(self):
         return self.__refreshToken
@@ -66,3 +68,12 @@ class HcCache(metaclass=MetaCache):
     @EndUserId.setter
     def Token(self, token: str):
         self.__token = token
+        
+          
+    @property
+    def DisconnectTime(self):
+        return self.__disconectTime
+    
+    @DisconnectTime.setter
+    def DisconnectTime(self, disconnectTime: datetime.datetime):
+        self.__disconectTime = disconnectTime

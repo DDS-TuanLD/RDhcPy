@@ -1,6 +1,7 @@
 from Cache.HcCache import HcCache
 from Database.Db import Db
 from Model.systemConfiguration import systemConfiguration
+import datetime
 class DataHandlerService():  
     def MqttDataHandler(self, args):
         pass
@@ -18,8 +19,10 @@ class DataHandlerService():
         if data == "pong":
             cache.SignalrDisconnectCount = 0
             if cache.SignalrDisconnectStatusUpdate == True:
-                await db.DbSystemConfigurationRepo.CreateWithParamsAsync(IsConnect=True)
+                print("Update cloud reconnect status to db")
+                await db.DbSystemConfigurationRepo.CreateWithParamsAsync(IsConnect=True, DisconnectTime=None, ReconnectTime=datetime.datetime.now())
                 cache.SignalrDisconnectStatusUpdate = False
+                cache.DisconnectTime = None
             
         
     

@@ -7,6 +7,7 @@ import os
 import aiohttp
 from Cache.HcCache import HcCache
 from Model.systemConfiguration import systemConfiguration
+import datetime
 class HcController:
     __httpServices: HttpAsyncServices
     __signalServices: SignalrServices
@@ -53,22 +54,22 @@ class HcController:
         await session.close()
         return
     
-    async def getToken(self):
+    async def __getToken(self):
         refreshToken = self.__cache.RefreshToken
         tokenUrl = os.getenv("SERVER_HOST") + os.getenv("TOKEN_URL")
         cookie = f"RefreshToken={refreshToken}"
         header = self.HcHttpServices.CreateNewHttpHeader(cookie = cookie)
         req = self.HcHttpServices.CreateNewHttpRequest(url=tokenUrl, header=header)
         session = aiohttp.ClientSession()
-        res = ""
+        token = ""
         try:
             res = await self.HcHttpServices.UsePostRequest(session, req)
             data = await res.json()
-            res = data['token']
+            token = data['token']
         except Exception as err:
             print("Error when get token")
         await session.close()
-        return res
+        return token
     
     async def __HcCheckConnectWithCloud(self):
         while True:
@@ -80,11 +81,14 @@ class HcController:
             except Exception as err:
                 print(f"Exception when send heardbeat {err}")
             await asyncio.sleep(5)
+            if self.__cache.DisconnectTime == None:
+                self.__cache.DisconnectTime = datetime.datetime.now()
             self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1
             self.__signalServices.StartConnect()
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
+                
                 print("Update cloud disconnect status to db")
-                await self.__Db.DbSystemConfigurationRepo.CreateWithParamsAsync(IsConnect=True)
+                await self.__Db.DbSystemConfigurationRepo.CreateWithParamsAsync(IsConnect=True, DisconnectTime=self.__cache.DisconnectTime, ReconnectTime=None)
                 self.__cache.SignalrDisconnectStatusUpdate = True
                 self.__cache.SignalrDisconnectCount = 0   
     

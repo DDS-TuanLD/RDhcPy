@@ -5,7 +5,7 @@ from requests.structures import CaseInsensitiveDict
 import asyncio
 import aiohttp
 import os
-
+from Cache.HcCache import HcCache
 class HttpRequest():
     __header: CaseInsensitiveDict
     __body: dict
@@ -40,11 +40,12 @@ class HttpRequest():
         return self
 class HttpAsyncServices():
 
-    def CreateNewHttpHeader(self, token: str = "", EndUserProfileId: str="20", cookie: str = ""):
+    def CreateNewHttpHeader(self, token: str = "", cookie: str = ""):
+        cache = HcCache()
         newHttpHeader = CaseInsensitiveDict()
         newHttpHeader["Accept"] = "application/json"
         newHttpHeader["Authorization"] = "Bearer " + token
-        newHttpHeader["X-EndUserProfileId"] = EndUserProfileId
+        newHttpHeader["X-EndUserProfileId"] = cache.EndUserId
         newHttpHeader["Cookie"] = cookie
         return newHttpHeader
     
