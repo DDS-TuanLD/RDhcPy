@@ -8,6 +8,7 @@ from Model.users import usersTable
 from Model.systemConfiguration import systemConfigurationTable
 from databases import Database
 import os
+from Repository.systemConfigurationRepo import systemConfigurationRepo
 class MetaDb(type):
     _instances = {}
     def __call__(cls, *args, **kwargs):
@@ -19,8 +20,11 @@ class Db(metaclass= MetaDb):
     __metadata = MetaData()
     __engine: create_engine
     __database: Database
+    
     __usersTable: usersTable
     __systemConfiguration: systemConfigurationTable
+    
+    __systemConfigurationRepo: systemConfigurationRepo
 
     def createTable(self):
         self.__engine = create_engine('sqlite:///' + os.getenv("DB_NAME"), echo=True)
@@ -31,6 +35,9 @@ class Db(metaclass= MetaDb):
     async def DbConnect(self):
         self.__database = Database('sqlite:///' + os.getenv("DB_NAME"))
         await self.__database.connect()
+        
+    def DbRepoUpdate(self):
+        self.__systemConfigurationRepo = systemConfigurationRepo(self.__systemConfiguration.systemConfigurationTable, self.__database)
     
     @property
     def DbContext(self):
@@ -44,4 +51,6 @@ class Db(metaclass= MetaDb):
     def DbUserTable(self):
         return self.__systemConfiguration.systemConfigurationTable
     
- 
+    @property
+    def DbSystemConfigurationRepo(self):
+        return self.__systemConfigurationRepo

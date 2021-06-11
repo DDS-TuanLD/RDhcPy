@@ -12,11 +12,8 @@ class systemConfiguration():
     __createAt: datetime.datetime
     __updateAt: datetime.datetime
     
-    def __init__(self, id: int, isConnect: bool, createAt: str, updateAt: str):
-        self.__id = id
+    def __init__(self, isConnect: bool):
         self.__isConnect = isConnect
-        self.__updateAt = updateAt
-        self.__createAt = createAt
         
     @property
     def Id(self):
