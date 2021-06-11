@@ -71,20 +71,19 @@ class HcController:
         while True:
             endUser = self.__cache.EndUserId
             try:
+                print("Hc send heardbeat to cloud")
                 self.HcSignalrServices.SendMesageToServer(endUserProfileId=endUser,entity= "Heardbeat", message= "ping")
                 await asyncio.sleep(5)
             except Exception as err:
-                self.__cache.SignalrConnectStatus = False
+                print(f"Exception when send heardbeat {err}")
             await asyncio.sleep(5)
-            if self.__cache.SignalrConnectStatus == False:
-                self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1
-                self.__signalServices.StartConnect()
-                if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
-                    print("Update cloud disconnect status to db")
-                    s = systemConfiguration(isConnect=False)
-                    await self.__Db.DbSystemConfigurationRepo.Create(s)
-                    self.__cache.SignalrDisconnectStatusUpdate = True
-                    self.__cache.SignalrDisconnectCount = 0   
+            self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1
+            self.__signalServices.StartConnect()
+            if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
+                print("Update cloud disconnect status to db")
+                await self.__Db.DbSystemConfigurationRepo.Create(True)
+                self.__cache.SignalrDisconnectStatusUpdate = True
+                self.__cache.SignalrDisconnectCount = 0   
     
     async def HcServicesRun(self):
         await self.__getAndSaveRefreshToken()

@@ -17,7 +17,6 @@ class DataHandlerService():
         db = Db()
         if data == "pong":
             cache.SignalrDisconnectCount = 0
-            cache.SignalrConnectStatus = True
             if cache.SignalrDisconnectStatusUpdate == True:
                 print("Update cloud onconnect status to db")
                 s = systemConfiguration(isConnect=True)
