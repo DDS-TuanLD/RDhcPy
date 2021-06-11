@@ -18,9 +18,7 @@ class DataHandlerService():
         if data == "pong":
             cache.SignalrDisconnectCount = 0
             if cache.SignalrDisconnectStatusUpdate == True:
-                print("Update cloud onconnect status to db")
-                s = systemConfiguration(isConnect=True)
-                await db.DbSystemConfigurationRepo.Create(s)
+                await db.DbSystemConfigurationRepo.CreateWithParamsAsync(IsConnect=True)
                 cache.SignalrDisconnectStatusUpdate = False
             
         

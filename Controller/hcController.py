@@ -44,9 +44,12 @@ class HcController:
         refreshTokenReq = self.HcHttpServices.CreateNewHttpRequest(url= refreshTokenUrl, body_data=refreshTokenBody)
         session = aiohttp.ClientSession()
         res = await self.HcHttpServices.UsePostRequest(session, refreshTokenReq)
-        data = await res.json()
-        self.__cache.RefreshToken = data['refreshToken']
-        self.__cache.EndUserId = str(data['endUserProfiles'][0]['id'])
+        try:
+            data = await res.json()
+            self.__cache.RefreshToken = data['refreshToken']
+            self.__cache.EndUserId = str(data['endUserProfiles'][0]['id'])
+        except Exception as err:
+            print(f"Error when get refresh token")
         await session.close()
         return
     
@@ -63,7 +66,7 @@ class HcController:
             data = await res.json()
             res = data['token']
         except Exception as err:
-            print(err)
+            print("Error when get token")
         await session.close()
         return res
     
@@ -81,7 +84,7 @@ class HcController:
             self.__signalServices.StartConnect()
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 print("Update cloud disconnect status to db")
-                await self.__Db.DbSystemConfigurationRepo.Create(True)
+                await self.__Db.DbSystemConfigurationRepo.CreateWithParamsAsync(IsConnect=True)
                 self.__cache.SignalrDisconnectStatusUpdate = True
                 self.__cache.SignalrDisconnectCount = 0   
     

@@ -14,31 +14,29 @@ class systemConfigurationRepo():
         self.__systemConfigurationTable = SystemConfigurationTable
         self.__context = context
     
-    async def Create(self, IsConnect: bool=None):
+    async def CreateWithParamsAsync(self, IsConnect: bool):
         ins = self.__systemConfigurationTable.insert()
         values = {
             "IsConnect" : str(IsConnect),
         }
         await self.__context.execute(query=ins, values=values)
 
-    def Remove(self):
-        pass
-
-    def Update(self):
-        pass
-
-    def Delete(self):
-        pass
+    async def RemoveAsyncById(self, id:int):
+        ins = self.__systemConfigurationTable.delete().where(self.__systemConfigurationTable.c.id == id)
+        await self.__context.execute(query=ins)
+        
+    async def RemoveAsyncByCondition(self, condition: BinaryExpression):
+        ins = self.__systemConfigurationTable.delete().where(condition)
+        await self.__context.execute(query=ins)
     
-    def FindAll(self):
+    async def UpdateAsync(self, id:int):
+        ins = self.__systemConfigurationTable.update().where(self.__systemConfigurationTable.c.id == id).values(IsConnect = "False")
+        await self.__context.execute(query=ins)
+    
+    async def FindAllAsync(self):
         pass
     
     async def FindWithConditionAsync(self, condition: BinaryExpression):
         ins = self.__systemConfigurationTable.select().where(condition)
         rel = await self.__context.fetch_all(ins)
     
-    async def FindWithConditionIterate(self, condition: BinaryExpression):
-        ins = self.__systemConfigurationTable.select().where(condition)
-        async for row in self.__context.iterate(query = ins):
-            print(row)
-      
