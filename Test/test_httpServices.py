@@ -2,9 +2,9 @@ import unittest
 from Services.httpServices import HttpAsyncServices
 import aiohttp
 import asyncio
-import aiounittest
+from unittest.async_case import IsolatedAsyncioTestCase
 import http
-class TestHttpService(aiounittest.AsyncTestCase):
+class TestHttpService(IsolatedAsyncioTestCase):
     
     MESSAGE_FMT = 'want `{0}`, get `{1}`: `{2}`'
     refreshToken =  "10a8F5yStJ1A7JBXRzc4NdO67kxbZtbxGYQPyOFlQXiRR/nI9ZrTzAwCUYrq2DUnNyKrAFBE/PB3Oa8t9tGy57xKqBQPfpFhoNXVDB83JC8QsPCxxy2qIMdI2KlxthA7U8xx8v+iTJIzEMmOZUO6VLBUuKS1L2Kwiou/7HB+3gp2QgJRmF4WJiXkKFZzaCwyeOjOz/SYBTp6VG519IxGLCi3z+FUqWC32eP8BFlWQ3I="
@@ -30,10 +30,9 @@ class TestHttpService(aiounittest.AsyncTestCase):
         token=""
         token = data['token'] 
         return token    
-        
+    
     async def test_usePostRequest(self):
         expect = http.HTTPStatus.OK
-        
         token = await self.__test_getNewToken()
         cookie = f"Token={token}"
         header = self.httpService.CreateNewHttpHeader(cookie=cookie, endProfileId= self.endProfileId)
