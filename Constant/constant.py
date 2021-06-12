@@ -15,9 +15,9 @@ DEVICENAME = "device_test"
 #Mqtt connection option
 MQTT_HOST = "broker.mqttdashboard.com"
 MQTT_PORT = 1883
-MQTT_QOS = 2
+MQTT_QOS = 0
 MQTT_KEEPALIVE = 60
-MQTT_PUB_TOPIC = "pub_topic"
+MQTT_PUB_TOPIC = "test"
 MQTT_SUB_TOPIC = "test"
 
 #Sqlite connection option

@@ -101,7 +101,6 @@ class HttpAsyncServices():
         Returns:
             [ClientResponse]: [response of request]
         """
-        resp = None
         try:
             async with session.post(req.Url, headers=req.Header, json=req.Body) as resp:
                 resp.raise_for_status()

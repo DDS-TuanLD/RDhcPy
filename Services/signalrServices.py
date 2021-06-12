@@ -75,7 +75,7 @@ class SignalrServices():
         
         hander = DataHandlerService()
         while True:
-            await asyncio.sleep(0.5)
+            await asyncio.sleep(1)
             if self.__queue.empty() == False:
                 item = self.__queue.get()
                 hander.SignalrDataHandler(item)

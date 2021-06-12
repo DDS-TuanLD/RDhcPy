@@ -1,7 +1,6 @@
 import unittest
 from Database.Db import Db
 import datetime
-
 class TestDb(unittest.TestCase):
     db = Db()
     

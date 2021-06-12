@@ -2,6 +2,7 @@ import paho.mqtt.client as mqtt
 import asyncio
 import queue
 import Constant.constant as const
+from Handler.dataHandler import DataHandlerService
 class MqttConfig():
     host = ""
     port: int
@@ -39,10 +40,10 @@ class MqttServices():
             userdata ([type]): [description]
             msg ([type]): [description]
         """
-        
+        handler = DataHandlerService()
         item = msg.payload.decode("utf-8")
         try:
-            self.__queue.put_nowait(item)
+            handler.MqttDataHandler(item)
         except Exception as err:
             print(f"Error when put subcribe data in queue: {err}")
         return
@@ -84,16 +85,15 @@ class MqttServices():
         """
         
         self.__client.publish(self.__mqttConfig.pub_topic, payload=send_data, qos=qos)
-    
-    # def MqttSubscribe(
-    #     self, topic, qos):
-    #     self.__client.subscribe(topic, qos)
 
     def MqttStartLoop(self):
         self.__client.loop_start()
 
     def MqttStopLoop(self):
         self.__client.loop_stop()
+        
+    def MqttDisconnect(self):
+        self.__client.disconnect()
 
     # def MqttLoopForever(self):
     #     self.__client.loop_forever()
@@ -108,7 +108,7 @@ class MqttServices():
         """ This function handler data received in queue
         """
         while True:
-            await asyncio.sleep(0.5)
+            await asyncio.sleep(1)
             if self.__queue.empty() == False:
                 item = self.__queue.get()
                 print(item)

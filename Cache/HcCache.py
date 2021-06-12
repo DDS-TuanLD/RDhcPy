@@ -21,6 +21,8 @@ class HcCache(metaclass=MetaCache):
         self.__signalrDisconnectStatusUpdate = False
         self.__endUserId = ""
         self.__disconectTime = None
+        self.mqttDisconnectStatus = False
+        self.mqttProblemCount = 0
     @property
     def RefreshToken(self):
         return self.__refreshToken

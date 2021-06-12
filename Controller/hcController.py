@@ -85,12 +85,11 @@ class HcController:
             try:
                 print("Hc send heardbeat to cloud")
                 self.HcSignalrServices.SendMesageToServer(endUserProfileId=endUser,entity= "Heardbeat", message= "ping")
+                self.__cache.DisconnectTime = datetime.datetime.now()
                 await asyncio.sleep(5)
             except Exception as err:
                 print(f"Exception when send heardbeat {err}")
             await asyncio.sleep(5)
-            if self.__cache.DisconnectTime == None:
-                self.__cache.DisconnectTime = datetime.datetime.now()
             self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1
             self.__signalServices.StartConnect()
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
@@ -99,6 +98,18 @@ class HcController:
                 self.__cache.SignalrDisconnectStatusUpdate = True
                 self.__cache.SignalrDisconnectCount = 0   
     
+    async def __HcCheckMqttConnect(self):
+        while True:
+            self.HcMqttServices.MqttPublish("ping", qos=0)
+            self.__cache.mqttDisconnectStatus = True
+            await asyncio.sleep(10)
+            self.__cache.mqttProblemCount = self.__cache.mqttProblemCount + 1
+            if self.__cache.mqttProblemCount == 3 and self.__cache.mqttDisconnectStatus == True:
+                self.__mqttServices.MqttStopLoop()
+                self.__mqttServices.MqttDisconnect()
+                self.__cache.mqttProblemCount = 0
+                await self.HcMqttServices.MqttServicesInit()
+    
     async def HcServicesRun(self):
         task1 = asyncio.ensure_future(self.__mqttServices.MqttServicesInit())
         task2 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())
@@ -106,6 +117,7 @@ class HcController:
         task4 = asyncio.ensure_future(self.__signalServices.OnHandlerReceiveData())
         task5 = asyncio.ensure_future(self.__HcCheckConnectWithCloud())
         task6 = asyncio.ensure_future(self.__HcUpdateRefreshToken())
-        tasks = [task1, task2, task3, task4, task5, task6]
+        task7 = asyncio.ensure_future(self.__HcCheckMqttConnect())
+        tasks = [task1, task2, task3, task4, task5, task6, task7]
         await asyncio.gather(*tasks)
         return

@@ -4,7 +4,11 @@ from Model.systemConfiguration import systemConfiguration
 import datetime
 class DataHandlerService():  
     def MqttDataHandler(self, args):
-        pass
+        print(args)
+        cache = HcCache()
+        if args == "ping":
+           cache.mqttDisconnectStatus = False
+           cache.mqttProblemCount = 0       
     
     def SignalrDataHandler(self, *args):
         switcher = {
