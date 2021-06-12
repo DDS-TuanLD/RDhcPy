@@ -88,7 +88,7 @@ class HcController:
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 
                 print("Update cloud disconnect status to db")
-                await self.__Db.DbSystemConfigurationRepo.CreateWithParams(IsConnect=True, DisconnectTime=self.__cache.DisconnectTime, ReconnectTime=None)
+                self.__Db.DbSystemConfigurationRepo.CreateWithParams(IsConnect=False, DisconnectTime=self.__cache.DisconnectTime, ReconnectTime=None)
                 self.__cache.SignalrDisconnectStatusUpdate = True
                 self.__cache.SignalrDisconnectCount = 0   
     
