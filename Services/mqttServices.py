@@ -44,6 +44,7 @@ class MqttServices():
         item = msg.payload.decode("utf-8")
         try:
             handler.MqttDataHandler(item)
+            #self.__queue.put_nowait(item)
         except Exception as err:
             print(f"Error when put subcribe data in queue: {err}")
         return
@@ -107,8 +108,9 @@ class MqttServices():
     async def MqttHandlerData(self):
         """ This function handler data received in queue
         """
+        handler = DataHandlerService()
         while True:
             await asyncio.sleep(1)
             if self.__queue.empty() == False:
                 item = self.__queue.get()
-                print(item)
+                handler.MqttDataHandler(item)

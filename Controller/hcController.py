@@ -100,7 +100,7 @@ class HcController:
     
     async def __HcCheckMqttConnect(self):
         while True:
-            self.HcMqttServices.MqttPublish("ping", qos=0)
+            self.HcMqttServices.MqttPublish("ping", qos=2)
             self.__cache.mqttDisconnectStatus = True
             await asyncio.sleep(10)
             self.__cache.mqttProblemCount = self.__cache.mqttProblemCount + 1
@@ -113,11 +113,11 @@ class HcController:
     async def HcServicesRun(self):
         task1 = asyncio.ensure_future(self.__mqttServices.MqttServicesInit())
         task2 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())
-        task3 = asyncio.ensure_future(self.__mqttServices.MqttHandlerData())
-        task4 = asyncio.ensure_future(self.__signalServices.OnHandlerReceiveData())
+        # task3 = asyncio.ensure_future(self.__mqttServices.MqttHandlerData())
+        # task4 = asyncio.ensure_future(self.__signalServices.OnHandlerReceiveData())
         task5 = asyncio.ensure_future(self.__HcCheckConnectWithCloud())
         task6 = asyncio.ensure_future(self.__HcUpdateRefreshToken())
         task7 = asyncio.ensure_future(self.__HcCheckMqttConnect())
-        tasks = [task1, task2, task3, task4, task5, task6, task7]
+        tasks = [task1, task2, task5, task6, task7]
         await asyncio.gather(*tasks)
         return
