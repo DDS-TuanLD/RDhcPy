@@ -9,9 +9,6 @@ async def main():
     db.createTable()
     db.DbRepoUpdate()
     
-    # rel = db.DbSystemConfigurationRepo.FindWithCondition(db.DbSystemConfigurationTable.c.IsConnect == "True")
-    # for r in rel:
-    #     print(r['Id'])
     hc = HcController()
     await hc.HcServicesRun()
 

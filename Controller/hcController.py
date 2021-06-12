@@ -71,6 +71,12 @@ class HcController:
         await session.close()
         return token
     
+    async def __HcUpdateRefreshToken(self):
+        while True:
+            await self.__getAndSaveRefreshToken()
+            print("Update refresh Token")
+            await asyncio.sleep(10)
+    
     async def __HcCheckConnectWithCloud(self):
         while True:
             endUser = self.__cache.EndUserId
@@ -86,7 +92,6 @@ class HcController:
             self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1
             self.__signalServices.StartConnect()
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
-                
                 print("Update cloud disconnect status to db")
                 self.__Db.DbSystemConfigurationRepo.CreateWithParams(IsConnect=False, DisconnectTime=self.__cache.DisconnectTime, ReconnectTime=None)
                 self.__cache.SignalrDisconnectStatusUpdate = True
@@ -99,6 +104,7 @@ class HcController:
         task3 = asyncio.ensure_future(self.__mqttServices.MqttHandlerData())
         task4 = asyncio.ensure_future(self.__signalServices.OnHandlerReceiveData())
         task5 = asyncio.ensure_future(self.__HcCheckConnectWithCloud())
-        tasks = [task1, task2, task3, task4, task5]
+        task6 = asyncio.ensure_future(self.__HcUpdateRefreshToken())
+        tasks = [task1, task2, task3, task4, task5, task6]
         await asyncio.gather(*tasks)
         return

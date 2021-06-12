@@ -59,9 +59,9 @@ class SignalrServices():
     
     async def SignalrServicesInit(self):
         startSuccess = False
+        self.BuildConnection()
         while startSuccess == False:
             try:
-                self.BuildConnection()
                 self.__hub.start()
                 startSuccess = True
             except Exception as err:
