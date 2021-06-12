@@ -4,7 +4,6 @@ from requests.exceptions import HTTPError
 from requests.structures import CaseInsensitiveDict
 import asyncio
 import aiohttp
-import os
 from Cache.HcCache import HcCache
 
 cache = HcCache()

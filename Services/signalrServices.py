@@ -1,10 +1,10 @@
 import signalrcore.hub_connection_builder as SignalrBuilder
 import asyncio
 import queue
-import os
 import requests
 from Cache.HcCache import HcCache
 from Handler.dataHandler import DataHandlerService
+import Constant.constant as const
 
 def getToken():
     cache = HcCache()
@@ -26,7 +26,7 @@ class SignalrServices():
     
     def BuildConnection(self):
         self.__hub = SignalrBuilder.HubConnectionBuilder()\
-        .with_url(os.getenv("SERVER_HOST") + os.getenv("SIGNALR_SERVER_URL"), 
+        .with_url(const.SERVER_HOST + const.SIGNALR_SERVER_URL, 
                 options={
                         "access_token_factory": getToken,
                         "headers": {

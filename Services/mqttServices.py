@@ -1,14 +1,14 @@
 import paho.mqtt.client as mqtt
-import os
 import asyncio
 import queue
+import Constant.constant as const
 class MqttConfig():
     host = ""
-    port = ""
+    port: int
     sub_topic = ""
     pub_topic = ""
-    qos = ""
-    keepalive = ""
+    qos: int
+    keepalive: int
 
     def GetMqttConfig(self):
         """ Get mqtt server params from env file
@@ -16,12 +16,12 @@ class MqttConfig():
         Returns:
             [MqttConfig]: [Instance of MqttConfig
         """
-        self.host = os.getenv("MQTT_HOST")
-        self.port = os.getenv("MQTT_PORT")
-        self.sub_topic = os.getenv("MQTT_SUB_TOPIC")
-        self.pub_topic = os.getenv("MQTT_PUB_TOPIC")
-        self.qos = os.getenv("MQTT_QOS")
-        self.keepalive = os.getenv("MQTT_KEEPALIVE")
+        self.host = const.MQTT_HOST
+        self.port = const.MQTT_PORT
+        self.sub_topic = const.MQTT_SUB_TOPIC
+        self.pub_topic = const.MQTT_PUB_TOPIC
+        self.qos = const.MQTT_QOS
+        self.keepalive = const.MQTT_KEEPALIVE
         return self
 
 
@@ -47,8 +47,8 @@ class MqttServices():
             print(f"Error when put subcribe data in queue: {err}")
         return
     
-    def __on_connect(self, client, userdata, flags, rc):
-            self.__client.subscribe(topic=self.__mqttConfig.sub_topic, qos=int(self.__mqttConfig.qos))
+    # def __on_connect(self, client, userdata, flags, rc):
+    #         self.__client.subscribe(topic=self.__mqttConfig.sub_topic, qos=self.__mqttConfig.qos)
             
     # def __on_public(self, client, userdata, mid):
     #     return
@@ -65,10 +65,10 @@ class MqttServices():
         self.__mqttConfig.GetMqttConfig()
         self.__client.on_message = self.__on_message
         # self.__client.on_publish = self.__on_public
-        self.__client.on_connect = self.__on_connect
+        # self.__client.on_connect = self.__on_connect
         try:
-            self.__client.connect(self.__mqttConfig.host, int(self.__mqttConfig.port))
-            # self.__client.subscribe(topic=self.__mqttConfig.sub_topic, qos=int(self.__mqttConfig.qos))
+            self.__client.connect(self.__mqttConfig.host, self.__mqttConfig.port)
+            self.__client.subscribe(topic=self.__mqttConfig.sub_topic, qos=int(self.__mqttConfig.qos))
             self.__client.loop_start()
             connectSuccess = True
         except Exception as err:

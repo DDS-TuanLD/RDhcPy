@@ -3,10 +3,10 @@ from Services.signalrServices import SignalrServices
 from Services.mqttServices import MqttServices
 import asyncio
 from Database.Db import Db
-import os
 import aiohttp
 from Cache.HcCache import HcCache
 from Model.systemConfiguration import systemConfiguration
+import Constant.constant as const
 import datetime
 class HcController:
     __httpServices: HttpAsyncServices
@@ -36,11 +36,11 @@ class HcController:
     
     async def __getAndSaveRefreshToken(self):
         refreshTokenHeader = self.HcHttpServices.CreateNewHttpHeader()
-        refreshTokenUrl = os.getenv("SERVER_HOST") + os.getenv("REFRESH_TOKEN_URL")
+        refreshTokenUrl = const.SERVER_HOST + const.REFRESH_TOKEN_URL
         refreshTokenBody = {
-            "username": os.getenv("USER"),
-            "password": os.getenv("PASS"),
-            "deviceName": os.getenv("DEVICENAME")
+            "username": const.USER,
+            "password": const.PASS,
+            "deviceName": const.DEVICENAME
             }
         refreshTokenReq = self.HcHttpServices.CreateNewHttpRequest(url= refreshTokenUrl, body_data=refreshTokenBody)
         session = aiohttp.ClientSession()
@@ -56,7 +56,7 @@ class HcController:
     
     async def __getToken(self):
         refreshToken = self.__cache.RefreshToken
-        tokenUrl = os.getenv("SERVER_HOST") + os.getenv("TOKEN_URL")
+        tokenUrl = const.SERVER_HOST + const.TOKEN_URL
         cookie = f"RefreshToken={refreshToken}"
         header = self.HcHttpServices.CreateNewHttpHeader(cookie = cookie)
         req = self.HcHttpServices.CreateNewHttpRequest(url=tokenUrl, header=header)

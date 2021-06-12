@@ -6,8 +6,8 @@ from sqlalchemy.sql import select, Select
 from sqlalchemy import insert
 from Model.systemConfiguration import systemConfigurationTable
 from databases import Database
-import os
 from Repository.systemConfigurationRepo import systemConfigurationRepo
+import Constant.constant as const
 class MetaDb(type):
     _instances = {}
     def __call__(cls, *args, **kwargs):
@@ -25,12 +25,12 @@ class Db(metaclass= MetaDb):
     __systemConfigurationRepo: systemConfigurationRepo
 
     def createTable(self):
-        self.__engine = create_engine('sqlite:///' + os.getenv("DB_NAME"), echo=True)
+        self.__engine = create_engine('sqlite:///' + const.DB_NAME, echo=True)
         self.__systemConfigurationTable = systemConfigurationTable(self.__metadata)
         self.__metadata.create_all( self.__engine)
     
     async def DbConnect(self):
-        self.__database = Database('sqlite:///' + os.getenv("DB_NAME"))
+        self.__database = Database('sqlite:///' + const.DB_NAME)
         await self.__database.connect()
         
     def DbRepoUpdate(self):
