@@ -20,7 +20,7 @@ class DataHandlerService():
             cache.SignalrDisconnectCount = 0
             if cache.SignalrDisconnectStatusUpdate == True:
                 print("Update cloud reconnect status to db")
-                await db.DbSystemConfigurationRepo.CreateWithParamsAsync(IsConnect=True, DisconnectTime=None, ReconnectTime=datetime.datetime.now())
+                await db.DbSystemConfigurationRepo.CreateWithParams(IsConnect=True, DisconnectTime=None, ReconnectTime=datetime.datetime.now())
                 cache.SignalrDisconnectStatusUpdate = False
                 cache.DisconnectTime = None
             

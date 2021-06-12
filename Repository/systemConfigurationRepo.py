@@ -1,20 +1,21 @@
 from Model.systemConfiguration import systemConfigurationTable, systemConfiguration
 from databases import Database
-from sqlalchemy.orm import base
-from sqlalchemy import Table
+from sqlalchemy import Table, select
 import sqlalchemy
 from sqlalchemy.sql.expression import BinaryExpression
 import asyncio
 import datetime
+from sqlalchemy.engine.base import Connection
+
 class systemConfigurationRepo():
     __systemConfigurationTable: Table
-    __context: Database
+    __context: Connection
     
-    def __init__(self, SystemConfigurationTable: Table, context: Database):
+    def __init__(self, SystemConfigurationTable: Table, context: Connection):
         self.__systemConfigurationTable = SystemConfigurationTable
         self.__context = context
     
-    async def CreateWithParamsAsync(self, IsConnect: bool, DisconnectTime: datetime.datetime, ReconnectTime: datetime.datetime):
+    def CreateWithParams(self, IsConnect: bool, DisconnectTime: datetime.datetime, ReconnectTime: datetime.datetime):
         """[summary]
 
         Args:
@@ -27,36 +28,36 @@ class systemConfigurationRepo():
             "ReconnectTime": ReconnectTime,
             "CreateAt": datetime.datetime.now()
         }
-        await self.__context.execute(query=ins, values=values)
+        self.__context.execute(ins, values)
 
-    async def RemoveByIdAsync(self, id:int):
+    def RemoveById(self, id:int):
         """[summary]
 
         Args:
             id (int): [description]
         """
-        ins = self.__systemConfigurationTable.delete().where(self.__systemConfigurationTable.c.id == id)
-        await self.__context.execute(query=ins)
+        ins = self.__systemConfigurationTable.delete().where(self.__systemConfigurationTable.c.Id == id)
+        self.__context.execute(ins)
         
-    async def RemoveByConditionAsync(self, systemConfiCondition: BinaryExpression):
+    def RemoveByCondition(self, systemConfiCondition: BinaryExpression):
         """[summary]
 
         Args:
             systemConfiCondition (BinaryExpression): [description]
         """
         ins = self.__systemConfigurationTable.delete().where(systemConfiCondition)
-        await self.__context.execute(query=ins)
+        self.__context.execute(ins)
     
-    async def UpdateByIdAsync(self, id:int, IsConnect: str, DisConnectime: datetime.datetime, ReConnectTime: datetime.datetime):
+    def UpdateById(self, id:int, IsConnect: str, DisConnectTime: datetime.datetime, ReConnectTime: datetime.datetime):
         """[summary]
 
         Args:
             id (int): [description]
         """
-        ins = self.__systemConfigurationTable.update().where(self.__systemConfigurationTable.c.id == id).values(IsConnect = IsConnect, Disconnectime = DisConnectime, ReconnectTime = ReConnectTime, UpdateAt = datetime.datetime.now())
-        await self.__context.execute(query=ins)
+        ins = self.__systemConfigurationTable.update().where(self.__systemConfigurationTable.c.Id == id).values(IsConnect = IsConnect, DisconnectTime = DisConnectTime, ReconnectTime = ReConnectTime, UpdateAt = datetime.datetime.now())
+        self.__context.execute(ins)
     
-    async def FindwithIdAsync(self, id:int):
+    def FindwithId(self, Id:int):
         """[summary]
 
         Args:
@@ -65,11 +66,11 @@ class systemConfigurationRepo():
         Returns:
             [type]: [description]
         """
-        ins = self.__systemConfigurationTable.select().where(self.__systemConfigurationTable.c.id == id)
-        rel = await self.__context.fetch_one(ins)
+        ins = self.__systemConfigurationTable.select().where(self.__systemConfigurationTable.c.Id == Id)
+        rel = self.__context.execute(ins)
         return rel
-    
-    async def FindWithConditionAsync(self, condition: BinaryExpression):
+            
+    def FindWithCondition(self, condition: BinaryExpression):
         """[summary]
 
         Args:
@@ -79,15 +80,15 @@ class systemConfigurationRepo():
             [type]: [description]
         """
         ins = self.__systemConfigurationTable.select().where(condition)
-        rel = await self.__context.fetch_all(ins)
+        rel = self.__context.execute(ins)
         return rel
     
-    async def FindAllAsync(self):
+    def FindAll(self):
             """[summary]
 
             Returns:
                 [type]: [description]
             """
             ins = self.__systemConfigurationTable.select()
-            rel = await self.__context.fetch_all(query=ins)
+            rel = self.__context.execute(ins)
             return rel
