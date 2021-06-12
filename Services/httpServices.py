@@ -106,11 +106,13 @@ class HttpAsyncServices():
             async with session.post(req.Url, headers=req.Header, json=req.Body) as resp:
                 resp.raise_for_status()
                 await resp.json()
+                return resp
         except HTTPError as err:  
             print("Http request error: " + err)
+            return ""
         except Exception as err:
             print(f"Other exception: {err}")
-        return resp
+            return ""
     
     async def UsePutRequest(
         self, session: aiohttp.ClientSession, req: HttpRequest):

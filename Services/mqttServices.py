@@ -47,8 +47,8 @@ class MqttServices():
             print(f"Error when put subcribe data in queue: {err}")
         return
     
-    # def __on_connect(self, client, userdata, flags, rc):
-    #         self.__client.subscribe(topic=self.__mqttConfig.sub_topic, qos=self.__mqttConfig.qos)
+    def __on_connect(self, client, userdata, flags, rc):
+            self.__client.subscribe(topic=self.__mqttConfig.sub_topic, qos=self.__mqttConfig.qos)
             
     # def __on_public(self, client, userdata, mid):
     #     return
@@ -65,10 +65,9 @@ class MqttServices():
         self.__mqttConfig.GetMqttConfig()
         self.__client.on_message = self.__on_message
         # self.__client.on_publish = self.__on_public
-        # self.__client.on_connect = self.__on_connect
+        self.__client.on_connect = self.__on_connect
         try:
             self.__client.connect(self.__mqttConfig.host, self.__mqttConfig.port)
-            self.__client.subscribe(topic=self.__mqttConfig.sub_topic, qos=int(self.__mqttConfig.qos))
             self.__client.loop_start()
             connectSuccess = True
         except Exception as err:

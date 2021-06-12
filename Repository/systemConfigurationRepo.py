@@ -1,5 +1,4 @@
 from Model.systemConfiguration import systemConfigurationTable, systemConfiguration
-from databases import Database
 from sqlalchemy import Table, select
 import sqlalchemy
 from sqlalchemy.sql.expression import BinaryExpression

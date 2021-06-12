@@ -45,12 +45,14 @@ class HcController:
         refreshTokenReq = self.HcHttpServices.CreateNewHttpRequest(url= refreshTokenUrl, body_data=refreshTokenBody)
         session = aiohttp.ClientSession()
         res = await self.HcHttpServices.UsePostRequest(session, refreshTokenReq)
-        try:
+        if res != "":
             data = await res.json()
-            self.__cache.RefreshToken = data['refreshToken']
-            self.__cache.EndUserId = str(data['endUserProfiles'][0]['id'])
-        except Exception as err:
-            print(f"Error when get refresh token")
+            refreshToken = data['refreshToken']
+            endUserId = str(data['endUserProfiles'][0]['id'])
+            if refreshToken != None:
+                self.__cache.RefreshToken = data['refreshToken']
+            if endUserId != None:
+                self.__cache.EndUserId = endUserId
         await session.close()
         return
     
@@ -75,7 +77,7 @@ class HcController:
         while True:
             await self.__getAndSaveRefreshToken()
             print("Update refresh Token")
-            await asyncio.sleep(10)
+            await asyncio.sleep(20)
     
     async def __HcCheckConnectWithCloud(self):
         while True:
@@ -98,7 +100,6 @@ class HcController:
                 self.__cache.SignalrDisconnectCount = 0   
     
     async def HcServicesRun(self):
-        await self.__getAndSaveRefreshToken()
         task1 = asyncio.ensure_future(self.__mqttServices.MqttServicesInit())
         task2 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())
         task3 = asyncio.ensure_future(self.__mqttServices.MqttHandlerData())
