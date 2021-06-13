@@ -3,12 +3,13 @@ import asyncio
 import requests
 from Database.Db import Db
 import datetime
+from Model.systemConfiguration import systemConfiguration
          
 async def main():  
     db = Db()
-    db.createTable()
-    db.DbRepoUpdate()
-    
+    db.DbCreateTable()
+    db.DbServicesInit()
+  
     hc = HcController()
     await hc.HcServicesRun()
 

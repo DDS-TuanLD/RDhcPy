@@ -14,7 +14,7 @@ class systemConfigurationRepo():
         self.__systemConfigurationTable = SystemConfigurationTable
         self.__context = context
     
-    def CreateWithParams(self, IsConnect: bool, DisconnectTime: datetime.datetime, ReconnectTime: datetime.datetime):
+    def CreateWithParams(self, sysCon: systemConfiguration):
         """[summary]
 
         Args:
@@ -22,9 +22,9 @@ class systemConfigurationRepo():
         """
         ins = self.__systemConfigurationTable.insert()
         values = {
-            "IsConnect" : str(IsConnect),
-            "DisconnectTime": DisconnectTime,
-            "ReconnectTime": ReconnectTime,
+            "IsConnect" : str(sysCon.IsConnect),
+            "DisconnectTime": sysCon.DisconnectTime,
+            "ReconnectTime": sysCon.ReconnectTime,
             "CreateAt": datetime.datetime.now()
         }
         self.__context.execute(ins, values)
@@ -47,13 +47,15 @@ class systemConfigurationRepo():
         ins = self.__systemConfigurationTable.delete().where(systemConfiCondition)
         self.__context.execute(ins)
     
-    def UpdateById(self, id:int, IsConnect: str, DisConnectTime: datetime.datetime, ReConnectTime: datetime.datetime):
+    def UpdateById(self, id:int, newSysConfig: systemConfiguration):
         """[summary]
 
         Args:
             id (int): [description]
         """
-        ins = self.__systemConfigurationTable.update().where(self.__systemConfigurationTable.c.Id == id).values(IsConnect = IsConnect, DisconnectTime = DisConnectTime, ReconnectTime = ReConnectTime, UpdateAt = datetime.datetime.now())
+        ins = self.__systemConfigurationTable.update().where(self.__systemConfigurationTable.c.Id == id).values({"IsConnect": newSysConfig.IsConnect,
+                                                                                                                 "DisconnectTime": newSysConfig.DisconnectTime,
+                                                                                                                "ReconnectTime": newSysConfig.ReconnectTime})
         self.__context.execute(ins)
     
     def FindwithId(self, Id:int):

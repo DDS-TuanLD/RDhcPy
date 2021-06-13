@@ -1,9 +1,7 @@
 import asyncio
 from sqlalchemy import Column, Integer, String
-from sqlalchemy import create_engine, DateTime, func
+from sqlalchemy import DateTime
 from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
-from sqlalchemy.sql import select, Select
-from sqlalchemy import insert, Boolean
 import datetime
 import time
 class systemConfiguration():
@@ -12,8 +10,10 @@ class systemConfiguration():
     __disconnectTime: datetime.datetime
     __reconnectTime: datetime.datetime
     
-    def __init__(self, isConnect: bool):
+    def __init__(self, isConnect: bool, DisconnectTime: datetime.datetime, ReconnectTime: datetime.datetime):
         self.__isConnect = isConnect
+        self.__disconnectTime = DisconnectTime
+        self.__reconnectTime = ReconnectTime
         
     @property
     def Id(self):
