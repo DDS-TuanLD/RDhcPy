@@ -7,7 +7,7 @@ class DataHandlerService():
         print(args)
         cache = HcCache()
         if args == "ping":
-            print("reconnect with mqtt")
+            print("connect with mqtt")
             cache.mqttDisconnectStatus = False
             cache.mqttProblemCount = 0       
     
