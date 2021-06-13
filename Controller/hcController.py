@@ -1,6 +1,6 @@
-from Services.httpServices import HttpAsyncServices
-from Services.signalrServices import SignalrServices
-from Services.mqttServices import MqttServices
+from HcServices.httpServices import HttpAsyncServices
+from HcServices.signalrServices import SignalrServices
+from HcServices.mqttServices import MqttServices
 import asyncio
 from Database.Db import Db
 import aiohttp
@@ -8,6 +8,7 @@ from Cache.HcCache import HcCache
 from Model.systemConfiguration import systemConfiguration
 import Constant.constant as const
 import datetime
+from Model.systemConfiguration import systemConfiguration
 class HcController:
     __httpServices: HttpAsyncServices
     __signalServices: SignalrServices
@@ -63,13 +64,10 @@ class HcController:
         header = self.HcHttpServices.CreateNewHttpHeader(cookie = cookie)
         req = self.HcHttpServices.CreateNewHttpRequest(url=tokenUrl, header=header)
         session = aiohttp.ClientSession()
-        token = ""
-        try:
-            res = await self.HcHttpServices.UsePostRequest(session, req)
+        res = await self.HcHttpServices.UsePostRequest(session, req)
+        if res != "":
             data = await res.json()
             token = data['token']
-        except Exception as err:
-            print("Error when get token")
         await session.close()
         return token
     
@@ -94,7 +92,8 @@ class HcController:
             self.__signalServices.StartConnect()
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 print("Update cloud disconnect status to db")
-                self.__Db.DbSystemConfigurationRepo.CreateWithParams(IsConnect=False, DisconnectTime=self.__cache.DisconnectTime, ReconnectTime=None)
+                s =systemConfiguration(isConnect= False, DisconnectTime= self.__cache.DisconnectTime, ReconnectTime= None)
+                self.__Db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
                 self.__cache.SignalrDisconnectStatusUpdate = True
                 self.__cache.SignalrDisconnectCount = 0   
     

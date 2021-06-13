@@ -1,5 +1,5 @@
 import unittest
-from Services.httpServices import HttpAsyncServices
+from HcServices.httpServices import HttpAsyncServices
 import aiohttp
 import asyncio
 from unittest.async_case import IsolatedAsyncioTestCase
