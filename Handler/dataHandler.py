@@ -7,8 +7,9 @@ class DataHandlerService():
         print(args)
         cache = HcCache()
         if args == "ping":
-           cache.mqttDisconnectStatus = False
-           cache.mqttProblemCount = 0       
+            print("reconnect with mqtt")
+            cache.mqttDisconnectStatus = False
+            cache.mqttProblemCount = 0       
     
     def SignalrDataHandler(self, *args):
         switcher = {
