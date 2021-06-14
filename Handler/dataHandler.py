@@ -4,7 +4,6 @@ from Model.systemConfiguration import systemConfiguration
 import datetime
 class DataHandlerService():  
     def MqttDataHandler(self, args):
-        print(args)
         cache = HcCache()
         if args == "ping":
             print("connect with mqtt")
@@ -25,7 +24,7 @@ class DataHandlerService():
             cache.SignalrDisconnectCount = 0
             if cache.SignalrDisconnectStatusUpdate == True:
                 print("Update cloud reconnect status to db")
-                s = systemConfiguration(isConnect=True, DisconnectTime=None, ReconnectTime=datetime.datetime.now())
+                s =systemConfiguration(isConnect= True, DisconnectTime= None, ReconnectTime= datetime.datetime.now())
                 db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
                 cache.SignalrDisconnectStatusUpdate = False
                 cache.DisconnectTime = None

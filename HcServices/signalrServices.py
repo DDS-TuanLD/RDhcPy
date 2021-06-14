@@ -42,8 +42,8 @@ class SignalrServices():
             print(f"Exception when start signal server {err}")
 
     def OnReceiveData(self):
-        self.__hub.on("Receive", self.Handler)
-        # self.__hub.on("Receive", lambda data: self.__queue.put_nowait(data))
+        #self.__hub.on("Receive", self.Handler)
+        self.__hub.on("Receive", lambda data: self.__queue.put_nowait(data))
     
     def Handler(self, data):
         hander = DataHandlerService()

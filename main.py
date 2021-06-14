@@ -9,7 +9,7 @@ async def main():
     db = Db()
     db.DbCreateTable()
     db.DbServicesInit()
-  
+    
     hc = HcController()
     await hc.HcServicesRun()
 

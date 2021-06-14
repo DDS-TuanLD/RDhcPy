@@ -54,7 +54,6 @@ class MqttServices():
             
     # def __on_public(self, client, userdata, mid):
     #     return
-
    
     def MqttConnect(self):
         """  Connect to mqtt broker
@@ -76,6 +75,8 @@ class MqttServices():
             print(f"Exception in connect to mqtt: {err}")
         return connectSuccess
 
+    def MqttReconnect(self):
+        self.__client.reconnect()
     def MqttPublish(
         self, send_data, qos: int = 0):
         """ Public data to mqtt server
