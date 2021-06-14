@@ -91,7 +91,6 @@ class HcController:
             await asyncio.sleep(5)
             self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1
             self.__signalServices.StartConnect()
-            print(f"{self.__cache.SignalrDisconnectCount} : {self.__cache.SignalrDisconnectStatusUpdate}")
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 print("Update cloud disconnect status to db")
                 s =systemConfiguration(isConnect= False, DisconnectTime= self.__cache.DisconnectTime, ReconnectTime= None)
@@ -104,17 +103,20 @@ class HcController:
     
     async def __HcCheckMqttConnect(self):
         while True:
-            self.HcMqttServices.MqttPublish("ping", qos=2)
+            try:
+                self.HcMqttServices.MqttPublish("ping", qos=2)
+            except:
+                pass
             self.__cache.mqttDisconnectStatus = True
             await asyncio.sleep(10)
             self.__cache.mqttProblemCount = self.__cache.mqttProblemCount + 1
             if self.__cache.mqttProblemCount == 3 and self.__cache.mqttDisconnectStatus == True:
                 print("reconnect to mqtt")
                 #self.__mqttServices.MqttStopLoop()
-                #self.__mqttServices.MqttDisconnect()
+                self.__mqttServices.MqttDisconnect()
                 self.__cache.mqttProblemCount = 0
-                #await self.HcMqttServices.MqttServicesInit()
-                self.__mqttServices.MqttReconnect()
+                await self.HcMqttServices.MqttServicesInit()
+                #self.__mqttServices.MqttReconnect()
     
     async def HcServicesRun(self):
         task1 = asyncio.ensure_future(self.__mqttServices.MqttServicesInit())

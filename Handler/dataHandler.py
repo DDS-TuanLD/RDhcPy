@@ -4,6 +4,7 @@ from Model.systemConfiguration import systemConfiguration
 import datetime
 class DataHandlerService():  
     def MqttDataHandler(self, args):
+        print(args)
         cache = HcCache()
         if args == "ping":
             print("connect with mqtt")

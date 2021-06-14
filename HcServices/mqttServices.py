@@ -55,7 +55,7 @@ class MqttServices():
     # def __on_public(self, client, userdata, mid):
     #     return
    
-    def MqttConnect(self):
+    async def MqttConnect(self):
         """  Connect to mqtt broker
 
         Returns:
@@ -68,7 +68,7 @@ class MqttServices():
         # self.__client.on_publish = self.__on_public
         self.__client.on_connect = self.__on_connect
         try:
-            self.__client.connect(self.__mqttConfig.host, self.__mqttConfig.port)
+            self.__client.connect_async(self.__mqttConfig.host, self.__mqttConfig.port)
             self.__client.loop_start()
             connectSuccess = True
         except Exception as err:
@@ -103,7 +103,8 @@ class MqttServices():
     async def MqttServicesInit(self):
         startSuccess = False
         while startSuccess == False:
-            startSuccess =  self.MqttConnect()
+            print("MqttServicesInit")
+            startSuccess = await self.MqttConnect()
             await asyncio.sleep(5)
         
     async def MqttHandlerData(self):
