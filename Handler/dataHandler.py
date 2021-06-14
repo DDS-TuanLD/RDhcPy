@@ -26,6 +26,7 @@ class DataHandlerService():
             if cache.SignalrDisconnectStatusUpdate == True:
                 print("Update cloud reconnect status to db")
                 s = systemConfiguration(isConnect=True, DisconnectTime=None, ReconnectTime=datetime.datetime.now())
+                db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
                 cache.SignalrDisconnectStatusUpdate = False
                 cache.DisconnectTime = None
             
