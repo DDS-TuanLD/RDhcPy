@@ -110,10 +110,7 @@ class HcController:
             self.__cache.mqttDisconnectStatus = True
             await asyncio.sleep(5)
             self.__cache.mqttProblemCount = self.__cache.mqttProblemCount + 1
-            print(self.__cache.mqttProblemCount)
-            print(self.__cache.mqttDisconnectStatus)
             if (self.__cache.mqttProblemCount == 3) and (self.__cache.mqttDisconnectStatus == True):
-                print("reconnect to mqtt")
                 #self.__mqttServices.MqttStopLoop()
                 #self.__mqttServices.MqttDisconnect()
                 self.__cache.mqttProblemCount = 0

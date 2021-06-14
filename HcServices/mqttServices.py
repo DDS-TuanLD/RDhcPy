@@ -106,7 +106,6 @@ class MqttServices():
         startSuccess = False
         while startSuccess == False:
             startSuccess = await self.MqttConnect()
-            print("startSuccess: " + str(startSuccess))
             await asyncio.sleep(5)
         
     async def MqttHandlerData(self):
