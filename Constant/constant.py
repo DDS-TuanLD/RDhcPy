@@ -17,8 +17,8 @@ MQTT_HOST = "broker.mqttdashboard.com"
 MQTT_PORT = 1883
 MQTT_QOS = 2
 MQTT_KEEPALIVE = 60
-MQTT_PUB_TOPIC = "test"
-MQTT_SUB_TOPIC = "test"
+MQTT_PUB_TOPIC = "testtopic/1"
+MQTT_SUB_TOPIC = "testtopic/1"
 
 #Sqlite connection option
 DB_NAME = "rd.db"

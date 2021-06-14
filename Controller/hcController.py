@@ -101,16 +101,16 @@ class HcController:
                 self.__cache.SignalrDisconnectCount = 0   
 
     
-    async def __HcCheckMqttConnect(self):
+    async def HcCheckMqttConnect(self):
         while True:
             try:
                 self.HcMqttServices.MqttPublish("ping", qos=2)
             except:
                 pass
             self.__cache.mqttDisconnectStatus = True
-            await asyncio.sleep(5)
-            self.__cache.mqttProblemCount = self.__cache.mqttProblemCount + 1
-            if (self.__cache.mqttProblemCount == 3) and (self.__cache.mqttDisconnectStatus == True):
+            await asyncio.sleep(15)
+            if (self.__cache.mqttDisconnectStatus == True):
+                print("Reconnect to mqtt")
                 #self.__mqttServices.MqttStopLoop()
                 #self.__mqttServices.MqttDisconnect()
                 self.__cache.mqttProblemCount = 0
@@ -118,13 +118,13 @@ class HcController:
                 #self.__mqttServices.MqttReconnect()
     
     async def HcServicesRun(self):
-        task1 = asyncio.ensure_future(self.__mqttServices.MqttServicesInit())
+        #task1 = asyncio.ensure_future(self.__mqttServices.MqttServicesInit())
         task2 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())
         #task3 = asyncio.ensure_future(self.__mqttServices.MqttHandlerData())
         task4 = asyncio.ensure_future(self.__signalServices.OnHandlerReceiveData())
         task5 = asyncio.ensure_future(self.__HcCheckConnectWithCloud())
         task6 = asyncio.ensure_future(self.__HcUpdateRefreshToken())
-        task7 = asyncio.ensure_future(self.__HcCheckMqttConnect())
-        tasks = [task1, task2, task4, task5, task6, task7]
+        #task7 = asyncio.ensure_future(self.__HcCheckMqttConnect())
+        tasks = [task2, task4, task5, task6]
         await asyncio.gather(*tasks)
         return

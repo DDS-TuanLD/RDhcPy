@@ -76,9 +76,6 @@ class MqttServices():
             print(f"Exception in connect to mqtt: {err}")
         return connectSuccess
 
-    def MqttReconnect(self):
-        self.__client.reconnect()
-        
     def MqttPublish(
         self, send_data, qos: int = 0):
         """ Public data to mqtt server
@@ -98,7 +95,7 @@ class MqttServices():
         
     def MqttDisconnect(self):
         self.__client.disconnect()
-
+        
     # def MqttLoopForever(self):
     #     self.__client.loop_forever()
 
@@ -106,6 +103,7 @@ class MqttServices():
         startSuccess = False
         while startSuccess == False:
             startSuccess = await self.MqttConnect()
+            print("startSuccess: " + str(startSuccess))
             await asyncio.sleep(5)
         
     async def MqttHandlerData(self):
