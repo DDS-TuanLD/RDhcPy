@@ -83,10 +83,12 @@ class HcController:
             try:
                 print("Hc send heardbeat to cloud")
                 self.HcSignalrServices.SendMesageToServer(endUserProfileId=endUser,entity= "Heardbeat", message= "ping")
-                self.__cache.DisconnectTime = datetime.datetime.now()
                 await asyncio.sleep(5)
             except Exception as err:
                 print(f"Exception when send heardbeat {err}")
+            if self.__cache.DisconnectTime == None:
+                self.__cache.DisconnectTime = datetime.datetime.now()
+            print(self.__cache.DisconnectTime)
             await asyncio.sleep(5)
             self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1
             self.__signalServices.StartConnect()
