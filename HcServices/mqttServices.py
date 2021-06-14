@@ -69,6 +69,7 @@ class MqttServices():
         self.__client.on_connect = self.__on_connect
         try:
             self.__client.connect_async(self.__mqttConfig.host, self.__mqttConfig.port)
+            self.__client.reconnect()
             self.__client.loop_start()
             connectSuccess = True
         except Exception as err:
@@ -77,6 +78,7 @@ class MqttServices():
 
     def MqttReconnect(self):
         self.__client.reconnect()
+        
     def MqttPublish(
         self, send_data, qos: int = 0):
         """ Public data to mqtt server
@@ -103,8 +105,8 @@ class MqttServices():
     async def MqttServicesInit(self):
         startSuccess = False
         while startSuccess == False:
-            print("MqttServicesInit")
             startSuccess = await self.MqttConnect()
+            print("startSuccess: " + str(startSuccess))
             await asyncio.sleep(5)
         
     async def MqttHandlerData(self):
