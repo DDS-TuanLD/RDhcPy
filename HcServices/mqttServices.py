@@ -6,6 +6,7 @@ import time
 from Cache.HcCache import HcCache
 from Database.Db import Db
 from Model.systemConfiguration import systemConfiguration
+import socket
 
 class MqttConfig():
     host = ""
@@ -20,14 +21,19 @@ class MqttConfig():
 
         Returns:
             [MqttConfig]: [Instance of MqttConfig
+            
         """
-        self.host = const.MQTT_HOST
+        hostname = socket.gethostname()
+        ip = socket.gethostbyname(hostname)
+        
+        self.host = ip
         self.port = const.MQTT_PORT
         self.sub_topic = const.MQTT_SUB_TOPIC
         self.pub_topic = const.MQTT_PUB_TOPIC
         self.qos = const.MQTT_QOS
         self.keepalive = const.MQTT_KEEPALIVE
         return self
+    
 class MqttServices():
     __mqttConfig = MqttConfig()
     __client = mqtt.Client()
@@ -61,14 +67,16 @@ class MqttServices():
         Returns:
             [bool]: [connect status: false/true]
         """
-        
+      
         connectSuccess = False
+        
         self.__mqttConfig.GetMqttConfig()
         self.__client.on_message = self.__on_message
         # self.__client.on_publish = self.__on_public
         self.__client.on_connect = self.__on_connect
+        self.__client.username_pw_set(username="RD", password="1")
         try:
-            self.__client.connect(self.__mqttConfig.host, self.__mqttConfig.port)
+            self.__client.connect("broker.mqttdashboard.com", self.__mqttConfig.port)
             self.__client.reconnect()
             self.__client.loop_start()
             connectSuccess = True

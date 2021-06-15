@@ -68,7 +68,10 @@ class SignalrServices():
             username (str, optional): [name of gateway]. Defaults to "RdGateway".
             mess (str, optional): [string need to send]. Defaults to "".
         """
-        self.__hub.send("Send", [endUserProfileId, entity , message])
+        try:
+            self.__hub.send("Send", [endUserProfileId, entity , message])
+        except Exception as err:
+            print(f"Error when send data to cloud: {err}")
     
     async def SignalrServicesInit(self):
         startSuccess = False

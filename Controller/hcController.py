@@ -77,20 +77,16 @@ class HcController():
         while True:
             await self.__getAndSaveRefreshToken()
             print("Update refresh Token")
-            await asyncio.sleep(20)
+            await asyncio.sleep(30)
     
     async def __hcCheckConnectWithCloud(self):
         while True:
             endUser = self.__cache.EndUserId
-            try:
-                print("Hc send heardbeat to cloud")
-                self.HcSignalrServices.SendMesageToServer(endUserProfileId=endUser,entity= "Heardbeat", message= "ping")
-                await asyncio.sleep(5)
-            except Exception as err:
-                print(f"Exception when send heardbeat {err}")
+            print("Hc send heardbeat to cloud")
+            self.HcSignalrServices.SendMesageToServer(endUserProfileId=endUser,entity= "Heardbeat", message= "ping")          
             if self.__cache.DisconnectTime == None:
                 self.__cache.DisconnectTime = datetime.datetime.now()
-            await asyncio.sleep(5)
+            await asyncio.sleep(50)
             self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1
             self.__signalServices.StartConnect()
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
@@ -120,7 +116,7 @@ class HcController():
         """ This function handler data received in queue
         """
         while True:
-            await asyncio.sleep(1)
+            await asyncio.sleep(0.5)
             if self.__mqttServices.mqttDataQueue.empty() == False:
                 item = self.__mqttServices.mqttDataQueue.get()
                 self.__mqttItemHandler(item)
@@ -138,7 +134,7 @@ class HcController():
         
     async def __hcHandlerSignalRData(self):
         while True:
-            await asyncio.sleep(1)
+            await asyncio.sleep(0.5)
             if self.__signalServices.signalrDataQueue.empty() == False:
                 item = self.__signalServices.signalrDataQueue.get()
                 self.__signalrItemHandler(item)
@@ -168,8 +164,8 @@ class HcController():
     
     async def HcActionNoDb(self):
         task1 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())
-        task2 = asyncio.ensure_future(self.__hcUpdateRefreshToken())
-        task3 = asyncio.ensure_future(self.__hcMqttHandlerData())
+        task2 = asyncio.ensure_future(self.__hcMqttHandlerData())
+        task3 = asyncio.ensure_future(self.__hcUpdateRefreshToken())
         tasks = [task1, task2, task3]
         await asyncio.gather(*tasks)
         return
