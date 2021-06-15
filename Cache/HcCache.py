@@ -13,7 +13,7 @@ class HcCache(metaclass=MetaCache):
     __signalrDisconnectCount: int
     __signalrDisconnectStatusUpdate: bool
     __disconectTime: datetime.datetime
-    
+ 
     def __init__(self):
         self.__refreshToken = ""
         self.__signalrOnConnect = True

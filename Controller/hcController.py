@@ -9,7 +9,9 @@ from Model.systemConfiguration import systemConfiguration
 import Constant.constant as const
 import datetime
 from Model.systemConfiguration import systemConfiguration
-class HcController:
+import time
+from Adapter.dataAdapter import dataAdapter
+class HcController():
     __httpServices: HttpAsyncServices
     __signalServices: SignalrServices
     __mqttServices: MqttServices
@@ -61,7 +63,7 @@ class HcController:
         refreshToken = self.__cache.RefreshToken
         tokenUrl = const.SERVER_HOST + const.TOKEN_URL
         cookie = f"RefreshToken={refreshToken}"
-        header = self.HcHttpServices.CreateNewHttpHeader(cookie = cookie)
+        header = self.HcHttpServices.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
         req = self.HcHttpServices.CreateNewHttpRequest(url=tokenUrl, header=header)
         session = aiohttp.ClientSession()
         res = await self.HcHttpServices.UsePostRequest(session, req)
@@ -77,7 +79,7 @@ class HcController:
             print("Update refresh Token")
             await asyncio.sleep(20)
     
-    async def __HcCheckConnectWithCloud(self):
+    async def HcCheckConnectWithCloud(self):
         while True:
             endUser = self.__cache.EndUserId
             try:
@@ -101,30 +103,81 @@ class HcController:
                 self.__cache.SignalrDisconnectCount = 0   
 
     
-    async def HcCheckMqttConnect(self):
+    def  HcCheckMqttConnect(self):
         while True:
             try:
                 self.HcMqttServices.MqttPublish("ping", qos=2)
             except:
                 pass
             self.__cache.mqttDisconnectStatus = True
-            await asyncio.sleep(15)
+            time.sleep(15)
             if (self.__cache.mqttDisconnectStatus == True):
                 print("Reconnect to mqtt")
-                #self.__mqttServices.MqttStopLoop()
-                #self.__mqttServices.MqttDisconnect()
                 self.__cache.mqttProblemCount = 0
-                await self.HcMqttServices.MqttServicesInit()
-                #self.__mqttServices.MqttReconnect()
+                self.HcMqttServices.MqttServicesInit()
+
+    async def HcMqttHandlerData(self):
+        """ This function handler data received in queue
+        """
+        while True:
+            await asyncio.sleep(1)
+            if self.__mqttServices.mqttDataQueue.empty() == False:
+                item = self.__mqttServices.mqttDataQueue.get()
+                self.__mqttItemHandler(item)
+
+    def __mqttItemHandler(self, args):
+        print(args)
+        dtAdapter = dataAdapter()
+        if args == "ping":
+            print("connect with mqtt")
+            self.__cache.mqttDisconnectStatus = False
+            self.__cache.mqttProblemCount = 0
+            return
+        newdata = dtAdapter.hcToCloudAdapter(args)
+
+        
+    async def HcHandlerSignalRData(self):
+        while True:
+            await asyncio.sleep(1)
+            if self.__signalServices.signalrDataQueue.empty() == False:
+                item = self.__signalServices.signalrDataQueue.get()
+                self.__signalrItemHandler(item)
+        
+    def __signalrItemHandler(self, *args):
+        switcher = {
+            "Heardbeat": self.__heardbeatHandler,
+            "LedControlTesting": self.__ledControlTestingHandler
+        }
+        func = switcher.get(args[0][0])
+        func(args[0][1])
     
-    async def HcServicesRun(self):
-        #task1 = asyncio.ensure_future(self.__mqttServices.MqttServicesInit())
-        task2 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())
-        #task3 = asyncio.ensure_future(self.__mqttServices.MqttHandlerData())
-        task4 = asyncio.ensure_future(self.__signalServices.OnHandlerReceiveData())
-        task5 = asyncio.ensure_future(self.__HcCheckConnectWithCloud())
-        task6 = asyncio.ensure_future(self.__HcUpdateRefreshToken())
-        #task7 = asyncio.ensure_future(self.__HcCheckMqttConnect())
-        tasks = [task2, task4, task5, task6]
+    def __heardbeatHandler(self, data: str=""):
+        if data == "pong":
+            self.__cache.SignalrDisconnectCount = 0
+            if self.__cache.SignalrDisconnectStatusUpdate == True:
+                print("Update cloud reconnect status to db")
+                s =systemConfiguration(isConnect= True, DisconnectTime= None, ReconnectTime= datetime.datetime.now())
+                self.__db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
+                self.__cache.SignalrDisconnectStatusUpdate = False
+                self.__cache.DisconnectTime = None
+            
+    def __ledControlTestingHandler(self, data: str=""):
+        dataAdapter = dataAdapter()
+        newdata = dataAdapter.cloudToHcAdapter()
+        pass
+    
+    async def test(self):
+        task1 = asyncio.ensure_future(self.HcCheckConnectWithCloud())
+        task2 = asyncio.ensure_future(self.HcCheckMqttConnect())
+        tasks = [task1, task2]
         await asyncio.gather(*tasks)
         return
+
+    async def HcServicesRun(self):
+        task3 = asyncio.ensure_future(self.HcMqttHandlerData())
+        task4 = asyncio.ensure_future(self.HcHandlerSignalRData())
+        task6 = asyncio.ensure_future(self.__HcUpdateRefreshToken())
+        tasks = [task3, task4, task6]
+        await asyncio.gather(*tasks)
+        return
+    

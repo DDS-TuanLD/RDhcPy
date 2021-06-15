@@ -5,6 +5,7 @@ from Database.Db import Db
 import datetime
 from Model.systemConfiguration import systemConfiguration
 import threading        
+
 # async def main():  
 #     db = Db()
 #     db.DbCreateTable()
@@ -23,17 +24,12 @@ hc = HcController()
 def main_thread(db: Db, hc: HcController):
     db.DbCreateTable()
     db.DbServicesInit() 
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    loop.run_until_complete(hc.HcServicesRun())
-    loop.close()
+    asyncio.run(hc.HcServicesRun())
     
 def mqtt_reconnect_thread(hc: HcController):
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    loop.run_until_complete(hc.HcCheckMqttConnect())
-    loop.close()
-    
+    asyncio.run(hc.test())
+
+
 def main():  
     thread1 = threading.Thread(target = main_thread, args=(db, hc,))
     thread2 = threading.Thread(target = mqtt_reconnect_thread, args=(hc,))
@@ -43,6 +39,6 @@ def main():
     
     thread1.join() 
     thread2.join()
-  
+
 if __name__ == "__main__":
     main()

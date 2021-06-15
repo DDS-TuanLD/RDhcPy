@@ -21,7 +21,7 @@ class TestHttpService(IsolatedAsyncioTestCase):
 
     async def __test_getNewToken(self):
         cookie = f"RefreshToken={self.refreshToken}"
-        header = self.httpService.CreateNewHttpHeader(cookie=cookie)
+        header = self.httpService.CreateNewHttpHeader(cookie=cookie, endProfileId=self.endProfileId)
         req = self.httpService.CreateNewHttpRequest(header=header, url=self.getNewTokenUrl)
         
         session = aiohttp.ClientSession()

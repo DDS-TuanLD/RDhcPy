@@ -2,7 +2,11 @@ import paho.mqtt.client as mqtt
 import asyncio
 import queue
 import Constant.constant as const
-from Handler.dataHandler import DataHandlerService
+import time
+from Cache.HcCache import HcCache
+from Database.Db import Db
+from Model.systemConfiguration import systemConfiguration
+
 class MqttConfig():
     host = ""
     port: int
@@ -24,14 +28,12 @@ class MqttConfig():
         self.qos = const.MQTT_QOS
         self.keepalive = const.MQTT_KEEPALIVE
         return self
-
-
-
 class MqttServices():
     __mqttConfig = MqttConfig()
     __client = mqtt.Client()
-    __queue = queue.Queue()
-
+    mqttDataQueue = queue.Queue()
+    __cache = HcCache()
+    
     def __on_message(self, client, userdata, msg):
         """[summary]
 
@@ -40,11 +42,9 @@ class MqttServices():
             userdata ([type]): [description]
             msg ([type]): [description]
         """
-        handler = DataHandlerService()
         item = msg.payload.decode("utf-8")
         try:
-            handler.MqttDataHandler(item)
-            #self.__queue.put_nowait(item)
+            self.mqttDataQueue.put_nowait(item)
         except Exception as err:
             print(f"Error when put subcribe data in queue: {err}")
         return
@@ -55,7 +55,7 @@ class MqttServices():
     # def __on_public(self, client, userdata, mid):
     #     return
    
-    async def MqttConnect(self):
+    def MqttConnect(self):
         """  Connect to mqtt broker
 
         Returns:
@@ -68,7 +68,7 @@ class MqttServices():
         # self.__client.on_publish = self.__on_public
         self.__client.on_connect = self.__on_connect
         try:
-            self.__client.connect_async(self.__mqttConfig.host, self.__mqttConfig.port)
+            self.__client.connect(self.__mqttConfig.host, self.__mqttConfig.port)
             self.__client.reconnect()
             self.__client.loop_start()
             connectSuccess = True
@@ -99,19 +99,11 @@ class MqttServices():
     # def MqttLoopForever(self):
     #     self.__client.loop_forever()
 
-    async def MqttServicesInit(self):
+    def MqttServicesInit(self):
         startSuccess = False
         while startSuccess == False:
-            startSuccess = await self.MqttConnect()
+            startSuccess = self.MqttConnect()
             print("startSuccess: " + str(startSuccess))
-            await asyncio.sleep(5)
+            time.sleep(5)
         
-    async def MqttHandlerData(self):
-        """ This function handler data received in queue
-        """
-        handler = DataHandlerService()
-        while True:
-            await asyncio.sleep(1)
-            if self.__queue.empty() == False:
-                item = self.__queue.get()
-                handler.MqttDataHandler(item)
+   

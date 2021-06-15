@@ -3,9 +3,11 @@ import asyncio
 import queue
 import requests
 from Cache.HcCache import HcCache
-from Handler.dataHandler import DataHandlerService
 import Constant.constant as const
-
+from Model.systemConfiguration import systemConfiguration
+from Adapter.dataAdapter import dataAdapter
+from Database.Db import Db
+import datetime
 def getToken():
     cache = HcCache()
     try:
@@ -20,10 +22,20 @@ def getToken():
         return token
     except Exception as e:
         return None
+
+class MetaSignalServices(type):
+    _instances = {}
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls._instances:
+            cls._instances[cls] = super(MetaSignalServices, cls).__call__(*args, **kwargs)
+        return cls._instances[cls]
+    
 class SignalrServices():
     __hub=SignalrBuilder.HubConnectionBuilder
-    __queue = queue.Queue()
-    
+    signalrDataQueue = queue.Queue()
+    __cache = HcCache()
+    __db = Db()
+      
     def BuildConnection(self):
         self.__hub = SignalrBuilder.HubConnectionBuilder()\
         .with_url(const.SERVER_HOST + const.SIGNALR_SERVER_URL, 
@@ -42,25 +54,21 @@ class SignalrServices():
             print(f"Exception when start signal server {err}")
 
     def OnReceiveData(self):
-        #self.__hub.on("Receive", self.Handler)
-        self.__hub.on("Receive", lambda data: self.__queue.put_nowait(data))
+        self.__hub.on("Receive", lambda data: self.signalrDataQueue.put_nowait(data))
     
-    def Handler(self, data):
-        hander = DataHandlerService()
-        hander.SignalrDataHandler(data)
         
     def DisConnectWithServer(self):
         self.__hub.stop()
 
     def SendMesageToServer(
-        self, endUserProfileId: str ="", entity: str="", message: str=""):
+        self, endUserProfileId: str = "", entity: str="", message: str=""):
         """ This is function support send data to server
 
         Args:
             username (str, optional): [name of gateway]. Defaults to "RdGateway".
             mess (str, optional): [string need to send]. Defaults to "".
         """
-        self.__hub.send("Send", ["10033", entity , message])
+        self.__hub.send("Send", [endUserProfileId, entity , message])
     
     async def SignalrServicesInit(self):
         startSuccess = False
@@ -74,14 +82,4 @@ class SignalrServices():
                 await asyncio.sleep(5)
         self.OnReceiveData()
 
-    async def OnHandlerReceiveData(self):
-        """ function handler receive data
-        """
-        
-        hander = DataHandlerService()
-        while True:
-            await asyncio.sleep(1)
-            if self.__queue.empty() == False:
-                item = self.__queue.get()
-                hander.SignalrDataHandler(item)
-           
+   
