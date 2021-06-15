@@ -15,6 +15,8 @@ class MqttConfig():
     pub_topic = ""
     qos: int
     keepalive: int
+    username: str
+    password: str
 
     def GetMqttConfig(self):
         """ Get mqtt server params from env file
@@ -32,6 +34,8 @@ class MqttConfig():
         self.pub_topic = const.MQTT_PUB_TOPIC
         self.qos = const.MQTT_QOS
         self.keepalive = const.MQTT_KEEPALIVE
+        self.username = const.MQTT_USER
+        self.password = const.MQTT_PASS
         return self
     
 class MqttServices():
@@ -74,7 +78,7 @@ class MqttServices():
         self.__client.on_message = self.__on_message
         # self.__client.on_publish = self.__on_public
         self.__client.on_connect = self.__on_connect
-        self.__client.username_pw_set(username="RD", password="0")
+        self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
         try:
             self.__client.connect(self.__mqttConfig.host, self.__mqttConfig.port)
             self.__client.reconnect()
