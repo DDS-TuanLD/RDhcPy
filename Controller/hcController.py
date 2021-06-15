@@ -11,20 +11,23 @@ import datetime
 from Model.systemConfiguration import systemConfiguration
 import time
 from Adapter.dataAdapter import dataAdapter
+import logging
 class HcController():
     __httpServices: HttpAsyncServices
     __signalServices: SignalrServices
     __mqttServices: MqttServices
     __db: Db
     __cache : HcCache
+    __logger: logging.Logger
     
-    def __init__(self):
-        self.__httpServices = HttpAsyncServices()
-        self.__signalServices = SignalrServices()
-        self.__mqttServices = MqttServices()
+    def __init__(self, log: logging.Logger):   
+        self.__logger = log
+        self.__httpServices = HttpAsyncServices(self.__logger)
+        self.__signalServices = SignalrServices(self.__logger)
+        self.__mqttServices = MqttServices(self.__logger)
         self.__db = Db()
         self.__cache = HcCache()
-    
+        
     @property
     def HcHttpServices(self):
         return self.__httpServices
@@ -52,6 +55,7 @@ class HcController():
             data = await res.json()
             refreshToken = data['refreshToken']
             endUserId = str(data['endUserProfiles'][0]['id'])
+            self.__logger.debug("Get RefreshToken and endUserId successful")
             if refreshToken != None:
                 self.__cache.RefreshToken = data['refreshToken']
             if endUserId != None:
@@ -76,21 +80,21 @@ class HcController():
     async def __hcUpdateRefreshToken(self):
         while True:
             await self.__getAndSaveRefreshToken()
-            print("Update refresh Token")
+            self.__logger.info("Update refresh Token")
             await asyncio.sleep(30)
     
     async def __hcCheckConnectWithCloud(self):
         while True:
             endUser = self.__cache.EndUserId
-            print("Hc send heardbeat to cloud")
+            self.__logger.info("Hc send heardbeat to cloud")
             self.HcSignalrServices.SendMesageToServer(endUserProfileId=endUser,entity= "Heardbeat", message= "ping")          
             if self.__cache.DisconnectTime == None:
                 self.__cache.DisconnectTime = datetime.datetime.now()
-            await asyncio.sleep(50)
+            await asyncio.sleep(10)
             self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1
             self.__signalServices.StartConnect()
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
-                print("Update cloud disconnect status to db")
+                self.__logger.info("Update cloud disconnect status to db")
                 s =systemConfiguration(isConnect= False, DisconnectTime= self.__cache.DisconnectTime, ReconnectTime= None)
                 self.__db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
                 self.__cache.SignalrDisconnectStatusUpdate = True
@@ -99,18 +103,18 @@ class HcController():
                 self.__cache.SignalrDisconnectCount = 0   
 
     
-    def HcCheckMqttConnect(self):
+    async def HcCheckMqttConnect(self):
         while True:
             try:
                 self.HcMqttServices.MqttPublish("ping", qos=2)
             except:
                 pass
             self.__cache.mqttDisconnectStatus = True
-            time.sleep(15)
+            await asyncio.sleep(15)
             if (self.__cache.mqttDisconnectStatus == True):
-                print("Reconnect to mqtt")
+                self.__logger.info("Reconnect to mqtt")
                 self.__cache.mqttProblemCount = 0
-                self.HcMqttServices.MqttServicesInit()
+                await self.HcMqttServices.MqttServicesInit()
 
     async def __hcMqttHandlerData(self):
         """ This function handler data received in queue
@@ -125,7 +129,7 @@ class HcController():
         print(args)
         dtAdapter = dataAdapter()
         if args == "ping":
-            print("connect with mqtt")
+            self.__logger.debug("Connecting with mqtt broker")
             self.__cache.mqttDisconnectStatus = False
             self.__cache.mqttProblemCount = 0
             return
@@ -151,7 +155,7 @@ class HcController():
         if data == "pong":
             self.__cache.SignalrDisconnectCount = 0
             if self.__cache.SignalrDisconnectStatusUpdate == True:
-                print("Update cloud reconnect status to db")
+                self.__logger.info("Update cloud reconnect status to db")
                 s =systemConfiguration(isConnect= True, DisconnectTime= None, ReconnectTime= datetime.datetime.now())
                 self.__db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
                 self.__cache.SignalrDisconnectStatusUpdate = False

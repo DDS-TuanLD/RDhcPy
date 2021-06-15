@@ -8,6 +8,8 @@ from Model.systemConfiguration import systemConfiguration
 from Adapter.dataAdapter import dataAdapter
 from Database.Db import Db
 import datetime
+import logging
+
 def getToken():
     cache = HcCache()
     try:
@@ -35,7 +37,10 @@ class SignalrServices():
     signalrDataQueue = queue.Queue()
     __cache = HcCache()
     __db = Db()
-      
+    __logger: logging.Logger
+    
+    def __init__(self, log: logging.Logger):
+        self.__logger = log
     def BuildConnection(self):
         self.__hub = SignalrBuilder.HubConnectionBuilder()\
         .with_url(const.SERVER_HOST + const.SIGNALR_SERVER_URL, 
@@ -51,7 +56,7 @@ class SignalrServices():
         try:
             self.__hub.start()
         except Exception as err:
-            print(f"Exception when start signal server {err}")
+            pass
 
     def OnReceiveData(self):
         self.__hub.on("Receive", lambda data: self.signalrDataQueue.put_nowait(data))
@@ -71,7 +76,7 @@ class SignalrServices():
         try:
             self.__hub.send("Send", [endUserProfileId, entity , message])
         except Exception as err:
-            print(f"Error when send data to cloud: {err}")
+            self.__logger.error(f"Error when send data to cloud: {err}")
     
     async def SignalrServicesInit(self):
         startSuccess = False
@@ -81,7 +86,7 @@ class SignalrServices():
                 self.__hub.start()
                 startSuccess = True
             except Exception as err:
-                print(f"Exception when connect with signalr server: {err}")
+                self.__logger.error(f"Exception when connect with signalr server: {err}")
                 await asyncio.sleep(5)
         self.OnReceiveData()
 

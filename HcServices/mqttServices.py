@@ -7,7 +7,7 @@ from Cache.HcCache import HcCache
 from Database.Db import Db
 from Model.systemConfiguration import systemConfiguration
 import socket
-
+import logging
 class MqttConfig():
     host = ""
     port: int
@@ -43,6 +43,10 @@ class MqttServices():
     __client = mqtt.Client()
     mqttDataQueue = queue.Queue()
     __cache = HcCache()
+    __logger: logging.Logger
+    
+    def __init__(self, log: logging.Logger):
+        self.__logger = log
     
     def __on_message(self, client, userdata, msg):
         """[summary]
@@ -56,7 +60,7 @@ class MqttServices():
         try:
             self.mqttDataQueue.put_nowait(item)
         except Exception as err:
-            print(f"Error when put subcribe data in queue: {err}")
+            pass
         return
     
     def __on_connect(self, client, userdata, flags, rc):
@@ -65,7 +69,7 @@ class MqttServices():
     # def __on_public(self, client, userdata, mid):
     #     return
    
-    def MqttConnect(self):
+    async def MqttConnect(self):
         """  Connect to mqtt broker
 
         Returns:
@@ -78,14 +82,14 @@ class MqttServices():
         self.__client.on_message = self.__on_message
         # self.__client.on_publish = self.__on_public
         self.__client.on_connect = self.__on_connect
-        self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
+        #self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
         try:
-            self.__client.connect(self.__mqttConfig.host, self.__mqttConfig.port)
+            self.__client.connect_async(self.__mqttConfig.host, self.__mqttConfig.port)
             self.__client.reconnect()
             self.__client.loop_start()
             connectSuccess = True
         except Exception as err:
-            print(f"Exception in connect to mqtt: {err}")
+            self.__logger.error(f"Exception in connect to mqtt: {err}")
         return connectSuccess
 
     def MqttPublish(
@@ -111,11 +115,12 @@ class MqttServices():
     # def MqttLoopForever(self):
     #     self.__client.loop_forever()
 
-    def MqttServicesInit(self):
-        startSuccess = False
-        while startSuccess == False:
-            startSuccess = self.MqttConnect()
-            print("startSuccess: " + str(startSuccess))
+    async def MqttServicesInit(self):
+        connectSuccess = False
+        while connectSuccess == False:
+            connectSuccess =await self.MqttConnect()
             time.sleep(5)
+        self.__logger.debug("Connect to mqtt status: " + str(connectSuccess))
+
         
    

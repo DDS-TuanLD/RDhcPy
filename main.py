@@ -5,21 +5,27 @@ from Database.Db import Db
 import datetime
 from Model.systemConfiguration import systemConfiguration
 import threading        
+import logging
+from logging.handlers import TimedRotatingFileHandler
 
-# async def main():  
-#     db = Db()
-#     db.DbCreateTable()
-#     db.DbServicesInit()
-    
-#     hc = HcController()
-#     await hc.HcServicesRun()
 
-# loop = asyncio.get_event_loop()
-# loop.run_until_complete(main())
+loghandler = logging.handlers.TimedRotatingFileHandler(filename='Logging/runtime.log', when="D", backupCount=4)
+logfomatter = logging.Formatter(fmt=(
+                                                    '%(levelname)s:\t'
+                                                    '%(filename)s:'
+                                                    '%(funcName)s():'
+                                                    '%(lineno)d\t'
+                                                    '%(message)s'
+                                                ))
+logger = logging.getLogger()
+loghandler.setFormatter(logfomatter)
+logger.addHandler(loghandler)
+logger.setLevel(logging.DEBUG)
+
 
 
 db = Db()
-hc = HcController()
+hc = HcController(logger)
 
 def db_thread(db: Db, hc: HcController):
     db.DbCreateTable()
@@ -30,7 +36,7 @@ def no_db_thread(hc: HcController):
     asyncio.run(hc.HcActionNoDb())
 
 def mqtt_check_connection(hc: HcController):
-    hc.HcCheckMqttConnect()
+    asyncio.run(hc.HcCheckMqttConnect())
     
 def main():  
     thread1 = threading.Thread(target = db_thread, args=(db, hc,))

@@ -4,7 +4,7 @@ from requests.exceptions import HTTPError
 from requests.structures import CaseInsensitiveDict
 import asyncio
 import aiohttp
-
+import logging
 class HttpRequest():
     __header: CaseInsensitiveDict
     __body: dict
@@ -38,6 +38,12 @@ class HttpRequest():
         self.__url = url
         return self
 class HttpAsyncServices():
+    
+    __logger: logging.Logger
+    
+    def __init__(self, log: logging.Logger):
+        self.__logger = log
+    
     def CreateNewHttpHeader(self, token: str = "", endProfileId: str = "", cookie: str = ""):
         newHttpHeader = CaseInsensitiveDict()
         newHttpHeader["Accept"] = "application/json"
@@ -82,9 +88,9 @@ class HttpAsyncServices():
                 resp.raise_for_status()
                 await resp.json()
         except HTTPError as err:  
-            print("Http request error: " + err)
+            return ""
         except Exception as err:
-            print(f"Other exception: {err}")
+            return ""
         return resp
 
     async def UsePostRequest(
@@ -104,10 +110,8 @@ class HttpAsyncServices():
                 await resp.json()
                 return resp
         except HTTPError as err:  
-            print("Http request error: " + err)
             return ""
         except Exception as err:
-            print(f"Other exception: {err}")
             return ""
     
     async def UsePutRequest(
@@ -127,9 +131,9 @@ class HttpAsyncServices():
                 resp.raise_for_status()
                 await resp.json()
         except HTTPError as err:  
-            print("Http request error: " + err)
+            return ""
         except Exception as err:
-            print(f"Other exception: {err}")
+            return ""
         return resp
 
     async def UseDeleteRequest(
@@ -149,9 +153,9 @@ class HttpAsyncServices():
                 resp.raise_for_status()
                 await resp.json()
         except HTTPError as err:  
-            print("Http request error: " + err)
+            return ""
         except Exception as err:
-            print(f"Other exception: {err}")
+            return ""
         return resp
     
     
