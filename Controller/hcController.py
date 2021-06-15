@@ -73,13 +73,13 @@ class HcController():
         await session.close()
         return token
     
-    async def __HcUpdateRefreshToken(self):
+    async def __hcUpdateRefreshToken(self):
         while True:
             await self.__getAndSaveRefreshToken()
             print("Update refresh Token")
             await asyncio.sleep(20)
     
-    async def HcCheckConnectWithCloud(self):
+    async def __hcCheckConnectWithCloud(self):
         while True:
             endUser = self.__cache.EndUserId
             try:
@@ -116,7 +116,7 @@ class HcController():
                 self.__cache.mqttProblemCount = 0
                 self.HcMqttServices.MqttServicesInit()
 
-    async def HcMqttHandlerData(self):
+    async def __hcMqttHandlerData(self):
         """ This function handler data received in queue
         """
         while True:
@@ -136,7 +136,7 @@ class HcController():
         newdata = dtAdapter.hcToCloudAdapter(args)
 
         
-    async def HcHandlerSignalRData(self):
+    async def __hcHandlerSignalRData(self):
         while True:
             await asyncio.sleep(1)
             if self.__signalServices.signalrDataQueue.empty() == False:
@@ -166,18 +166,18 @@ class HcController():
         newdata = dataAdapter.cloudToHcAdapter()
         pass
     
-    async def test(self):
-        task1 = asyncio.ensure_future(self.HcCheckConnectWithCloud())
-        task2 = asyncio.ensure_future(self.HcCheckMqttConnect())
-        tasks = [task1, task2]
+    async def HcActionNoDb(self):
+        task1 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())
+        task2 = asyncio.ensure_future(self.__hcUpdateRefreshToken())
+        task3 = asyncio.ensure_future(self.__hcMqttHandlerData())
+        tasks = [task1, task2, task3]
         await asyncio.gather(*tasks)
         return
 
-    async def HcServicesRun(self):
-        task3 = asyncio.ensure_future(self.HcMqttHandlerData())
-        task4 = asyncio.ensure_future(self.HcHandlerSignalRData())
-        task6 = asyncio.ensure_future(self.__HcUpdateRefreshToken())
-        tasks = [task3, task4, task6]
+    async def HcActionDb(self):
+        task1 = asyncio.ensure_future(self.__hcHandlerSignalRData())
+        task2 = asyncio.ensure_future(self.__hcCheckConnectWithCloud())
+        tasks = [task1, task2]
         await asyncio.gather(*tasks)
         return
     
