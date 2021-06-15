@@ -81,12 +81,14 @@ class HcController():
         while True:
             await self.__getAndSaveRefreshToken()
             self.__logger.info("Update refresh Token")
+            print("Update refresh Token")
             await asyncio.sleep(30)
     
     async def __hcCheckConnectWithCloud(self):
         while True:
             endUser = self.__cache.EndUserId
             self.__logger.info("Hc send heardbeat to cloud")
+            print("Hc send heardbeat to cloud")
             self.HcSignalrServices.SendMesageToServer(endUserProfileId=endUser,entity= "Heardbeat", message= "ping")          
             if self.__cache.DisconnectTime == None:
                 self.__cache.DisconnectTime = datetime.datetime.now()

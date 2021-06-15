@@ -1,0 +1,20 @@
+INFO:	hcController.py:__hcCheckConnectWithCloud():89	Hc send heardbeat to cloud
+ERROR:	signalrServices.py:SendMesageToServer():79	Error when send data to cloud: Hub is not running you cand send messages
+ERROR:	signalrServices.py:SignalrServicesInit():89	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+DEBUG:	hcController.py:__getAndSaveRefreshToken():58	Get RefreshToken and endUserId successful
+INFO:	hcController.py:__hcUpdateRefreshToken():83	Update refresh Token
+INFO:	hcController.py:__hcCheckConnectWithCloud():89	Hc send heardbeat to cloud
+INFO:	hcController.py:HcCheckMqttConnect():115	Reconnect to mqtt
+ERROR:	mqttServices.py:MqttConnect():92	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+INFO:	hcController.py:__hcCheckConnectWithCloud():89	Hc send heardbeat to cloud
+ERROR:	mqttServices.py:MqttConnect():92	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+DEBUG:	hcController.py:__getAndSaveRefreshToken():58	Get RefreshToken and endUserId successful
+INFO:	hcController.py:__hcUpdateRefreshToken():83	Update refresh Token
+INFO:	hcController.py:__hcCheckConnectWithCloud():97	Update cloud disconnect status to db
+INFO:	hcController.py:__hcCheckConnectWithCloud():89	Hc send heardbeat to cloud
+ERROR:	mqttServices.py:MqttConnect():92	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+ERROR:	mqttServices.py:MqttConnect():92	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+INFO:	hcController.py:__hcCheckConnectWithCloud():89	Hc send heardbeat to cloud
+ERROR:	mqttServices.py:MqttConnect():92	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+INFO:	hcController.py:__hcCheckConnectWithCloud():89	Hc send heardbeat to cloud
+ERROR:	mqttServices.py:MqttConnect():92	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it

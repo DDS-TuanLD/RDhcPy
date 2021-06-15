@@ -17,7 +17,7 @@ logfomatter = logging.Formatter(fmt=(
                                                     '%(lineno)d\t'
                                                     '%(message)s'
                                                 ))
-logger = logging.getLogger()
+logger = logging.getLogger("mylog")
 loghandler.setFormatter(logfomatter)
 logger.addHandler(loghandler)
 logger.setLevel(logging.DEBUG)

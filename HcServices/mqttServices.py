@@ -82,7 +82,7 @@ class MqttServices():
         self.__client.on_message = self.__on_message
         # self.__client.on_publish = self.__on_public
         self.__client.on_connect = self.__on_connect
-        #self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
+        self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
         try:
             self.__client.connect_async(self.__mqttConfig.host, self.__mqttConfig.port)
             self.__client.reconnect()
@@ -90,6 +90,7 @@ class MqttServices():
             connectSuccess = True
         except Exception as err:
             self.__logger.error(f"Exception in connect to mqtt: {err}")
+            print(f"Exception in connect to mqtt: {err}")
         return connectSuccess
 
     def MqttPublish(
