@@ -99,7 +99,7 @@ class HcController():
                 self.__cache.SignalrDisconnectCount = 0   
 
     
-    def  HcCheckMqttConnect(self):
+    def HcCheckMqttConnect(self):
         while True:
             try:
                 self.HcMqttServices.MqttPublish("ping", qos=2)
