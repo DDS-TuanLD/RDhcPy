@@ -109,14 +109,19 @@ class HcController():
         while True:
             try:
                 self.HcMqttServices.MqttPublish("ping", qos=2)
-            except:
-                pass
-            self.__cache.mqttDisconnectStatus = True
-            await asyncio.sleep(15)
-            if (self.__cache.mqttDisconnectStatus == True):
-                self.__logger.info("Reconnect to mqtt")
-                self.__cache.mqttProblemCount = 0
-                await self.HcMqttServices.MqttServicesInit()
+                await asyncio.sleep(15)
+            except Exception as err:
+                print("Error when ping to mqtt")
+                self.__mqttServices.MqttStopLoop()
+                self.__mqttServices.MqttDisconnect()
+                await self.__mqttServices.MqttServicesInit()
+                await asyncio.sleep(15)
+                
+    
+            # self.__cache.mqttDisconnectStatus = True
+            # if (self.__cache.mqttDisconnectStatus == True):
+            #     self.__logger.info("Reconnect to mqtt")
+            #     self.__cache.mqttProblemCount = 0
 
     async def __hcMqttHandlerData(self):
         """ This function handler data received in queue
@@ -131,7 +136,7 @@ class HcController():
         print(args)
         dtAdapter = dataAdapter()
         if args == "ping":
-            self.__logger.debug("Connecting with mqtt broker")
+            self.__logger.debug("Hc is connecting with mqtt broker")
             self.__cache.mqttDisconnectStatus = False
             self.__cache.mqttProblemCount = 0
             return
