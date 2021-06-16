@@ -54,13 +54,16 @@ class SignalrServices():
         .build()
         return self
     
-    def StartConnect(self):
-        try:
-            self.__hub.start()
-        except Exception as err:
-            self.__logger.error("Error when start signalr services")
-            print("Error when start signalr services")
-
+    async def StartConnect(self):
+        startSuccess = False
+        while startSuccess == False:
+            try:
+                self.__hub.start()
+                startSuccess = True
+            except Exception as err:
+                self.__logger.error(f"Exception when connect with signalr server: {err}")
+                await asyncio.sleep(5)
+            
     def OnReceiveData(self):
         self.__hub.on("Receive", self.__dataPreHandler)
     
