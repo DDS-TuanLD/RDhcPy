@@ -56,7 +56,8 @@ class SignalrServices():
         try:
             self.__hub.start()
         except Exception as err:
-            pass
+            self.__logger.error("Error when start signalr services")
+            print("Error when start signalr services")
 
     def OnReceiveData(self):
         self.__hub.on("Receive", lambda data: self.signalrDataQueue.put_nowait(data))
@@ -82,12 +83,14 @@ class SignalrServices():
         startSuccess = False
         self.BuildConnection()
         while startSuccess == False:
-            try:
-                self.__hub.start()
-                startSuccess = True
-            except Exception as err:
-                self.__logger.error(f"Exception when connect with signalr server: {err}")
-                await asyncio.sleep(5)
+            if self.__cache.RefreshToken != "":
+                try:
+                    self.__hub.start()
+                    startSuccess = True
+                except Exception as err:
+                    self.__logger.error(f"Exception when connect with signalr server: {err}")
+                    await asyncio.sleep(5)
+            await asyncio.sleep(5)
         self.OnReceiveData()
 
    

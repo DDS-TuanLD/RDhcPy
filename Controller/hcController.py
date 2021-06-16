@@ -63,7 +63,7 @@ class HcController():
         await session.close()
         return
     
-    async def __getToken(self):
+    async def __hcGetToken(self):
         refreshToken = self.__cache.RefreshToken
         tokenUrl = const.SERVER_HOST + const.TOKEN_URL
         cookie = f"RefreshToken={refreshToken}"
@@ -85,13 +85,13 @@ class HcController():
             await asyncio.sleep(30)
     
     async def __hcCheckConnectWithCloud(self):
-        while True:
-            endUser = self.__cache.EndUserId
+        while True:  
             self.__logger.info("Hc send heardbeat to cloud")
             print("Hc send heardbeat to cloud")
-            self.HcSignalrServices.SendMesageToServer(endUserProfileId=endUser,entity= "Heardbeat", message= "ping")          
+            endUser = self.__cache.EndUserId
             if self.__cache.DisconnectTime == None:
                 self.__cache.DisconnectTime = datetime.datetime.now()
+            self.HcSignalrServices.SendMesageToServer(endUserProfileId=endUser,entity= "Heardbeat", message= "ping")          
             await asyncio.sleep(10)
             self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1
             self.__signalServices.StartConnect()
@@ -160,6 +160,7 @@ class HcController():
             self.__cache.SignalrDisconnectCount = 0
             if self.__cache.SignalrDisconnectStatusUpdate == True:
                 self.__logger.info("Update cloud reconnect status to db")
+                print("Update cloud reconnect status to db")
                 s =systemConfiguration(isConnect= True, DisconnectTime= None, ReconnectTime= datetime.datetime.now())
                 self.__db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
                 self.__cache.SignalrDisconnectStatusUpdate = False
@@ -168,7 +169,7 @@ class HcController():
     def __ledControlTestingHandler(self, data: str=""):
         dataAdapter = dataAdapter()
         newdata = dataAdapter.cloudToHcAdapter()
-        pass
+        return
     
     async def HcActionNoDb(self):
         task1 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())

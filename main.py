@@ -23,8 +23,6 @@ loghandler.setFormatter(logfomatter)
 logger.addHandler(loghandler)
 logger.setLevel(logging.DEBUG)
 
-
-
 db = Db()
 hc = HcController(logger)
 
