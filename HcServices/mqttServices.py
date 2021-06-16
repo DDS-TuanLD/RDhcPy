@@ -60,8 +60,7 @@ class MqttServices():
         """
         item = msg.payload.decode("utf-8")
         try:
-            with self.__lock:
-                self.mqttDataQueue.put_nowait(item)
+            self.mqttDataQueue.put_nowait(item)
         except Exception as err:
             pass
         return
@@ -85,9 +84,9 @@ class MqttServices():
         self.__client.on_message = self.__on_message
         # self.__client.on_publish = self.__on_public
         self.__client.on_connect = self.__on_connect
-        self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
+        #self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
         try:
-            self.__client.connect_async(self.__mqttConfig.host, self.__mqttConfig.port)
+            self.__client.connect_async("broker.mqttdashboard.com", self.__mqttConfig.port)
             self.__client.reconnect()
             self.__client.loop_start()
             connectSuccess = True

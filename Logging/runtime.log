@@ -825,3 +825,249 @@ ERROR:	mqttServices.py:MqttConnect():92	Exception in connect to mqtt: [WinError 
 2021-06-16 16:53:54,825:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
 2021-06-16 16:53:59,827:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
 2021-06-16 16:54:01,854:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 16:54:04,831:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:54:09,794:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 16:54:09,835:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:54:11,865:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 16:54:14,840:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:54:19,843:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:54:21,874:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 16:54:24,849:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:54:29,851:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:54:31,879:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 16:54:34,855:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:54:39,859:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:54:40,465:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 16:54:41,891:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 16:54:44,863:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:54:49,870:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:54:52,175:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 16:54:54,875:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:54:59,879:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:55:03,870:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 16:55:04,885:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:55:09,891:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:55:10,932:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 16:55:14,243:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 16:55:14,898:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:55:19,903:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:55:24,907:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:55:25,677:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 16:55:29,911:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:55:34,915:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:55:37,243:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 16:55:39,920:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:55:41,242:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 16:55:44,926:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:55:47,532:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 16:55:49,931:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:55:54,936:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:55:58,411:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 16:55:59,943:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:56:04,948:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:56:08,420:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 16:56:09,952:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 16:56:11,247:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 16:56:14,955:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:57:12,025:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 17:57:14,033:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:57:19,038:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:57:22,044:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 17:57:22,416:	INFO:	hcController.py:__hcCheckConnectWithCloud():120	Update cloud reconnect status to db
+2021-06-16 17:57:24,043:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:57:29,047:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:57:32,420:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 17:57:34,051:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:57:34,764:	DEBUG:	hcController.py:__getAndSaveRefreshToken():62	Get RefreshToken and endUserId successful
+2021-06-16 17:57:34,765:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 17:57:39,055:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:57:42,852:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 17:57:44,059:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:57:49,063:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:57:53,091:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 17:57:54,066:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:57:59,070:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:58:03,271:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 17:58:04,075:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:58:04,973:	DEBUG:	hcController.py:__getAndSaveRefreshToken():62	Get RefreshToken and endUserId successful
+2021-06-16 17:58:04,973:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 17:58:09,079:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:58:13,554:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 17:58:14,083:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:58:19,089:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:58:23,804:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 17:58:24,095:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:58:29,099:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:58:34,102:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:58:34,196:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 17:58:35,112:	DEBUG:	hcController.py:__getAndSaveRefreshToken():62	Get RefreshToken and endUserId successful
+2021-06-16 17:58:35,113:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 17:58:39,107:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:58:44,113:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:58:44,433:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 17:58:49,118:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:58:54,124:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:58:54,702:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 17:58:59,127:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:59:04,131:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:59:04,914:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 17:59:06,070:	DEBUG:	hcController.py:__getAndSaveRefreshToken():62	Get RefreshToken and endUserId successful
+2021-06-16 17:59:06,071:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 17:59:09,135:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:59:14,138:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:59:15,045:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 17:59:19,143:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:59:24,147:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:59:25,293:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 17:59:29,152:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:59:34,159:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:59:35,533:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 17:59:36,164:	DEBUG:	hcController.py:__getAndSaveRefreshToken():62	Get RefreshToken and endUserId successful
+2021-06-16 17:59:36,165:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 17:59:39,163:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:59:44,169:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:59:45,894:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 17:59:49,175:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:59:54,179:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 17:59:56,149:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 17:59:59,183:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:00:04,187:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:00:06,358:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:00:06,395:	DEBUG:	hcController.py:__getAndSaveRefreshToken():62	Get RefreshToken and endUserId successful
+2021-06-16 18:00:06,396:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 18:00:09,190:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:00:14,195:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:00:16,533:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:00:19,201:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:00:24,207:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:00:26,835:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:00:29,210:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:00:34,216:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:00:37,102:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:00:39,222:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:00:41,622:	DEBUG:	hcController.py:__getAndSaveRefreshToken():62	Get RefreshToken and endUserId successful
+2021-06-16 18:00:41,623:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 18:00:44,228:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:00:49,231:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:00:51,521:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:00:54,235:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:00:59,238:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:01:01,885:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:01:04,243:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:01:09,246:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:01:11,719:	DEBUG:	hcController.py:__getAndSaveRefreshToken():62	Get RefreshToken and endUserId successful
+2021-06-16 18:01:11,719:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 18:01:12,047:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:01:14,250:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:01:19,254:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:01:22,210:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:01:24,259:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:01:29,263:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:01:32,602:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:01:34,267:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:01:39,271:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:01:41,887:	DEBUG:	hcController.py:__getAndSaveRefreshToken():62	Get RefreshToken and endUserId successful
+2021-06-16 18:01:41,888:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 18:01:42,885:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:01:44,275:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:01:49,278:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:01:53,027:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:01:54,284:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:01:59,286:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:02:03,346:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:02:04,291:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:02:09,297:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:02:12,013:	DEBUG:	hcController.py:__getAndSaveRefreshToken():62	Get RefreshToken and endUserId successful
+2021-06-16 18:02:12,014:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 18:02:14,303:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:02:16,519:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:02:19,307:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:02:24,311:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:02:26,745:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:02:29,315:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:02:34,319:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:02:36,997:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:02:39,323:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:02:42,173:	DEBUG:	hcController.py:__getAndSaveRefreshToken():62	Get RefreshToken and endUserId successful
+2021-06-16 18:02:42,173:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 18:02:44,328:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:02:47,531:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:02:49,331:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:02:54,335:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:02:57,837:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:02:59,339:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:03:04,343:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:03:08,145:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:03:09,347:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:03:12,269:	DEBUG:	hcController.py:__getAndSaveRefreshToken():62	Get RefreshToken and endUserId successful
+2021-06-16 18:03:12,271:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 18:03:14,351:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:03:18,267:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:03:19,355:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:03:24,359:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:03:28,390:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:03:29,362:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:03:34,368:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:03:38,524:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:03:39,371:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:03:42,365:	DEBUG:	hcController.py:__getAndSaveRefreshToken():62	Get RefreshToken and endUserId successful
+2021-06-16 18:03:42,366:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 18:03:44,377:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:03:48,767:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:03:49,383:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:03:54,386:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:03:59,110:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:03:59,391:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:04:04,395:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:04:09,398:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:04:09,493:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:04:12,521:	DEBUG:	hcController.py:__getAndSaveRefreshToken():62	Get RefreshToken and endUserId successful
+2021-06-16 18:04:12,522:	INFO:	hcController.py:__hcUpdateRefreshToken():89	Update refresh Token
+2021-06-16 18:04:14,403:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:04:19,406:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:04:19,775:	INFO:	hcController.py:__hcCheckConnectWithCloud():95	Hc send heardbeat to cloud
+2021-06-16 18:04:24,410:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-16 18:04:29,128:	ERROR:	hcController.py:HcCheckMqttConnect():122	Error when ping to mqtt
+2021-06-16 18:04:29,139:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:04:34,462:	DEBUG:	mqttServices.py:MqttServicesInit():127	Connect to mqtt status: True
+2021-06-16 18:04:39,510:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:04:49,646:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:04:59,935:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:05:10,380:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:05:20,658:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:05:30,906:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:05:41,204:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:05:50,357:	ERROR:	hcController.py:HcCheckMqttConnect():122	Error when ping to mqtt
+2021-06-16 18:05:50,366:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:05:55,666:	DEBUG:	mqttServices.py:MqttServicesInit():127	Connect to mqtt status: True
+2021-06-16 18:06:00,691:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:06:11,000:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:06:21,565:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:06:31,824:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:07:34,486:	ERROR:	hcController.py:HcCheckMqttConnect():122	Error when ping to mqtt
+2021-06-16 18:07:34,492:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno -3] Temporary failure in name resolution
+2021-06-16 18:07:34,492:	ERROR:	signalrServices.py:StartConnect():64	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-16 18:07:34,498:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:07:39,496:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno -3] Temporary failure in name resolution
+2021-06-16 18:07:39,503:	ERROR:	signalrServices.py:StartConnect():64	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-16 18:07:44,504:	ERROR:	mqttServices.py:MqttConnect():95	Exception in connect to mqtt: [Errno -3] Temporary failure in name resolution
+2021-06-16 18:07:44,505:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:07:44,518:	ERROR:	signalrServices.py:StartConnect():64	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-16 18:09:02,904:	ERROR:	hcController.py:HcCheckMqttConnect():122	Error when ping to mqtt
+2021-06-16 18:09:02,904:	ERROR:	signalrServices.py:StartConnect():64	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-16 18:09:02,905:	ERROR:	mqttServices.py:MqttConnect():94	Exception in connect to mqtt: [Errno -3] Temporary failure in name resolution
+2021-06-16 18:09:02,916:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:09:12,922:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:09:13,166:	DEBUG:	mqttServices.py:MqttServicesInit():126	Connect to mqtt status: True
+2021-06-16 18:09:23,121:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:09:28,502:	DEBUG:	hcController.py:__mqttItemHandler():142	Hc is connecting with mqtt broker
+2021-06-16 18:10:08,988:	ERROR:	hcController.py:HcCheckMqttConnect():122	Error when ping to mqtt
+2021-06-16 18:10:08,997:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:10:14,314:	DEBUG:	mqttServices.py:MqttServicesInit():126	Connect to mqtt status: True
+2021-06-16 18:10:19,283:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:11:44,050:	ERROR:	hcController.py:HcCheckMqttConnect():122	Error when ping to mqtt
+2021-06-16 18:11:44,063:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:11:49,342:	DEBUG:	mqttServices.py:MqttServicesInit():127	Connect to mqtt status: True
+2021-06-16 18:11:54,337:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:12:04,902:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-16 18:12:15,338:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud

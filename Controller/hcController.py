@@ -43,30 +43,7 @@ class HcController():
     @property
     def HcSignalrServices(self):
         return self.__signalServices
-    
-    async def __getAndSaveRefreshToken(self):
-        refreshTokenHeader = self.HcHttpServices.CreateNewHttpHeader()
-        refreshTokenUrl = const.SERVER_HOST + const.REFRESH_TOKEN_URL
-        refreshTokenBody = {
-            "username": const.USER,
-            "password": const.PASS,
-            "deviceName": const.DEVICENAME
-            }
-        refreshTokenReq = self.HcHttpServices.CreateNewHttpRequest(url= refreshTokenUrl, body_data=refreshTokenBody)
-        session = aiohttp.ClientSession()
-        res = await self.HcHttpServices.UsePostRequest(session, refreshTokenReq)
-        if res != "":
-            data = await res.json()
-            refreshToken = data['refreshToken']
-            endUserId = str(data['endUserProfiles'][0]['id'])
-            self.__logger.debug("Get RefreshToken and endUserId successful")
-            if refreshToken != None:
-                self.__cache.RefreshToken = data['refreshToken']
-            if endUserId != None:
-                self.__cache.EndUserId = endUserId
-        await session.close()
-        return
-    
+     
     async def __hcGetToken(self):
         refreshToken = self.__cache.RefreshToken
         if refreshToken == "":
@@ -76,7 +53,7 @@ class HcController():
         header = self.HcHttpServices.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
         req = self.HcHttpServices.CreateNewHttpRequest(url=tokenUrl, header=header)
         session = aiohttp.ClientSession()
-        res = await self.HcHttpServices.UsePostRequest(session, req)
+        res = await self.HcHttpServices.UsePostRequest(session, req)  
         if res != "":
             data = await res.json()
             token = data['token']
@@ -152,7 +129,7 @@ class HcController():
         """ This function handler data received in queue
         """
         while True:
-            await asyncio.sleep(0.5)
+            await asyncio.sleep(0.1)
             if self.__mqttServices.mqttDataQueue.empty() == False:
                 with self.__lock:
                     item = self.__mqttServices.mqttDataQueue.get()
@@ -171,13 +148,14 @@ class HcController():
         
     async def __hcHandlerSignalRData(self):
         while True:
-            await asyncio.sleep(0.5)
+            await asyncio.sleep(0.1)
             if self.__signalServices.signalrDataQueue.empty() == False:
                 with self.__lock:
                     item = self.__signalServices.signalrDataQueue.get()
                     self.__signalrItemHandler(item)
         
     def __signalrItemHandler(self, *args):
+        print(args[0][1])
         # switcher = {
            
         # }
@@ -189,8 +167,7 @@ class HcController():
     async def HcActionNoDb(self):
         task1 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())
         task2 = asyncio.ensure_future(self.__hcMqttHandlerData())
-        task3 = asyncio.ensure_future(self.__hcUpdateRefreshToken())
-        tasks = [task1, task2, task3]
+        tasks = [task1, task2]
         await asyncio.gather(*tasks)
         return
 

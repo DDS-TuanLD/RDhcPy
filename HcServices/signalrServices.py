@@ -43,6 +43,7 @@ class SignalrServices():
     
     def __init__(self, log: logging.Logger):
         self.__logger = log
+        
     def BuildConnection(self):
         self.__hub = SignalrBuilder.HubConnectionBuilder()\
         .with_url(const.SERVER_HOST + const.SIGNALR_SERVER_URL, 
@@ -90,15 +91,7 @@ class SignalrServices():
     async def SignalrServicesInit(self):
         startSuccess = False
         self.BuildConnection()
-        while startSuccess == False:
-            if self.__cache.RefreshToken != "":
-                try:
-                    self.__hub.start()
-                    startSuccess = True
-                except Exception as err:
-                    self.__logger.error(f"Exception when connect with signalr server: {err}")
-                    await asyncio.sleep(5)
-            await asyncio.sleep(5)
+        await self.StartConnect()
         self.OnReceiveData()
 
    
