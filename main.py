@@ -11,6 +11,7 @@ from logging.handlers import TimedRotatingFileHandler
 
 loghandler = logging.handlers.TimedRotatingFileHandler(filename='Logging/runtime.log', when="D", backupCount=4)
 logfomatter = logging.Formatter(fmt=(
+                                                    '%(asctime)s:\t'
                                                     '%(levelname)s:\t'
                                                     '%(filename)s:'
                                                     '%(funcName)s():'
