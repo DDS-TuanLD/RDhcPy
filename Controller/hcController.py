@@ -12,6 +12,7 @@ from Model.systemConfiguration import systemConfiguration
 import time
 from Adapter.dataAdapter import dataAdapter
 import logging
+import threading
 class HcController():
     __httpServices: HttpAsyncServices
     __signalServices: SignalrServices
@@ -19,6 +20,7 @@ class HcController():
     __db: Db
     __cache : HcCache
     __logger: logging.Logger
+    __lock: threading.Lock
     
     def __init__(self, log: logging.Logger):   
         self.__logger = log
@@ -27,6 +29,7 @@ class HcController():
         self.__mqttServices = MqttServices(self.__logger)
         self.__db = Db()
         self.__cache = HcCache()
+        self.__lock = threading.Lock()
         
     @property
     def HcHttpServices(self):
@@ -126,8 +129,9 @@ class HcController():
         while True:
             await asyncio.sleep(0.5)
             if self.__mqttServices.mqttDataQueue.empty() == False:
-                item = self.__mqttServices.mqttDataQueue.get()
-                self.__mqttItemHandler(item)
+                with self.__lock:
+                    item = self.__mqttServices.mqttDataQueue.get()
+                    self.__mqttItemHandler(item)
 
     def __mqttItemHandler(self, args):
         print(args)
@@ -144,8 +148,9 @@ class HcController():
         while True:
             await asyncio.sleep(0.5)
             if self.__signalServices.signalrDataQueue.empty() == False:
-                item = self.__signalServices.signalrDataQueue.get()
-                self.__signalrItemHandler(item)
+                with self.__lock:
+                    item = self.__signalServices.signalrDataQueue.get()
+                    self.__signalrItemHandler(item)
         
     def __signalrItemHandler(self, *args):
         switcher = {

@@ -9,6 +9,7 @@ from Adapter.dataAdapter import dataAdapter
 from Database.Db import Db
 import datetime
 import logging
+import threading
 
 def getToken():
     cache = HcCache()
@@ -38,6 +39,7 @@ class SignalrServices():
     __cache = HcCache()
     __db = Db()
     __logger: logging.Logger
+    __lock = threading.Lock()
     
     def __init__(self, log: logging.Logger):
         self.__logger = log
@@ -60,8 +62,11 @@ class SignalrServices():
             print("Error when start signalr services")
 
     def OnReceiveData(self):
-        self.__hub.on("Receive", lambda data: self.signalrDataQueue.put_nowait(data))
+        self.__hub.on("Receive", self.__dataPreHandler)
     
+    def __dataPreHandler(self, data):
+        with self.__lock:
+            self.signalrDataQueue.put_nowait(data)
         
     def DisConnectWithServer(self):
         self.__hub.stop()

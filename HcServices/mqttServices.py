@@ -8,6 +8,7 @@ from Database.Db import Db
 from Model.systemConfiguration import systemConfiguration
 import socket
 import logging
+import threading
 class MqttConfig():
     host = ""
     port: int
@@ -44,6 +45,7 @@ class MqttServices():
     mqttDataQueue = queue.Queue()
     __cache = HcCache()
     __logger: logging.Logger
+    __lock : threading.Lock()
     
     def __init__(self, log: logging.Logger):
         self.__logger = log
@@ -58,7 +60,8 @@ class MqttServices():
         """
         item = msg.payload.decode("utf-8")
         try:
-            self.mqttDataQueue.put_nowait(item)
+            with self.__lock:
+                self.mqttDataQueue.put_nowait(item)
         except Exception as err:
             pass
         return
