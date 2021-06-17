@@ -21,7 +21,7 @@ class Db(metaclass= MetaDb):
     __connect: Connection    
     __dbTable: tableManager
     __servicesManager: modelServicesManager
-
+    
     def DbCreateTable(self):
         self.__engine = create_engine('sqlite:///' + const.DB_NAME, echo=True)
         self.__dbTable = tableManager(self.__metadata)

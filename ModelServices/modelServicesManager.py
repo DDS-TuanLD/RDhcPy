@@ -1,4 +1,5 @@
 from ModelServices.systemConfigurationServices import systemConfigurationServices
+from ModelServices.userDataService import userDataServices
 from Table.tableManager import tableManager
 from sqlalchemy.engine.base import Connection
 
@@ -11,10 +12,16 @@ class MetaService(type):
 
 class  modelServicesManager(metaclass=MetaService):
     __systemConfigurationServices: systemConfigurationServices
+    __userDataService: userDataServices
     
     def __init__(self, table: tableManager, context: Connection):
         self.__systemConfigurationServices = systemConfigurationServices(table.SystemConfigurationTable, context)
+        self.__userDataService = userDataServices(table.UserDataTable, context)
     
     @property
     def SystemConfigurationServices(self):
         return self.__systemConfigurationServices
+    
+    @property
+    def UserdataServices(self):
+        return self.__userDataService
