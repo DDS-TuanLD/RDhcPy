@@ -86,7 +86,7 @@ class HcController():
                 s =systemConfiguration(isConnect= True, DisconnectTime= None, ReconnectTime= datetime.datetime.now())
                 self.__db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
                 self.__cache.SignalrDisconnectStatusUpdate = False  
-            await asyncio.sleep(10)
+            await asyncio.sleep(50)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 self.__logger.info("Update cloud disconnect status to db")
                 s =systemConfiguration(isConnect= False, DisconnectTime= self.__cache.DisconnectTime, ReconnectTime= None)
@@ -169,15 +169,16 @@ class HcController():
     
     async def HcActionNoDb(self):
         task1 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())
-        task2 = asyncio.ensure_future(self.__hcMqttHandlerData())
-        tasks = [task1, task2]
+        tasks = [task1]
         await asyncio.gather(*tasks)
         return
 
     async def HcActionDb(self):
         task1 = asyncio.ensure_future(self.__hcHandlerSignalRData())
         task2 = asyncio.ensure_future(self.__hcCheckConnectWithCloud())
-        tasks = [task1, task2]
+        task3 = asyncio.ensure_future(self.__hcMqttHandlerData())
+        
+        tasks = [task1, task2, task3]
         await asyncio.gather(*tasks)
         return
     
