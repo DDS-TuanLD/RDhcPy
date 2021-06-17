@@ -66,6 +66,24 @@ class HcController():
             self.__logger.info("Update refresh Token")
             print("Update refresh Token")
             await asyncio.sleep(30)
+            
+    async def __hcSendHttpRequestToHeardbeatUrl(self):
+        endUser = self.__cache.EndUserId
+        try:
+            token = await self.__hcGetToken() 
+        except:
+            token = ""
+        cookie = f"Token={token}"
+        heardBeatUrl = const.SERVER_HOST + const.SIGNSLR_HEARDBEAT_URL
+        header = self.HcHttpServices.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
+        req = self.HcHttpServices.CreateNewHttpRequest(url=heardBeatUrl, header=header)
+        session = aiohttp.ClientSession()
+        res = await self.HcHttpServices.UsePostRequest(session, req)
+        await session.close()
+        if res == "":
+            return False
+        if (res != "") and (res.status == http.HTTPStatus.OK):
+            return True
     
     async def __hcCheckConnectWithCloud(self):
         while True:  
@@ -73,43 +91,26 @@ class HcController():
             print("Hc send heardbeat to cloud")
             if self.__cache.DisconnectTime == None:
                 self.__cache.DisconnectTime = datetime.datetime.now()
-            endUser = self.__cache.EndUserId
-            try:
-                token = await self.__hcGetToken() 
-            except:
-                token = ""
-            cookie = f"Token={token}"
-            heardBeatUrl = const.SERVER_HOST + const.SIGNSLR_HEARDBEAT_URL
-            header = self.HcHttpServices.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
-            req = self.HcHttpServices.CreateNewHttpRequest(url=heardBeatUrl, header=header)
-            session = aiohttp.ClientSession()
-            res = await self.HcHttpServices.UsePostRequest(session, req)
-            await session.close()
-            
-            if res == "":
-                self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1
-                
-            if (res != "") and (res.status == http.HTTPStatus.OK):
+            ok = await self.__hcSendHttpRequestToHeardbeatUrl()
+            if ok == False:
+                self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1    
+            if ok == True:
                 self.__cache.DisconnectTime = None
-
-            if (res != "") and (res.status == http.HTTPStatus.OK) and (self.__cache.SignalrDisconnectStatusUpdate == True):
+            if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
                 await self.__signalServices.StartConnect()
                 self.__logger.info("Update cloud reconnect status to db")
                 print("Update cloud reconnect status to db")
                 self.__cache.SignalrDisconnectCount = 0
                 s =systemConfiguration(isConnect= True, DisconnectTime= None, ReconnectTime= datetime.datetime.now())
                 self.__db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
-                self.__cache.SignalrDisconnectStatusUpdate = False
-                
+                self.__cache.SignalrDisconnectStatusUpdate = False  
             await asyncio.sleep(10)
-            
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 self.__logger.info("Update cloud disconnect status to db")
                 s =systemConfiguration(isConnect= False, DisconnectTime= self.__cache.DisconnectTime, ReconnectTime= None)
                 self.__db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
                 self.__cache.SignalrDisconnectStatusUpdate = True
-                self.__cache.SignalrDisconnectCount = 0
-                
+                self.__cache.SignalrDisconnectCount = 0    
             if self.__cache.SignalrDisconnectStatusUpdate > 3:
                 self.__cache.SignalrDisconnectCount = 0
     
