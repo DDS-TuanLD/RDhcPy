@@ -40,3 +40,88 @@
 2021-06-17 20:41:41,582:	DEBUG:	hcController.py:__mqttItemHandler():144	Hc is connecting with mqtt broker
 2021-06-17 20:41:56,638:	DEBUG:	hcController.py:__mqttItemHandler():144	Hc is connecting with mqtt broker
 2021-06-17 20:41:57,514:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:07:55,828:	ERROR:	hcController.py:HcCheckMqttConnect():123	Error when ping to mqtt
+2021-06-17 21:07:55,851:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:08:01,034:	DEBUG:	mqttServices.py:MqttServicesInit():123	Connect to mqtt status: True
+2021-06-17 21:08:21,348:	DEBUG:	hcController.py:__mqttItemHandler():144	Hc is connecting with mqtt broker
+2021-06-17 21:08:46,100:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:09:36,104:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:10:26,108:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:11:16,112:	INFO:	hcController.py:__hcCheckConnectWithCloud():91	Update cloud disconnect status to db
+2021-06-17 21:11:16,161:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:12:06,166:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:12:07,873:	INFO:	hcController.py:__hcCheckConnectWithCloud():83	Update cloud reconnect status to db
+2021-06-17 21:12:41,907:	DEBUG:	hcController.py:__mqttItemHandler():144	Hc is connecting with mqtt broker
+2021-06-17 21:12:57,885:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:13:01,580:	DEBUG:	hcController.py:__mqttItemHandler():144	Hc is connecting with mqtt broker
+2021-06-17 21:13:21,649:	DEBUG:	hcController.py:__mqttItemHandler():144	Hc is connecting with mqtt broker
+2021-06-17 21:13:41,618:	DEBUG:	hcController.py:__mqttItemHandler():144	Hc is connecting with mqtt broker
+2021-06-17 21:13:48,166:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:14:01,684:	DEBUG:	hcController.py:__mqttItemHandler():144	Hc is connecting with mqtt broker
+2021-06-17 21:14:09,734:	ERROR:	hcController.py:HcCheckMqttConnect():124	Error when ping to mqtt
+2021-06-17 21:14:09,744:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:14:15,098:	DEBUG:	mqttServices.py:MqttServicesInit():123	Connect to mqtt status: True
+2021-06-17 21:15:09,860:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:16:09,863:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:16:15,456:	DEBUG:	hcController.py:__mqttItemHandler():145	Hc is connecting with mqtt broker
+2021-06-17 21:16:35,524:	DEBUG:	hcController.py:__mqttItemHandler():145	Hc is connecting with mqtt broker
+2021-06-17 21:16:55,492:	DEBUG:	hcController.py:__mqttItemHandler():145	Hc is connecting with mqtt broker
+2021-06-17 21:17:09,980:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:17:15,763:	DEBUG:	hcController.py:__mqttItemHandler():145	Hc is connecting with mqtt broker
+2021-06-17 21:17:35,629:	DEBUG:	hcController.py:__mqttItemHandler():145	Hc is connecting with mqtt broker
+2021-06-17 21:17:55,597:	DEBUG:	hcController.py:__mqttItemHandler():145	Hc is connecting with mqtt broker
+2021-06-17 21:18:10,292:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:18:16,373:	DEBUG:	hcController.py:__mqttItemHandler():145	Hc is connecting with mqtt broker
+2021-06-17 21:18:35,637:	DEBUG:	hcController.py:__mqttItemHandler():145	Hc is connecting with mqtt broker
+2021-06-17 21:18:55,705:	DEBUG:	hcController.py:__mqttItemHandler():145	Hc is connecting with mqtt broker
+2021-06-17 21:19:10,545:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:19:15,672:	DEBUG:	hcController.py:__mqttItemHandler():145	Hc is connecting with mqtt broker
+2021-06-17 21:19:35,743:	DEBUG:	hcController.py:__mqttItemHandler():145	Hc is connecting with mqtt broker
+2021-06-17 21:19:55,711:	DEBUG:	hcController.py:__mqttItemHandler():145	Hc is connecting with mqtt broker
+2021-06-17 21:20:10,649:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:20:12,763:	ERROR:	hcController.py:HcCheckMqttConnect():123	Error when ping to mqtt
+2021-06-17 21:20:12,777:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:21:13,014:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:22:26,577:	ERROR:	hcController.py:HcCheckMqttConnect():123	Error when ping to mqtt
+2021-06-17 21:22:26,591:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:22:52,119:	DEBUG:	hcController.py:__mqttItemHandler():144	Hc is connecting with mqtt broker
+2021-06-17 21:23:12,285:	DEBUG:	hcController.py:__mqttItemHandler():144	Hc is connecting with mqtt broker
+2021-06-17 21:23:26,830:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:23:32,162:	DEBUG:	hcController.py:__mqttItemHandler():144	Hc is connecting with mqtt broker
+2021-06-17 21:24:27,245:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:24:52,241:	DEBUG:	hcController.py:__mqttItemHandler():144	Hc is connecting with mqtt broker
+2021-06-17 21:24:52,442:	DEBUG:	hcController.py:__mqttItemHandler():144	Hc is connecting with mqtt broker
+2021-06-17 21:24:52,642:	DEBUG:	hcController.py:__mqttItemHandler():144	Hc is connecting with mqtt broker
+2021-06-17 21:24:52,743:	DEBUG:	hcController.py:__mqttItemHandler():144	Hc is connecting with mqtt broker
+2021-06-17 21:25:12,209:	DEBUG:	hcController.py:__mqttItemHandler():144	Hc is connecting with mqtt broker
+2021-06-17 21:25:27,249:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:25:32,289:	DEBUG:	hcController.py:__mqttItemHandler():144	Hc is connecting with mqtt broker
+2021-06-17 21:26:53,922:	ERROR:	hcController.py:HcCheckMqttConnect():123	Error when ping to mqtt
+2021-06-17 21:26:53,936:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:27:54,378:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:28:54,381:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:29:54,385:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:30:54,388:	INFO:	hcController.py:__hcCheckConnectWithCloud():91	Update cloud disconnect status to db
+2021-06-17 21:30:54,399:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:31:54,405:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:31:55,080:	INFO:	hcController.py:__hcCheckConnectWithCloud():83	Update cloud reconnect status to db
+2021-06-17 21:32:55,084:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:33:19,864:	DEBUG:	hcController.py:__mqttItemHandler():147	Hc is connecting with mqtt broker
+2021-06-17 21:33:53,963:	ERROR:	hcController.py:HcCheckMqttConnect():123	Error when ping to mqtt
+2021-06-17 21:33:53,973:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:34:11,503:	DEBUG:	hcController.py:__mqttItemHandler():143	Hc is connecting with mqtt broker
+2021-06-17 21:34:54,535:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:35:54,540:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:36:54,544:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:37:54,546:	INFO:	hcController.py:__hcCheckConnectWithCloud():91	Update cloud disconnect status to db
+2021-06-17 21:37:54,558:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:37:55,294:	INFO:	hcController.py:__hcCheckConnectWithCloud():83	Update cloud reconnect status to db
+2021-06-17 21:38:27,718:	DEBUG:	hcController.py:__mqttItemHandler():143	Hc is connecting with mqtt broker
+2021-06-17 21:38:41,765:	DEBUG:	hcController.py:__mqttItemHandler():143	Hc is connecting with mqtt broker
+2021-06-17 21:38:55,306:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:38:56,851:	DEBUG:	hcController.py:__mqttItemHandler():143	Hc is connecting with mqtt broker
+2021-06-17 21:39:11,802:	DEBUG:	hcController.py:__mqttItemHandler():143	Hc is connecting with mqtt broker
+2021-06-17 21:39:27,758:	DEBUG:	hcController.py:__mqttItemHandler():143	Hc is connecting with mqtt broker
+2021-06-17 21:39:41,848:	DEBUG:	hcController.py:__mqttItemHandler():143	Hc is connecting with mqtt broker
+2021-06-17 21:39:56,652:	INFO:	hcController.py:__hcCheckConnectWithCloud():72	Hc send heardbeat to cloud
+2021-06-17 21:39:57,953:	DEBUG:	hcController.py:__mqttItemHandler():143	Hc is connecting with mqtt broker

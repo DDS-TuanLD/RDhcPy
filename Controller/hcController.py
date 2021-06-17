@@ -78,15 +78,15 @@ class HcController():
                 self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1    
             if ok == True:
                 self.__cache.DisconnectTime = None
-            if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
                 await self.__signalServices.StartConnect()
+            if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
                 self.__logger.info("Update cloud reconnect status to db")
                 print("Update cloud reconnect status to db")
                 self.__cache.SignalrDisconnectCount = 0
                 s =systemConfiguration(isConnect= True, DisconnectTime= None, ReconnectTime= datetime.datetime.now())
                 self.__db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
                 self.__cache.SignalrDisconnectStatusUpdate = False  
-            await asyncio.sleep(50)
+            await asyncio.sleep(60)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 self.__logger.info("Update cloud disconnect status to db")
                 s =systemConfiguration(isConnect= False, DisconnectTime= self.__cache.DisconnectTime, ReconnectTime= None)
@@ -121,7 +121,6 @@ class HcController():
                 await asyncio.sleep(15)
             except Exception as err:
                 self.__logger.error("Error when ping to mqtt")
-                print("Error when ping to mqtt")
                 self.__mqttServices.MqttDisconnect()
                 await self.__mqttServices.MqttServicesInit()
                 await asyncio.sleep(15)

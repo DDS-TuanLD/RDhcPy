@@ -81,9 +81,9 @@ class MqttServices():
         self.__client.on_message = self.__on_message
         # self.__client.on_publish = self.__on_public
         self.__client.on_connect = self.__on_connect
-        self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
+        #self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
         try:
-            self.__client.connect_async(self.__mqttConfig.host, self.__mqttConfig.port)
+            self.__client.connect_async("broker.mqttdashboard.com", self.__mqttConfig.port)
             self.__client.reconnect()
             self.__client.loop_start()
             connectSuccess = True
@@ -119,8 +119,7 @@ class MqttServices():
         connectSuccess = False
         while connectSuccess == False:
             connectSuccess =await self.MqttConnect()
-            time.sleep(5)
-        self.__logger.debug("Connect to mqtt status: " + str(connectSuccess))
+            time.sleep(2)
 
         
    
