@@ -70,7 +70,7 @@ class SignalrServices():
     
     def __dataPreHandler(self, data):
         with self.__lock:
-            self.signalrDataQueue.put_nowait(data)
+            self.signalrDataQueue.put(data)
         
     def DisConnectWithServer(self):
         self.__hub.stop()
