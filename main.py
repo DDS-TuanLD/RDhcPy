@@ -37,15 +37,11 @@ def db_thread(db: Db, hc: HcController):
     
 def no_db_thread(hc: HcController):
     asyncio.run(hc.HcActionNoDb())
-
-def mqtt_check_connection(hc: HcController):
-    asyncio.run(hc.HcCheckMqttConnect())
     
 def main():  
     threads = []
     threads.append(threading.Thread(target = db_thread, args=(db, hc,)))
     threads.append(threading.Thread(target = no_db_thread, args=(hc,)))
-    threads.append(threading.Thread(target = mqtt_check_connection, args=(hc, )))
     
     [thread.start() for thread in threads]
     [thread.join() for thread in threads]

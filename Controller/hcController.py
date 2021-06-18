@@ -86,7 +86,7 @@ class HcController():
                 self.__cache.SignalrDisconnectCount = 0
                 s =systemConfiguration(isConnect= True, DisconnectTime= None, ReconnectTime= datetime.datetime.now())
                 self.__db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
-                self.__cache.SignalrDisconnectStatusUpdate = False  
+                self.__cache.SignalrDisconnectStatusUpdate = False 
             await asyncio.sleep(60)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 self.__logger.info("Update cloud disconnect status to db")
@@ -114,17 +114,6 @@ class HcController():
             return False
         if (res != "") and (res.status == http.HTTPStatus.OK):
             return True
-    
-    async def HcCheckMqttConnect(self):
-        while True:
-            try:
-                self.HcMqttServices.MqttPublish("ping", qos=0)
-                await asyncio.sleep(15)
-            except Exception as err:
-                self.__logger.error("Error when ping to mqtt")
-                self.__mqttServices.MqttDisconnect()
-                await self.__mqttServices.MqttServicesInit()
-                await asyncio.sleep(15)
                 
     async def __hcMqttHandlerData(self):
         """ This function handler data received in queue
@@ -140,12 +129,7 @@ class HcController():
     def __mqttItemHandler(self, args):
         print(args)
         dtAdapter = dataAdapter()
-        if args == "ping":
-            self.__logger.debug("Hc is connecting with mqtt broker")
-            self.__cache.mqttDisconnectStatus = False
-            self.__cache.mqttProblemCount = 0
-            return
-        newdata = dtAdapter.hcToCloudAdapter(args)
+        self.__signalServices.SendMesageToServer(self.__cache.EndUserId, entity="Response", message=args)
 
         
     async def __hcHandlerSignalRData(self):
@@ -170,12 +154,13 @@ class HcController():
         try:
             _ = d['TYPE']
         except:
-            self.__mqttServices.MqttPublish(data, const.MQTT_QOS)
+            self.__mqttServices.MqttPublish(const.MQTT_PUB_CONTROL_TOPIC, data, const.MQTT_QOS)
         return
     
     async def HcActionNoDb(self):
         task1 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())
-        tasks = [task1]
+        task2 = asyncio.ensure_future(self.__mqttServices.MqttServicesInit())
+        tasks = [task1, task2]
         await asyncio.gather(*tasks)
         return
 

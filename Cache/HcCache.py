@@ -15,7 +15,7 @@ class HcCache(metaclass=MetaCache):
     __disconectTime: datetime.datetime
  
     def __init__(self):
-        self.__refreshToken = "10a8F5yStJ1A7JBXRzc4NdO67kxbZtbxGYQPyOFlQXiRR%2FnI9ZrTzAwCUYrq2DUnFt915wjAkXoGjGsIoL814I7fO5swdgc2xd6AV6WPwF9ddXBGs77Kz1E8vvqMbs3WlXKDovZk%2FlEjIU57W6hW6%2FSMAlDq2pNKI5garQSQ9e0BrdoAJR1pnKDiQd7QgrrbrItH0zAQhkX5Cgj55W%2FU4F4dR6bh3CLWRIPiWsapgmg%3D"
+        self.__refreshToken = "10a8F5yStJ1A7JBXRzc4NdO67kxbZtbxGYQPyOFlQXiRR/nI9ZrTzAwCUYrq2DUnFt915wjAkXoGjGsIoL814I7fO5swdgc2xd6AV6WPwF8Bum0fEXbv9mV13A2Y0aJ/89pw1KFTtmX3UVLZOyrixUVRmEwxQEPSsFORFQOV8NGEcOXrxQPz6gjyFl1JpDz9ZsFrgFLouyitefqX6srCsA2WH5ztuXnULKkw8XtGxL8="
         self.__signalrOnConnect = True
         self.__signalrDisconnectCount = 0
         self.__signalrDisconnectStatusUpdate = False

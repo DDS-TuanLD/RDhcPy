@@ -4,16 +4,12 @@ import queue
 import Constant.constant as const
 import time
 from Cache.HcCache import HcCache
-from Database.Db import Db
-from Model.systemConfiguration import systemConfiguration
 import socket
 import logging
 import threading
 class MqttConfig():
     host = ""
     port: int
-    sub_topic = ""
-    pub_topic = ""
     qos: int
     keepalive: int
     username: str
@@ -31,8 +27,6 @@ class MqttConfig():
         
         self.host = ip
         self.port = const.MQTT_PORT
-        self.sub_topic = const.MQTT_SUB_TOPIC
-        self.pub_topic = const.MQTT_PUB_TOPIC
         self.qos = const.MQTT_QOS
         self.keepalive = const.MQTT_KEEPALIVE
         self.username = const.MQTT_USER
@@ -64,8 +58,7 @@ class MqttServices():
         return
     
     def __on_connect(self, client, userdata, flags, rc):
-            self.__client.subscribe(topic=self.__mqttConfig.sub_topic, qos=self.__mqttConfig.qos)
-            self.__client.subscribe("Heardbeat", 0)
+            self.__client.subscribe(topic=const.MQTT_SUB_RESPONSE_TOPIC, qos=self.__mqttConfig.qos)
 
     # def __on_public(self, client, userdata, mid):
     #     return
@@ -95,7 +88,7 @@ class MqttServices():
         return connectSuccess
 
     def MqttPublish(
-        self, send_data:str, qos: int = 0):
+        self, topic:str, send_data:str, qos: int):
         """ Public data to mqtt server
 
         Args:
@@ -103,7 +96,8 @@ class MqttServices():
             qos (int, optional): [description]. Defaults to 0.
         """
         
-        self.__client.publish(self.__mqttConfig.pub_topic, payload=send_data, qos=qos)
+        self.__client.publish(topic, payload=send_data, qos=qos)
+        
 
     def MqttStartLoop(self):
         self.__client.loop_start()
