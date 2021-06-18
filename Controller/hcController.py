@@ -150,11 +150,13 @@ class HcController():
         return
 
     def _hcHandlerSignalrCommand(self, data):
+        
         d = json.loads(data)
         try:
             _ = d['TYPE']
         except:
             self.__mqttServices.MqttPublish(const.MQTT_PUB_CONTROL_TOPIC, data, const.MQTT_QOS)
+       
         return
     
     async def HcActionNoDb(self):
