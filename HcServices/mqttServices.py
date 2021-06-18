@@ -45,7 +45,7 @@ class MqttServices():
     mqttDataQueue = queue.Queue()
     __cache = HcCache()
     __logger: logging.Logger
-    __lock : threading.Lock()
+    __lock = threading.Lock()
     
     def __init__(self, log: logging.Logger):
         self.__logger = log
@@ -59,12 +59,14 @@ class MqttServices():
             msg ([type]): [description]
         """
         item = msg.payload.decode("utf-8")
-        self.mqttDataQueue.put(item)
+        with self.__lock:
+            self.mqttDataQueue.put(item)
         return
     
     def __on_connect(self, client, userdata, flags, rc):
             self.__client.subscribe(topic=self.__mqttConfig.sub_topic, qos=self.__mqttConfig.qos)
-            
+            self.__client.subscribe("Heardbeat", 0)
+
     # def __on_public(self, client, userdata, mid):
     #     return
    
@@ -93,7 +95,7 @@ class MqttServices():
         return connectSuccess
 
     def MqttPublish(
-        self, send_data, qos: int = 0):
+        self, send_data:str, qos: int = 0):
         """ Public data to mqtt server
 
         Args:

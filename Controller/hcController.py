@@ -14,6 +14,7 @@ from Adapter.dataAdapter import dataAdapter
 import logging
 import threading
 import http
+import json
 class HcController():
     __httpServices: HttpAsyncServices
     __signalServices: SignalrServices
@@ -157,14 +158,20 @@ class HcController():
                     self.__signalServices.signalrDataQueue.task_done()
         
     def __signalrItemHandler(self, *args):
-        print(args[0][1])
-        # switcher = {
-           
-        # }
-        # func = switcher.get(args[0][0])
-        # func(args[0][1])
-        pass
+        switcher = {
+           "Command": self._hcHandlerSignalrCommand
+        }
+        func = switcher.get(args[0][0])
+        func(args[0][1])
+        return
 
+    def _hcHandlerSignalrCommand(self, data):
+        d = json.loads(data)
+        try:
+            _ = d['TYPE']
+        except:
+            self.__mqttServices.MqttPublish(data, const.MQTT_QOS)
+        return
     
     async def HcActionNoDb(self):
         task1 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())
