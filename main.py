@@ -3,15 +3,12 @@ import asyncio
 import requests
 from Database.Db import Db
 import datetime
-from Model.systemConfiguration import systemConfiguration
-from Model.userData import userData
 import threading        
 import logging
 from logging.handlers import TimedRotatingFileHandler
 import os
 
 d = os.path.dirname(__file__)
-print(d)
 
 loghandler = logging.handlers.TimedRotatingFileHandler(filename= d + '/Logging/runtime.log', when="D", backupCount=4)
 logfomatter = logging.Formatter(fmt=(
