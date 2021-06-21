@@ -68,7 +68,7 @@ class HcController():
     async def __hcUpdateRefreshToken(self):
        pass
             
-    async def __hcCheckConnectWithCloud(self):
+    async def __HcCheckConnectWithCloud(self):
         while True:  
             self.__logger.info("Hc send heardbeat to cloud")
             print("Hc send heardbeat to cloud")
@@ -115,7 +115,7 @@ class HcController():
         if (res != "") and (res.status == http.HTTPStatus.OK):
             return True
                 
-    async def __hcMqttHandlerData(self):
+    async def __HcMqttHandlerData(self):
         """ This function handler data received in queue
         """
         while True:
@@ -132,7 +132,7 @@ class HcController():
         self.__signalServices.SendMesageToServer(self.__cache.EndUserId, entity="Response", message=args)
 
         
-    async def __hcHandlerSignalRData(self):
+    async def __HcHandlerSignalRData(self):
         while True:
             await asyncio.sleep(0.1)
             if self.__signalServices.signalrDataQueue.empty() == False:
@@ -168,9 +168,9 @@ class HcController():
         return
 
     async def HcActionDb(self):
-        task1 = asyncio.ensure_future(self.__hcHandlerSignalRData())
-        task2 = asyncio.ensure_future(self.__hcCheckConnectWithCloud())
-        task3 = asyncio.ensure_future(self.__hcMqttHandlerData())
+        task1 = asyncio.ensure_future(self.__HcHandlerSignalRData())
+        task2 = asyncio.ensure_future(self.__HcCheckConnectWithCloud())
+        task3 = asyncio.ensure_future(self.__HcMqttHandlerData())
         
         tasks = [task1, task2, task3]
         await asyncio.gather(*tasks)
