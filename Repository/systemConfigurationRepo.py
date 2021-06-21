@@ -55,7 +55,8 @@ class systemConfigurationRepo():
         """
         ins = self.__systemConfigurationTable.update().where(self.__systemConfigurationTable.c.Id == id).values({"IsConnect": newSysConfig.IsConnect,
                                                                                                                  "DisconnectTime": newSysConfig.DisconnectTime,
-                                                                                                                "ReconnectTime": newSysConfig.ReconnectTime})
+                                                                                                                "ReconnectTime": newSysConfig.ReconnectTime,
+                                                                                                                "UpdateAt": datetime.datetime.now()})
         self.__context.execute(ins)
     
     def FindwithId(self, Id:int):
