@@ -15,6 +15,7 @@ import logging
 import threading
 import http
 import json
+
 class HcController():
     __httpServices: HttpAsyncServices
     __signalServices: SignalrServices
@@ -45,29 +46,10 @@ class HcController():
     def HcSignalrServices(self):
         return self.__signalServices
      
-    async def __hcGetToken(self):
-        refreshToken = self.__cache.RefreshToken
-        if refreshToken == "":
-            return ""
-        tokenUrl = const.SERVER_HOST + const.TOKEN_URL
-        cookie = f"RefreshToken={refreshToken}"
-        header = self.HcHttpServices.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
-        req = self.HcHttpServices.CreateNewHttpRequest(url=tokenUrl, header=header)
-        session = aiohttp.ClientSession()
-        res = await self.HcHttpServices.UsePostRequest(session, req)  
-        token = ""
-        if res != "":
-            try:
-                data = await res.json()
-                token = data['token']
-            except:
-                return ""
-        await session.close()
-        return token
-    
-    async def __hcUpdateRefreshToken(self):
+    async def __HcUpdateUserdata(self):
        pass
             
+    #-----------------Ping cloud
     async def __HcCheckConnectWithCloud(self):
         while True:  
             self.__logger.info("Hc send heardbeat to cloud")
@@ -81,19 +63,10 @@ class HcController():
                 self.__cache.DisconnectTime = None
                 await self.__signalServices.StartConnect()
             if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
-                self.__logger.info("Update cloud reconnect status to db")
-                print("Update cloud reconnect status to db")
-                self.__cache.SignalrDisconnectCount = 0
-                s =systemConfiguration(isConnect= True, DisconnectTime= None, ReconnectTime= datetime.datetime.now())
-                self.__db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
-                self.__cache.SignalrDisconnectStatusUpdate = False 
-            await asyncio.sleep(60)
+                self.__hcUpdateReconnectStToDb()
+            await asyncio.sleep(10)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
-                self.__logger.info("Update cloud disconnect status to db")
-                s =systemConfiguration(isConnect= False, DisconnectTime= self.__cache.DisconnectTime, ReconnectTime= None)
-                self.__db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
-                self.__cache.SignalrDisconnectStatusUpdate = True
-                self.__cache.SignalrDisconnectCount = 0    
+                self.__hcUpdateDisconnectStToDb()
             if self.__cache.SignalrDisconnectStatusUpdate > 3:
                 self.__cache.SignalrDisconnectCount = 0
                 
@@ -114,7 +87,45 @@ class HcController():
             return False
         if (res != "") and (res.status == http.HTTPStatus.OK):
             return True
-                
+        
+    async def __hcGetToken(self):
+        refreshToken = self.__cache.RefreshToken
+        if refreshToken == "":
+            return ""
+        tokenUrl = const.SERVER_HOST + const.TOKEN_URL
+        cookie = f"RefreshToken={refreshToken}"
+        header = self.HcHttpServices.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
+        req = self.HcHttpServices.CreateNewHttpRequest(url=tokenUrl, header=header)
+        session = aiohttp.ClientSession()
+        res = await self.HcHttpServices.UsePostRequest(session, req)  
+        token = ""
+        if res != "":
+            try:
+                data = await res.json()
+                token = data['token']
+            except:
+                return ""
+        await session.close()
+        return token  
+    
+    def __hcUpdateReconnectStToDb(self):
+        self.__logger.info("Update cloud reconnect status to db")
+        print("Update cloud reconnect status to db")
+        self.__cache.SignalrDisconnectCount = 0
+        s =systemConfiguration(isConnect= True, DisconnectTime= None, ReconnectTime= datetime.datetime.now())
+        self.__db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
+        self.__cache.SignalrDisconnectStatusUpdate = False 
+        
+    def __hcUpdateDisconnectStToDb(self):
+        self.__logger.info("Update cloud disconnect status to db")
+        print("Update cloud Disconnect status to db")
+        s =systemConfiguration(isConnect= False, DisconnectTime= self.__cache.DisconnectTime, ReconnectTime= None)
+        self.__db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
+        self.__cache.SignalrDisconnectStatusUpdate = True
+        self.__cache.SignalrDisconnectCount = 0  
+    #-----------------------
+    
+    #------------------Mqtt data handler          
     async def __HcMqttHandlerData(self):
         """ This function handler data received in queue
         """
@@ -128,11 +139,11 @@ class HcController():
 
     def __mqttItemHandler(self, args):
         print(args)
-        dtAdapter = dataAdapter()
-        self.__signalServices.SendMesageToServer(self.__cache.EndUserId, entity="Response", message=args)
-
-        
+    #---------------------------
+    
+    #------------------- Signalr data handler
     async def __HcHandlerSignalRData(self):
+        
         while True:
             await asyncio.sleep(0.1)
             if self.__signalServices.signalrDataQueue.empty() == False:
@@ -143,13 +154,13 @@ class HcController():
         
     def __signalrItemHandler(self, *args):
         switcher = {
-           "Command": self._hcHandlerSignalrCommand
+           "Command": self.__signalrHandlerCommand
         }
         func = switcher.get(args[0][0])
         func(args[0][1])
         return
 
-    def _hcHandlerSignalrCommand(self, data):
+    def __signalrHandlerCommand(self, data):
         try:
             d = json.loads(data)
             try:
@@ -157,8 +168,10 @@ class HcController():
             except:
                 self.__mqttServices.MqttPublish(const.MQTT_PUB_CONTROL_TOPIC, data, const.MQTT_QOS)
         except:
-            pass
+            self.__logger.debug("Data receiver invalid")
         return
+    #------------------------------
+    
     
     async def HcActionNoDb(self):
         task1 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())

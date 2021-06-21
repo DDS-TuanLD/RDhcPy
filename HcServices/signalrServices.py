@@ -63,7 +63,7 @@ class SignalrServices():
                 startSuccess = True
             except Exception as err:
                 self.__logger.error(f"Exception when connect with signalr server: {err}")
-                await asyncio.sleep(5)
+                await asyncio.sleep(2)
             
     def OnReceiveData(self):
         self.__hub.on("Receive", self.__dataPreHandler)
