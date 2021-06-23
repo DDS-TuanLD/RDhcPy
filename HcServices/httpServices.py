@@ -53,7 +53,7 @@ class HttpAsyncServices():
         return newHttpHeader
     
     def CreateNewHttpRequest(
-        self, url: str = None, token: str = "", body_data: dict = {}, header: CaseInsensitiveDict = {}):
+        self, url: str = None, body_data: dict = {}, header: CaseInsensitiveDict = {}):
         """ Create new http request
 
         Args:

@@ -64,7 +64,7 @@ class HcController():
                 await self.__signalServices.StartConnect()
             if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
                 self.__hcUpdateReconnectStToDb()
-            await asyncio.sleep(10)
+            await asyncio.sleep(60)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 self.__hcUpdateDisconnectStToDb()
             if self.__cache.SignalrDisconnectStatusUpdate > 3:
@@ -111,11 +111,11 @@ class HcController():
     def __hcUpdateReconnectStToDb(self):
         self.__logger.info("Update cloud reconnect status to db")
         print("Update cloud reconnect status to db")
-        self.__cache.SignalrDisconnectCount = 0
         s =systemConfiguration(isConnect= True, DisconnectTime= None, ReconnectTime= datetime.datetime.now())
         self.__db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
         self.__cache.SignalrDisconnectStatusUpdate = False 
-        
+        self.__cache.SignalrDisconnectCount = 0
+     
     def __hcUpdateDisconnectStToDb(self):
         self.__logger.info("Update cloud disconnect status to db")
         print("Update cloud Disconnect status to db")
@@ -143,7 +143,6 @@ class HcController():
     
     #------------------- Signalr data handler
     async def __HcHandlerSignalRData(self):
-        
         while True:
             await asyncio.sleep(0.1)
             if self.__signalServices.signalrDataQueue.empty() == False:
