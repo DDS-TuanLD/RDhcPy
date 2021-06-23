@@ -33,19 +33,7 @@ class HcController():
         self.__db = Db()
         self.__cache = HcCache()
         self.__lock = threading.Lock()
-        
-    @property
-    def HcHttpServices(self):
-        return self.__httpServices
-    
-    @property 
-    def HcMqttServices(self):
-        return self.__mqttServices
-    
-    @property
-    def HcSignalrServices(self):
-        return self.__signalServices
-     
+           
     async def __HcUpdateUserdata(self):
        pass
             
@@ -78,10 +66,10 @@ class HcController():
             token = ""
         cookie = f"Token={token}"
         heardBeatUrl = const.SERVER_HOST + const.SIGNSLR_HEARDBEAT_URL
-        header = self.HcHttpServices.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
-        req = self.HcHttpServices.CreateNewHttpRequest(url=heardBeatUrl, header=header)
+        header = self.__httpServices.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
+        req = self.__httpServices.CreateNewHttpRequest(url=heardBeatUrl, header=header)
         session = aiohttp.ClientSession()
-        res = await self.HcHttpServices.UsePostRequest(session, req)
+        res = await self.__httpServices.UsePostRequest(session, req)
         await session.close()
         if res == "":
             return False
@@ -94,10 +82,10 @@ class HcController():
             return ""
         tokenUrl = const.SERVER_HOST + const.TOKEN_URL
         cookie = f"RefreshToken={refreshToken}"
-        header = self.HcHttpServices.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
-        req = self.HcHttpServices.CreateNewHttpRequest(url=tokenUrl, header=header)
+        header = self.__httpServices.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
+        req = self.__httpServices.CreateNewHttpRequest(url=tokenUrl, header=header)
         session = aiohttp.ClientSession()
-        res = await self.HcHttpServices.UsePostRequest(session, req)  
+        res = await self.__httpServices.UsePostRequest(session, req)  
         token = ""
         if res != "":
             try:
@@ -186,16 +174,17 @@ class HcController():
             self.__logger.debug("Data receiver invalid")
         return
     #------------------------------
+
+    async def MqttInit(self):
+        await self.__mqttServices.Init()
     
-    
-    async def HcActionNoDb(self):
+    async def ActionNoDb(self):
         task1 = asyncio.ensure_future(self.__signalServices.Init())
-        task2 = asyncio.ensure_future(self.__mqttServices.Init())
-        tasks = [task1, task2]
+        tasks = [task1]
         await asyncio.gather(*tasks)
         return
 
-    async def HcActionDb(self):
+    async def ActionDb(self):
         task1 = asyncio.ensure_future(self.__HcHandlerSignalRData())
         task2 = asyncio.ensure_future(self.__HcCheckConnectWithCloud())
         task3 = asyncio.ensure_future(self.__HcMqttHandlerData())

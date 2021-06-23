@@ -1,0 +1,63 @@
+2021-06-23 15:20:18,709:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 15:20:23,250:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:00:32,047:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 16:00:34,845:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:00:38,894:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:00:42,942:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:00:46,959:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:00:51,004:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:00:55,039:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:00:59,079:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:01:03,112:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:01:07,142:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:01:11,193:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:01:15,251:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:01:54,093:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 16:01:57,168:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:02:01,198:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:02:05,234:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:02:09,292:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:06:19,290:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 16:06:21,498:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:06:25,516:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:06:29,529:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:06:33,569:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:07:03,700:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:07:03,728:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 16:07:05,704:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:07:05,736:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:07:07,709:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:07:09,715:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:07:09,779:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:07:11,723:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:07:13,750:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:07:13,810:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:07:15,755:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:07:17,771:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:07:17,861:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:07:19,797:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:07:21,813:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:07:21,904:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:09:09,572:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:09:09,595:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-23 16:09:11,580:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:09:11,611:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:09:13,599:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:09:15,610:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:09:15,657:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:09:17,615:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:09:19,619:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:09:19,710:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:09:21,628:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:09:23,634:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:09:23,736:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:09:25,641:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:09:27,653:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:09:27,766:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:09:29,659:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:09:31,668:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:09:31,819:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:09:33,681:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:09:35,694:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-23 16:09:35,846:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-06-23 16:09:37,707:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str

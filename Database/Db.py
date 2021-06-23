@@ -24,7 +24,7 @@ class Db(metaclass= MetaDb):
     __servicesManager: modelServicesManager
     
     def Init(self, dbName: str):
-        self._createTable(dbName)
+        self.__createTable(dbName)
         self.__createContext()
         self.__servicesInit()
        
