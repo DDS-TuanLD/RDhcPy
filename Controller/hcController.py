@@ -140,7 +140,7 @@ class HcController():
     def __mqttItemHandler(self, item):
         try:
             switcher = {
-            const.MQTT_PUB_CONTROL_TOPIC: self.__mqttHandlerHcControl
+                const.MQTT_PUB_CONTROL_TOPIC: self.__mqttHandlerHcControl
             }
             func = switcher.get(item["topic"])
             func(item["msg"])
@@ -149,7 +149,7 @@ class HcController():
         return
     
     def __mqttHandlerHcControl(self, data):
-        print("data receive from mqtt: " + data)
+        pass
     #---------------------------
     
     #------------------- Signalr data handler
@@ -165,7 +165,7 @@ class HcController():
     def __signalrItemHandler(self, *args):
         try:
             switcher = {
-            "Command": self.__signalrHandlerCommand
+                "Command": self.__signalrHandlerCommand
             }
             func = switcher.get(args[0][0])
             func(args[0][1])
@@ -174,7 +174,7 @@ class HcController():
         return
 
     def __signalrHandlerCommand(self, data):
-        print("data receive from cloud: " + data)
+        self.__logger.debug("data receive from cloud: " + data)
         try:
             d = json.loads(data)
             try:
