@@ -6,7 +6,6 @@ from Cache.HcCache import HcCache
 import Constant.constant as const
 from Model.systemConfiguration import systemConfiguration
 from Adapter.dataAdapter import dataAdapter
-from Database.Db import Db
 import datetime
 import logging
 import threading
@@ -27,15 +26,17 @@ def getToken():
         return None
   
 class SignalrServices():
-    __hub=SignalrBuilder.HubConnectionBuilder
-    signalrDataQueue = queue.Queue()
-    __cache = HcCache()
-    __db = Db()
+    __hub: SignalrBuilder.HubConnectionBuilder
+    signalrDataQueue: queue.Queue
+    __cache: HcCache
     __logger: logging.Logger
-    __lock = threading.Lock()
+    __lock: threading.Lock
     
     def __init__(self, log: logging.Logger):
         self.__logger = log
+        self.__cache = HcCache()
+        self.__lock = threading.Lock()
+        self.signalrDataQueue = queue.Queue()
         
     def BuildConnection(self):
         self.__hub = SignalrBuilder.HubConnectionBuilder()\

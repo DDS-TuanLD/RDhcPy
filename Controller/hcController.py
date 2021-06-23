@@ -25,12 +25,12 @@ class HcController():
     __logger: logging.Logger
     __lock: threading.Lock
     
-    def __init__(self, log: logging.Logger, mqttService: MqttServices):   
+    def __init__(self, log: logging.Logger, httpService: HttpServices, mqttService: MqttServices, signalrService: SignalrServices, db: Db):   
         self.__logger = log
-        self.__httpServices = HttpServices(self.__logger)
+        self.__httpServices = httpService
         self.__signalServices = SignalrServices(self.__logger)
         self.__mqttServices = mqttService
-        self.__db = Db()
+        self.__db = db
         self.__cache = HcCache()
         self.__lock = threading.Lock()
            
@@ -52,7 +52,7 @@ class HcController():
                 await self.__signalServices.StartConnect()
             if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
                 self.__hcUpdateReconnectStToDb()
-            await asyncio.sleep(60)
+            await asyncio.sleep(10)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 self.__hcUpdateDisconnectStToDb()
             if self.__cache.SignalrDisconnectStatusUpdate > 3:

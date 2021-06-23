@@ -9,6 +9,8 @@ from logging.handlers import TimedRotatingFileHandler
 import os
 import Constant.constant as const 
 from HcServices.mqttServices import MqttServices, MqttConfig
+from HcServices.httpServices import HttpServices
+from HcServices.signalrServices import SignalrServices
 import socket
 
 d = os.path.dirname(__file__)
@@ -40,9 +42,11 @@ mqttConfig = MqttConfig(
 )
 
 mqttService = MqttServices(logger, mqttConfig) 
-
+httpService = HttpServices(logger)
+signalrService = SignalrServices(logger)
 db = Db()
-hc = HcController(logger, mqttService)
+
+hc = HcController(logger, httpService=httpService, mqttService=mqttService, signalrService=signalrService, db=db)
 
 def hc_db_thread(db: Db, hc: HcController):
     db.Init(const.DB_NAME)

@@ -9,14 +9,14 @@ import Constant.constant as const
 from Table.tableManager import tableManager
 from ModelServices.modelServicesManager import modelServicesManager
 
-class MetaDb(type):
-    _instances = {}
-    def __call__(cls, *args, **kwargs):
-        if cls not in cls._instances:
-            cls._instances[cls] = super(MetaDb, cls).__call__(*args, **kwargs)
-        return cls._instances[cls]
+# class MetaDb(type):
+#     _instances = {}
+#     def __call__(cls, *args, **kwargs):
+#         if cls not in cls._instances:
+#             cls._instances[cls] = super(MetaDb, cls).__call__(*args, **kwargs)
+#         return cls._instances[cls]
     
-class Db(metaclass= MetaDb):
+class Db():
     __metadata = MetaData()
     __engine: create_engine
     __connect: Connection    
