@@ -137,8 +137,19 @@ class HcController():
                     self.__mqttItemHandler(item)
                     self.__mqttServices.mqttDataQueue.task_done()
 
-    def __mqttItemHandler(self, args):
-        print(args)
+    def __mqttItemHandler(self, item):
+        try:
+            switcher = {
+            const.MQTT_PUB_CONTROL_TOPIC: self.__mqttHandlerHcControl
+            }
+            func = switcher.get(item["topic"])
+            func(item["msg"])
+        except:
+            pass
+        return
+    
+    def __mqttHandlerHcControl(self, data):
+        print("data receive from mqtt: " + data)
     #---------------------------
     
     #------------------- Signalr data handler
@@ -152,20 +163,25 @@ class HcController():
                     self.__signalServices.signalrDataQueue.task_done()
         
     def __signalrItemHandler(self, *args):
-        switcher = {
-           "Command": self.__signalrHandlerCommand
-        }
-        func = switcher.get(args[0][0])
-        func(args[0][1])
+        try:
+            switcher = {
+            "Command": self.__signalrHandlerCommand
+            }
+            func = switcher.get(args[0][0])
+            func(args[0][1])
+        except:
+            pass
         return
 
     def __signalrHandlerCommand(self, data):
+        print("data receive from cloud: " + data)
         try:
             d = json.loads(data)
             try:
                 _ = d['TYPE']
             except:
                 self.__mqttServices.MqttPublish(const.MQTT_PUB_CONTROL_TOPIC, data, const.MQTT_QOS)
+                self.__logger.debug("Forward data to cloud")
         except:
             self.__logger.debug("Data receiver invalid")
         return

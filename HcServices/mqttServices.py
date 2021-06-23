@@ -52,13 +52,16 @@ class MqttServices():
             userdata ([type]): [description]
             msg ([type]): [description]
         """
-        item = msg.payload.decode("utf-8")
+        message = msg.payload.decode("utf-8")
+        topic = msg.topic
+        item = {"topic": topic, "msg": message}
         with self.__lock:
             self.mqttDataQueue.put(item)
         return
     
     def __on_connect(self, client, userdata, flags, rc):
             self.__client.subscribe(topic=const.MQTT_SUB_RESPONSE_TOPIC, qos=self.__mqttConfig.qos)
+            self.__client.subscribe(topic=const.MQTT_PUB_CONTROL_TOPIC, qos=self.__mqttConfig.qos)
 
     # def __on_public(self, client, userdata, mid):
     #     return
@@ -76,9 +79,9 @@ class MqttServices():
         self.__client.on_message = self.__on_message
         # self.__client.on_publish = self.__on_public
         self.__client.on_connect = self.__on_connect
-        #self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
+        self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
         try:
-            self.__client.connect_async("broker.mqttdashboard.com", self.__mqttConfig.port)
+            self.__client.connect_async(self.__mqttConfig.host, self.__mqttConfig.port)
             self.__client.reconnect()
             self.__client.loop_start()
             connectSuccess = True

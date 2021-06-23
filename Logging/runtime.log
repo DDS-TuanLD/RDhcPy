@@ -1,1 +1,60 @@
-2021-06-23 08:37:51,486:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 09:20:58,626:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 09:21:07,082:	DEBUG:	hcController.py:__signalrHandlerCommand():170	Forward data to cloud
+2021-06-23 09:21:12,115:	DEBUG:	hcController.py:__signalrHandlerCommand():170	Forward data to cloud
+2021-06-23 09:21:17,147:	DEBUG:	hcController.py:__signalrHandlerCommand():170	Forward data to cloud
+2021-06-23 09:21:22,078:	DEBUG:	hcController.py:__signalrHandlerCommand():170	Forward data to cloud
+2021-06-23 09:21:27,107:	DEBUG:	hcController.py:__signalrHandlerCommand():170	Forward data to cloud
+2021-06-23 09:26:14,791:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 09:26:17,318:	DEBUG:	hcController.py:__signalrHandlerCommand():178	Forward data to cloud
+2021-06-23 09:26:22,349:	DEBUG:	hcController.py:__signalrHandlerCommand():178	Forward data to cloud
+2021-06-23 09:26:27,280:	DEBUG:	hcController.py:__signalrHandlerCommand():178	Forward data to cloud
+2021-06-23 09:28:13,242:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 09:28:17,421:	DEBUG:	hcController.py:__signalrHandlerCommand():180	Forward data to cloud
+2021-06-23 09:28:22,455:	DEBUG:	hcController.py:__signalrHandlerCommand():180	Forward data to cloud
+2021-06-23 09:29:00,533:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 09:29:02,454:	DEBUG:	hcController.py:__signalrHandlerCommand():178	Forward data to cloud
+2021-06-23 09:29:07,486:	DEBUG:	hcController.py:__signalrHandlerCommand():178	Forward data to cloud
+2021-06-23 09:29:31,344:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 09:29:37,503:	DEBUG:	hcController.py:__signalrHandlerCommand():179	Forward data to cloud
+2021-06-23 09:29:42,531:	DEBUG:	hcController.py:__signalrHandlerCommand():179	Forward data to cloud
+2021-06-23 09:29:47,562:	DEBUG:	hcController.py:__signalrHandlerCommand():179	Forward data to cloud
+2021-06-23 09:30:05,734:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 09:30:07,917:	DEBUG:	hcController.py:__signalrHandlerCommand():179	Forward data to cloud
+2021-06-23 09:30:12,546:	DEBUG:	hcController.py:__signalrHandlerCommand():179	Forward data to cloud
+2021-06-23 09:30:17,576:	DEBUG:	hcController.py:__signalrHandlerCommand():179	Forward data to cloud
+2021-06-23 09:30:22,507:	DEBUG:	hcController.py:__signalrHandlerCommand():179	Forward data to cloud
+2021-06-23 09:30:27,536:	DEBUG:	hcController.py:__signalrHandlerCommand():179	Forward data to cloud
+2021-06-23 09:30:58,112:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 09:31:02,609:	DEBUG:	hcController.py:__signalrHandlerCommand():178	Forward data to cloud
+2021-06-23 09:31:07,640:	DEBUG:	hcController.py:__signalrHandlerCommand():178	Forward data to cloud
+2021-06-23 09:31:12,563:	DEBUG:	hcController.py:__signalrHandlerCommand():178	Forward data to cloud
+2021-06-23 09:32:54,502:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 09:32:58,879:	ERROR:	mqttServices.py:MqttConnect():89	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-23 09:33:00,880:	ERROR:	mqttServices.py:MqttConnect():89	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-23 09:33:02,879:	DEBUG:	hcController.py:__signalrHandlerCommand():178	Forward data to cloud
+2021-06-23 09:33:02,883:	ERROR:	mqttServices.py:MqttConnect():89	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-23 09:40:05,208:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 09:40:13,106:	DEBUG:	hcController.py:__signalrHandlerCommand():181	Forward data to cloud
+2021-06-23 09:40:18,139:	DEBUG:	hcController.py:__signalrHandlerCommand():181	Forward data to cloud
+2021-06-23 09:40:23,173:	DEBUG:	hcController.py:__signalrHandlerCommand():181	Forward data to cloud
+2021-06-23 09:40:28,105:	DEBUG:	hcController.py:__signalrHandlerCommand():181	Forward data to cloud
+2021-06-23 09:40:33,137:	DEBUG:	hcController.py:__signalrHandlerCommand():181	Forward data to cloud
+2021-06-23 09:40:38,087:	DEBUG:	hcController.py:__signalrHandlerCommand():181	Forward data to cloud
+2021-06-23 09:40:43,121:	DEBUG:	hcController.py:__signalrHandlerCommand():181	Forward data to cloud
+2021-06-23 09:40:48,052:	DEBUG:	hcController.py:__signalrHandlerCommand():181	Forward data to cloud
+2021-06-23 09:40:53,186:	DEBUG:	hcController.py:__signalrHandlerCommand():181	Forward data to cloud
+2021-06-23 09:44:06,846:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 09:44:08,181:	ERROR:	mqttServices.py:MqttConnect():89	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-23 09:44:10,183:	ERROR:	mqttServices.py:MqttConnect():89	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-23 09:44:12,186:	ERROR:	mqttServices.py:MqttConnect():89	Exception in connect to mqtt: [Errno 111] Connection refused
+2021-06-23 09:44:36,965:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 09:44:43,278:	DEBUG:	hcController.py:__signalrHandlerCommand():181	Forward data to cloud
+2021-06-23 09:44:48,311:	DEBUG:	hcController.py:__signalrHandlerCommand():181	Forward data to cloud
+2021-06-23 09:44:53,343:	DEBUG:	hcController.py:__signalrHandlerCommand():181	Forward data to cloud
+2021-06-23 09:45:07,446:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 09:45:13,311:	DEBUG:	hcController.py:__signalrHandlerCommand():181	Forward data to cloud
+2021-06-23 09:45:18,342:	DEBUG:	hcController.py:__signalrHandlerCommand():181	Forward data to cloud
+2021-06-23 09:46:44,291:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
+2021-06-23 09:46:48,450:	DEBUG:	hcController.py:__signalrHandlerCommand():184	Forward data to cloud
+2021-06-23 09:46:53,581:	DEBUG:	hcController.py:__signalrHandlerCommand():184	Forward data to cloud
+2021-06-23 09:46:58,412:	DEBUG:	hcController.py:__signalrHandlerCommand():184	Forward data to cloud
