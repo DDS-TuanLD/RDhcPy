@@ -1,6 +1,6 @@
 from HcServices.httpServices import HttpServices
 from HcServices.signalrServices import SignalrServices
-from HcServices.mqttServices import MqttServices
+from HcServices.mqttServices import MqttServices, MqttConfig
 import asyncio
 from Database.Db import Db
 import aiohttp
@@ -25,11 +25,11 @@ class HcController():
     __logger: logging.Logger
     __lock: threading.Lock
     
-    def __init__(self, log: logging.Logger):   
+    def __init__(self, log: logging.Logger, mqttService: MqttServices):   
         self.__logger = log
         self.__httpServices = HttpServices(self.__logger)
         self.__signalServices = SignalrServices(self.__logger)
-        self.__mqttServices = MqttServices(self.__logger)
+        self.__mqttServices = mqttService
         self.__db = Db()
         self.__cache = HcCache()
         self.__lock = threading.Lock()
@@ -128,7 +128,7 @@ class HcController():
     def __mqttItemHandler(self, item):
         try:
             switcher = {
-                const.MQTT_PUB_CONTROL_TOPIC: self.__mqttHandlerHcControl
+                const.MQTT_SUB_RESPONSE_TOPIC: self.__mqttHandlerHcControlResponse
             }
             func = switcher.get(item["topic"])
             func(item["msg"])
@@ -136,8 +136,8 @@ class HcController():
             pass
         return
     
-    def __mqttHandlerHcControl(self, data):
-        pass
+    def __mqttHandlerHcControlResponse(self, data):
+        print(data)
     #---------------------------
     
     #------------------- Signalr data handler

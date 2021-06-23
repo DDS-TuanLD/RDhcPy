@@ -8,41 +8,36 @@ import socket
 import logging
 import threading
 class MqttConfig():
-    host = ""
+    host: str
     port: int
     qos: int
     keepalive: int
     username: str
     password: str
-
-    def GetMqttConfig(self):
-        """ Get mqtt server params from env file
-
-        Returns:
-            [MqttConfig]: [Instance of MqttConfig
-            
-        """
-        hostname = socket.gethostname()
-        ip = socket.gethostbyname(hostname)
-        
-        self.host = ip
-        self.port = const.MQTT_PORT
-        self.qos = const.MQTT_QOS
-        self.keepalive = const.MQTT_KEEPALIVE
-        self.username = const.MQTT_USER
-        self.password = const.MQTT_PASS
-        return self
+    
+    def __init__(self, host:str, port: int, qos: int, keepalive: int, username: str, password: str):
+        self.host = host
+        self.port = port
+        self.qos = qos
+        self.keepalive = keepalive
+        self.username = username
+        self.password = password
     
 class MqttServices():
-    __mqttConfig = MqttConfig()
-    __client = mqtt.Client()
-    mqttDataQueue = queue.Queue()
-    __cache = HcCache()
+    __mqttConfig: MqttConfig
+    __client: mqtt.Client
+    mqttDataQueue: queue.Queue
+    __cache: HcCache
     __logger: logging.Logger
-    __lock = threading.Lock()
+    __lock: threading.Lock
     
-    def __init__(self, log: logging.Logger):
+    def __init__(self, log: logging.Logger, mqttConfig: MqttConfig):
         self.__logger = log
+        self.__mqttConfig = mqttConfig
+        self.__client = mqtt.Client()
+        self.mqttDataQueue = queue.Queue()
+        self.__cache = HcCache()
+        self.__lock = threading.Lock()
     
     def __on_message(self, client, userdata, msg):
         """[summary]
@@ -62,9 +57,6 @@ class MqttServices():
     def __on_connect(self, client, userdata, flags, rc):
             self.__client.subscribe(topic=const.MQTT_SUB_RESPONSE_TOPIC, qos=self.__mqttConfig.qos)
 
-    # def __on_public(self, client, userdata, mid):
-    #     return
-   
     async def Connect(self):
         """  Connect to mqtt broker
 
@@ -73,14 +65,11 @@ class MqttServices():
         """
       
         connectSuccess = False
-        
-        self.__mqttConfig.GetMqttConfig()
         self.__client.on_message = self.__on_message
-        # self.__client.on_publish = self.__on_public
         self.__client.on_connect = self.__on_connect
-        self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
+        #self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
         try:
-            self.__client.connect_async(self.__mqttConfig.host, self.__mqttConfig.port)
+            self.__client.connect_async("broker.mqttdashboard.com", self.__mqttConfig.port)
             self.__client.reconnect()
             self.__client.loop_start()
             connectSuccess = True

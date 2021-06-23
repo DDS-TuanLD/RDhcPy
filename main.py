@@ -8,6 +8,8 @@ import logging
 from logging.handlers import TimedRotatingFileHandler
 import os
 import Constant.constant as const 
+from HcServices.mqttServices import MqttServices, MqttConfig
+import socket
 
 d = os.path.dirname(__file__)
 
@@ -25,8 +27,22 @@ loghandler.setFormatter(logfomatter)
 logger.addHandler(loghandler)
 logger.setLevel(logging.DEBUG)
 
+hostname = socket.gethostname()
+ip = socket.gethostbyname(hostname)
+
+mqttConfig = MqttConfig(
+    host = ip,
+    port = const.MQTT_PORT,
+    qos = const.MQTT_QOS,
+    keepalive = const.MQTT_KEEPALIVE,
+    username = const.MQTT_USER,
+    password = const.MQTT_PASS
+)
+
+mqttService = MqttServices(logger, mqttConfig) 
+
 db = Db()
-hc = HcController(logger)
+hc = HcController(logger, mqttService)
 
 def hc_db_thread(db: Db, hc: HcController):
     db.Init(const.DB_NAME)
