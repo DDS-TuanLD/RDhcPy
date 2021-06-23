@@ -66,7 +66,7 @@ class MqttServices():
     # def __on_public(self, client, userdata, mid):
     #     return
    
-    async def MqttConnect(self):
+    async def Connect(self):
         """  Connect to mqtt broker
 
         Returns:
@@ -90,7 +90,7 @@ class MqttServices():
             print(f"Exception in connect to mqtt: {err}")
         return connectSuccess
 
-    def MqttPublish(
+    def Publish(
         self, topic:str, send_data:str, qos: int):
         """ Public data to mqtt server
 
@@ -102,22 +102,22 @@ class MqttServices():
         self.__client.publish(topic, payload=send_data, qos=qos)
         
 
-    def MqttStartLoop(self):
+    def StartLoop(self):
         self.__client.loop_start()
 
-    def MqttStopLoop(self):
+    def StopLoop(self):
         self.__client.loop_stop()
         
-    def MqttDisconnect(self):
+    def Disconnect(self):
         self.__client.disconnect()
         
     # def MqttLoopForever(self):
     #     self.__client.loop_forever()
 
-    async def MqttServicesInit(self):
+    async def ServicesInit(self):
         connectSuccess = False
         while connectSuccess == False:
-            connectSuccess =await self.MqttConnect()
+            connectSuccess =await self.Connect()
             time.sleep(2)
 
         

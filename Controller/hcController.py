@@ -180,7 +180,7 @@ class HcController():
             try:
                 _ = d['TYPE']
             except:
-                self.__mqttServices.MqttPublish(const.MQTT_PUB_CONTROL_TOPIC, data, const.MQTT_QOS)
+                self.__mqttServices.Publish(const.MQTT_PUB_CONTROL_TOPIC, data, const.MQTT_QOS)
                 self.__logger.debug("Forward data to cloud")
         except:
             self.__logger.debug("Data receiver invalid")
@@ -190,7 +190,7 @@ class HcController():
     
     async def HcActionNoDb(self):
         task1 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())
-        task2 = asyncio.ensure_future(self.__mqttServices.MqttServicesInit())
+        task2 = asyncio.ensure_future(self.__mqttServices.ServicesInit())
         tasks = [task1, task2]
         await asyncio.gather(*tasks)
         return
