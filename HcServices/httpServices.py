@@ -37,7 +37,7 @@ class HttpRequest():
     def Url(self, url: str):
         self.__url = url
         return self
-class HttpAsyncServices():
+class HttpServices():
     
     __logger: logging.Logger
     

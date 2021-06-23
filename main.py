@@ -7,6 +7,7 @@ import threading
 import logging
 from logging.handlers import TimedRotatingFileHandler
 import os
+import Constant.constant as const 
 
 d = os.path.dirname(__file__)
 
@@ -28,8 +29,7 @@ db = Db()
 hc = HcController(logger)
 
 def db_thread(db: Db, hc: HcController):
-    db.DbCreateTable()
-    db.DbServicesInit() 
+    db.Init(const.DB_NAME)
     asyncio.run(hc.HcActionDb())
     
 def no_db_thread(hc: HcController):

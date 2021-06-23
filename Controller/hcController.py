@@ -1,4 +1,4 @@
-from HcServices.httpServices import HttpAsyncServices
+from HcServices.httpServices import HttpServices
 from HcServices.signalrServices import SignalrServices
 from HcServices.mqttServices import MqttServices
 import asyncio
@@ -17,7 +17,7 @@ import http
 import json
 
 class HcController():
-    __httpServices: HttpAsyncServices
+    __httpServices: HttpServices
     __signalServices: SignalrServices
     __mqttServices: MqttServices
     __db: Db
@@ -27,7 +27,7 @@ class HcController():
     
     def __init__(self, log: logging.Logger):   
         self.__logger = log
-        self.__httpServices = HttpAsyncServices(self.__logger)
+        self.__httpServices = HttpServices(self.__logger)
         self.__signalServices = SignalrServices(self.__logger)
         self.__mqttServices = MqttServices(self.__logger)
         self.__db = Db()
@@ -112,7 +112,7 @@ class HcController():
         self.__logger.info("Update cloud reconnect status to db")
         print("Update cloud reconnect status to db")
         s =systemConfiguration(isConnect= True, DisconnectTime= None, ReconnectTime= datetime.datetime.now())
-        self.__db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
+        self.__db.Services.SystemConfigurationServices.AddNewSysConfiguration(s)
         self.__cache.SignalrDisconnectStatusUpdate = False 
         self.__cache.SignalrDisconnectCount = 0
      
@@ -120,7 +120,7 @@ class HcController():
         self.__logger.info("Update cloud disconnect status to db")
         print("Update cloud Disconnect status to db")
         s =systemConfiguration(isConnect= False, DisconnectTime= self.__cache.DisconnectTime, ReconnectTime= None)
-        self.__db.DbServices.SystemConfigurationServices.AddNewSysConfiguration(s)
+        self.__db.Services.SystemConfigurationServices.AddNewSysConfiguration(s)
         self.__cache.SignalrDisconnectStatusUpdate = True
         self.__cache.SignalrDisconnectCount = 0  
     #-----------------------
@@ -189,8 +189,8 @@ class HcController():
     
     
     async def HcActionNoDb(self):
-        task1 = asyncio.ensure_future(self.__signalServices.SignalrServicesInit())
-        task2 = asyncio.ensure_future(self.__mqttServices.ServicesInit())
+        task1 = asyncio.ensure_future(self.__signalServices.Init())
+        task2 = asyncio.ensure_future(self.__mqttServices.Init())
         tasks = [task1, task2]
         await asyncio.gather(*tasks)
         return

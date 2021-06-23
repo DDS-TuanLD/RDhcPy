@@ -81,7 +81,7 @@ class SignalrServices():
         except Exception as err:
             self.__logger.error(f"Error when send data to cloud: {err}")
     
-    async def SignalrServicesInit(self):
+    async def Init(self):
         startSuccess = False
         self.BuildConnection()
         await self.StartConnect()
