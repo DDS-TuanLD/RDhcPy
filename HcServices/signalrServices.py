@@ -36,21 +36,17 @@ class SignalrServices():
         self.signalrDataQueue = queue.Queue()
         
     def BuildConnection(self):
-        try:
-            self.__hub = SignalrBuilder.HubConnectionBuilder()\
-            .with_url(const.SERVER_HOST + const.SIGNALR_SERVER_URL, 
-                    options={
-                            "access_token_factory": getToken,
-                            "headers": {
-                            }
-                        }) \
-            .build()
-        except:
-            pass
+        self.__hub = SignalrBuilder.HubConnectionBuilder()\
+        .with_url(const.SERVER_HOST + const.SIGNALR_SERVER_URL, 
+                options={
+                        "access_token_factory": getToken,
+                        "headers": {
+                        }
+                    }) \
+        .build()
         return self
     
     async def StartConnect(self):
-        print("aaaaaaaaaaaaaa")
         startSuccess = False
         while startSuccess == False:
             try:

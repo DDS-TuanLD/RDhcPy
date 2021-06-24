@@ -178,16 +178,12 @@ class HcController():
         return
     #------------------------------
   
-    async def test(self):
-        while True:
-            print("testttttttt")
-            await asyncio.sleep(5)
-    
+
+    #-------------main function
     async def ActionNoDb(self):
         task1 = asyncio.ensure_future(self.__signalServices.Init())
         task2 = asyncio.ensure_future(self.__mqttServices.Init())
-        task3 = asyncio.ensure_future(self.test())
-        tasks = [task1, task2, task3]
+        tasks = [task1, task2]
         await asyncio.gather(*tasks)
         return
 
