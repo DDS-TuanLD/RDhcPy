@@ -1,21 +1,11 @@
 import asyncio
-from sqlalchemy import Column, Integer, String
 from sqlalchemy import create_engine
-from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
-from sqlalchemy.sql import select, Select
-from sqlalchemy import insert
+from sqlalchemy import MetaData
 from sqlalchemy.engine.base import Connection
 import Constant.constant as const
 from Table.tableManager import tableManager
 from ModelServices.modelServicesManager import modelServicesManager
-
-# class MetaDb(type):
-#     _instances = {}
-#     def __call__(cls, *args, **kwargs):
-#         if cls not in cls._instances:
-#             cls._instances[cls] = super(MetaDb, cls).__call__(*args, **kwargs)
-#         return cls._instances[cls]
-    
+  
 class Db():
     __metadata = MetaData()
     __engine: create_engine

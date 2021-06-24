@@ -1,4 +1,3 @@
-import requests
 import Constant.constant as const
 from requests.exceptions import HTTPError
 from requests.structures import CaseInsensitiveDict

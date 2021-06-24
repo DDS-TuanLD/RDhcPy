@@ -54,15 +54,11 @@ def hc_db_thread(db: Db, hc: HcController):
     
 def hc_no_db_thread(hc: HcController):
     asyncio.run(hc.ActionNoDb())
-    
-def hc_mqtt_init_thread(hc: HcController):
-    asyncio.run(hc.MqttInit())
-    
+
 def main():  
     threads = []
     threads.append(threading.Thread(target = hc_db_thread, args=(db, hc,)))
     threads.append(threading.Thread(target = hc_no_db_thread, args=(hc,)))
-    threads.append(threading.Thread(target = hc_mqtt_init_thread, args=(hc,)))
     
     [thread.start() for thread in threads]
     [thread.join() for thread in threads]

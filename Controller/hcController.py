@@ -28,7 +28,7 @@ class HcController():
     def __init__(self, log: logging.Logger, httpService: HttpServices, mqttService: MqttServices, signalrService: SignalrServices, db: Db):   
         self.__logger = log
         self.__httpServices = httpService
-        self.__signalServices = SignalrServices(self.__logger)
+        self.__signalServices = signalrService
         self.__mqttServices = mqttService
         self.__db = db
         self.__cache = HcCache()
@@ -52,7 +52,7 @@ class HcController():
                 await self.__signalServices.StartConnect()
             if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
                 self.__hcUpdateReconnectStToDb()
-            await asyncio.sleep(10)
+            await asyncio.sleep(20)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 self.__hcUpdateDisconnectStToDb()
             if self.__cache.SignalrDisconnectStatusUpdate > 3:
@@ -146,9 +146,12 @@ class HcController():
             await asyncio.sleep(0.1)
             if self.__signalServices.signalrDataQueue.empty() == False:
                 with self.__lock:
-                    item = self.__signalServices.signalrDataQueue.get()
-                    self.__signalrItemHandler(item)
-                    self.__signalServices.signalrDataQueue.task_done()
+                    try:
+                        item = self.__signalServices.signalrDataQueue.get()
+                        self.__signalrItemHandler(item)
+                        self.__signalServices.signalrDataQueue.task_done()
+                    except:
+                        pass
         
     def __signalrItemHandler(self, *args):
         try:
@@ -174,13 +177,17 @@ class HcController():
             self.__logger.debug("Data receiver invalid")
         return
     #------------------------------
-
-    async def MqttInit(self):
-        await self.__mqttServices.Init()
+  
+    async def test(self):
+        while True:
+            print("testttttttt")
+            await asyncio.sleep(5)
     
     async def ActionNoDb(self):
         task1 = asyncio.ensure_future(self.__signalServices.Init())
-        tasks = [task1]
+        task2 = asyncio.ensure_future(self.__mqttServices.Init())
+        task3 = asyncio.ensure_future(self.test())
+        tasks = [task1, task2, task3]
         await asyncio.gather(*tasks)
         return
 

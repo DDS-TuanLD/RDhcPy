@@ -4,9 +4,6 @@ import queue
 import requests
 from Cache.HcCache import HcCache
 import Constant.constant as const
-from Model.systemConfiguration import systemConfiguration
-from Adapter.dataAdapter import dataAdapter
-import datetime
 import logging
 import threading
 
@@ -39,17 +36,21 @@ class SignalrServices():
         self.signalrDataQueue = queue.Queue()
         
     def BuildConnection(self):
-        self.__hub = SignalrBuilder.HubConnectionBuilder()\
-        .with_url(const.SERVER_HOST + const.SIGNALR_SERVER_URL, 
-                options={
-                        "access_token_factory": getToken,
-                        "headers": {
-                        }
-                    }) \
-        .build()
+        try:
+            self.__hub = SignalrBuilder.HubConnectionBuilder()\
+            .with_url(const.SERVER_HOST + const.SIGNALR_SERVER_URL, 
+                    options={
+                            "access_token_factory": getToken,
+                            "headers": {
+                            }
+                        }) \
+            .build()
+        except:
+            pass
         return self
     
     async def StartConnect(self):
+        print("aaaaaaaaaaaaaa")
         startSuccess = False
         while startSuccess == False:
             try:

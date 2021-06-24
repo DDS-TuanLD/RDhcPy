@@ -1,212 +1,44 @@
-2021-06-23 15:20:18,709:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
-2021-06-23 15:20:23,250:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:00:32,047:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
-2021-06-23 16:00:34,845:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:00:38,894:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:00:42,942:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:00:46,959:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:00:51,004:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:00:55,039:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:00:59,079:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:01:03,112:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:01:07,142:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:01:11,193:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:01:15,251:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:01:54,093:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
-2021-06-23 16:01:57,168:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:02:01,198:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:02:05,234:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:02:09,292:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:06:19,290:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
-2021-06-23 16:06:21,498:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:06:25,516:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:06:29,529:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:06:33,569:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:07:03,700:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:07:03,728:	INFO:	hcController.py:__HcCheckConnectWithCloud():55	Hc send heardbeat to cloud
-2021-06-23 16:07:05,704:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:07:05,736:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:07:07,709:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:07:09,715:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:07:09,779:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:07:11,723:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:07:13,750:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:07:13,810:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:07:15,755:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:07:17,771:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:07:17,861:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:07:19,797:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:07:21,813:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:07:21,904:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:09:09,572:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:09:09,595:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
-2021-06-23 16:09:11,580:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:09:11,611:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:09:13,599:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:09:15,610:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:09:15,657:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:09:17,615:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:09:19,619:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:09:19,710:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:09:21,628:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:09:23,634:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:09:23,736:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:09:25,641:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:09:27,653:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:09:27,766:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:09:29,659:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:09:31,668:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:09:31,819:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:09:33,681:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:09:35,694:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:09:35,846:	ERROR:	mqttServices.py:Connect():88	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
-2021-06-23 16:09:37,707:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:45:00,699:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
-2021-06-23 16:46:02,005:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
-2021-06-23 16:46:48,364:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
-2021-06-23 16:50:32,333:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:50:32,336:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:50:32,355:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
-2021-06-23 16:50:34,341:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:50:34,346:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:50:36,344:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:50:36,366:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:50:38,350:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:50:38,378:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:50:40,357:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:50:40,392:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:50:42,366:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:50:42,382:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
-2021-06-23 16:50:42,400:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:50:44,382:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:50:44,414:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:50:46,395:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:50:46,429:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:50:48,403:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:50:48,437:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:50:50,413:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:50:50,448:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:50:52,392:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
-2021-06-23 16:50:52,423:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:50:52,456:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:50:54,432:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:50:54,466:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:50:56,439:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:50:56,475:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:50:58,446:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:50:58,480:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:00,461:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:00,497:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:02,403:	INFO:	hcController.py:__hcUpdateDisconnectStToDb():108	Update cloud disconnect status to db
-2021-06-23 16:51:02,425:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
-2021-06-23 16:51:02,465:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:02,514:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:04,467:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:04,534:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:06,482:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:06,547:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:08,493:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:08,559:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:10,509:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:10,563:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:12,433:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
-2021-06-23 16:51:12,511:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:12,576:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:14,529:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:14,584:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:21,027:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:21,030:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:21,051:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
-2021-06-23 16:51:23,034:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:23,038:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:25,036:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:25,051:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:27,043:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:27,055:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:29,050:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:29,069:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:31,064:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:31,079:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
-2021-06-23 16:51:31,085:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:33,074:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:33,092:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:35,090:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:35,108:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:37,101:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:37,122:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:39,116:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:39,135:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:41,104:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
-2021-06-23 16:51:41,120:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:41,153:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:43,132:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:43,167:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:45,140:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:45,175:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:47,147:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:47,182:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:49,149:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:49,198:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:51,110:	INFO:	hcController.py:__hcUpdateDisconnectStToDb():108	Update cloud disconnect status to db
-2021-06-23 16:51:51,118:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
-2021-06-23 16:51:51,156:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:51,207:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:53,173:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:53,223:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:55,194:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:55,230:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:57,201:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:57,236:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:51:59,208:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:51:59,243:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:52:01,130:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
-2021-06-23 16:52:01,219:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:52:01,253:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:52:44,551:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
-2021-06-23 16:52:44,553:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:52:44,580:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:52:46,569:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:52:46,587:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:52:48,581:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:52:48,609:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:52:50,590:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:52:50,625:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:52:52,596:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:52:52,632:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:52:54,590:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
-2021-06-23 16:52:54,607:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:52:54,641:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:52:56,613:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:52:56,648:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:52:58,620:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:52:58,654:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:53:00,627:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:53:00,662:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:53:02,636:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:53:02,670:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:53:04,588:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
-2021-06-23 16:53:04,650:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:53:04,688:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:53:06,665:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:53:06,699:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:53:08,672:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:53:08,705:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:53:10,681:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:53:10,718:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:53:12,688:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:53:12,722:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:53:14,578:	INFO:	hcController.py:__hcUpdateDisconnectStToDb():108	Update cloud disconnect status to db
-2021-06-23 16:53:14,689:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:53:14,740:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:53:16,693:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:53:16,759:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:53:18,709:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:53:18,775:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:53:20,710:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:53:20,793:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:53:22,715:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:53:22,812:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:53:24,717:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:53:24,818:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
-2021-06-23 16:53:26,719:	ERROR:	mqttServices.py:Connect():77	Exception in connect to mqtt: [Errno 11001] getaddrinfo failed
-2021-06-23 16:53:26,819:	ERROR:	signalrServices.py:StartConnect():58	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-24 08:26:33,957:	INFO:	hcController.py:__hcUpdateDisconnectStToDb():108	Update cloud disconnect status to db
+2021-06-24 08:26:33,981:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 08:26:53,992:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 08:26:54,757:	INFO:	hcController.py:__hcUpdateReconnectStToDb():100	Update cloud reconnect status to db
+2021-06-24 08:26:55,635:	DEBUG:	hcController.py:__signalrHandlerCommand():165	data receive from cloud: {
+    tuan
+}
+2021-06-24 08:26:55,635:	DEBUG:	hcController.py:__signalrHandlerCommand():174	Data receiver invalid
+2021-06-24 08:27:00,757:	DEBUG:	hcController.py:__signalrHandlerCommand():165	data receive from cloud: {
+    tuan
+}
+2021-06-24 08:27:00,757:	DEBUG:	hcController.py:__signalrHandlerCommand():174	Data receiver invalid
+2021-06-24 08:27:05,772:	DEBUG:	hcController.py:__signalrHandlerCommand():165	data receive from cloud: {
+    tuan
+}
+2021-06-24 08:27:05,772:	DEBUG:	hcController.py:__signalrHandlerCommand():174	Data receiver invalid
+2021-06-24 08:27:10,919:	DEBUG:	hcController.py:__signalrHandlerCommand():165	data receive from cloud: {
+    tuan
+}
+2021-06-24 08:27:10,920:	DEBUG:	hcController.py:__signalrHandlerCommand():174	Data receiver invalid
+2021-06-24 08:27:14,789:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 08:27:16,155:	DEBUG:	hcController.py:__signalrHandlerCommand():165	data receive from cloud: {
+    tuan
+}
+2021-06-24 08:27:16,155:	DEBUG:	hcController.py:__signalrHandlerCommand():174	Data receiver invalid
+2021-06-24 08:28:13,551:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 08:28:15,798:	DEBUG:	hcController.py:__signalrHandlerCommand():165	data receive from cloud: {
+    tuan
+}
+2021-06-24 08:28:15,799:	DEBUG:	hcController.py:__signalrHandlerCommand():174	Data receiver invalid
+2021-06-24 08:28:34,962:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 08:28:55,682:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 08:29:16,910:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 08:29:39,037:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 08:30:00,300:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 08:31:37,225:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 08:31:58,633:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 08:32:18,661:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 08:32:38,660:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 08:32:58,676:	INFO:	hcController.py:__hcUpdateDisconnectStToDb():108	Update cloud disconnect status to db
+2021-06-24 08:32:58,694:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 08:32:59,536:	INFO:	hcController.py:__hcUpdateReconnectStToDb():100	Update cloud reconnect status to db
+2021-06-24 08:33:19,551:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 08:33:40,180:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud

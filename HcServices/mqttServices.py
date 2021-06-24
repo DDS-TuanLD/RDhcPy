@@ -2,9 +2,7 @@ import paho.mqtt.client as mqtt
 import asyncio
 import queue
 import Constant.constant as const
-import time
 from Cache.HcCache import HcCache
-import socket
 import logging
 import threading
 class MqttConfig():
@@ -98,15 +96,12 @@ class MqttServices():
         
     def Disconnect(self):
         self.__client.disconnect()
-        
-    # def MqttLoopForever(self):
-    #     self.__client.loop_forever()
 
     async def Init(self):
         connectSuccess = False
         while connectSuccess == False:
             connectSuccess =await self.Connect()
-            time.sleep(2)
+            await asyncio.sleep(2)
 
         
    
