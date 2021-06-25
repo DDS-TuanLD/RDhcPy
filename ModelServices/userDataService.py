@@ -22,3 +22,7 @@ class userDataServices(metaclass=MetaUserDataServices):
         
     def UpdateUserDataById(self, id: int, newUserData: userData):
         self.__userDataRepo.UpdateById(id, newUserData)
+        
+    def FindUserDataById(self, id:int):
+        rel = self.__userDataRepo.FindwithId(id)
+        return rel

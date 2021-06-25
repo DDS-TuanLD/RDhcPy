@@ -54,6 +54,7 @@ class MqttServices():
     
     def __on_connect(self, client, userdata, flags, rc):
             self.__client.subscribe(topic=const.MQTT_SUB_RESPONSE_TOPIC, qos=self.__mqttConfig.qos)
+            self.__client.subscribe(topic=const.MQTT_PUB_CONTROL_TOPIC, qos=self.__mqttConfig.qos)
 
     async def Connect(self):
         """  Connect to mqtt broker

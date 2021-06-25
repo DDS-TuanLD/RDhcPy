@@ -18,3 +18,8 @@ class systemConfigurationServices(metaclass=MetaSystemConfigurationServices):
         
     def AddNewSysConfiguration(self, sysConfig: systemConfiguration):
         self.__systemConfigurationRepo.CreateWithParams(sysConfig)
+        
+    def FindSysConfigurationById(self, id:int):
+        rel = self.__systemConfigurationRepo.FindwithId(id)
+        return rel
+    

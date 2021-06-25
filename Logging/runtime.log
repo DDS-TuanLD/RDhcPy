@@ -75,3 +75,868 @@
 2021-06-24 08:46:37,178:	INFO:	hcController.py:__hcUpdateReconnectStToDb():100	Update cloud reconnect status to db
 2021-06-24 08:46:57,182:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
 2021-06-24 08:47:19,408:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:26:04,691:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:26:26,614:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:26:48,905:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:27:10,788:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:27:33,450:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:27:53,461:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:28:13,471:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:28:33,480:	INFO:	hcController.py:__hcUpdateDisconnectStToDb():108	Update cloud disconnect status to db
+2021-06-24 16:28:33,494:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:28:53,502:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:29:13,512:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:29:33,520:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:29:53,526:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:30:13,535:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:30:33,545:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:30:53,554:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:31:13,558:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:31:33,565:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:31:53,569:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:32:13,573:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:32:33,581:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:32:53,590:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:33:13,598:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:33:33,608:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:33:53,618:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:34:13,628:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:34:33,639:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:34:53,646:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:35:13,649:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:35:33,658:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:35:53,668:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:36:13,676:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:36:33,685:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:36:53,691:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:37:13,700:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:37:33,710:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:37:53,720:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:38:13,729:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:38:33,739:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:38:53,748:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:39:13,757:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:39:33,770:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:39:53,778:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:40:13,787:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:40:33,797:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:40:53,807:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:41:13,813:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:41:33,823:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:41:53,833:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:42:13,842:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:42:33,851:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:42:53,861:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:43:13,870:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:43:33,880:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:43:53,888:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:44:13,894:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:44:33,904:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:44:53,914:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:45:13,923:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:45:33,931:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:45:53,939:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:46:13,948:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:46:33,952:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:46:53,960:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:47:13,971:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:47:33,979:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:47:53,987:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:48:13,997:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:48:34,006:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:48:54,018:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:49:14,028:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:49:34,037:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:49:54,047:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:50:14,055:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:50:34,063:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:50:54,073:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:51:14,081:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:51:34,088:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:51:54,097:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:52:14,106:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:52:34,111:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:52:54,120:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:53:14,401:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-24 16:53:34,855:	INFO:	hcController.py:__HcCheckConnectWithCloud():43	Hc send heardbeat to cloud
+2021-06-25 10:45:55,644:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:45:56,202:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:45:58,639:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:01,606:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:04,265:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:06,740:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:09,110:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:11,440:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:13,798:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:16,282:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:16,433:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:46:18,721:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:21,165:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:23,934:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:26,615:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:29,054:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:31,703:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:36,412:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:37,275:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:46:40,569:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:45,531:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:48,535:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:53,018:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:46:57,820:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:47:00,910:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:47:02,453:	INFO:	hcController.py:__hcUpdateDisconnectStToDb():109	Update cloud disconnect status to db
+2021-06-25 10:47:02,469:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:48:09,099:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:48:09,632:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:48:12,081:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:48:12,126:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():175	mqtt data receiver invalid
+2021-06-25 10:48:14,542:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:48:16,899:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:48:19,505:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:48:22,265:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:48:24,833:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:48:27,278:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:48:29,712:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:48:29,825:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:50:06,292:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:50:06,930:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:50:09,014:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():179	mqtt data receiver invalid
+2021-06-25 10:50:09,609:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:50:12,056:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:50:14,510:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:51:02,365:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:51:02,775:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:51:16,404:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:51:19,018:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:51:21,374:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:51:22,145:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():177	mqtt data receiver invalid
+2021-06-25 10:51:23,760:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:51:24,864:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():177	mqtt data receiver invalid
+2021-06-25 10:51:26,278:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:54:24,431:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:54:24,911:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:54:27,141:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:54:27,656:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():179	mqtt data receiver invalid
+2021-06-25 10:54:29,493:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:54:31,872:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:54:33,397:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():179	mqtt data receiver invalid
+2021-06-25 10:54:34,227:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:54:35,408:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():179	mqtt data receiver invalid
+2021-06-25 10:54:35,711:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():179	mqtt data receiver invalid
+2021-06-25 10:54:35,913:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():179	mqtt data receiver invalid
+2021-06-25 10:54:36,582:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:54:38,805:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:54:41,190:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:54:54,911:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:54:55,428:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:54:57,880:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:55:00,235:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:55:01,177:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():180	mqtt data receiver invalid
+2021-06-25 10:55:01,583:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():180	mqtt data receiver invalid
+2021-06-25 10:55:02,443:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:56:04,492:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:56:07,495:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:56:11,789:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:56:15,456:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:56:25,888:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:56:26,534:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:56:28,739:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:56:31,057:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:56:31,529:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():176	mqtt data receiver invalid
+2021-06-25 10:56:33,348:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:56:35,761:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:56:38,219:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:56:40,925:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:56:43,377:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:56:45,899:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:56:46,753:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:56:48,256:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:56:50,557:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:56:53,066:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:56:55,632:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:56:58,191:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:00,910:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:03,410:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:05,885:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:07,742:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:57:09,249:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:11,606:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:13,831:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:16,419:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:18,800:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:21,232:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:25,650:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:57:25,993:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:27,668:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():176	mqtt data receiver invalid
+2021-06-25 10:57:28,507:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:30,865:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:33,442:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:35,775:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:38,241:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:40,692:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:43,257:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:45,740:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:46,463:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:57:47,956:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:50,520:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:52,993:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:55,278:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:57,562:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:57:59,989:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:58:03,210:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:58:03,940:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:58:06,327:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:58:07,155:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():175	mqtt data receiver invalid
+2021-06-25 10:58:08,667:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():175	mqtt data receiver invalid
+2021-06-25 10:58:08,852:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:58:11,206:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:58:13,669:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:58:36,386:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:58:36,909:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:58:38,603:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:39,267:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:58:40,516:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:41,827:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:58:42,832:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:44,142:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:44,390:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:58:44,444:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:44,545:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:44,647:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:44,849:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:44,951:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:45,052:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:45,455:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:45,657:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:45,759:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:45,961:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:46,163:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:46,264:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:46,466:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:46,668:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:46,753:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:58:47,072:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:47,777:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:58:49,425:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:59:07,362:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:59:07,944:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:59:09,782:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:59:10,439:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:59:11,494:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:59:12,977:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:59:14,013:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:59:14,114:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:59:14,215:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:59:14,317:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:59:14,418:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:59:14,519:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:59:14,722:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:59:14,823:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:59:14,924:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:59:15,158:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():173	mqtt data receiver invalid
+2021-06-25 10:59:15,227:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:59:43,220:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 10:59:43,866:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:59:47,292:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:59:48,355:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():174	mqtt data receiver invalid
+2021-06-25 10:59:49,537:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:59:49,868:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():174	mqtt data receiver invalid
+2021-06-25 10:59:50,775:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():174	mqtt data receiver invalid
+2021-06-25 10:59:50,876:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():174	mqtt data receiver invalid
+2021-06-25 10:59:51,280:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():174	mqtt data receiver invalid
+2021-06-25 10:59:51,382:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():174	mqtt data receiver invalid
+2021-06-25 10:59:51,483:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():174	mqtt data receiver invalid
+2021-06-25 10:59:51,584:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():174	mqtt data receiver invalid
+2021-06-25 10:59:51,685:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():174	mqtt data receiver invalid
+2021-06-25 10:59:51,886:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():174	mqtt data receiver invalid
+2021-06-25 10:59:51,890:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 10:59:51,987:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():174	mqtt data receiver invalid
+2021-06-25 10:59:52,088:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():174	mqtt data receiver invalid
+2021-06-25 10:59:52,392:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():174	mqtt data receiver invalid
+2021-06-25 10:59:52,493:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():174	mqtt data receiver invalid
+2021-06-25 10:59:52,695:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():174	mqtt data receiver invalid
+2021-06-25 10:59:53,199:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():174	mqtt data receiver invalid
+2021-06-25 10:59:53,300:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():174	mqtt data receiver invalid
+2021-06-25 10:59:53,402:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():174	mqtt data receiver invalid
+2021-06-25 10:59:54,259:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:01:54,105:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:01:56,307:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:01:58,562:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:02:00,773:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:02:03,024:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:02:05,211:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:02:55,396:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:03:29,098:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:03:44,349:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:04:48,094:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:04:50,355:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:05:01,626:	INFO:	hcController.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-06-25 11:05:01,939:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:05:04,203:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:05:19,870:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:05:26,960:	INFO:	hcController.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-06-25 11:05:27,286:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:05:58,628:	INFO:	hcController.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-06-25 11:05:59,003:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:06:38,489:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:06:40,759:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:06:53,537:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:07:15,600:	INFO:	hcController.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud
+2021-06-25 11:07:15,906:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:07:18,158:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:07:42,156:	INFO:	hcController.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-06-25 11:07:42,452:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:07:44,691:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:08:00,559:	INFO:	hcController.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-06-25 11:08:00,889:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:09:39,817:	INFO:	hcController.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-06-25 11:09:40,160:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:13:22,020:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 11:15:54,966:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 11:15:55,286:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:19:05,782:	INFO:	hcController.py:__HcCheckConnectWithCloud():48	Hc send heardbeat to cloud
+2021-06-25 11:19:06,191:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:19:08,389:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:19:10,612:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:19:12,847:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:19:15,099:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:19:17,299:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:19:19,495:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:19:42,348:	INFO:	hcController.py:__HcCheckConnectWithCloud():49	Hc send heardbeat to cloud
+2021-06-25 11:19:42,651:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:19:44,849:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:19:47,050:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:22:18,026:	INFO:	hcController.py:__HcCheckConnectWithCloud():49	Hc send heardbeat to cloud
+2021-06-25 11:22:18,350:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:22:20,817:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:22:45,880:	INFO:	hcController.py:__HcCheckConnectWithCloud():49	Hc send heardbeat to cloud
+2021-06-25 11:22:46,233:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:22:48,597:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:22:51,056:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:22:53,514:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:22:57,056:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:22:59,401:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:23:01,672:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:23:03,944:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:23:06,112:	INFO:	hcController.py:__HcCheckConnectWithCloud():49	Hc send heardbeat to cloud
+2021-06-25 11:23:06,229:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:23:08,429:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:23:49,758:	INFO:	hcController.py:__HcCheckConnectWithCloud():49	Hc send heardbeat to cloud
+2021-06-25 11:23:50,345:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:23:52,683:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-25 11:23:52,698:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:23:55,158:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:23:57,725:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:24:00,280:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:24:02,736:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:24:05,399:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:24:22,950:	INFO:	hcController.py:__HcCheckConnectWithCloud():49	Hc send heardbeat to cloud
+2021-06-25 11:24:23,424:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:24:25,071:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-25 11:24:25,882:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:24:28,235:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:24:30,694:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:24:33,149:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:24:35,610:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:26:11,701:	INFO:	hcController.py:__HcCheckConnectWithCloud():49	Hc send heardbeat to cloud
+2021-06-25 11:26:12,071:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:26:13,317:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-25 11:26:14,556:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:26:33,495:	INFO:	hcController.py:__HcCheckConnectWithCloud():49	Hc send heardbeat to cloud
+2021-06-25 11:26:33,984:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:26:36,440:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:26:38,341:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-25 11:26:38,898:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:26:41,289:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:26:43,711:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:27:17,608:	INFO:	hcController.py:__HcCheckConnectWithCloud():49	Hc send heardbeat to cloud
+2021-06-25 11:27:18,123:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:27:19,932:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():179	mqtt data receiver invalid
+2021-06-25 11:27:20,581:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:27:22,932:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:27:51,449:	INFO:	hcController.py:__HcCheckConnectWithCloud():49	Hc send heardbeat to cloud
+2021-06-25 11:27:52,117:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:27:54,580:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:27:55,582:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():179	mqtt data receiver invalid
+2021-06-25 11:27:57,781:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:28:39,879:	INFO:	hcController.py:__HcCheckConnectWithCloud():49	Hc send heardbeat to cloud
+2021-06-25 11:28:40,655:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:28:44,662:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:28:58,391:	INFO:	hcController.py:__HcCheckConnectWithCloud():49	Hc send heardbeat to cloud
+2021-06-25 11:28:59,140:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:29:08,731:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:29:11,068:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:29:15,470:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:29:17,941:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:29:19,138:	INFO:	hcController.py:__HcCheckConnectWithCloud():49	Hc send heardbeat to cloud
+2021-06-25 11:29:20,387:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:29:22,722:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:29:50,021:	INFO:	hcController.py:__HcCheckConnectWithCloud():49	Hc send heardbeat to cloud
+2021-06-25 11:29:50,595:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:29:53,053:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:29:57,563:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:47:46,483:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 11:47:56,483:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:48:06,491:	ERROR:	mqttServices.py:Connect():76	Exception in connect to mqtt: [Errno -3] Temporary failure in name resolution
+2021-06-25 11:48:16,496:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 11:48:16,498:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:48:39,101:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 11:48:49,103:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:48:59,109:	ERROR:	mqttServices.py:Connect():76	Exception in connect to mqtt: [Errno -3] Temporary failure in name resolution
+2021-06-25 11:49:19,805:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 11:49:34,190:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 11:50:16,375:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 11:50:35,163:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 11:56:51,602:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:57:06,965:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 11:57:07,914:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:57:09,550:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:57:23,824:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 11:57:24,219:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:57:24,761:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:57:56,254:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 11:57:56,693:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 11:58:17,545:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:32:18,904:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:32:19,520:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:32:33,615:	ERROR:	hcController.py:__mqttHandlerHcControlResponse():156	mqtt data receiver invalid
+2021-06-25 12:32:41,830:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:33:09,171:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:33:31,565:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:33:39,281:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:33:41,528:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:36:33,980:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:36:34,639:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:36:36,036:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:36:36,910:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:36:38,497:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:36:39,690:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:36:41,157:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:36:42,176:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:36:43,818:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:36:44,549:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:36:46,275:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:36:47,092:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:36:49,204:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:36:49,470:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:36:56,412:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:36:56,414:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:36:59,152:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:36:59,175:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:01,608:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:01,612:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:04,247:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:04,254:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:06,586:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:06,587:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:08,971:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:08,994:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:11,202:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:11,260:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:13,647:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:13,649:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:16,390:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:16,391:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:19,404:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:19,406:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:22,245:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:22,257:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:24,581:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:24,583:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:37:58,867:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:38:00,433:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:38:01,435:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:40:41,464:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:40:57,170:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:40:57,754:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:40:59,385:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:40:59,995:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:41:01,818:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:41:02,288:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:41:04,544:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:41:05,155:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:41:17,117:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:41:17,777:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:41:30,196:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:41:34,442:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:41:43,658:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:41:48,962:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:42:05,131:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:42:17,996:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:42:30,557:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:42:30,903:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:42:43,466:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:42:56,469:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:43:08,858:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:43:14,942:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:43:21,642:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:43:34,218:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:43:46,953:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:43:49,393:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:44:48,225:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:44:52,299:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:44:52,932:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:44:54,592:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:44:55,282:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:44:57,339:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:44:57,490:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:44:59,541:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:44:59,647:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:02,143:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:02,143:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:05,137:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:05,141:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:07,853:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:07,856:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:11,118:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:11,120:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:13,692:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:13,694:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:16,458:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:16,460:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:18,812:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:18,823:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:21,612:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:21,613:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:26,457:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:26,463:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:28,752:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:28,762:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:31,607:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:31,610:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:34,276:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:34,277:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:36,587:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:36,593:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:39,408:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:39,596:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:41,717:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:41,753:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:45,132:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:45,134:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:48,496:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:48,499:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:50,932:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:50,934:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:53,731:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:53,899:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:56,105:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:56,165:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:58,736:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:45:58,755:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:46:01,719:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:46:01,919:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:46:04,031:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:46:04,137:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:46:06,275:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:46:06,424:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:16,808:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:47:17,092:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:18,408:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:19,565:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:20,599:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:21,891:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:23,529:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:24,080:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:25,788:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:26,485:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:28,109:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:28,674:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:30,682:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:31,211:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:33,222:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:33,679:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:35,479:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:35,925:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:37,669:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:38,173:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:40,074:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:41,041:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:42,477:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:43,705:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:44,650:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:45,923:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:47,136:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:48,152:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:50,244:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:50,571:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:52,675:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:53,321:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:55,324:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:57,344:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:57,519:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:59,602:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:47:59,720:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:48:02,066:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:48:02,070:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:48:04,404:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:48:04,405:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:48:07,261:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:48:07,273:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:48:30,542:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:48:53,067:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:50:30,170:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:50:30,450:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:50:51,880:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:50:52,288:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:50:53,072:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:50:54,599:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:50:55,498:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:51:29,070:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:51:40,063:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:51:58,317:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:52:10,978:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:52:12,170:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:52:26,310:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:52:38,608:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:52:52,975:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:52:53,010:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:04,077:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:06,333:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:06,343:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:08,598:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:08,605:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:11,188:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:11,190:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:13,696:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:13,697:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:16,150:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:16,153:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:18,733:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:18,740:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:21,210:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:21,214:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:23,996:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:24,017:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:27,208:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:27,209:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:29,522:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:29,528:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:32,536:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:32,739:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:34,991:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:35,105:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:37,243:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:37,330:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:39,907:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:39,910:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:42,421:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:42,423:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:45,029:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:45,032:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:47,404:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:47,407:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:49,587:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:49,602:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:52,196:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:52,198:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:54,761:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:54,767:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:57,347:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:57,347:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:59,569:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:53:59,827:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:02,232:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:02,433:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:04,895:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:04,897:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:07,358:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:07,359:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:09,690:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:09,694:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:12,270:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:12,271:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:15,052:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:15,053:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:17,289:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:17,295:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:19,745:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:19,842:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:22,167:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:22,168:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:24,578:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:24,579:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:27,094:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:27,096:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:29,469:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:29,471:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:32,136:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:32,137:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:34,748:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:34,750:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:37,410:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:37,413:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:39,622:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:39,625:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:42,122:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:42,124:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:44,987:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:44,989:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:47,666:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:47,669:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:50,011:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:50,057:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:52,464:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:52,577:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:54,831:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:54,889:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:57,248:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:57,252:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:59,505:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:54:59,516:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:02,284:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:02,393:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:04,649:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:04,743:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:06,899:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:06,988:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:09,348:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:09,560:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:11,664:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:11,813:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:14,272:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:14,275:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:16,729:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:16,731:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:19,107:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:19,110:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:21,460:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:21,463:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:23,716:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:23,723:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:28,409:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:28,418:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:30,580:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:30,596:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:32,970:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:32,988:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:35,200:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:35,265:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:37,494:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:37,568:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:39,847:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:40,034:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:42,060:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:42,227:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:44,245:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:44,845:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:46,834:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:47,638:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:49,248:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:49,951:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:51,966:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:52,311:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:54,269:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:54,709:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:56,680:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:55:57,026:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:08,425:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 12:56:08,786:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:09,553:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:10,975:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:11,934:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:13,561:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:14,486:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:16,122:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:17,098:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:19,728:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:19,839:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:23,295:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:23,305:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:27,142:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:28,748:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:29,614:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:31,248:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:31,826:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:33,459:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:34,054:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:35,886:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:36,597:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:38,444:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:39,264:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:40,886:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:41,927:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:43,157:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:44,119:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:45,534:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:46,635:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:47,970:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:49,135:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:50,265:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:51,610:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:53,625:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:54,226:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:55,954:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:56,639:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:58,423:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:56:58,898:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:00,911:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:01,345:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:03,613:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:03,616:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:06,298:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:06,301:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:09,132:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:09,134:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:11,592:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:11,595:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:13,862:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:13,864:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:16,152:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:16,223:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:18,731:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:18,733:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:21,087:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:21,095:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:23,588:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:23,591:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:25,918:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:25,919:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:28,287:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:28,287:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:30,496:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:30,499:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:32,834:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:33,098:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:35,136:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:35,278:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:38,020:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:38,022:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:40,271:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:40,277:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:43,151:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:43,153:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:45,824:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:45,825:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:52,891:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:52,908:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:55,325:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 12:57:55,328:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:19:51,202:	INFO:	hcController.py:__HcCheckConnectWithCloud():44	Hc send heardbeat to cloud
+2021-06-25 13:19:51,674:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:19:52,065:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:19:54,121:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:19:54,400:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:19:56,777:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:19:56,876:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:19:58,983:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:19:59,088:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:20:01,259:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:20:01,343:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:20:03,450:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:20:03,535:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:20:05,704:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:20:05,707:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:20:07,215:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():146	mqtt data receive from topic HC.CONTROL: {
+  "CMD":"HC_CONNECT_TO_CLOUD",
+  "DATA":{
+    "END_USER_PROFILE_ID":10103,
+    "REFRESH_TOKEN":"WBPjP32y6fuSCvJCXlCbvVEWLdSdMwuMIQwIDh0MgUiqpbFEse0kVWPr1T9CChTerHDDn5sMBvWh4ug="
+  }
+}
+2021-06-25 13:20:07,710:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:20:07,714:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:20:09,721:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:20:09,722:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:20:11,727:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-25 13:20:11,730:	ERROR:	signalrServices.py:StartConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str

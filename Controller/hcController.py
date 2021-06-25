@@ -10,6 +10,7 @@ import Constant.constant as const
 import datetime
 from Model.systemConfiguration import systemConfiguration
 import time
+from Model.userData import userData
 from Adapter.dataAdapter import dataAdapter
 import logging
 import threading
@@ -41,7 +42,6 @@ class HcController():
     async def __HcCheckConnectWithCloud(self):
         while True:  
             self.__logger.info("Hc send heardbeat to cloud")
-            print("Hc send heardbeat to cloud")
             if self.__cache.DisconnectTime == None:
                 self.__cache.DisconnectTime = datetime.datetime.now()
             ok = await self.__hcSendHttpRequestToHeardbeatUrl()
@@ -52,7 +52,7 @@ class HcController():
                 await self.__signalServices.StartConnect()
             if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
                 self.__hcUpdateReconnectStToDb()
-            await asyncio.sleep(20)
+            await asyncio.sleep(60)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 self.__hcUpdateDisconnectStToDb()
             if self.__cache.SignalrDisconnectStatusUpdate > 3:
@@ -128,7 +128,9 @@ class HcController():
     def __mqttItemHandler(self, item):
         try:
             switcher = {
-                const.MQTT_SUB_RESPONSE_TOPIC: self.__mqttHandlerHcControlResponse
+                const.MQTT_SUB_RESPONSE_TOPIC: self.__mqttHandlerHcControlResponse,
+                const.MQTT_PUB_CONTROL_TOPIC: self.__mqttHandlerTopicHcControl
+
             }
             func = switcher.get(item["topic"])
             func(item["msg"])
@@ -137,7 +139,43 @@ class HcController():
         return
     
     def __mqttHandlerHcControlResponse(self, data):
-        print(data)
+        self.__logger.debug("mqtt data receive from topic HC.CONTROL.RESPONSE: " + data)
+        pass
+    
+    def __mqttHandlerTopicHcControl(self, data):
+        self.__logger.debug("mqtt data receive from topic HC.CONTROL: " + data)
+        try:
+            dt = json.loads(data)
+            try:
+                cmd = dt["CMD"]
+                data = dt["DATA"]
+                switcher = {
+                    "HC_CONNECT_TO_CLOUD": self.__mqttHandlerCmdConnectToCloud
+                }
+                func = switcher.get(cmd)
+                func(data)
+            except:
+                self.__logger.error("mqtt data receiver invalid")
+        except:
+            self.__logger.error("mqtt data receiver invalid")
+            
+    def __mqttHandlerCmdConnectToCloud(self, data):
+        try:
+            endUserProfileId = data["END_USER_PROFILE_ID"]
+            refreshToken = data["REFRESH_TOKEN"]
+            self.__cache.EndUserId = endUserProfileId
+            self.__cache.RefreshToken = refreshToken
+            userDt = userData(refreshToken=refreshToken, endUserProfileId=str(endUserProfileId))
+            rel = self.__db.Services.UserdataServices.FindUserDataById(id = 1)
+            dt = rel.fetchall()
+            if len(dt) != 0:
+                self.__db.Services.UserdataServices.UpdateUserDataById(id = 1, newUserData=userDt)
+            if len(dt) == 0:
+                self.__db.Services.UserdataServices.AddNewUserData(newUserData=userDt)
+           
+        except:
+            self.__logger.error("mqtt data receiver invalid")
+
     #---------------------------
     
     #------------------- Signalr data handler
@@ -154,6 +192,7 @@ class HcController():
                         pass
         
     def __signalrItemHandler(self, *args):
+        self.__logger.debug(f"handler receive signal data in {args[0][0]} is {args[0][1]}")
         try:
             switcher = {
                 "Command": self.__signalrHandlerCommand
@@ -165,7 +204,7 @@ class HcController():
         return
 
     def __signalrHandlerCommand(self, data):
-        self.__logger.debug("data receive from cloud: " + data)
+        self.__logger.debug("handler data receive from cloud: " + data)
         try:
             d = json.loads(data)
             try:
@@ -178,6 +217,15 @@ class HcController():
         return
     #------------------------------
   
+    #-----------load userdata from db
+    def __HcLoadUserData(self):
+        userData = self.__db.Services.UserdataServices.FindUserDataById(id=1)
+        dt = userData.fetchall()
+        if len(dt) != 0:
+            self.__cache.EndUserId = dt[0]["EndUserProfileId"]
+            self.__cache.RefreshToken = dt[0]["RefreshToken"]
+    #-------------------------------
+    
 
     #-------------main function
     async def ActionNoDb(self):
@@ -188,10 +236,10 @@ class HcController():
         return
 
     async def ActionDb(self):
+        self.__HcLoadUserData()
         task1 = asyncio.ensure_future(self.__HcHandlerSignalRData())
         task2 = asyncio.ensure_future(self.__HcCheckConnectWithCloud())
-        task3 = asyncio.ensure_future(self.__HcMqttHandlerData())
-        
+        task3 = asyncio.ensure_future(self.__HcMqttHandlerData())     
         tasks = [task1, task2, task3]
         await asyncio.gather(*tasks)
         return

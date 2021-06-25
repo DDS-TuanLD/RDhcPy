@@ -55,7 +55,7 @@ def hc_db_thread(db: Db, hc: HcController):
 def hc_no_db_thread(hc: HcController):
     asyncio.run(hc.ActionNoDb())
 
-def main():  
+def main():      
     threads = []
     threads.append(threading.Thread(target = hc_db_thread, args=(db, hc,)))
     threads.append(threading.Thread(target = hc_no_db_thread, args=(hc,)))
