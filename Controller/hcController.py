@@ -163,7 +163,7 @@ class HcController():
         try:
             endUserProfileId = data["END_USER_PROFILE_ID"]
             refreshToken = data["REFRESH_TOKEN"]
-            self.__cache.EndUserId = endUserProfileId
+            self.__cache.EndUserId = str(endUserProfileId)
             self.__cache.RefreshToken = refreshToken
             userDt = userData(refreshToken=refreshToken, endUserProfileId=str(endUserProfileId))
             rel = self.__db.Services.UserdataServices.FindUserDataById(id = 1)
