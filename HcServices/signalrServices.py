@@ -17,7 +17,6 @@ def getToken():
         response = requests.post(renew_token, json=None, headers=headers).json()
         token = response['token']
         headers['Cookie'] = "Token={token}".format(token=token)
-      
         return token
     except Exception as e:
         return None
@@ -54,7 +53,7 @@ class SignalrServices():
                 startSuccess = True
             except Exception as err:
                 self.__logger.error(f"Exception when connect with signalr server: {err}")
-                await asyncio.sleep(2)
+                await asyncio.sleep(5)
             
     def OnReceiveData(self):
         self.__hub.on("Receive", self.__dataPreHandler)
@@ -80,6 +79,8 @@ class SignalrServices():
             self.__logger.error(f"Error when send data to cloud: {err}")
     
     async def Init(self):
+        while self.__cache.RefreshToken == "":
+            await asyncio.sleep(1)
         startSuccess = False
         self.BuildConnection()
         await self.StartConnect()

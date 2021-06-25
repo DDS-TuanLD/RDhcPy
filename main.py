@@ -9,8 +9,6 @@ from logging.handlers import TimedRotatingFileHandler
 import os
 import Constant.constant as const 
 from HcServices.mqttServices import MqttServices, MqttConfig
-from HcServices.httpServices import HttpServices
-from HcServices.signalrServices import SignalrServices
 import socket
 
 d = os.path.dirname(__file__)
@@ -29,27 +27,12 @@ loghandler.setFormatter(logfomatter)
 logger.addHandler(loghandler)
 logger.setLevel(logging.DEBUG)
 
-hostname = socket.gethostname()
-ip = socket.gethostbyname(hostname)
-
-mqttConfig = MqttConfig(
-    host = ip,
-    port = const.MQTT_PORT,
-    qos = const.MQTT_QOS,
-    keepalive = const.MQTT_KEEPALIVE,
-    username = const.MQTT_USER,
-    password = const.MQTT_PASS
-)
-
-mqttService = MqttServices(logger, mqttConfig) 
-httpService = HttpServices(logger)
-signalrService = SignalrServices(logger)
 db = Db()
-
-hc = HcController(logger, httpService=httpService, mqttService=mqttService, signalrService=signalrService, db=db)
+hc = HcController(logger)
 
 def hc_db_thread(db: Db, hc: HcController):
-    db.Init(const.DB_NAME)
+    db.CreateTable()
+    db.ServicesInit()
     asyncio.run(hc.ActionDb())
     
 def hc_no_db_thread(hc: HcController):

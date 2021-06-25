@@ -26,12 +26,12 @@ class HcController():
     __logger: logging.Logger
     __lock: threading.Lock
     
-    def __init__(self, log: logging.Logger, httpService: HttpServices, mqttService: MqttServices, signalrService: SignalrServices, db: Db):   
+    def __init__(self, log: logging.Logger):
         self.__logger = log
-        self.__httpServices = httpService
-        self.__signalServices = signalrService
-        self.__mqttServices = mqttService
-        self.__db = db
+        self.__httpServices = HttpServices(self.__logger)
+        self.__signalServices = SignalrServices(self.__logger)
+        self.__mqttServices = MqttServices(self.__logger)
+        self.__db = Db()
         self.__cache = HcCache()
         self.__lock = threading.Lock()
            
@@ -41,6 +41,7 @@ class HcController():
     #-----------------Ping cloud
     async def __HcCheckConnectWithCloud(self):
         while True:  
+            print("Hc send heardbeat to cloud")
             self.__logger.info("Hc send heardbeat to cloud")
             if self.__cache.DisconnectTime == None:
                 self.__cache.DisconnectTime = datetime.datetime.now()
@@ -52,7 +53,7 @@ class HcController():
                 await self.__signalServices.StartConnect()
             if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
                 self.__hcUpdateReconnectStToDb()
-            await asyncio.sleep(60)
+            await asyncio.sleep(12)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 self.__hcUpdateDisconnectStToDb()
             if self.__cache.SignalrDisconnectStatusUpdate > 3:
@@ -130,7 +131,6 @@ class HcController():
             switcher = {
                 const.MQTT_SUB_RESPONSE_TOPIC: self.__mqttHandlerHcControlResponse,
                 const.MQTT_PUB_CONTROL_TOPIC: self.__mqttHandlerTopicHcControl
-
             }
             func = switcher.get(item["topic"])
             func(item["msg"])
@@ -152,7 +152,7 @@ class HcController():
                 switcher = {
                     "HC_CONNECT_TO_CLOUD": self.__mqttHandlerCmdConnectToCloud
                 }
-                func = switcher.get(cmd)
+                func = switcher.get("HC_CONNECT_TO_CLOUD")
                 func(data)
             except:
                 self.__logger.error("mqtt data receiver invalid")
@@ -224,6 +224,7 @@ class HcController():
         if len(dt) != 0:
             self.__cache.EndUserId = dt[0]["EndUserProfileId"]
             self.__cache.RefreshToken = dt[0]["RefreshToken"]
+        
     #-------------------------------
     
 
