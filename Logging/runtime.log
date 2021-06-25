@@ -179,3 +179,116 @@
 2021-06-25 21:55:09,954:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
 2021-06-25 21:55:21,957:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
 2021-06-25 21:55:33,961:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:45:21,227:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:45:33,233:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:45:45,246:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:45:57,257:	INFO:	hcController.py:__hcUpdateDisconnectStToDb():109	Update cloud disconnect status to db
+2021-06-25 23:45:57,265:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:46:09,275:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:46:21,285:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:46:33,294:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:46:45,366:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:46:57,376:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:47:09,380:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:47:10,564:	INFO:	hcController.py:__hcUpdateReconnectStToDb():101	Update cloud reconnect status to db
+2021-06-25 23:47:22,577:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:47:35,169:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:47:48,341:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:48:00,351:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:48:12,360:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:48:24,367:	INFO:	hcController.py:__hcUpdateDisconnectStToDb():109	Update cloud disconnect status to db
+2021-06-25 23:48:24,418:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:48:36,422:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:48:48,433:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:49:00,444:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:49:12,454:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:49:24,465:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:49:36,474:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:49:48,484:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:50:00,495:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:50:12,506:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:50:24,516:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:50:36,525:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:50:36,867:	INFO:	hcController.py:__hcUpdateReconnectStToDb():101	Update cloud reconnect status to db
+2021-06-25 23:50:48,874:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:51:01,495:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:51:14,818:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:51:37,152:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:51:49,162:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:52:01,172:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:52:13,181:	INFO:	hcController.py:__hcUpdateDisconnectStToDb():109	Update cloud disconnect status to db
+2021-06-25 23:52:13,194:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:52:25,200:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:52:37,210:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:52:49,219:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:53:01,224:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:53:13,236:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:53:25,246:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:53:37,256:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:53:49,269:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:54:37,858:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:54:50,648:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:55:03,165:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:55:15,728:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:55:28,241:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:55:43,254:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:55:55,264:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:56:07,273:	INFO:	hcController.py:__hcUpdateDisconnectStToDb():110	Update cloud disconnect status to db
+2021-06-25 23:56:07,325:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:56:19,333:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:56:31,343:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:56:43,349:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:56:43,685:	INFO:	hcController.py:__hcUpdateReconnectStToDb():102	Update cloud reconnect status to db
+2021-06-25 23:56:55,690:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:57:08,123:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:57:20,647:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:57:35,658:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:57:47,668:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:57:59,675:	INFO:	hcController.py:__hcUpdateDisconnectStToDb():110	Update cloud disconnect status to db
+2021-06-25 23:57:59,725:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:58:11,730:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:58:23,740:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:58:35,751:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:58:47,760:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:58:59,770:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:59:11,779:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:59:23,784:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-25 23:59:25,155:	INFO:	hcController.py:__hcUpdateReconnectStToDb():102	Update cloud reconnect status to db
+2021-06-26 00:01:16,964:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:01:34,885:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:02:00,510:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:02:26,008:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:02:52,792:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:03:20,802:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:03:45,810:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:04:10,819:	INFO:	hcController.py:__hcUpdateDisconnectStToDb():110	Update cloud disconnect status to db
+2021-06-26 00:04:10,872:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:04:35,885:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:05:00,895:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:05:25,904:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:05:50,912:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:06:15,921:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:06:40,929:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:07:05,938:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:07:30,948:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:07:55,956:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:07:57,007:	INFO:	hcController.py:__hcUpdateReconnectStToDb():102	Update cloud reconnect status to db
+2021-06-26 00:08:22,060:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:09:25,531:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:09:45,702:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:10:11,468:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:10:13,456:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:10:39,280:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:11:10,141:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:11:35,796:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:12:01,235:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:12:29,249:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:12:54,258:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:13:19,268:	INFO:	hcController.py:__hcUpdateDisconnectStToDb():110	Update cloud disconnect status to db
+2021-06-26 00:13:19,275:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:13:44,279:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:14:09,292:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:14:34,301:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:14:37,846:	INFO:	hcController.py:__hcUpdateReconnectStToDb():102	Update cloud reconnect status to db
+2021-06-26 00:15:02,853:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-26 00:15:28,439:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud

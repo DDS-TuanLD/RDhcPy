@@ -47,13 +47,14 @@ class HcController():
                 self.__cache.DisconnectTime = datetime.datetime.now()
             ok = await self.__hcSendHttpRequestToHeardbeatUrl()
             if ok == False:
-                self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1    
+                self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1  
+                await self.__signalServices.Disconnect()  
             if ok == True:
                 self.__cache.DisconnectTime = None
                 await self.__signalServices.StartConnect()
             if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
                 self.__hcUpdateReconnectStToDb()
-            await asyncio.sleep(12)
+            await asyncio.sleep(25)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 self.__hcUpdateDisconnectStToDb()
             if self.__cache.SignalrDisconnectStatusUpdate > 3:
@@ -230,9 +231,9 @@ class HcController():
 
     #-------------main function
     async def ActionNoDb(self):
-        task1 = asyncio.ensure_future(self.__signalServices.Init())
+        self.__signalServices.BuildConnection()
         task2 = asyncio.ensure_future(self.__mqttServices.Init())
-        tasks = [task1, task2]
+        tasks = [task2]
         await asyncio.gather(*tasks)
         return
 

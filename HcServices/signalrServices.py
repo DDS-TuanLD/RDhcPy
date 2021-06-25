@@ -54,6 +54,13 @@ class SignalrServices():
             except Exception as err:
                 self.__logger.error(f"Exception when connect with signalr server: {err}")
                 await asyncio.sleep(5)
+                
+    def Startconnect(self):
+        try:
+            self.__hub.start()
+            startSuccess = True
+        except Exception as err:
+            self.__logger.error(f"Exception when connect with signalr server: {err}")
             
     def OnReceiveData(self):
         self.__hub.on("Receive", self.__dataPreHandler)
@@ -63,7 +70,20 @@ class SignalrServices():
             self.signalrDataQueue.put(data)
         
     def DisConnectWithServer(self):
-        self.__hub.stop()
+        try:
+            self.__hub.stop()
+        except:
+            pass
+        
+    async def Disconnect(self):
+        startSuccess = False
+        while startSuccess == False:
+            try:
+                self.__hub.stop()
+                startSuccess = True
+            except Exception as err:
+                self.__logger.error(f"Exception when disconnect with signalr server: {err}")
+                await asyncio.sleep(5)
 
     def SendMesageToServer(
         self, endUserProfileId: str = "", entity: str="", message: str=""):
@@ -77,13 +97,5 @@ class SignalrServices():
             self.__hub.send("Send", [endUserProfileId, entity , message])
         except Exception as err:
             self.__logger.error(f"Error when send data to cloud: {err}")
-    
-    async def Init(self):
-        while self.__cache.RefreshToken == "":
-            await asyncio.sleep(1)
-        startSuccess = False
-        self.BuildConnection()
-        await self.StartConnect()
-        self.OnReceiveData()
-
+       
    
