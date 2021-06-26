@@ -48,10 +48,10 @@ class HcController():
             ok = await self.__hcSendHttpRequestToHeardbeatUrl()
             if ok == False:
                 self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1  
-                await self.__signalServices.Disconnect()  
+                self.__signalServices.DisConnect()  
             if ok == True:
                 self.__cache.DisconnectTime = None
-                await self.__signalServices.StartConnect()
+                self.__signalServices.StartConnect()
             if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
                 self.__hcUpdateReconnectStToDb()
             await asyncio.sleep(25)

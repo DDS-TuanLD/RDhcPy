@@ -45,7 +45,7 @@ class SignalrServices():
         .build()
         return self
     
-    async def StartConnect(self):
+    async def Startconnect(self):
         startSuccess = False
         while startSuccess == False:
             try:
@@ -55,10 +55,9 @@ class SignalrServices():
                 self.__logger.error(f"Exception when connect with signalr server: {err}")
                 await asyncio.sleep(5)
                 
-    def Startconnect(self):
+    def StartConnect(self):
         try:
             self.__hub.start()
-            startSuccess = True
         except Exception as err:
             self.__logger.error(f"Exception when connect with signalr server: {err}")
             
@@ -69,11 +68,12 @@ class SignalrServices():
         with self.__lock:
             self.signalrDataQueue.put(data)
         
-    def DisConnectWithServer(self):
+    def DisConnect(self):
         try:
             self.__hub.stop()
-        except:
-            pass
+        except Exception as err:
+            self.__logger.error(f"Exception when disconnect with signalr server: {err}")
+
         
     async def Disconnect(self):
         startSuccess = False
