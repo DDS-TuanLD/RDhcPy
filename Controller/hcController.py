@@ -124,10 +124,10 @@ class HcController():
             if self.__mqttServices.mqttDataQueue.empty() == False:
                 with self.__lock:
                     item = self.__mqttServices.mqttDataQueue.get()
-                    self.__mqttItemHandler(item)
+                    self.__hcMqttItemHandler(item)
                     self.__mqttServices.mqttDataQueue.task_done()
 
-    def __mqttItemHandler(self, item):
+    def __hcMqttItemHandler(self, item):
         try:
             switcher = {
                 const.MQTT_SUB_RESPONSE_TOPIC: self.__mqttHandlerHcControlResponse,
@@ -139,7 +139,7 @@ class HcController():
             pass
         return
     
-    def __mqttHandlerHcControlResponse(self, data):
+    def __mqttHandlerTopicHcControlResponse(self, data):
         self.__logger.debug("mqtt data receive from topic HC.CONTROL.RESPONSE: " + data)
         pass
     
@@ -151,7 +151,7 @@ class HcController():
                 cmd = dt["CMD"]
                 data = dt["DATA"]
                 switcher = {
-                    "HC_CONNECT_TO_CLOUD": self.__mqttHandlerCmdConnectToCloud
+                    "HC_CONNECT_TO_CLOUD": self.__mqttHandlerCmdHcConnectToCloud
                 }
                 func = switcher.get("HC_CONNECT_TO_CLOUD")
                 func(data)
@@ -160,7 +160,7 @@ class HcController():
         except:
             self.__logger.error("mqtt data receiver invalid")
             
-    def __mqttHandlerCmdConnectToCloud(self, data):
+    def __mqttHandlerCmdHcConnectToCloud(self, data):
         try:
             endUserProfileId = data["END_USER_PROFILE_ID"]
             refreshToken = data["REFRESH_TOKEN"]
@@ -231,9 +231,10 @@ class HcController():
 
     #-------------main function
     async def ActionNoDb(self):
-        self.__signalServices.BuildConnection()
+        # self.__signalServices.BuildConnection()
+        task1 = asyncio.ensure_future(self.__signalServices.Init())
         task2 = asyncio.ensure_future(self.__mqttServices.Init())
-        tasks = [task2]
+        tasks = [task1, task2]
         await asyncio.gather(*tasks)
         return
 

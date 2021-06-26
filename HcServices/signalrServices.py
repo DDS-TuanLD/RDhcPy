@@ -45,7 +45,7 @@ class SignalrServices():
         .build()
         return self
     
-    async def Startconnect(self):
+    async def __startConnect(self):
         startSuccess = False
         while startSuccess == False:
             try:
@@ -74,17 +74,6 @@ class SignalrServices():
         except Exception as err:
             self.__logger.error(f"Exception when disconnect with signalr server: {err}")
 
-        
-    async def Disconnect(self):
-        startSuccess = False
-        while startSuccess == False:
-            try:
-                self.__hub.stop()
-                startSuccess = True
-            except Exception as err:
-                self.__logger.error(f"Exception when disconnect with signalr server: {err}")
-                await asyncio.sleep(5)
-
     def SendMesageToServer(
         self, endUserProfileId: str = "", entity: str="", message: str=""):
         """ This is function support send data to server
@@ -98,4 +87,9 @@ class SignalrServices():
         except Exception as err:
             self.__logger.error(f"Error when send data to cloud: {err}")
        
-   
+    async def Init(self):
+        self.BuildConnection();
+        while self.__cache.RefreshToken == "":
+            await asyncio.sleep(1)
+        await self.__startConnect()
+            
