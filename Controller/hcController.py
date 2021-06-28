@@ -139,7 +139,7 @@ class HcController():
             pass
         return
     
-    def __mqttHandlerTopicHcControlResponse(self, data):
+    def __mqttHandlerHcControlResponse(self, data):
         self.__logger.debug("mqtt data receive from topic HC.CONTROL.RESPONSE: " + data)
         pass
     
@@ -151,7 +151,7 @@ class HcController():
                 cmd = dt["CMD"]
                 data = dt["DATA"]
                 switcher = {
-                    "HC_CONNECT_TO_CLOUD": self.__mqttHandlerCmdHcConnectToCloud
+                    "HC_CONNECT_TO_CLOUD": self.__mqttHandlerCmdConnectToCloud
                 }
                 func = switcher.get("HC_CONNECT_TO_CLOUD")
                 func(data)
@@ -160,7 +160,7 @@ class HcController():
         except:
             self.__logger.error("mqtt data receiver invalid")
             
-    def __mqttHandlerCmdHcConnectToCloud(self, data):
+    def __mqttHandlerCmdConnectToCloud(self, data):
         try:
             endUserProfileId = data["END_USER_PROFILE_ID"]
             refreshToken = data["REFRESH_TOKEN"]
@@ -193,7 +193,7 @@ class HcController():
                         pass
         
     def __signalrItemHandler(self, *args):
-        self.__logger.debug(f"handler receive signal data in {args[0][0]} is {args[0][1]}")
+        print(f"handler receive signal data in {args[0][0]} is {args[0][1]}")
         try:
             switcher = {
                 "Command": self.__signalrHandlerCommand
@@ -205,7 +205,6 @@ class HcController():
         return
 
     def __signalrHandlerCommand(self, data):
-        self.__logger.debug("handler data receive from cloud: " + data)
         try:
             d = json.loads(data)
             try:
@@ -231,7 +230,6 @@ class HcController():
 
     #-------------main function
     async def ActionNoDb(self):
-        # self.__signalServices.BuildConnection()
         task1 = asyncio.ensure_future(self.__signalServices.Init())
         task2 = asyncio.ensure_future(self.__mqttServices.Init())
         tasks = [task1, task2]

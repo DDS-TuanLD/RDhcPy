@@ -18,7 +18,6 @@ class MqttConfig():
         
         hostname = socket.gethostname()
         ip = socket.gethostbyname(hostname)
-        
         self.host = ip
         self.port = const.MQTT_PORT
         self.qos = const.MQTT_QOS

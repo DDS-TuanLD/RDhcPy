@@ -1,0 +1,177 @@
+2021-06-28 15:55:52,879:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 15:56:18,805:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 15:56:44,900:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 15:57:11,621:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 15:57:37,107:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 15:58:02,586:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 15:59:51,367:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 15:59:51,778:	ERROR:	signalrServices.py:StartConnect():62	Exception when connect with signalr server: 'SignalrServices' object has no attribute '_SignalrServices__hub'
+2021-06-28 16:00:16,779:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:00:16,931:	ERROR:	signalrServices.py:StartConnect():62	Exception when connect with signalr server: 'SignalrServices' object has no attribute '_SignalrServices__hub'
+2021-06-28 16:01:10,757:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:01:16,147:	DEBUG:	hcController.py:__signalrItemHandler():196	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:01:16,147:	DEBUG:	hcController.py:__signalrHandlerCommand():208	handler data receive from cloud: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:01:16,147:	DEBUG:	hcController.py:__signalrHandlerCommand():216	Forward data to cloud
+2021-06-28 16:01:21,067:	DEBUG:	hcController.py:__signalrItemHandler():196	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:01:21,067:	DEBUG:	hcController.py:__signalrHandlerCommand():208	handler data receive from cloud: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:01:21,067:	DEBUG:	hcController.py:__signalrHandlerCommand():216	Forward data to cloud
+2021-06-28 16:01:26,087:	DEBUG:	hcController.py:__signalrItemHandler():196	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:01:26,087:	DEBUG:	hcController.py:__signalrHandlerCommand():208	handler data receive from cloud: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:01:26,087:	DEBUG:	hcController.py:__signalrHandlerCommand():216	Forward data to cloud
+2021-06-28 16:01:31,105:	DEBUG:	hcController.py:__signalrItemHandler():196	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:01:31,105:	DEBUG:	hcController.py:__signalrHandlerCommand():208	handler data receive from cloud: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:01:31,105:	DEBUG:	hcController.py:__signalrHandlerCommand():216	Forward data to cloud
+2021-06-28 16:03:16,607:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:03:42,190:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:05:38,819:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:06:05,755:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:06:31,480:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:06:58,041:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:07:23,695:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:07:28,749:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:07:49,930:	DEBUG:	hcController.py:__signalrHandlerCommand():207	handler data receive from cloud: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:07:49,930:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 16:07:54,246:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:07:55,269:	DEBUG:	hcController.py:__signalrHandlerCommand():207	handler data receive from cloud: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:07:55,269:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 16:08:00,387:	DEBUG:	hcController.py:__signalrHandlerCommand():207	handler data receive from cloud: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:08:00,388:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 16:08:30,834:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:08:37,753:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:09:03,460:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:09:22,461:	DEBUG:	hcController.py:__signalrHandlerCommand():207	handler data receive from cloud: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:09:22,461:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 16:09:29,880:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:09:55,577:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:10:23,583:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:10:48,587:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:10:50,164:	DEBUG:	hcController.py:__signalrHandlerCommand():207	handler data receive from cloud: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:10:50,165:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 16:24:03,079:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:24:06,367:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: { "CMD":"HC_CONNECT_TO_CLOUD", "DATA":{ "END_USER_PROFILE_ID":10103,"REFRESH_TOKEN":"OGj2Lo8elXRxCiOit9i2lmZlHlOqA5KCoQ8NEAkmcU94F8zMFmpED3SQzd7OJDOvkJd0yWBPjP32y6fuSCvJCXlCbvWVrktDWe67YvMcjHnZCzOR1mu3+c6lKNGHWvfvtDLJTpWZQIyWYqx/+l3agx0ULYckAvV5K3gKfgVNem/JOP57IVEWLdSdMwuMIQwIDh0MgUiqpbFEse0kVWPr1T9CChTerHDDn5sMBvWh4ug="}}
+2021-06-28 16:24:08,997:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: { "CMD":"HC_CONNECT_TO_CLOUD", "DATA":{ "END_USER_PROFILE_ID":10103,"REFRESH_TOKEN":"OGj2Lo8elXRxCiOit9i2lmZlHlOqA5KCoQ8NEAkmcU94F8zMFmpED3SQzd7OJDOvkJd0yWBPjP32y6fuSCvJCXlCbvWVrktDWe67YvMcjHnZCzOR1mu3+c6lKNGHWvfvtDLJTpWZQIyWYqx/+l3agx0ULYckAvV5K3gKfgVNem/JOP57IVEWLdSdMwuMIQwIDh0MgUiqpbFEse0kVWPr1T9CChTerHDDn5sMBvWh4ug="}}
+2021-06-28 16:24:30,362:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 16:24:46,163:	DEBUG:	hcController.py:__signalrItemHandler():196	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:24:46,164:	DEBUG:	hcController.py:__signalrHandlerCommand():208	handler data receive from cloud: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:24:46,164:	DEBUG:	hcController.py:__signalrHandlerCommand():215	Forward data to cloud
+2021-06-28 16:24:46,264:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:24:46,265:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 16:24:51,383:	DEBUG:	hcController.py:__signalrItemHandler():196	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:24:51,383:	DEBUG:	hcController.py:__signalrHandlerCommand():208	handler data receive from cloud: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:24:51,383:	DEBUG:	hcController.py:__signalrHandlerCommand():215	Forward data to cloud
+2021-06-28 16:24:51,484:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-06-28 16:24:51,485:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid

@@ -54,6 +54,8 @@ class SignalrServices():
             except Exception as err:
                 self.__logger.error(f"Exception when connect with signalr server: {err}")
                 await asyncio.sleep(5)
+        self.OnReceiveData()
+
                 
     def StartConnect(self):
         try:
@@ -65,6 +67,7 @@ class SignalrServices():
         self.__hub.on("Receive", self.__dataPreHandler)
     
     def __dataPreHandler(self, data):
+        print(f"add data receive from sinalr to queue {data}")
         with self.__lock:
             self.signalrDataQueue.put(data)
         
@@ -83,7 +86,7 @@ class SignalrServices():
             mess (str, optional): [string need to send]. Defaults to "".
         """
         try:
-            self.__hub.send("Send", [endUserProfileId, entity , message])
+            self.__hub.send("Send", endUserProfileId, entity , message)
         except Exception as err:
             self.__logger.error(f"Error when send data to cloud: {err}")
        
