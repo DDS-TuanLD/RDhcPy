@@ -175,3 +175,151 @@
     }
 }
 2021-06-28 16:24:51,485:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:10:50,354:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:11:16,004:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:11:41,538:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:12:06,790:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:12:32,928:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:13:17,979:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:13:19,010:	ERROR:	signalrServices.py:StartConnect():64	Exception when connect with signalr server: 404
+2021-06-28 17:13:19,090:	ERROR:	signalrServices.py:__startConnect():55	Exception when connect with signalr server: 404
+2021-06-28 17:13:24,429:	ERROR:	signalrServices.py:__startConnect():55	Exception when connect with signalr server: 404
+2021-06-28 17:13:30,017:	ERROR:	signalrServices.py:__startConnect():55	Exception when connect with signalr server: 404
+2021-06-28 17:13:51,759:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:14:17,354:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:14:42,563:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:15:08,128:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:15:08,229:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-06-28 17:15:08,229:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:15:10,744:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:15:10,846:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-06-28 17:15:10,846:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:15:12,503:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:15:39,239:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:16:06,289:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:16:31,992:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:18:21,517:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:18:47,975:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:19:10,678:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:19:36,577:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:20:03,244:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:20:26,540:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:20:26,641:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-06-28 17:20:26,642:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:20:29,603:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:20:55,073:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:20:55,429:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:20:55,926:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-06-28 17:20:55,928:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:21:20,926:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:21:47,015:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:22:12,299:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:22:37,769:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:23:03,653:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:23:29,403:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:23:55,854:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:24:21,434:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:24:48,312:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:25:14,306:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:25:39,970:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:26:05,898:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:26:12,884:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:26:12,986:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-06-28 17:26:12,986:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:26:31,742:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:26:57,738:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:27:05,992:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:27:06,093:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-06-28 17:27:06,093:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:27:09,616:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:27:09,717:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-06-28 17:27:09,717:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:27:10,019:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:27:10,120:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-06-28 17:27:10,120:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:27:14,870:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:27:14,971:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-06-28 17:27:14,971:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:27:15,375:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:27:15,476:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-06-28 17:27:15,477:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:27:20,009:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:27:20,110:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-06-28 17:27:20,110:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:27:20,916:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:27:21,018:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-06-28 17:27:21,018:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:27:23,640:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:27:29,851:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:27:29,952:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-06-28 17:27:29,953:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:27:30,963:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:27:30,965:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-06-28 17:27:30,965:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:27:34,601:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:27:34,602:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-06-28 17:27:34,603:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:27:35,207:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:27:35,308:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-06-28 17:27:35,309:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:27:49,961:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:27:49,963:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"DEVICE","DATA":{"DEVICE_ID":"","DEVICE_UNICAST_ID":65535,"PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-06-28 17:27:49,963:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:27:50,825:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:27:52,345:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:27:52,447:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"DEVICE","DATA":{"DEVICE_ID":"","DEVICE_UNICAST_ID":65535,"PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-06-28 17:27:52,448:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:27:53,756:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:27:53,857:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"DEVICE","DATA":{"DEVICE_ID":"","DEVICE_UNICAST_ID":65535,"PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-06-28 17:27:53,857:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:28:16,337:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:28:43,016:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:28:58,871:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:28:58,972:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-06-28 17:28:58,972:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:29:09,878:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:29:17,092:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:29:17,193:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-06-28 17:29:17,194:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:29:20,314:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:29:20,416:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-06-28 17:29:20,416:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:29:23,739:	DEBUG:	hcController.py:__signalrHandlerCommand():214	Forward data to cloud
+2021-06-28 17:29:23,840:	DEBUG:	hcController.py:__mqttHandlerTopicHcControl():147	mqtt data receive from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"334b9e33-5408-4f66-8aac-93c2aaf67954","PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-06-28 17:29:23,841:	ERROR:	hcController.py:__mqttHandlerCmdConnectToCloud():178	mqtt data receiver invalid
+2021-06-28 17:29:38,870:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:30:05,748:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:30:31,538:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:30:57,706:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:31:23,316:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:31:49,565:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:32:14,979:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:32:41,999:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:33:08,937:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:33:36,867:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:34:03,512:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:34:29,171:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:34:55,285:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:35:27,333:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:35:53,854:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:36:20,063:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:36:46,641:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:39:25,101:	ERROR:	signalrServices.py:StartConnect():64	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-06-28 17:39:50,102:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:41:26,330:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:41:54,008:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:42:40,023:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:43:15,782:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:43:47,779:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:44:22,429:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:45:25,095:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:45:52,433:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:46:21,310:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:46:48,463:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:47:15,981:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:47:48,544:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:48:15,874:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:48:45,887:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:49:19,939:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:49:50,574:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-06-28 17:50:16,682:	INFO:	hcController.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud

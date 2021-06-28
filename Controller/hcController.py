@@ -193,7 +193,7 @@ class HcController():
                         pass
         
     def __signalrItemHandler(self, *args):
-        print(f"handler receive signal data in {args[0][0]} is {args[0][1]}")
+        self.__logger.debug(f"handler receive signal data in {args[0][0]} is {args[0][1]}")
         try:
             switcher = {
                 "Command": self.__signalrHandlerCommand
