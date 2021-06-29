@@ -38,7 +38,7 @@ class HcController():
     async def __HcUpdateUserdata(self):
        pass
             
-    #-----------------Ping cloud
+    #-----------------Ping cloud----------------------------------------------------------------------
     async def __HcCheckConnectWithCloud(self):
         while True:  
             print("Hc send heardbeat to cloud")
@@ -113,9 +113,9 @@ class HcController():
         self.__db.Services.SystemConfigurationServices.AddNewSysConfiguration(s)
         self.__cache.SignalrDisconnectStatusUpdate = True
         self.__cache.SignalrDisconnectCount = 0  
-    #-----------------------
+    #--------------------------------------------------------------------------------------
     
-    #------------------Mqtt data handler          
+    #------------------Mqtt data handler---------------------------------------------------         
     async def __HcMqttHandlerData(self):
         """ This function handler data received in queue
         """
@@ -145,6 +145,7 @@ class HcController():
     
     def __mqttHandlerTopicHcControl(self, data):
         self.__logger.debug("mqtt data receive from topic HC.CONTROL: " + data)
+        print("mqtt data receive from topic HC.CONTROL: " + data)
         try:
             dt = json.loads(data)
             try:
@@ -176,10 +177,9 @@ class HcController():
            
         except:
             self.__logger.error("mqtt data receiver invalid")
-
-    #---------------------------
+    #------------------------------------------------------------------------------------------------
     
-    #------------------- Signalr data handler
+    #------------------- Signalr data handler--------------------------------------------------------
     async def __HcHandlerSignalRData(self):
         while True:
             await asyncio.sleep(0.1)
@@ -194,6 +194,7 @@ class HcController():
         
     def __signalrItemHandler(self, *args):
         self.__logger.debug(f"handler receive signal data in {args[0][0]} is {args[0][1]}")
+        print(f"handler receive signal data in {args[0][0]} is {args[0][1]}")
         try:
             switcher = {
                 "Command": self.__signalrHandlerCommand
@@ -211,24 +212,24 @@ class HcController():
                 _ = d['TYPE']
             except:
                 self.__mqttServices.Publish(const.MQTT_PUB_CONTROL_TOPIC, data, const.MQTT_QOS)
-                self.__logger.debug("Forward data to cloud")
+                self.__logger.debug("Forward data to mqtt")
+                print(f"Forward data to mqtt: {data}")
         except:
             self.__logger.debug("Data receiver invalid")
         return
-    #------------------------------
+    #------------------------------------------------------------------------------------------
   
-    #-----------load userdata from db
+    #-----------load userdata from db----------------------------------------------------------
     def __HcLoadUserData(self):
         userData = self.__db.Services.UserdataServices.FindUserDataById(id=1)
         dt = userData.fetchall()
         if len(dt) != 0:
             self.__cache.EndUserId = dt[0]["EndUserProfileId"]
-            self.__cache.RefreshToken = dt[0]["RefreshToken"]
-        
-    #-------------------------------
+            self.__cache.RefreshToken = dt[0]["RefreshToken"]      
+    #------------------------------------------------------------------------------------------
     
 
-    #-------------main function
+    #-------------main function----------------------------------------------------------------
     async def ActionNoDb(self):
         task1 = asyncio.ensure_future(self.__signalServices.Init())
         task2 = asyncio.ensure_future(self.__mqttServices.Init())
