@@ -2,10 +2,12 @@ import paho.mqtt.client as mqtt
 import asyncio
 import queue
 import Constant.constant as const
-from Cache.HcCache import HcCache
+from Cache.Cache import Cache
 import logging
 import threading
 import socket
+from Contracts.Itransport import Itransport
+
 class MqttConfig():
     host: str
     port: int
@@ -14,8 +16,7 @@ class MqttConfig():
     username: str
     password: str
     
-    def __init__(self):
-        
+    def __init__(self): 
         hostname = socket.gethostname()
         ip = socket.gethostbyname(hostname)
         self.host = ip
@@ -25,11 +26,11 @@ class MqttConfig():
         self.username = const.MQTT_USER
         self.password = const.MQTT_PASS
     
-class MqttServices():
+class Mqtt(Itransport):
     __mqttConfig: MqttConfig
     __client: mqtt.Client
     mqttDataQueue: queue.Queue
-    __cache: HcCache
+    __cache: Cache
     __logger: logging.Logger
     __lock: threading.Lock
     
@@ -38,7 +39,7 @@ class MqttServices():
         self.__mqttConfig = MqttConfig()
         self.__client = mqtt.Client()
         self.mqttDataQueue = queue.Queue()
-        self.__cache = HcCache()
+        self.__cache = Cache()
         self.__lock = threading.Lock()
     
     def __on_message(self, client, userdata, msg):
@@ -60,7 +61,7 @@ class MqttServices():
             self.__client.subscribe(topic=const.MQTT_SUB_RESPONSE_TOPIC, qos=self.__mqttConfig.qos)
             self.__client.subscribe(topic=const.MQTT_PUB_CONTROL_TOPIC, qos=self.__mqttConfig.qos)
 
-    async def Connect(self):
+    async def _connect(self):
         """  Connect to mqtt broker
 
         Returns:
@@ -81,7 +82,7 @@ class MqttServices():
             print(f"Exception in connect to mqtt: {err}")
         return connectSuccess
 
-    def Publish(
+    def Send(
         self, topic:str, send_data:str, qos: int):
         """ Public data to mqtt server
 
@@ -91,22 +92,23 @@ class MqttServices():
         """
         
         self.__client.publish(topic, payload=send_data, qos=qos)
-        
-
-    def StartLoop(self):
-        self.__client.loop_start()
-
-    def StopLoop(self):
-        self.__client.loop_stop()
-        
-    def Disconnect(self):
+             
+    def DisConnect(self):
         self.__client.disconnect()
 
     async def Init(self):
         connectSuccess = False
         while connectSuccess == False:
-            connectSuccess =await self.Connect()
+            connectSuccess =await self._connect()
             await asyncio.sleep(5)
 
+    def ReConnect(self):
+        pass
+    
+    def Receive(self):
+        pass
+    
+    def HandlerData(self, data):
+        pass
         
    

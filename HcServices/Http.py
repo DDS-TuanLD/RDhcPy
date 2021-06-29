@@ -36,7 +36,7 @@ class HttpRequest():
     def Url(self, url: str):
         self.__url = url
         return self
-class HttpServices():
+class Http():
     
     __logger: logging.Logger
     
@@ -70,7 +70,7 @@ class HttpServices():
         
         return newHttpRequest
 
-    async def UseGetRequest(
+    async def Get(
         self, session: aiohttp.ClientSession, req: HttpRequest):
         """ Send get request
 
@@ -92,7 +92,7 @@ class HttpServices():
             return ""
         return resp
 
-    async def UsePostRequest(
+    async def Post(
         self, session: aiohttp.ClientSession, req: HttpRequest):
         """ Send post request
 
@@ -113,7 +113,7 @@ class HttpServices():
         except Exception as err:
             return ""
     
-    async def UsePutRequest(
+    async def Put(
         self, session: aiohttp.ClientSession, req: HttpRequest):
         """ Send put request
 
@@ -135,7 +135,7 @@ class HttpServices():
             return ""
         return resp
 
-    async def UseDeleteRequest(
+    async def Delete(
         self, session: aiohttp.ClientSession, req: HttpRequest):
         """ Send delete request
 

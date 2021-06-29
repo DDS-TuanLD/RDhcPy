@@ -6,7 +6,7 @@ class MetaCache(type):
             cls._instances[cls] = super(MetaCache, cls).__call__(*args, **kwargs)
         return cls._instances[cls]
     
-class HcCache(metaclass=MetaCache):
+class Cache(metaclass=MetaCache):
     __refreshToken: str
     __endUserId: str
     __signalrOnConnect: bool

@@ -2,13 +2,14 @@ import signalrcore.hub_connection_builder as SignalrBuilder
 import asyncio
 import queue
 import requests
-from Cache.HcCache import HcCache
+from Cache.Cache import Cache
 import Constant.constant as const
 import logging
 import threading
+from Contracts.Itransport import Itransport
 
 def getToken():
-    cache = HcCache()
+    cache = Cache()
     try:
         renew_token = "https://iot-dev.truesight.asia/rpc/iot-ebe/account/renew-token"
         headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
@@ -21,20 +22,20 @@ def getToken():
     except Exception as e:
         return None
   
-class SignalrServices():
+class Signalr(Itransport):
     __hub: SignalrBuilder.HubConnectionBuilder
     signalrDataQueue: queue.Queue
-    __cache: HcCache
+    __cache: Cache
     __logger: logging.Logger
     __lock: threading.Lock
     
     def __init__(self, log: logging.Logger):
         self.__logger = log
-        self.__cache = HcCache()
+        self.__cache = Cache()
         self.__lock = threading.Lock()
         self.signalrDataQueue = queue.Queue()
         
-    def BuildConnection(self):
+    def __buildConnection(self):
         self.__hub = SignalrBuilder.HubConnectionBuilder()\
         .with_url(const.SERVER_HOST + const.SIGNALR_SERVER_URL, 
                 options={
@@ -54,16 +55,9 @@ class SignalrServices():
             except Exception as err:
                 self.__logger.error(f"Exception when connect with signalr server: {err}")
                 await asyncio.sleep(5)
-        self.OnReceiveData()
+        self.__onReceiveData()
 
-                
-    def StartConnect(self):
-        try:
-            self.__hub.start()
-        except Exception as err:
-            self.__logger.error(f"Exception when connect with signalr server: {err}")
-            
-    def OnReceiveData(self):
+    def __onReceiveData(self):
         self.__hub.on("Receive", self.__dataPreHandler)
     
     def __dataPreHandler(self, data):
@@ -77,7 +71,7 @@ class SignalrServices():
         except Exception as err:
             self.__logger.error(f"Exception when disconnect with signalr server: {err}")
 
-    def SendMesageToServer(
+    def Send(
         self, endUserProfileId: str = "", entity: str="", message: str=""):
         """ This is function support send data to server
 
@@ -91,8 +85,20 @@ class SignalrServices():
             self.__logger.error(f"Error when send data to cloud: {err}")
        
     async def Init(self):
-        self.BuildConnection();
+        self.__buildConnection();
         while self.__cache.RefreshToken == "":
             await asyncio.sleep(1)
         await self.__startConnect()
             
+    def ReConnect(self):
+        try:
+            self.__hub.start()
+        except Exception as err:
+            self.__logger.error(f"Exception when connect with signalr server: {err}")
+   
+    def Receive(self):
+        pass
+    
+    def HandlerData(self, data):
+        pass
+        

@@ -1,4 +1,4 @@
-from Controller.hcController import HcController
+from Controller.Hc import RdHc
 import asyncio
 import requests
 from Database.Db import Db
@@ -8,7 +8,6 @@ import logging
 from logging.handlers import TimedRotatingFileHandler
 import os
 import Constant.constant as const 
-from HcServices.mqttServices import MqttServices, MqttConfig
 import socket
 
 d = os.path.dirname(__file__)
@@ -28,14 +27,13 @@ logger.addHandler(loghandler)
 logger.setLevel(logging.DEBUG)
 
 db = Db()
-hc = HcController(logger)
+hc = RdHc(logger)
 
-def hc_db_thread(db: Db, hc: HcController):
-    db.CreateTable()
-    db.ServicesInit()
+def hc_db_thread(db: Db, hc: RdHc):
+    db.Init()
     asyncio.run(hc.ActionDb())
     
-def hc_no_db_thread(hc: HcController):
+def hc_no_db_thread(hc: RdHc):
     asyncio.run(hc.ActionNoDb())
 
 def main():      

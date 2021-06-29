@@ -1,38 +1,38 @@
-from HcServices.httpServices import HttpServices
-from HcServices.signalrServices import SignalrServices
-from HcServices.mqttServices import MqttServices, MqttConfig
+from HcServices.Http import Http
+from HcServices.Signalr import Signalr
+from HcServices.Mqtt import Mqtt
 import asyncio
 from Database.Db import Db
 import aiohttp
-from Cache.HcCache import HcCache
+from Cache.Cache import Cache
 from Model.systemConfiguration import systemConfiguration
 import Constant.constant as const
 import datetime
 from Model.systemConfiguration import systemConfiguration
 import time
 from Model.userData import userData
-from Adapter.dataAdapter import dataAdapter
 import logging
 import threading
 import http
 import json
+from Contracts.Itransport import Itransport
 
-class HcController():
-    __httpServices: HttpServices
-    __signalServices: SignalrServices
-    __mqttServices: MqttServices
+class RdHc():
+    __httpServices: Http
+    __signalServices: Itransport
+    __mqttServices: Itransport
     __db: Db
-    __cache : HcCache
+    __cache : Cache
     __logger: logging.Logger
     __lock: threading.Lock
     
     def __init__(self, log: logging.Logger):
         self.__logger = log
-        self.__httpServices = HttpServices(self.__logger)
-        self.__signalServices = SignalrServices(self.__logger)
-        self.__mqttServices = MqttServices(self.__logger)
+        self.__httpServices = Http(self.__logger)
+        self.__signalServices = Signalr(self.__logger)
+        self.__mqttServices = Mqtt(self.__logger)
         self.__db = Db()
-        self.__cache = HcCache()
+        self.__cache = Cache()
         self.__lock = threading.Lock()
            
     async def __HcUpdateUserdata(self):
@@ -51,7 +51,7 @@ class HcController():
                 self.__signalServices.DisConnect()  
             if ok == True:
                 self.__cache.DisconnectTime = None
-                self.__signalServices.StartConnect()
+                self.__signalServices.ReConnect()
             if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
                 self.__hcUpdateReconnectStToDb()
             await asyncio.sleep(25)
@@ -71,7 +71,7 @@ class HcController():
         header = self.__httpServices.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
         req = self.__httpServices.CreateNewHttpRequest(url=heardBeatUrl, header=header)
         session = aiohttp.ClientSession()
-        res = await self.__httpServices.UsePostRequest(session, req)
+        res = await self.__httpServices.Post(session, req)
         await session.close()
         if res == "":
             return False
@@ -87,7 +87,7 @@ class HcController():
         header = self.__httpServices.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
         req = self.__httpServices.CreateNewHttpRequest(url=tokenUrl, header=header)
         session = aiohttp.ClientSession()
-        res = await self.__httpServices.UsePostRequest(session, req)  
+        res = await self.__httpServices.Post(session, req)  
         token = ""
         if res != "":
             try:
