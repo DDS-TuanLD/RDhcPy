@@ -16,16 +16,17 @@ import threading
 import http
 import json
 from Contracts.Itransport import Itransport
+from Contracts.IController import IController
 
-class RdHc():
+class RdHc(IController):
     __httpServices: Http
     __signalServices: Itransport
     __mqttServices: Itransport
     __db: Db
     __cache : Cache
-    __logger: logging.Logger
     __lock: threading.Lock
-    
+    __logger: logging.Logger
+
     def __init__(self, log: logging.Logger):
         self.__logger = log
         self.__httpServices = Http(self.__logger)
@@ -141,6 +142,7 @@ class RdHc():
     
     def __mqttHandlerHcControlResponse(self, data):
         self.__logger.debug("mqtt data receive from topic HC.CONTROL.RESPONSE: " + data)
+        print("mqtt data receive from topic HC.CONTROL.RESPONSE: " + data)
         pass
     
     def __mqttHandlerTopicHcControl(self, data):
@@ -165,7 +167,6 @@ class RdHc():
         try:
             endUserProfileId = data["END_USER_PROFILE_ID"]
             refreshToken = data["REFRESH_TOKEN"]
-            self.__cache.EndUserId = str(endUserProfileId)
             self.__cache.RefreshToken = refreshToken
             userDt = userData(refreshToken=refreshToken, endUserProfileId=str(endUserProfileId))
             rel = self.__db.Services.UserdataServices.FindUserDataById(id = 1)
@@ -174,7 +175,10 @@ class RdHc():
                 self.__db.Services.UserdataServices.UpdateUserDataById(id = 1, newUserData=userDt)
             if len(dt) == 0:
                 self.__db.Services.UserdataServices.AddNewUserData(newUserData=userDt)
-           
+            if  self.__cache.EndUserId != str(endUserProfileId):
+                self.__cache.EndUserId = str(endUserProfileId)
+                self.__signalServices.DisConnect()
+                self.__signalServices.ReConnect()
         except:
             self.__logger.error("mqtt data receiver invalid")
     #------------------------------------------------------------------------------------------------
@@ -211,7 +215,7 @@ class RdHc():
             try:
                 _ = d['TYPE']
             except:
-                self.__mqttServices.Publish(const.MQTT_PUB_CONTROL_TOPIC, data, const.MQTT_QOS)
+                self.__mqttServices.Send(const.MQTT_PUB_CONTROL_TOPIC, data, const.MQTT_QOS)
                 self.__logger.debug("Forward data to mqtt")
                 print(f"Forward data to mqtt: {data}")
         except:

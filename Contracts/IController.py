@@ -1,5 +1,12 @@
 from abc import ABC, ABCMeta, abstractmethod
 import asyncio
-
+import logging
 class IController(metaclass=ABCMeta):
-    pass
+    
+    @abstractmethod
+    async def ActionDb(self):
+        return
+    
+    @abstractmethod
+    async def ActionNoDb(self):
+        return

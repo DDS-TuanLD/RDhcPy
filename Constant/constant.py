@@ -19,6 +19,6 @@ MQTT_USER = "RD"
 MQTT_PASS = "1"
 
 #Sqlite connection option
-DB_NAME = "rd.db"
+DB_NAME = "rd.Sqlite"
 
 #

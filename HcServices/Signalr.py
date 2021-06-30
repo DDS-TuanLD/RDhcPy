@@ -61,7 +61,6 @@ class Signalr(Itransport):
         self.__hub.on("Receive", self.__dataPreHandler)
     
     def __dataPreHandler(self, data):
-        print(f"add data receive from sinalr to queue {data}")
         with self.__lock:
             self.signalrDataQueue.put(data)
         

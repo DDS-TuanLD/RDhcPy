@@ -9,6 +9,7 @@ from logging.handlers import TimedRotatingFileHandler
 import os
 import Constant.constant as const 
 import socket
+from Contracts.IController import IController
 
 d = os.path.dirname(__file__)
 
@@ -26,8 +27,8 @@ loghandler.setFormatter(logfomatter)
 logger.addHandler(loghandler)
 logger.setLevel(logging.DEBUG)
 
-db = Db()
-hc = RdHc(logger)
+db= Db()
+hc= RdHc(logger)
 
 def hc_db_thread(db: Db, hc: RdHc):
     db.Init()
