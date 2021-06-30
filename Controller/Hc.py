@@ -55,7 +55,7 @@ class RdHc(IController):
                 self.__signalServices.ReConnect()
             if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
                 self.__hcUpdateReconnectStToDb()
-            await asyncio.sleep(25)
+            await asyncio.sleep(60)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 self.__hcUpdateDisconnectStToDb()
             if self.__cache.SignalrDisconnectStatusUpdate > 3:
@@ -141,8 +141,6 @@ class RdHc(IController):
         return
     
     def __mqttHandlerHcControlResponse(self, data):
-        self.__logger.debug("mqtt data receive from topic HC.CONTROL.RESPONSE: " + data)
-        print("mqtt data receive from topic HC.CONTROL.RESPONSE: " + data)
         pass
     
     def __mqttHandlerTopicHcControl(self, data):

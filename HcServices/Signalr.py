@@ -79,7 +79,7 @@ class Signalr(Itransport):
             mess (str, optional): [string need to send]. Defaults to "".
         """
         try:
-            self.__hub.send("Send", endUserProfileId, entity , message)
+            self.__hub.send("Send", [endUserProfileId, entity , message])
         except Exception as err:
             self.__logger.error(f"Error when send data to cloud: {err}")
        
