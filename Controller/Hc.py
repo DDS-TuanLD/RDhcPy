@@ -55,7 +55,7 @@ class RdHc(IController):
                 self.__signalServices.ReConnect()
             if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
                 self.__hcUpdateReconnectStToDb()
-            await asyncio.sleep(60)
+            await asyncio.sleep(15)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 self.__hcUpdateDisconnectStToDb()
             if self.__cache.SignalrDisconnectStatusUpdate > 3:
@@ -117,7 +117,7 @@ class RdHc(IController):
         r = rel.first()
         if r == None:
             self.__db.Services.SystemConfigurationServices.AddNewSysConfiguration(s)
-        if r != None:
+        if r!=None and r["IsSync"]!="False":
             self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
         self.__cache.SignalrDisconnectStatusUpdate = True
         self.__cache.SignalrDisconnectCount = 0  
