@@ -59,6 +59,7 @@ class Signalr(Itransport):
 
     def __onReceiveData(self):
         self.__hub.on("Receive", self.__dataPreHandler)
+      
     
     def __dataPreHandler(self, data):
         with self.__lock:
@@ -94,7 +95,8 @@ class Signalr(Itransport):
             self.__hub.start()
         except Exception as err:
             self.__logger.error(f"Exception when connect with signalr server: {err}")
-   
+        self.__onReceiveData()
+        
     def Receive(self):
         pass
     

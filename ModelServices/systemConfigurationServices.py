@@ -23,3 +23,12 @@ class systemConfigurationServices(metaclass=MetaSystemConfigurationServices):
         rel = self.__systemConfigurationRepo.FindwithId(id)
         return rel
     
+    def UpdateSysConfigurationById(self, id:int, sysConfig: systemConfiguration):
+        self.__systemConfigurationRepo.UpdateById(id=id, newSysConfig=sysConfig)
+        
+    def FindAllSysConfiguration(self):
+        rel = self.__systemConfigurationRepo.FindAll()
+        return rel
+    
+    def RomoveSysConfigurationById(self, id:int):
+        self.__systemConfigurationRepo.RemoveById(id)

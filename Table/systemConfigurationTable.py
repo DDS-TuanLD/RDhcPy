@@ -9,6 +9,7 @@ class systemConfigurationTable():
                         Column('IsConnect', String),
                         Column('DisconnectTime', DateTime),
                         Column('ReconnectTime', DateTime),
+                        Column('IsSync', String),
                         Column('CreateAt', DateTime),
                         Column('UpdateAt', DateTime),
                         ) 

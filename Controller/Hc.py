@@ -102,16 +102,23 @@ class RdHc(IController):
     def __hcUpdateReconnectStToDb(self):
         self.__logger.info("Update cloud reconnect status to db")
         print("Update cloud reconnect status to db")
-        s =systemConfiguration(isConnect= True, DisconnectTime= None, ReconnectTime= datetime.datetime.now())
-        self.__db.Services.SystemConfigurationServices.AddNewSysConfiguration(s)
+        rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
+        r = rel.first()
+        s =systemConfiguration(isConnect= True, DisconnectTime= r['DisconnectTime'], ReconnectTime= datetime.datetime.now(), isSync=False)
+        self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
         self.__cache.SignalrDisconnectStatusUpdate = False 
         self.__cache.SignalrDisconnectCount = 0
      
     def __hcUpdateDisconnectStToDb(self):
         self.__logger.info("Update cloud disconnect status to db")
-        print("Update cloud Disconnect status to db")
-        s =systemConfiguration(isConnect= False, DisconnectTime= self.__cache.DisconnectTime, ReconnectTime= None)
-        self.__db.Services.SystemConfigurationServices.AddNewSysConfiguration(s)
+        print("Update cloud disconnect status to db")
+        s =systemConfiguration(isConnect= False, DisconnectTime= self.__cache.DisconnectTime, ReconnectTime= None, isSync=False)
+        rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
+        r = rel.first()
+        if r == None:
+            self.__db.Services.SystemConfigurationServices.AddNewSysConfiguration(s)
+        if r != None:
+            self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
         self.__cache.SignalrDisconnectStatusUpdate = True
         self.__cache.SignalrDisconnectCount = 0  
     #--------------------------------------------------------------------------------------
@@ -168,10 +175,10 @@ class RdHc(IController):
             self.__cache.RefreshToken = refreshToken
             userDt = userData(refreshToken=refreshToken, endUserProfileId=str(endUserProfileId))
             rel = self.__db.Services.UserdataServices.FindUserDataById(id = 1)
-            dt = rel.fetchall()
-            if len(dt) != 0:
+            dt = rel.first()
+            if dt != None:
                 self.__db.Services.UserdataServices.UpdateUserDataById(id = 1, newUserData=userDt)
-            if len(dt) == 0:
+            if dt == None:
                 self.__db.Services.UserdataServices.AddNewUserData(newUserData=userDt)
             if  self.__cache.EndUserId != str(endUserProfileId):
                 self.__cache.EndUserId = str(endUserProfileId)
@@ -224,10 +231,10 @@ class RdHc(IController):
     #-----------load userdata from db----------------------------------------------------------
     def __HcLoadUserData(self):
         userData = self.__db.Services.UserdataServices.FindUserDataById(id=1)
-        dt = userData.fetchall()
-        if len(dt) != 0:
-            self.__cache.EndUserId = dt[0]["EndUserProfileId"]
-            self.__cache.RefreshToken = dt[0]["RefreshToken"]      
+        dt = userData.first()
+        if dt != None:
+            self.__cache.EndUserId = dt["EndUserProfileId"]
+            self.__cache.RefreshToken = dt["RefreshToken"]      
     #------------------------------------------------------------------------------------------
     
 

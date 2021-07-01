@@ -9,11 +9,13 @@ class systemConfiguration():
     __isConnect: bool
     __disconnectTime: datetime.datetime
     __reconnectTime: datetime.datetime
+    __isSync: bool
     
-    def __init__(self, isConnect: bool, DisconnectTime: datetime.datetime, ReconnectTime: datetime.datetime):
+    def __init__(self, isConnect: bool, DisconnectTime: datetime.datetime, ReconnectTime: datetime.datetime, isSync:bool):
         self.__isConnect = isConnect
         self.__disconnectTime = DisconnectTime
         self.__reconnectTime = ReconnectTime
+        self.__isSync = isSync
         
     @property
     def Id(self):
@@ -36,7 +38,7 @@ class systemConfiguration():
         return self.__disconnectTime
     
     @DisconnectTime.setter
-    def DisconnectTime(self, DisconnectTime: bool):
+    def DisconnectTime(self, DisconnectTime: datetime.datetime):
         self.__disconnectTime = DisconnectTime
     
     @property
@@ -44,6 +46,14 @@ class systemConfiguration():
         return self.__reconnectTime
     
     @ReconnectTime.setter
-    def ReconnectTime(self, ReconnectTime: bool):
+    def ReconnectTime(self, ReconnectTime: datetime.datetime):
         self.__reconnectTime = ReconnectTime
-        
+    
+    @property
+    def IsSync(self):
+        return self.__isSync
+    
+    @IsSync.setter
+    def IsSync(self, isSync:bool):
+        self.__isSync = isSync
+           

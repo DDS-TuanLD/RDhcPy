@@ -20,6 +20,7 @@ class systemConfigurationRepo():
             "IsConnect" : str(sysCon.IsConnect),
             "DisconnectTime": sysCon.DisconnectTime,
             "ReconnectTime": sysCon.ReconnectTime,
+            "IsSync": str(sysCon.IsSync),
             "CreateAt": datetime.datetime.now()
         }
         self.__context.execute(ins, values)
@@ -33,9 +34,10 @@ class systemConfigurationRepo():
         self.__context.execute(ins)
     
     def UpdateById(self, id:int, newSysConfig: systemConfiguration):
-        ins = self.__systemConfigurationTable.update().where(self.__systemConfigurationTable.c.Id == id).values({"IsConnect": newSysConfig.IsConnect,
+        ins = self.__systemConfigurationTable.update().where(self.__systemConfigurationTable.c.Id == id).values({"IsConnect": str(newSysConfig.IsConnect),
                                                                                                                  "DisconnectTime": newSysConfig.DisconnectTime,
                                                                                                                 "ReconnectTime": newSysConfig.ReconnectTime,
+                                                                                                                "IsSync": str(newSysConfig.IsSync),
                                                                                                                 "UpdateAt": datetime.datetime.now()})
         self.__context.execute(ins)
     
