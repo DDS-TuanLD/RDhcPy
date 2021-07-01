@@ -55,7 +55,7 @@ class RdHc(IController):
                 self.__signalServices.ReConnect()
             if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
                 self.__hcUpdateReconnectStToDb()
-            await asyncio.sleep(15)
+            await asyncio.sleep(60)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 self.__hcUpdateDisconnectStToDb()
             if self.__cache.SignalrDisconnectStatusUpdate > 3:
@@ -184,6 +184,7 @@ class RdHc(IController):
                 self.__cache.EndUserId = str(endUserProfileId)
                 self.__signalServices.DisConnect()
                 self.__signalServices.ReConnect()
+                #self.__signalServices.Listen()
         except:
             self.__logger.error("mqtt data receiver invalid")
     #------------------------------------------------------------------------------------------------
@@ -216,13 +217,15 @@ class RdHc(IController):
 
     def __signalrHandlerCommand(self, data):
         try:
-            d = json.loads(data)
-            try:
-                _ = d['TYPE']
-            except:
-                self.__mqttServices.Send(const.MQTT_PUB_CONTROL_TOPIC, data, const.MQTT_QOS)
-                self.__logger.debug("Forward data to mqtt")
-                print(f"Forward data to mqtt: {data}")
+            # d = json.loads(data)
+            # try:
+            #     _ = d['TYPE']
+            # except:
+            #     self.__mqttServices.Send(const.MQTT_PUB_CONTROL_TOPIC, data, const.MQTT_QOS)
+            #     self.__logger.debug("Forward data to mqtt")
+            #     print(f"Forward data to mqtt: {data}")
+            self.__mqttServices.Send(const.MQTT_PUB_CONTROL_TOPIC, data, const.MQTT_QOS)
+            self.__logger.debug("Forward data to mqtt")
         except:
             self.__logger.debug("Data receiver invalid")
         return
@@ -248,6 +251,7 @@ class RdHc(IController):
 
     async def ActionDb(self):
         self.__HcLoadUserData()
+        print(self.__cache.RefreshToken)
         task1 = asyncio.ensure_future(self.__HcHandlerSignalRData())
         task2 = asyncio.ensure_future(self.__HcCheckConnectWithCloud())
         task3 = asyncio.ensure_future(self.__HcMqttHandlerData())     

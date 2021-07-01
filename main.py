@@ -30,11 +30,11 @@ logger.setLevel(logging.DEBUG)
 db= Db()
 hc= RdHc(logger)
 
-def hc_db_thread(db: Db, hc: IController):
+def hc_db_thread(db: Db, hc: RdHc):
     db.Init()
     asyncio.run(hc.ActionDb())
     
-def hc_no_db_thread(hc: IController):
+def hc_no_db_thread(hc: RdHc):
     asyncio.run(hc.ActionNoDb())
 
 def main():      

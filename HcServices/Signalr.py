@@ -55,10 +55,9 @@ class Signalr(Itransport):
             except Exception as err:
                 self.__logger.error(f"Exception when connect with signalr server: {err}")
                 await asyncio.sleep(5)
-        self.__onReceiveData()
 
     def __onReceiveData(self):
-        self.__hub.on("Receive", self.__dataPreHandler)
+        self.__hub.on("Receive", print)
       
     
     def __dataPreHandler(self, data):
@@ -85,21 +84,23 @@ class Signalr(Itransport):
             self.__logger.error(f"Error when send data to cloud: {err}")
        
     async def Init(self):
-        self.__buildConnection();
         while self.__cache.RefreshToken == "":
             await asyncio.sleep(1)
+        self.__buildConnection()
         await self.__startConnect()
-            
+        self.__onReceiveData()
+        
     def ReConnect(self):
         try:
             self.__hub.start()
         except Exception as err:
             self.__logger.error(f"Exception when connect with signalr server: {err}")
-        self.__onReceiveData()
         
     def Receive(self):
         pass
     
     def HandlerData(self, data):
         pass
-        
+    
+    def Listen(self):
+        self.__onReceiveData()
