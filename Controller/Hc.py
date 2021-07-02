@@ -153,8 +153,8 @@ class RdHc(IController):
         pass
     
     def __mqttHandlerTopicHcControl(self, data):
-        self.__logger.debug("mqtt data receive from topic HC.CONTROL: " + data)
-        print("mqtt data receive from topic HC.CONTROL: " + data)
+        # self.__logger.debug("mqtt data receive from topic HC.CONTROL: " + data)
+        # print("mqtt data receive from topic HC.CONTROL: " + data)
         try:
             dt = json.loads(data)
             try:
@@ -182,11 +182,9 @@ class RdHc(IController):
                 self.__db.Services.UserdataServices.UpdateUserDataById(id = 1, newUserData=userDt)
             if dt == None:
                 self.__db.Services.UserdataServices.AddNewUserData(newUserData=userDt)
-            if  self.__cache.EndUserId != str(endUserProfileId):
-                self.__cache.EndUserId = str(endUserProfileId)
-                self.__signalServices.DisConnect()
-                self.__signalServices.ReConnect()
-                #self.__signalServices.Listen()
+            self.__cache.EndUserId = str(endUserProfileId)
+            self.__signalServices.DisConnect()
+            self.__signalServices.ReConnect()
         except:
             self.__logger.error("mqtt data receiver invalid")
     #------------------------------------------------------------------------------------------------

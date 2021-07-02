@@ -68,19 +68,16 @@ class Mqtt(Itransport):
             [bool]: [connect status: false/true]
         """
       
-        connectSuccess = False
         self.__client.on_message = self.__on_message
         self.__client.on_connect = self.__on_connect
-        #self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
+        self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
         try:
-            self.__client.connect_async(self.__mqttConfig.host, self.__mqttConfig.port)
+            self.__client.connect_async("10.10.10.1", self.__mqttConfig.port)
             self.__client.reconnect()
             self.__client.loop_start()
-            connectSuccess = True
         except Exception as err:
             self.__logger.error(f"Exception in connect to mqtt: {err}")
             print(f"Exception in connect to mqtt: {err}")
-        return connectSuccess
 
     def Send(
         self, topic:str, send_data:str, qos: int):

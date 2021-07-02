@@ -47,9 +47,14 @@ class Signalr(Itransport):
         return self
     
     def __onReceiveData(self):
-        self.__hub.on("Receive", self.__dataPreHandler)
+        self.__hub.on("Receive", print)
       
-    
+    def __onDisconnect(self):
+        self.__hub.on_close(lambda: print("Disconnect signalr"))
+        
+    def __onConnect(self):
+        self.__hub.on_open(lambda: print("Connect to signalr"))
+        
     def __dataPreHandler(self, data):
         with self.__lock:
             self.signalrDataQueue.put(data)
@@ -85,6 +90,8 @@ class Signalr(Itransport):
             self.__cache.signalrConnectSuccess = False
             return
         self.__cache.signalrConnectSuccess = True
+        self.__onConnect()
+        self.__onDisconnect()
         self.__onReceiveData()
         
     def ReConnect(self):
@@ -100,4 +107,6 @@ class Signalr(Itransport):
         pass
     
     def Listen(self):
+        self.__onConnect()
+        self.__onDisconnect()
         self.__onReceiveData()
