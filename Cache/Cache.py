@@ -15,7 +15,7 @@ class Cache(metaclass=MetaCache):
     __disconectTime: datetime.datetime
  
     def __init__(self):
-        self.__refreshToken = "aaaaa"
+        self.__refreshToken = ""
         self.__signalrOnConnect = True
         self.__signalrDisconnectCount = 0
         self.__signalrDisconnectStatusUpdate = False

@@ -57,7 +57,7 @@ class Signalr(Itransport):
                 await asyncio.sleep(5)
 
     def __onReceiveData(self):
-        self.__hub.on("Receive", print)
+        self.__hub.on("Receive", self.__dataPreHandler)
       
     
     def __dataPreHandler(self, data):

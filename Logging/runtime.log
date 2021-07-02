@@ -785,3 +785,5 @@
 2021-07-01 20:57:33,542:	ERROR:	Signalr.py:__startConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
 2021-07-01 20:57:53,840:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
 2021-07-01 20:57:53,916:	ERROR:	Signalr.py:__startConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-02 09:53:37,340:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 09:53:37,707:	ERROR:	Signalr.py:__startConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
