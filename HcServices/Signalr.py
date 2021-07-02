@@ -46,16 +46,6 @@ class Signalr(Itransport):
         .build()
         return self
     
-    async def __startConnect(self):
-        startSuccess = False
-        while startSuccess == False:
-            try:
-                self.__hub.start()
-                startSuccess = True
-            except Exception as err:
-                self.__logger.error(f"Exception when connect with signalr server: {err}")
-                await asyncio.sleep(5)
-
     def __onReceiveData(self):
         self.__hub.on("Receive", self.__dataPreHandler)
       
@@ -87,7 +77,14 @@ class Signalr(Itransport):
         while self.__cache.RefreshToken == "":
             await asyncio.sleep(1)
         self.__buildConnection()
-        await self.__startConnect()
+        try:
+            self.__hub.start()
+        except Exception as err:
+            self.__logger.error(f"Exception when connect with signalr server: {err}")
+            print(f"Exception when connect with signalr server: {err}")
+            self.__cache.signalrConnectSuccess = False
+            return
+        self.__cache.signalrConnectSuccess = True
         self.__onReceiveData()
         
     def ReConnect(self):

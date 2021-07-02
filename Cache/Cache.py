@@ -9,14 +9,14 @@ class MetaCache(type):
 class Cache(metaclass=MetaCache):
     __refreshToken: str
     __endUserId: str
-    __signalrOnConnect: bool
     __signalrDisconnectCount: int
     __signalrDisconnectStatusUpdate: bool
     __disconectTime: datetime.datetime
- 
+    signalrConnectSuccess: bool
+    
     def __init__(self):
+        self.signalrConnectSuccess = None
         self.__refreshToken = ""
-        self.__signalrOnConnect = True
         self.__signalrDisconnectCount = 0
         self.__signalrDisconnectStatusUpdate = False
         self.__endUserId = ""
@@ -30,15 +30,7 @@ class Cache(metaclass=MetaCache):
     @RefreshToken.setter
     def RefreshToken(self, refreshToken: str):
         self.__refreshToken = refreshToken
-    
-    @property
-    def SignalrConnectStatus(self):
-        return self.__signalrOnConnect
-    
-    @SignalrConnectStatus.setter
-    def SignalrConnectStatus(self, onConnect: bool):
-        self.__signalrOnConnect = onConnect
-        
+            
     @property
     def SignalrDisconnectCount(self):
         return self.__signalrDisconnectCount

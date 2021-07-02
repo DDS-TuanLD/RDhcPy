@@ -787,3 +787,38 @@
 2021-07-01 20:57:53,916:	ERROR:	Signalr.py:__startConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
 2021-07-02 09:53:37,340:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
 2021-07-02 09:53:37,707:	ERROR:	Signalr.py:__startConnect():56	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-02 16:05:28,936:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:05:29,574:	ERROR:	Signalr.py:ReConnect():84	Exception when connect with signalr server: 'Signalr' object has no attribute '_Signalr__hub'
+2021-07-02 16:06:28,443:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:06:29,462:	ERROR:	Signalr.py:ReConnect():84	Exception when connect with signalr server: 'Signalr' object has no attribute '_Signalr__hub'
+2021-07-02 16:07:45,921:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:09:06,086:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:09:06,562:	ERROR:	Signalr.py:Init():81	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-02 16:09:44,126:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:09:52,171:	ERROR:	Signalr.py:Init():81	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-02 16:10:54,429:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:13:35,108:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:14:32,668:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:16:19,485:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:17:29,817:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:18:32,692:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:19:50,738:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:22:34,189:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:23:40,566:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:24:42,647:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:25:15,292:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:25:36,063:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:25:50,203:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:26:11,449:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:26:24,604:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:27:31,774:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:27:46,084:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:28:02,623:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:28:24,626:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:28:41,652:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:28:56,125:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:29:11,804:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:29:13,251:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:29:29,103:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:31:25,287:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-02 16:31:42,774:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud

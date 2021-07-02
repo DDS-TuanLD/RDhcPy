@@ -71,7 +71,7 @@ class Mqtt(Itransport):
         connectSuccess = False
         self.__client.on_message = self.__on_message
         self.__client.on_connect = self.__on_connect
-        self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
+        #self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
         try:
             self.__client.connect_async(self.__mqttConfig.host, self.__mqttConfig.port)
             self.__client.reconnect()
@@ -97,10 +97,7 @@ class Mqtt(Itransport):
         self.__client.disconnect()
 
     async def Init(self):
-        connectSuccess = False
-        while connectSuccess == False:
-            connectSuccess =await self._connect()
-            await asyncio.sleep(5)
+        await self._connect()
 
     def ReConnect(self):
         pass

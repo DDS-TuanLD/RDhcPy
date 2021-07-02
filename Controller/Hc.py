@@ -48,14 +48,16 @@ class RdHc(IController):
                 self.__cache.DisconnectTime = datetime.datetime.now()
             ok = await self.__hcSendHttpRequestToHeardbeatUrl()
             if ok == False:
-                self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1  
-                self.__signalServices.DisConnect()  
+                self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1 
+                self.__cache.signalrConnectSuccess = False 
             if ok == True:
                 self.__cache.DisconnectTime = None
-                self.__signalServices.ReConnect()
+                if self.__cache.signalrConnectSuccess == False:  
+                    self.__signalServices.ReConnect()
+                    self.__cache.signalrConnectSuccess = True
             if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
                 self.__hcUpdateReconnectStToDb()
-            await asyncio.sleep(60)
+            await asyncio.sleep(12)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 self.__hcUpdateDisconnectStToDb()
             if self.__cache.SignalrDisconnectStatusUpdate > 3:
@@ -203,9 +205,9 @@ class RdHc(IController):
                         pass
         
     def __signalrItemHandler(self, *args):
-        self.__logger.debug(f"handler receive signal data in {args[0][0]} is {args[0][1]}")
-        print(f"handler receive signal data in {args[0][0]} is {args[0][1]}")
         try:
+            self.__logger.debug(f"handler receive signal data in {args[0][0]} is {args[0][1]}")
+            print(f"handler receive signal data in {args[0][0]} is {args[0][1]}")
             switcher = {
                 "Command": self.__signalrHandlerCommand
             }
@@ -251,7 +253,6 @@ class RdHc(IController):
 
     async def ActionDb(self):
         self.__HcLoadUserData()
-        print(self.__cache.RefreshToken)
         task1 = asyncio.ensure_future(self.__HcHandlerSignalRData())
         task2 = asyncio.ensure_future(self.__HcCheckConnectWithCloud())
         task3 = asyncio.ensure_future(self.__HcMqttHandlerData())     

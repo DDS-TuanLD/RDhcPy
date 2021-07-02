@@ -4,7 +4,7 @@ import asyncio
 class Itransport(metaclass=ABCMeta):
     
     @abstractmethod
-    async def Init(self):
+    def Init(self):
         return
     
     @abstractmethod
