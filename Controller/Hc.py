@@ -50,7 +50,9 @@ class RdHc(IController):
             if ok == False:
                 self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1 
                 self.__cache.signalrConnectSuccess = False 
+                self.__cache.pingCloudHttp = False
             if ok == True:
+                self.__cache.pingCloudHttp = True
                 self.__cache.DisconnectTime = None
                 if self.__cache.signalrConnectSuccess == False:  
                     self.__signalServices.ReConnect()
@@ -134,25 +136,25 @@ class RdHc(IController):
             if self.__mqttServices.mqttDataQueue.empty() == False:
                 with self.__lock:
                     item = self.__mqttServices.mqttDataQueue.get()
-                    self.__hcMqttItemHandler(item)
+                    await self.__hcMqttItemHandler(item)
                     self.__mqttServices.mqttDataQueue.task_done()
 
-    def __hcMqttItemHandler(self, item):
+    async def __hcMqttItemHandler(self, item):
         try:
             switcher = {
                 const.MQTT_SUB_RESPONSE_TOPIC: self.__mqttHandlerHcControlResponse,
                 const.MQTT_PUB_CONTROL_TOPIC: self.__mqttHandlerTopicHcControl
             }
             func = switcher.get(item["topic"])
-            func(item["msg"])
+            await func(item["msg"])
         except:
             pass
         return
     
-    def __mqttHandlerHcControlResponse(self, data):
+    async def __mqttHandlerHcControlResponse(self, data):
         pass
     
-    def __mqttHandlerTopicHcControl(self, data):
+    async def __mqttHandlerTopicHcControl(self, data):
         # self.__logger.debug("mqtt data receive from topic HC.CONTROL: " + data)
         # print("mqtt data receive from topic HC.CONTROL: " + data)
         try:
@@ -164,16 +166,17 @@ class RdHc(IController):
                     "HC_CONNECT_TO_CLOUD": self.__mqttHandlerCmdConnectToCloud
                 }
                 func = switcher.get("HC_CONNECT_TO_CLOUD")
-                func(data)
+                await func(data)
             except:
                 self.__logger.error("mqtt data receiver invalid")
         except:
             self.__logger.error("mqtt data receiver invalid")
-            
-    def __mqttHandlerCmdConnectToCloud(self, data):
+          
+    async def __mqttHandlerCmdConnectToCloud(self, data):
         try:
             endUserProfileId = data["END_USER_PROFILE_ID"]
             refreshToken = data["REFRESH_TOKEN"]
+            self.__cache.EndUserId = str(endUserProfileId)
             self.__cache.RefreshToken = refreshToken
             userDt = userData(refreshToken=refreshToken, endUserProfileId=str(endUserProfileId))
             rel = self.__db.Services.UserdataServices.FindUserDataById(id = 1)
@@ -182,9 +185,10 @@ class RdHc(IController):
                 self.__db.Services.UserdataServices.UpdateUserDataById(id = 1, newUserData=userDt)
             if dt == None:
                 self.__db.Services.UserdataServices.AddNewUserData(newUserData=userDt)
-            self.__cache.EndUserId = str(endUserProfileId)
-            self.__signalServices.DisConnect()
-            self.__signalServices.ReConnect()
+            
+            if self.__cache.pingCloudHttp == True:
+                await self.__signalServices.DisConnect()
+                self.__signalServices.ReConnect()
         except:
             self.__logger.error("mqtt data receiver invalid")
     #------------------------------------------------------------------------------------------------

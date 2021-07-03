@@ -13,8 +13,10 @@ class Cache(metaclass=MetaCache):
     __signalrDisconnectStatusUpdate: bool
     __disconectTime: datetime.datetime
     signalrConnectSuccess: bool
+    pingCloudHttp: bool
     
     def __init__(self):
+        self.pingCloudHttp = None
         self.signalrConnectSuccess = None
         self.__refreshToken = ""
         self.__signalrDisconnectCount = 0

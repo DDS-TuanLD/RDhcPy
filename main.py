@@ -13,7 +13,7 @@ from Contracts.IController import IController
 
 d = os.path.dirname(__file__)
 
-loghandler = logging.handlers.TimedRotatingFileHandler(filename= d + '/Logging/runtime.log', when="D", backupCount=4)
+loghandler = logging.handlers.TimedRotatingFileHandler(filename= d + '/Logging/runtime.log', when="MIDNIGHT", backupCount=4)
 logfomatter = logging.Formatter(fmt=(
                                                     '%(asctime)s:\t'
                                                     '%(levelname)s:\t'

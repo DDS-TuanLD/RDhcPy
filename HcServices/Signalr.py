@@ -7,7 +7,7 @@ import Constant.constant as const
 import logging
 import threading
 from Contracts.Itransport import Itransport
-
+import time
 def getToken():
     cache = Cache()
     try:
@@ -28,12 +28,16 @@ class Signalr(Itransport):
     __cache: Cache
     __logger: logging.Logger
     __lock: threading.Lock
+    __disconnectFlag: int
+    __disconnectRetryCount: int
     
     def __init__(self, log: logging.Logger):
         self.__logger = log
         self.__cache = Cache()
         self.__lock = threading.Lock()
         self.signalrDataQueue = queue.Queue()
+        self.__disconnectFlag = 1
+        self.__disconnectRetryCount = 0
         
     def __buildConnection(self):
         self.__hub = SignalrBuilder.HubConnectionBuilder()\
@@ -50,21 +54,47 @@ class Signalr(Itransport):
         self.__hub.on("Receive", print)
       
     def __onDisconnect(self):
-        self.__hub.on_close(lambda: print("Disconnect signalr"))
-        
+        self.__hub.on_close(self.__disconnect)
+    
+    def __disconnect(self):
+        print("disconnect to signalr server")
+        self.__disconnectFlag = 0
+        self.__disconnectRetryCount = 0
+    
     def __onConnect(self):
-        self.__hub.on_open(lambda: print("Connect to signalr"))
+        self.__hub.on_open(lambda: print("Connect to signalr server"))
         
     def __dataPreHandler(self, data):
         with self.__lock:
             self.signalrDataQueue.put(data)
         
-    def DisConnect(self):
+    # async def DisConnect(self):
+    #     suc = 0
+    #     while suc == 0:
+    #         await asyncio.sleep(0.1)
+    #         try:
+    #             self.__hub.stop()
+    #             suc = 1
+    #         except Exception as err:
+    #             self.__logger.error(f"Exception when disconnect with signalr server: {err}")
+                
+    async def DisConnect(self):
+        self.__disconnectFlag = 1
+        print(self.__disconnectFlag)
         try:
             self.__hub.stop()
         except Exception as err:
             self.__logger.error(f"Exception when disconnect with signalr server: {err}")
+        await asyncio.sleep(1)
+        print(self.__disconnectFlag)
+        if self.__disconnectFlag == 1:
+            if(self.__disconnectRetryCount == 50):
+                self.__disconnectRetryCount = 0
+                return
+            self.__disconnectRetryCount = self.__disconnectRetryCount + 1
+            await self.DisConnect()
 
+            
     def Send(
         self, endUserProfileId: str = "", entity: str="", message: str=""):
         """ This is function support send data to server
@@ -105,8 +135,3 @@ class Signalr(Itransport):
     
     def HandlerData(self, data):
         pass
-    
-    def Listen(self):
-        self.__onConnect()
-        self.__onDisconnect()
-        self.__onReceiveData()

@@ -8,10 +8,6 @@ class Itransport(metaclass=ABCMeta):
         return
     
     @abstractmethod
-    def Listen(self):
-        return
-    
-    @abstractmethod
     def DisConnect(self):
         return
     
@@ -26,6 +22,7 @@ class Itransport(metaclass=ABCMeta):
     @abstractmethod
     def Receive(self):
         return
+    
     @abstractmethod
     def HandlerData(self, data):
         return
