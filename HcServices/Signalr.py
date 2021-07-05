@@ -51,7 +51,7 @@ class Signalr(Itransport):
         return self
     
     def __onReceiveData(self):
-        self.__hub.on("Receive", print)
+        self.__hub.on("Receive", self.__dataPreHandler)
       
     def __onDisconnect(self):
         self.__hub.on_close(self.__disconnect)
@@ -88,7 +88,7 @@ class Signalr(Itransport):
         await asyncio.sleep(1)
         print(self.__disconnectFlag)
         if self.__disconnectFlag == 1:
-            if(self.__disconnectRetryCount == 50):
+            if(self.__disconnectRetryCount == 30):
                 self.__disconnectRetryCount = 0
                 return
             self.__disconnectRetryCount = self.__disconnectRetryCount + 1
@@ -112,18 +112,21 @@ class Signalr(Itransport):
         while self.__cache.RefreshToken == "":
             await asyncio.sleep(1)
         self.__buildConnection()
-        try:
-            self.__hub.start()
-        except Exception as err:
-            self.__logger.error(f"Exception when connect with signalr server: {err}")
-            print(f"Exception when connect with signalr server: {err}")
-            self.__cache.signalrConnectSuccess = False
-            return
+        connectSuccess = False
+        while connectSuccess == False:
+            try:
+                self.__hub.start()
+                connectSuccess = True
+            except Exception as err:
+                self.__logger.error(f"Exception when connect with signalr server: {err}")
+                print(f"Exception when connect with signalr server: {err}")
+                self.__cache.signalrConnectSuccess = False
+                await asyncio.sleep(5)
         self.__cache.signalrConnectSuccess = True
         self.__onConnect()
         self.__onDisconnect()
         self.__onReceiveData()
-        
+    
     def ReConnect(self):
         try:
             self.__hub.start()
@@ -133,5 +136,5 @@ class Signalr(Itransport):
     def Receive(self):
         pass
     
-    def HandlerData(self, data):
+    def HandlerData(self):
         pass

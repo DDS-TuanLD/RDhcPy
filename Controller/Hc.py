@@ -59,7 +59,7 @@ class RdHc(IController):
                     self.__cache.signalrConnectSuccess = True
             if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
                 self.__hcUpdateReconnectStToDb()
-            await asyncio.sleep(12)
+            await asyncio.sleep(20)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 self.__hcUpdateDisconnectStToDb()
             if self.__cache.SignalrDisconnectStatusUpdate > 3:
@@ -227,7 +227,7 @@ class RdHc(IController):
             # except:
             #     self.__mqttServices.Send(const.MQTT_PUB_CONTROL_TOPIC, data, const.MQTT_QOS)
             #     self.__logger.debug("Forward data to mqtt")
-            #     print(f"Forward data to mqtt: {data}")
+            print(f"Forward data to mqtt: {data}")
             self.__mqttServices.Send(const.MQTT_PUB_CONTROL_TOPIC, data, const.MQTT_QOS)
             self.__logger.debug("Forward data to mqtt")
         except:

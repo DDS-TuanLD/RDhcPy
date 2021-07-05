@@ -24,6 +24,6 @@ class Itransport(metaclass=ABCMeta):
         return
     
     @abstractmethod
-    def HandlerData(self, data):
+    def HandlerData(self):
         return
         
