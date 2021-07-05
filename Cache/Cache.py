@@ -14,6 +14,7 @@ class Cache(metaclass=MetaCache):
     __disconectTime: datetime.datetime
     signalrConnectSuccess: bool
     pingCloudHttp: bool
+    __recheckConnectionStatusInDb: bool
     
     def __init__(self):
         self.pingCloudHttp = None
@@ -25,6 +26,17 @@ class Cache(metaclass=MetaCache):
         self.__disconectTime = None
         self.mqttDisconnectStatus = False
         self.mqttProblemCount = 0
+        self.__recheckConnectionStatusInDb = False
+        
+        
+    @property
+    def RecheckConnectionStatusInDb(self):
+        return self.__recheckConnectionStatusInDb
+    
+    @RecheckConnectionStatusInDb.setter
+    def RecheckConnectionStatusInDb(self, recheckStatus: bool):
+        self.__recheckConnectionStatusInDb = recheckStatus
+    
     @property
     def RefreshToken(self):
         return self.__refreshToken

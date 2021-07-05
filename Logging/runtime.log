@@ -1423,3 +1423,10 @@
 2021-07-05 15:41:35,249:	INFO:	Hc.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
 2021-07-05 15:42:32,415:	INFO:	Hc.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
 2021-07-05 15:42:56,351:	INFO:	Hc.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-07-05 16:10:27,932:	INFO:	Hc.py:__HcCheckConnectWithCloud():49	Hc send heardbeat to cloud
+2021-07-05 16:10:40,192:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-05 16:13:25,787:	INFO:	Hc.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud
+2021-07-05 16:16:07,104:	INFO:	Hc.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud
+2021-07-05 16:18:13,984:	INFO:	Hc.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud
+2021-07-05 16:18:33,050:	INFO:	Hc.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud
+2021-07-05 16:26:55,397:	INFO:	Hc.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud

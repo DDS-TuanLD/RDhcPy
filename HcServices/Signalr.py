@@ -8,9 +8,7 @@ import logging
 import threading
 from Contracts.Itransport import Itransport
 import time
-from Helper.Terminal import Terminal
-from Database.Db import Db
-from Model.systemConfiguration import systemConfiguration
+from Helper.System import System
 
 def getToken():
     cache = Cache()
@@ -73,8 +71,6 @@ class Signalr(Itransport):
             self.signalrDataQueue.put(data)
         
     async def DisConnect(self):
-        
-        
         self.__disconnectFlag = 1
         try:
             self.__hub.stop()
@@ -86,16 +82,9 @@ class Signalr(Itransport):
                 self.__disconnectRetryCount = 0
                 print("Disconnect signalr server timeout")
                 self.__logger.error("Disconnect signalr timeout")
+                s = System()
+                s.EliminateCurrentProgess()
                 
-                t = Terminal()
-                s = t.ExecuteWithResult(f'ps | grep python3')
-                dt = s[1].split(" ")
-                for i in range(len(dt)):
-                    if dt[i] != "":
-                        print(dt[i])
-                        break
-                s = t.Execute(f'kill -9 {dt[i]}')
-                return
             self.__disconnectRetryCount = self.__disconnectRetryCount + 1
             print(f"Retry to disconnect signalr server {self.__disconnectRetryCount} times")
             await self.DisConnect()

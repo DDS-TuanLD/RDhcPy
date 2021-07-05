@@ -41,8 +41,8 @@ class systemConfigurationRepo():
                                                                                                                 "UpdateAt": datetime.datetime.now()})
         self.__context.execute(ins)
     
-    def FindwithId(self, Id:int):
-        ins = self.__systemConfigurationTable.select().where(self.__systemConfigurationTable.c.Id == Id)
+    def FindwithId(self, id:int):
+        ins = self.__systemConfigurationTable.select().where(self.__systemConfigurationTable.c.Id == id)
         rel = self.__context.execute(ins)
         return rel
             

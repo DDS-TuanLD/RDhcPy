@@ -20,7 +20,7 @@ class systemConfigurationServices(metaclass=MetaSystemConfigurationServices):
         self.__systemConfigurationRepo.CreateWithParams(sysConfig)
         
     def FindSysConfigurationById(self, id:int):
-        rel = self.__systemConfigurationRepo.FindwithId(id)
+        rel = self.__systemConfigurationRepo.FindwithId(id=id)
         return rel
     
     def UpdateSysConfigurationById(self, id:int, sysConfig: systemConfiguration):

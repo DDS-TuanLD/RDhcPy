@@ -16,6 +16,7 @@ import http
 import json
 from Contracts.Itransport import Itransport
 from Contracts.IController import IController
+from Helper.System import System
 
 class RdHc(IController):
     __httpServices: Http
@@ -40,6 +41,7 @@ class RdHc(IController):
             
     #-----------------Ping cloud----------------------------------------------------------------------
     async def __HcCheckConnectWithCloud(self):
+        s = System()
         while True:  
             print("Hc send heardbeat to cloud")
             self.__logger.info("Hc send heardbeat to cloud")
@@ -51,6 +53,7 @@ class RdHc(IController):
                 self.__cache.signalrConnectSuccess = False 
                 self.__cache.pingCloudHttp = False
             if ok == True:
+                s.RecheckReconnectStatusOfLastActiveInDb()
                 self.__cache.pingCloudHttp = True
                 self.__cache.DisconnectTime = None
                 if self.__cache.signalrConnectSuccess == False:  
@@ -105,12 +108,14 @@ class RdHc(IController):
     def __hcUpdateReconnectStToDb(self):
         self.__logger.info("Update cloud reconnect status to db")
         print("Update cloud reconnect status to db")
-        rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
-        r = rel.first()
-        s =systemConfiguration(isConnect= True, DisconnectTime= r['DisconnectTime'], ReconnectTime= datetime.datetime.now(), isSync=False)
-        self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
-        self.__cache.SignalrDisconnectStatusUpdate = False 
-        self.__cache.SignalrDisconnectCount = 0
+        # rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
+        # r = rel.first()
+        # s =systemConfiguration(isConnect= True, DisconnectTime= r['DisconnectTime'], ReconnectTime= datetime.datetime.now(), isSync=False)
+        # self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
+        # self.__cache.SignalrDisconnectStatusUpdate = False 
+        # self.__cache.SignalrDisconnectCount = 0
+        s = System()
+        s.UpdateReconnectStatusToDb(reconnectTime=datetime.datetime.now())
      
     def __hcUpdateDisconnectStToDb(self):
         self.__logger.info("Update cloud disconnect status to db")
