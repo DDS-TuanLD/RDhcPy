@@ -23,7 +23,3 @@ class Itransport(metaclass=ABCMeta):
     def Receive(self):
         return
     
-    @abstractmethod
-    def HandlerData(self):
-        return
-        

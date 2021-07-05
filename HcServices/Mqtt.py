@@ -102,6 +102,3 @@ class Mqtt(Itransport):
     def Receive(self):
         pass
     
-    def HandlerData(self, data):
-        pass
-    

@@ -8,6 +8,10 @@ import logging
 import threading
 from Contracts.Itransport import Itransport
 import time
+from Helper.Terminal import Terminal
+from Database.Db import Db
+from Model.systemConfiguration import systemConfiguration
+
 def getToken():
     cache = Cache()
     try:
@@ -68,30 +72,32 @@ class Signalr(Itransport):
         with self.__lock:
             self.signalrDataQueue.put(data)
         
-    # async def DisConnect(self):
-    #     suc = 0
-    #     while suc == 0:
-    #         await asyncio.sleep(0.1)
-    #         try:
-    #             self.__hub.stop()
-    #             suc = 1
-    #         except Exception as err:
-    #             self.__logger.error(f"Exception when disconnect with signalr server: {err}")
-                
     async def DisConnect(self):
+        
+        
         self.__disconnectFlag = 1
-        print(self.__disconnectFlag)
         try:
             self.__hub.stop()
         except Exception as err:
             self.__logger.error(f"Exception when disconnect with signalr server: {err}")
         await asyncio.sleep(1)
-        print(self.__disconnectFlag)
         if self.__disconnectFlag == 1:
-            if(self.__disconnectRetryCount == 30):
+            if(self.__disconnectRetryCount == 60):
                 self.__disconnectRetryCount = 0
+                print("Disconnect signalr server timeout")
+                self.__logger.error("Disconnect signalr timeout")
+                
+                t = Terminal()
+                s = t.ExecuteWithResult(f'ps | grep python3')
+                dt = s[1].split(" ")
+                for i in range(len(dt)):
+                    if dt[i] != "":
+                        print(dt[i])
+                        break
+                s = t.Execute(f'kill -9 {dt[i]}')
                 return
             self.__disconnectRetryCount = self.__disconnectRetryCount + 1
+            print(f"Retry to disconnect signalr server {self.__disconnectRetryCount} times")
             await self.DisConnect()
 
             

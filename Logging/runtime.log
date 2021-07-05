@@ -1334,3 +1334,92 @@
 }
 2021-07-05 14:34:22,577:	DEBUG:	Hc.py:__signalrHandlerCommand():232	Forward data to mqtt
 2021-07-05 14:34:22,677:	ERROR:	Hc.py:__mqttHandlerCmdConnectToCloud():193	mqtt data receiver invalid
+2021-07-05 14:35:23,091:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-05 14:35:34,101:	ERROR:	Signalr.py:Init():121	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-05 14:35:49,121:	ERROR:	Signalr.py:Init():121	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-05 14:36:03,118:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-05 14:36:04,133:	ERROR:	Signalr.py:Init():121	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-05 14:36:09,138:	ERROR:	Signalr.py:Init():121	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-05 14:36:23,122:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-05 14:36:36,457:	DEBUG:	Hc.py:__signalrItemHandler():211	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-05 14:36:36,457:	DEBUG:	Hc.py:__signalrHandlerCommand():232	Forward data to mqtt
+2021-07-05 14:36:36,557:	ERROR:	Hc.py:__mqttHandlerCmdConnectToCloud():193	mqtt data receiver invalid
+2021-07-05 14:36:43,460:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-05 14:36:46,467:	DEBUG:	Hc.py:__signalrItemHandler():211	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-05 14:36:46,469:	DEBUG:	Hc.py:__signalrHandlerCommand():232	Forward data to mqtt
+2021-07-05 14:36:46,568:	ERROR:	Hc.py:__mqttHandlerCmdConnectToCloud():193	mqtt data receiver invalid
+2021-07-05 14:40:34,585:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-05 14:40:42,069:	DEBUG:	Hc.py:__signalrItemHandler():211	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-05 14:40:42,070:	DEBUG:	Hc.py:__signalrHandlerCommand():232	Forward data to mqtt
+2021-07-05 14:40:42,170:	ERROR:	Hc.py:__mqttHandlerCmdConnectToCloud():193	mqtt data receiver invalid
+2021-07-05 14:40:52,055:	DEBUG:	Hc.py:__signalrItemHandler():211	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-05 14:40:52,056:	DEBUG:	Hc.py:__signalrHandlerCommand():232	Forward data to mqtt
+2021-07-05 14:40:52,156:	ERROR:	Hc.py:__mqttHandlerCmdConnectToCloud():193	mqtt data receiver invalid
+2021-07-05 14:40:54,936:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-05 14:41:12,110:	DEBUG:	Hc.py:__signalrItemHandler():211	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-05 14:41:12,110:	DEBUG:	Hc.py:__signalrHandlerCommand():232	Forward data to mqtt
+2021-07-05 14:41:12,211:	ERROR:	Hc.py:__mqttHandlerCmdConnectToCloud():193	mqtt data receiver invalid
+2021-07-05 14:41:15,277:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-05 14:41:22,765:	DEBUG:	Hc.py:__signalrItemHandler():211	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-05 14:41:22,766:	DEBUG:	Hc.py:__signalrHandlerCommand():232	Forward data to mqtt
+2021-07-05 14:41:22,866:	ERROR:	Hc.py:__mqttHandlerCmdConnectToCloud():193	mqtt data receiver invalid
+2021-07-05 14:41:32,096:	DEBUG:	Hc.py:__signalrItemHandler():211	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-05 14:41:32,096:	DEBUG:	Hc.py:__signalrHandlerCommand():232	Forward data to mqtt
+2021-07-05 14:41:32,197:	ERROR:	Hc.py:__mqttHandlerCmdConnectToCloud():193	mqtt data receiver invalid
+2021-07-05 14:41:36,069:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-05 14:42:08,993:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-05 14:42:20,000:	ERROR:	Signalr.py:Init():122	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-05 14:42:35,020:	ERROR:	Signalr.py:Init():122	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-05 14:42:45,030:	ERROR:	Signalr.py:Init():122	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-05 14:42:49,032:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-05 14:42:50,034:	ERROR:	Signalr.py:Init():122	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-05 14:42:55,038:	ERROR:	Signalr.py:Init():122	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-05 14:43:09,037:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-05 14:43:31,019:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-05 14:43:53,847:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-05 14:44:14,187:	INFO:	Hc.py:__HcCheckConnectWithCloud():46	Hc send heardbeat to cloud
+2021-07-05 15:41:35,249:	INFO:	Hc.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-07-05 15:42:32,415:	INFO:	Hc.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud
+2021-07-05 15:42:56,351:	INFO:	Hc.py:__HcCheckConnectWithCloud():45	Hc send heardbeat to cloud

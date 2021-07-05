@@ -5,7 +5,6 @@ import asyncio
 from Database.Db import Db
 import aiohttp
 from Cache.Cache import Cache
-from Model.systemConfiguration import systemConfiguration
 import Constant.constant as const
 import datetime
 from Model.systemConfiguration import systemConfiguration
@@ -155,8 +154,6 @@ class RdHc(IController):
         pass
     
     async def __mqttHandlerTopicHcControl(self, data):
-        # self.__logger.debug("mqtt data receive from topic HC.CONTROL: " + data)
-        # print("mqtt data receive from topic HC.CONTROL: " + data)
         try:
             dt = json.loads(data)
             try:
