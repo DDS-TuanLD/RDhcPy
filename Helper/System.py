@@ -32,7 +32,7 @@ class System():
         r = rel.first()
         if r == None:
             self.__db.Services.SystemConfigurationServices.AddNewSysConfiguration(s)
-        if r!=None and r["IsSync"]!="False":
+        if r!=None and r["IsSync"]=="False":
             self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
         self.__cache.SignalrDisconnectStatusUpdate = True
         self.__cache.SignalrDisconnectCount = 0  
@@ -45,3 +45,5 @@ class System():
                 s = System()
                 s.UpdateReconnectStatusToDb(reconnectTime=datetime.datetime.now())
             self.__cache.RecheckConnectionStatusInDb = True    
+            
+    

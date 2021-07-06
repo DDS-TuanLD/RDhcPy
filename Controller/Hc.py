@@ -61,10 +61,9 @@ class RdHc(IController):
                     self.__cache.signalrConnectSuccess = True
             if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
                 self.__hcUpdateReconnectStToDb()
-            await asyncio.sleep(20)
+            await asyncio.sleep(60)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 self.__hcUpdateDisconnectStToDb()
-            if self.__cache.SignalrDisconnectStatusUpdate > 3:
                 self.__cache.SignalrDisconnectCount = 0
                 
     async def __hcSendHttpRequestToHeardbeatUrl(self):
@@ -108,27 +107,12 @@ class RdHc(IController):
     def __hcUpdateReconnectStToDb(self):
         self.__logger.info("Update cloud reconnect status to db")
         print("Update cloud reconnect status to db")
-        # rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
-        # r = rel.first()
-        # s =systemConfiguration(isConnect= True, DisconnectTime= r['DisconnectTime'], ReconnectTime= datetime.datetime.now(), isSync=False)
-        # self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
-        # self.__cache.SignalrDisconnectStatusUpdate = False 
-        # self.__cache.SignalrDisconnectCount = 0
         s = System()
         s.UpdateReconnectStatusToDb(reconnectTime=datetime.datetime.now())
-     
+        
     def __hcUpdateDisconnectStToDb(self):
         self.__logger.info("Update cloud disconnect status to db")
         print("Update cloud disconnect status to db")
-        # s =systemConfiguration(isConnect= False, DisconnectTime= self.__cache.DisconnectTime, ReconnectTime= None, isSync=False)
-        # rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
-        # r = rel.first()
-        # if r == None:
-        #     self.__db.Services.SystemConfigurationServices.AddNewSysConfiguration(s)
-        # if r!=None and r["IsSync"]!="False":
-        #     self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
-        # self.__cache.SignalrDisconnectStatusUpdate = True
-        # self.__cache.SignalrDisconnectCount = 0 
         s = System()
         s.UpdateDisconnectStatusToDb(DisconnectTime=self.__cache.DisconnectTime) 
     #--------------------------------------------------------------------------------------
@@ -225,12 +209,6 @@ class RdHc(IController):
 
     def __signalrHandlerCommand(self, data):
         try:
-            # d = json.loads(data)
-            # try:
-            #     _ = d['TYPE']
-            # except:
-            #     self.__mqttServices.Send(const.MQTT_PUB_CONTROL_TOPIC, data, const.MQTT_QOS)
-            #     self.__logger.debug("Forward data to mqtt")
             print(f"Forward data to mqtt: {data}")
             self.__mqttServices.Send(const.MQTT_PUB_CONTROL_TOPIC, data, const.MQTT_QOS)
             self.__logger.debug("Forward data to mqtt")
