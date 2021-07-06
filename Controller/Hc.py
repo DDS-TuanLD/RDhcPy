@@ -120,15 +120,17 @@ class RdHc(IController):
     def __hcUpdateDisconnectStToDb(self):
         self.__logger.info("Update cloud disconnect status to db")
         print("Update cloud disconnect status to db")
-        s =systemConfiguration(isConnect= False, DisconnectTime= self.__cache.DisconnectTime, ReconnectTime= None, isSync=False)
-        rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
-        r = rel.first()
-        if r == None:
-            self.__db.Services.SystemConfigurationServices.AddNewSysConfiguration(s)
-        if r!=None and r["IsSync"]!="False":
-            self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
-        self.__cache.SignalrDisconnectStatusUpdate = True
-        self.__cache.SignalrDisconnectCount = 0  
+        # s =systemConfiguration(isConnect= False, DisconnectTime= self.__cache.DisconnectTime, ReconnectTime= None, isSync=False)
+        # rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
+        # r = rel.first()
+        # if r == None:
+        #     self.__db.Services.SystemConfigurationServices.AddNewSysConfiguration(s)
+        # if r!=None and r["IsSync"]!="False":
+        #     self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
+        # self.__cache.SignalrDisconnectStatusUpdate = True
+        # self.__cache.SignalrDisconnectCount = 0 
+        s = System()
+        s.UpdateDisconnectStatusToDb(DisconnectTime=self.__cache.DisconnectTime) 
     #--------------------------------------------------------------------------------------
     
     #------------------Mqtt data handler---------------------------------------------------         

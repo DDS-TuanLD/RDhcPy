@@ -9,6 +9,7 @@ import threading
 from Contracts.Itransport import Itransport
 import time
 from Helper.System import System
+import datetime
 
 def getToken():
     cache = Cache()
@@ -82,8 +83,10 @@ class Signalr(Itransport):
                 self.__disconnectRetryCount = 0
                 print("Disconnect signalr server timeout")
                 self.__logger.error("Disconnect signalr timeout")
+                t = datetime.datetime.now().timestamp()-60
                 s = System()
                 s.EliminateCurrentProgess()
+                s.UpdateDisconnectStatusToDb(DisconnectTime=datetime.datetime.fromtimestamp(t))
                 
             self.__disconnectRetryCount = self.__disconnectRetryCount + 1
             print(f"Retry to disconnect signalr server {self.__disconnectRetryCount} times")
