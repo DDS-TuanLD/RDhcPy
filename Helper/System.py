@@ -31,12 +31,12 @@ class System():
         rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
         r = rel.first()
         s =systemConfiguration(isConnect= True, DisconnectTime= r['DisconnectTime'], ReconnectTime= reconnectTime, isSync=False)
-        # self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
+        r['ReconnectTime'] = reconnectTime
+        self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
         self.__cache.SignalrDisconnectStatusUpdate = False 
         self.__cache.SignalrDisconnectCount = 0
-        await self.PushDataToCloud(referenceTime=r['DisconnectTime'])
+        await self.__pushDataToCloud(referenceTime=r['DisconnectTime'], dt=r)
       
-            
     def UpdateDisconnectStatusToDb(self, DisconnectTime: datetime.datetime):
         s =systemConfiguration(isConnect= False, DisconnectTime= DisconnectTime, ReconnectTime= None, isSync=False)
         rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
@@ -58,13 +58,17 @@ class System():
                 self.__cache.RecheckConnectionStatusInDb = True  
 
             if r["ReconnectTime"] != None and r["IsSync"] == "False":
-                await self.PushDataToCloud(referenceTime=r["DisconnectTime"])
+                self.__cache.RecheckConnectionStatusInDb = False  
+                ok = await self.__pushDataToCloud(referenceTime=r["DisconnectTime"], dt=r)
+                if ok == True:
+                    self.__cache.RecheckConnectionStatusInDb = True  
+
                 
             
     def SendCommandOverMqtt(self, mqtt: Mqtt, topic: str, cmd: str, qos: int):
         mqtt.Send(topic=topic, send_data=cmd, qos=qos)  
             
-    async def PushDataToCloud(self, referenceTime: datetime.datetime):
+    async def __pushDataToCloud(self, referenceTime: datetime.datetime, dt: tuple):
         t = self.__timeSplit(time=referenceTime)
         updateDay = t[0]
         updateTime = t[1]
@@ -79,38 +83,35 @@ class System():
                 "value": r['Value']
             }
             data.append(d)
-        dt = json.dumps(data)
-        print(dt)
-        print(self.__cache.RefreshToken)
+        data_send_to_cloud = json.dumps(data)
+        print(f"push data: {data_send_to_cloud}")
+        print(f"refresh token: {self.__cache.RefreshToken}")
         h = Http()
         token = await self.__getToken(h) 
         cookie = f"Token={token}"
         pullDataUrl = const.SERVER_HOST + const.CLOUD_PUSH_DATA_URL
         header = h.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
-        req = h.CreateNewHttpRequest(url=pullDataUrl, body_data=json.loads(dt) , header=header)
+        req = h.CreateNewHttpRequest(url=pullDataUrl, body_data=json.loads(data_send_to_cloud) , header=header)
         session = aiohttp.ClientSession()
         res = await h.Post(session, req)
         await session.close()
         print(res)
         if res == "":
             print("Push data failure")
-            self.__updateAsyncStatusFailToDb()
+            self.__updateAsyncStatusFailToDb(data=dt)
             return False
         if (res != "") and (res.status == http.HTTPStatus.OK):
-            self.__updateAsyncStatusSuccessToDb()
+            self.__updateAsyncStatusSuccessToDb(data=dt)
             print("Push data successfully")
             return True
        
-    def __updateAsyncStatusSuccessToDb(self):
-        rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
-        r = rel.first()
-        s =systemConfiguration(isConnect= r['IsConnect'], DisconnectTime= r['DisconnectTime'], ReconnectTime= r['ReconnectTime'], isSync=True)
+    def __updateAsyncStatusSuccessToDb(self, data: tuple):
+        print(data)
+        s =systemConfiguration(isConnect= data['IsConnect'], DisconnectTime= data['DisconnectTime'], ReconnectTime= data['ReconnectTime'], isSync=True)
         self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
         
-    def __updateAsyncStatusFailToDb(self):
-        rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
-        r = rel.first()
-        s =systemConfiguration(isConnect= r['IsConnect'], DisconnectTime= r['DisconnectTime'], ReconnectTime= r['ReconnectTime'], isSync=False)
+    def __updateAsyncStatusFailToDb(self, data: tuple):
+        s =systemConfiguration(isConnect= data['IsConnect'], DisconnectTime= data['DisconnectTime'], ReconnectTime= data['ReconnectTime'], isSync=False)
         self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
         
     def __timeSplit(self, time: datetime.datetime):
