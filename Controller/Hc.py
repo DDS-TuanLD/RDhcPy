@@ -64,7 +64,7 @@ class RdHc(IController):
                     self.__cache.signalrConnectSuccess = True
             if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
                 await self.__hcUpdateReconnectStToDb()
-            await asyncio.sleep(15)
+            await asyncio.sleep(30)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 self.__hcUpdateDisconnectStToDb()
                 self.__cache.SignalrDisconnectCount = 0
@@ -142,7 +142,7 @@ class RdHc(IController):
         return
     
     async def __mqttHandlerHcControlResponse(self, data):
-        pass
+        self.__signalServices.Send(endUserProfileId=self.__cache.EndUserId, entity="Command", message=data)
     
     async def __mqttHandlerTopicHcControl(self, data):
         try:

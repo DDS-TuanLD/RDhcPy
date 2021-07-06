@@ -31,11 +31,12 @@ class System():
         rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
         r = rel.first()
         s =systemConfiguration(isConnect= True, DisconnectTime= r['DisconnectTime'], ReconnectTime= reconnectTime, isSync=False)
-        self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
+        # self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
         self.__cache.SignalrDisconnectStatusUpdate = False 
         self.__cache.SignalrDisconnectCount = 0
         await self.PushDataToCloud(referenceTime=r['DisconnectTime'])
-        
+      
+            
     def UpdateDisconnectStatusToDb(self, DisconnectTime: datetime.datetime):
         s =systemConfiguration(isConnect= False, DisconnectTime= DisconnectTime, ReconnectTime= None, isSync=False)
         rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
@@ -54,7 +55,11 @@ class System():
             if r["ReconnectTime"] == None:
                 s = System()
                 await s.UpdateReconnectStatusToDb(reconnectTime=datetime.datetime.now())
-            self.__cache.RecheckConnectionStatusInDb = True  
+                self.__cache.RecheckConnectionStatusInDb = True  
+
+            if r["ReconnectTime"] != None and r["IsSync"] == "False":
+                await self.PushDataToCloud(referenceTime=r["DisconnectTime"])
+                
             
     def SendCommandOverMqtt(self, mqtt: Mqtt, topic: str, cmd: str, qos: int):
         mqtt.Send(topic=topic, send_data=cmd, qos=qos)  
@@ -63,6 +68,7 @@ class System():
         t = self.__timeSplit(time=referenceTime)
         updateDay = t[0]
         updateTime = t[1]
+        print(f"updateDay: {updateDay}, updateTime: {updateTime}")
         rel = self.__db.Services.DeviceAttributeValueServices.FindDeviceAttributeValueWithCondition(or_(and_(self.__db.Table.DeviceAttributeValueTable.c.UpdateDay == updateDay, self.__db.Table.DeviceAttributeValueTable.c.UpdateTime >= updateTime), self.__db.Table.DeviceAttributeValueTable.c.UpdateDay > updateDay))
 
         data = []
@@ -75,6 +81,7 @@ class System():
             data.append(d)
         dt = json.dumps(data)
         print(dt)
+        print(self.__cache.RefreshToken)
         h = Http()
         token = await self.__getToken(h) 
         cookie = f"Token={token}"
@@ -86,16 +93,24 @@ class System():
         await session.close()
         print(res)
         if res == "":
+            print("Push data failure")
+            self.__updateAsyncStatusFailToDb()
             return False
         if (res != "") and (res.status == http.HTTPStatus.OK):
             self.__updateAsyncStatusSuccessToDb()
-            print("Update to cloud ok")
+            print("Push data successfully")
             return True
        
     def __updateAsyncStatusSuccessToDb(self):
         rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
         r = rel.first()
         s =systemConfiguration(isConnect= r['IsConnect'], DisconnectTime= r['DisconnectTime'], ReconnectTime= r['ReconnectTime'], isSync=True)
+        self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
+        
+    def __updateAsyncStatusFailToDb(self):
+        rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
+        r = rel.first()
+        s =systemConfiguration(isConnect= r['IsConnect'], DisconnectTime= r['DisconnectTime'], ReconnectTime= r['ReconnectTime'], isSync=False)
         self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
         
     def __timeSplit(self, time: datetime.datetime):
