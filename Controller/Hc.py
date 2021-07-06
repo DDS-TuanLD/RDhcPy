@@ -29,7 +29,7 @@ class RdHc(IController):
 
     def __init__(self, log: logging.Logger):
         self.__logger = log
-        self.__httpServices = Http(self.__logger)
+        self.__httpServices = Http()
         self.__signalServices = Signalr(self.__logger)
         self.__mqttServices = Mqtt(self.__logger)
         self.__db = Db()
@@ -53,25 +53,25 @@ class RdHc(IController):
                 self.__cache.signalrConnectSuccess = False 
                 self.__cache.pingCloudHttp = False
             if ok == True:
-                s.RecheckReconnectStatusOfLastActiveInDb()
+                await s.RecheckReconnectStatusOfLastActiveInDb()
+                # if self.__cache.FirstPullDataToCloud == False:
+                #     s.PushDataToCloud(http=self.__httpServices, referenceTime=datetime.datetime.now())
+                #     self.__cache.FirstPullDataToCloud = True
                 self.__cache.pingCloudHttp = True
                 self.__cache.DisconnectTime = None
-                if self.__cache.signalrConnectSuccess == False:  
+                if self.__cache.signalrConnectSuccess == False: 
                     self.__signalServices.ReConnect()
                     self.__cache.signalrConnectSuccess = True
             if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
-                self.__hcUpdateReconnectStToDb()
-            await asyncio.sleep(60)
+                await self.__hcUpdateReconnectStToDb()
+            await asyncio.sleep(15)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
                 self.__hcUpdateDisconnectStToDb()
                 self.__cache.SignalrDisconnectCount = 0
                 
     async def __hcSendHttpRequestToHeardbeatUrl(self):
         endUser = self.__cache.EndUserId
-        try:
-            token = await self.__hcGetToken() 
-        except:
-            token = ""
+        token = await self.__hcGetToken() 
         cookie = f"Token={token}"
         heardBeatUrl = const.SERVER_HOST + const.SIGNSLR_HEARDBEAT_URL
         header = self.__httpServices.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
@@ -104,11 +104,11 @@ class RdHc(IController):
         await session.close()
         return token  
     
-    def __hcUpdateReconnectStToDb(self):
+    async def __hcUpdateReconnectStToDb(self):
         self.__logger.info("Update cloud reconnect status to db")
         print("Update cloud reconnect status to db")
         s = System()
-        s.UpdateReconnectStatusToDb(reconnectTime=datetime.datetime.now())
+        await s.UpdateReconnectStatusToDb(reconnectTime=datetime.datetime.now())
         
     def __hcUpdateDisconnectStToDb(self):
         self.__logger.info("Update cloud disconnect status to db")
@@ -235,7 +235,7 @@ class RdHc(IController):
         await asyncio.gather(*tasks)
         return
 
-    async def ActionDb(self):
+    async def ActionDb(self): 
         self.__HcLoadUserData()
         task1 = asyncio.ensure_future(self.__HcHandlerSignalRData())
         task2 = asyncio.ensure_future(self.__HcCheckConnectWithCloud())

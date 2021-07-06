@@ -6,6 +6,9 @@ SERVER_HOST = "https://iot-dev.truesight.asia"
 SIGNALR_SERVER_URL = "/rpc/iot-ebe/signalr/sync"
 SIGNSLR_HEARDBEAT_URL = "/rpc/iot-ebe/sync/time"
 
+#pull,push data url
+CLOUD_PUSH_DATA_URL = "/rpc/iot-ebe/sync/hc/merge-device-attribute-value"
+
 #Server connection option
 TOKEN_URL = "/rpc/iot-ebe/account/renew-token"
 
@@ -19,6 +22,6 @@ MQTT_USER = "RD"
 MQTT_PASS = "1"
 
 #Sqlite connection option
-DB_NAME = "rd.Sqlite"
+DB_NAME = "rd.db"
 
 #

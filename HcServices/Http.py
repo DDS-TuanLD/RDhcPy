@@ -38,11 +38,6 @@ class HttpRequest():
         return self
 class Http():
     
-    __logger: logging.Logger
-    
-    def __init__(self, log: logging.Logger):
-        self.__logger = log
-    
     def CreateNewHttpHeader(self, token: str = "", endProfileId: str = "", cookie: str = ""):
         newHttpHeader = CaseInsensitiveDict()
         newHttpHeader["Accept"] = "application/json"

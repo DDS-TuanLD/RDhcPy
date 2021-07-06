@@ -15,6 +15,7 @@ class Cache(metaclass=MetaCache):
     signalrConnectSuccess: bool
     pingCloudHttp: bool
     __recheckConnectionStatusInDb: bool
+    # __firstPullDataToCloud: bool
     
     def __init__(self):
         self.pingCloudHttp = None
@@ -27,7 +28,15 @@ class Cache(metaclass=MetaCache):
         self.mqttDisconnectStatus = False
         self.mqttProblemCount = 0
         self.__recheckConnectionStatusInDb = False
-        
+        # self.__firstPullDataToCloud = False
+      
+    # @property
+    # def FirstPullDataToCloud(self):
+    #     return self.__firstPullDataToCloud
+    
+    # @FirstPullDataToCloud.setter
+    # def FirstPullDataToCloud(self, firstPull: bool):
+    #     self.__firstPullDataToCloud = firstPull 
         
     @property
     def RecheckConnectionStatusInDb(self):

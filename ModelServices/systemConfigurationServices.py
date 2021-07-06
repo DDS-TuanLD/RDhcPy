@@ -3,7 +3,6 @@ from Model.systemConfiguration import systemConfiguration
 from sqlalchemy import Table
 from sqlalchemy.engine.base import Connection
 
-
 class MetaSystemConfigurationServices(type):
     _instances = {}
     def __call__(cls, *args, **kwargs):
