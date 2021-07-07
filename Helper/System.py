@@ -31,11 +31,10 @@ class System():
         rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
         r = rel.first()
         s =systemConfiguration(isConnect= True, DisconnectTime= r['DisconnectTime'], ReconnectTime= reconnectTime, isSync=False)
-        r['ReconnectTime'] = reconnectTime
         self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
         self.__cache.SignalrDisconnectStatusUpdate = False 
         self.__cache.SignalrDisconnectCount = 0
-        await self.__pushDataToCloud(referenceTime=r['DisconnectTime'], dt=r)
+        await self.__pushDataToCloud(referenceTime=r['DisconnectTime'], dt=s)
       
     def UpdateDisconnectStatusToDb(self, DisconnectTime: datetime.datetime):
         s =systemConfiguration(isConnect= False, DisconnectTime= DisconnectTime, ReconnectTime= None, isSync=False)
@@ -52,23 +51,22 @@ class System():
         if self.__cache.RecheckConnectionStatusInDb == False:
             rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
             r = rel.first()
+            s =systemConfiguration(isConnect= r["IsConnect"], DisconnectTime= r['DisconnectTime'], ReconnectTime= r['ReconnectTime'], isSync=r['IsSync'])
+
             if r["ReconnectTime"] == None:
                 s = System()
                 await s.UpdateReconnectStatusToDb(reconnectTime=datetime.datetime.now())
-                self.__cache.RecheckConnectionStatusInDb = True  
+                return  
 
             if r["ReconnectTime"] != None and r["IsSync"] == "False":
-                self.__cache.RecheckConnectionStatusInDb = False  
-                ok = await self.__pushDataToCloud(referenceTime=r["DisconnectTime"], dt=r)
+                ok = await self.__pushDataToCloud(referenceTime=r["DisconnectTime"], dt=s)
                 if ok == True:
-                    self.__cache.RecheckConnectionStatusInDb = True  
-
-                
-            
-    def SendCommandOverMqtt(self, mqtt: Mqtt, topic: str, cmd: str, qos: int):
-        mqtt.Send(topic=topic, send_data=cmd, qos=qos)  
-            
-    async def __pushDataToCloud(self, referenceTime: datetime.datetime, dt: tuple):
+                    self.__cache.RecheckConnectionStatusInDb = True 
+                return
+        self.__cache.RecheckConnectionStatusInDb = True
+        return
+    
+    async def __pushDataToCloud(self, referenceTime: datetime.datetime, dt: systemConfiguration):
         t = self.__timeSplit(time=referenceTime)
         updateDay = t[0]
         updateTime = t[1]
@@ -98,20 +96,19 @@ class System():
         print(res)
         if res == "":
             print("Push data failure")
-            self.__updateAsyncStatusFailToDb(data=dt)
+            self.__updateAsyncStatusFailToDb(dt)
             return False
         if (res != "") and (res.status == http.HTTPStatus.OK):
-            self.__updateAsyncStatusSuccessToDb(data=dt)
+            self.__updateAsyncStatusSuccessToDb(dt)
             print("Push data successfully")
             return True
        
-    def __updateAsyncStatusSuccessToDb(self, data: tuple):
-        print(data)
-        s =systemConfiguration(isConnect= data['IsConnect'], DisconnectTime= data['DisconnectTime'], ReconnectTime= data['ReconnectTime'], isSync=True)
+    def __updateAsyncStatusSuccessToDb(self, s: systemConfiguration):
+        s.IsSync = True
         self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
         
-    def __updateAsyncStatusFailToDb(self, data: tuple):
-        s =systemConfiguration(isConnect= data['IsConnect'], DisconnectTime= data['DisconnectTime'], ReconnectTime= data['ReconnectTime'], isSync=False)
+    def __updateAsyncStatusFailToDb(self, s: systemConfiguration):
+        s.IsSync = False
         self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
         
     def __timeSplit(self, time: datetime.datetime):
