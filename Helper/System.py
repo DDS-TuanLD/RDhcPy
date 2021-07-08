@@ -30,10 +30,8 @@ class System():
     async def UpdateReconnectStatusToDb(self, reconnectTime: datetime.datetime):
         rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
         r = rel.first()
-        s =systemConfiguration(isConnect= True, DisconnectTime= r['DisconnectTime'], ReconnectTime= reconnectTime, isSync=False)
+        s =systemConfiguration(isConnect= True, DisconnectTime= r['DisconnectTime'], ReconnectTime= reconnectTime, isSync=r['IsSync'])
         self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
-        self.__cache.SignalrDisconnectStatusUpdate = False 
-        self.__cache.SignalrDisconnectCount = 0
         await self.__pushDataToCloud(referenceTime=r['DisconnectTime'], dt=s)
       
     def UpdateDisconnectStatusToDb(self, DisconnectTime: datetime.datetime):
@@ -44,11 +42,10 @@ class System():
             self.__db.Services.SystemConfigurationServices.AddNewSysConfiguration(s)
         if r!=None and r["IsSync"]!="False":
             self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
-        self.__cache.SignalrDisconnectStatusUpdate = True
-        self.__cache.SignalrDisconnectCount = 0  
+        
     
     async def RecheckReconnectStatusOfLastActiveInDb(self):
-        if self.__cache.RecheckConnectionStatusInDb == False:
+        if self.__cache.RecheckConnectionStatusInDbFlag == False:
             rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
             r = rel.first()
             s =systemConfiguration(isConnect= r["IsConnect"], DisconnectTime= r['DisconnectTime'], ReconnectTime= r['ReconnectTime'], isSync=r['IsSync'])
@@ -61,9 +58,9 @@ class System():
             if r["ReconnectTime"] != None and r["IsSync"] == "False":
                 ok = await self.__pushDataToCloud(referenceTime=r["DisconnectTime"], dt=s)
                 if ok == True:
-                    self.__cache.RecheckConnectionStatusInDb = True 
+                    self.__cache.RecheckConnectionStatusInDbFlag = True 
                 return
-        self.__cache.RecheckConnectionStatusInDb = True
+        self.__cache.RecheckConnectionStatusInDbFlag = True
         return
     
     async def __pushDataToCloud(self, referenceTime: datetime.datetime, dt: systemConfiguration):
@@ -75,6 +72,8 @@ class System():
 
         data = []
         for r in rel:
+            if r['DeviceId'] == None or r['DeviceAttributeId'] == None or r['Value'] == None:
+                continue
             d = {
                 "deviceId": r['DeviceId'],
                 "deviceAttributeId": r['DeviceAttributeId'],
@@ -87,6 +86,7 @@ class System():
         h = Http()
         token = await self.__getToken(h) 
         cookie = f"Token={token}"
+        print(f"cookie: {cookie}")
         pullDataUrl = const.SERVER_HOST + const.CLOUD_PUSH_DATA_URL
         header = h.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
         req = h.CreateNewHttpRequest(url=pullDataUrl, body_data=json.loads(data_send_to_cloud) , header=header)

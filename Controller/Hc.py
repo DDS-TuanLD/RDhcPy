@@ -49,26 +49,29 @@ class RdHc(IController):
                 self.__cache.DisconnectTime = datetime.datetime.now()
             ok = await self.__hcSendHttpRequestToHeardbeatUrl()
             if ok == False:
+                print("can not ping to cloud")
                 self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1 
-                self.__cache.signalrConnectSuccess = False 
-                self.__cache.pingCloudHttp = False
+                self.__cache.SignalrConnectSuccessFlag = False 
+                self.__cache.PingCloudSuccessFlag = False
             if ok == True:
                 await s.RecheckReconnectStatusOfLastActiveInDb()
-                # if self.__cache.FirstPullDataToCloud == False:
-                #     s.PushDataToCloud(http=self.__httpServices, referenceTime=datetime.datetime.now())
-                #     self.__cache.FirstPullDataToCloud = True
-                self.__cache.pingCloudHttp = True
+                if self.__cache.FirstPingSuccessToCloudFlag == False:
+                    self.__cache.FirstPingSuccessToCloudFlag = True
+                self.__cache.PingCloudSuccessFlag = True
                 self.__cache.DisconnectTime = None
-                if self.__cache.signalrConnectSuccess == False: 
-                    self.__signalServices.ReConnect()
-                    self.__cache.signalrConnectSuccess = True
-            if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdate == True):
-                await self.__hcUpdateReconnectStToDb()
-            await asyncio.sleep(30)
-            if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdate == False):
-                self.__hcUpdateDisconnectStToDb()
                 self.__cache.SignalrDisconnectCount = 0
+            # if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdateStatusFlag == True):
+            #     self.__cache.SignalrDisconnectStatusUpdateStatusFlag = False
+            #     await self.__hcUpdateReconnectStToDb()
                 
+            await asyncio.sleep(15)
+            if (self.__cache.SignalrDisconnectCount == 4) and (self.__cache.SignalrDisconnectStatusUpdateStatusFlag == False):
+                # self.__cache.SignalrDisconnectStatusUpdateStatusFlag = True
+                # self.__cache.SignalrDisconnectCount = 0  
+                self.__hcUpdateDisconnectStToDb()
+                if self.__cache.FirstPingSuccessToCloudFlag == True:
+                    s.EliminateCurrentProgess()
+                                
     async def __hcSendHttpRequestToHeardbeatUrl(self):
         endUser = self.__cache.EndUserId
         token = await self.__hcGetToken() 
@@ -142,8 +145,25 @@ class RdHc(IController):
         return
     
     async def __mqttHandlerHcControlResponse(self, data):
-        self.__signalServices.Send(endUserProfileId=self.__cache.EndUserId, entity="Command", message=data)
-    
+        if self.__cache.PingCloudSuccessFlag == True:
+            print("data from topic HC.CONTROL.RESPONSE: " + data)
+            self.__signalServices.Send(endUserProfileId=self.__cache.EndUserId, entity=const.SIGNALR_APP_RESPONSE_ENTITY, message=data)
+            
+            try:
+                dt = json.loads(data)
+                try:
+                    cmd = dt["CMD"]
+                    data = dt["DATA"]
+                    switcher = {
+                        "DEVICE": self.__mqttHandlerCmdDevice
+                    }
+                    func = switcher.get(cmd)
+                    await func(data)
+                except:
+                    self.__logger.error("mqtt data receiver invalid")
+            except:
+                self.__logger.error("mqtt data receiver invalid")
+       
     async def __mqttHandlerTopicHcControl(self, data):
         try:
             dt = json.loads(data)
@@ -153,14 +173,27 @@ class RdHc(IController):
                 switcher = {
                     "HC_CONNECT_TO_CLOUD": self.__mqttHandlerCmdConnectToCloud
                 }
-                func = switcher.get("HC_CONNECT_TO_CLOUD")
+                func = switcher.get(cmd)
                 await func(data)
             except:
                 self.__logger.error("mqtt data receiver invalid")
         except:
             self.__logger.error("mqtt data receiver invalid")
           
+    async def __mqttHandlerCmdDevice(self, data):
+        await asyncio.sleep(0.1)
+        signal_data = []
+        for i in range (len(data['PROPERTIES'])):
+            d = {
+                "deviceId": data['DEVICE_ID'],
+                "deviceAttributeId": data['PROPERTIES'][i]['ID'],
+                "value": data['PROPERTIES'][i]['VALUE']
+            }
+            signal_data.append(d)
+        self.__signalServices.Send(endUserProfileId=self.__cache.EndUserId, entity=const.SIGNALR_CLOUD_RESPONSE_ENTITY, message=json.dumps(signal_data))  
+          
     async def __mqttHandlerCmdConnectToCloud(self, data):
+        await asyncio.sleep(0.1)
         try:
             endUserProfileId = data["END_USER_PROFILE_ID"]
             refreshToken = data["REFRESH_TOKEN"]
@@ -174,9 +207,8 @@ class RdHc(IController):
             if dt == None:
                 self.__db.Services.UserdataServices.AddNewUserData(newUserData=userDt)
             
-            if self.__cache.pingCloudHttp == True:
-                await self.__signalServices.DisConnect()
-                self.__signalServices.ReConnect()
+            if self.__cache.PingCloudSuccessFlag == True:
+                self.__cache.ResetSignalrConnectFlag = True
         except:
             self.__logger.error("mqtt data receiver invalid")
     #------------------------------------------------------------------------------------------------
@@ -199,7 +231,7 @@ class RdHc(IController):
             self.__logger.debug(f"handler receive signal data in {args[0][0]} is {args[0][1]}")
             print(f"handler receive signal data in {args[0][0]} is {args[0][1]}")
             switcher = {
-                "Command": self.__signalrHandlerCommand
+                const.SIGNALR_COMMAND_ENTITY: self.__signalrHandlerCommand
             }
             func = switcher.get(args[0][0])
             func(args[0][1])
@@ -223,7 +255,7 @@ class RdHc(IController):
         dt = userData.first()
         if dt != None:
             self.__cache.EndUserId = dt["EndUserProfileId"]
-            self.__cache.RefreshToken = dt["RefreshToken"]      
+            self.__cache.RefreshToken = dt["RefreshToken"]   
     #------------------------------------------------------------------------------------------
     
 

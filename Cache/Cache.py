@@ -12,39 +12,64 @@ class Cache(metaclass=MetaCache):
     __signalrDisconnectCount: int
     __signalrDisconnectStatusUpdate: bool
     __disconectTime: datetime.datetime
-    signalrConnectSuccess: bool
-    pingCloudHttp: bool
     __recheckConnectionStatusInDb: bool
-    # __firstPullDataToCloud: bool
+    __resetSignalrConnect: bool
+    __signalrConnectSuccess: bool
+    __pingCloudSuccess: bool
+    __firstPingSuccessToCloud: bool
     
     def __init__(self):
-        self.pingCloudHttp = None
-        self.signalrConnectSuccess = None
+        self.__signalrConnectSuccess = False
         self.__refreshToken = ""
         self.__signalrDisconnectCount = 0
         self.__signalrDisconnectStatusUpdate = False
         self.__endUserId = ""
         self.__disconectTime = None
-        self.mqttDisconnectStatus = False
-        self.mqttProblemCount = 0
         self.__recheckConnectionStatusInDb = False
-        # self.__firstPullDataToCloud = False
-      
-    # @property
-    # def FirstPullDataToCloud(self):
-    #     return self.__firstPullDataToCloud
+        self.__resetSignalrConnect = False
+        self.__pingCloudSuccess = None
+        self.__firstPingSuccessToCloud = False
+
+    @property
+    def FirstPingSuccessToCloudFlag(self):
+        return self.__firstPingSuccessToCloud
     
-    # @FirstPullDataToCloud.setter
-    # def FirstPullDataToCloud(self, firstPull: bool):
-    #     self.__firstPullDataToCloud = firstPull 
+    @FirstPingSuccessToCloudFlag.setter
+    def FirstPingSuccessToCloudFlag(self, firstPingSuccessToCloud: bool):
+        self.__firstPingSuccessToCloud = firstPingSuccessToCloud
+    
+    @property    
+    def PingCloudSuccessFlag(self):
+        return self.__pingCloudSuccess
+
+    @PingCloudSuccessFlag.setter
+    def PingCloudSuccessFlag(self, pingCloudSuccess: bool):
+        self.__pingCloudSuccess = pingCloudSuccess
+    
+    
+    @property
+    def SignalrConnectSuccessFlag(self):
+        return self.__signalrConnectSuccess
+    
+    @SignalrConnectSuccessFlag.setter
+    def SignalrConnectSuccessFlag(self, signalrConnectSuccess: bool):
+        self.__signalrConnectSuccess = signalrConnectSuccess
+      
+    @property
+    def ResetSignalrConnectFlag(self):
+        return self.__resetSignalrConnect
+    
+    @ResetSignalrConnectFlag.setter
+    def ResetSignalrConnectFlag(self, resetSignalrConnect: bool):
+        self.__resetSignalrConnect = resetSignalrConnect
         
     @property
-    def RecheckConnectionStatusInDb(self):
+    def RecheckConnectionStatusInDbFlag(self):
         return self.__recheckConnectionStatusInDb
     
-    @RecheckConnectionStatusInDb.setter
-    def RecheckConnectionStatusInDb(self, recheckStatus: bool):
-        self.__recheckConnectionStatusInDb = recheckStatus
+    @RecheckConnectionStatusInDbFlag.setter
+    def RecheckConnectionStatusInDbFlag(self, recheckConnectionStatusInDb: bool):
+        self.__recheckConnectionStatusInDb = recheckConnectionStatusInDb
     
     @property
     def RefreshToken(self):
@@ -59,16 +84,16 @@ class Cache(metaclass=MetaCache):
         return self.__signalrDisconnectCount
     
     @SignalrDisconnectCount.setter
-    def SignalrDisconnectCount(self, count: int):
-        self.__signalrDisconnectCount = count
+    def SignalrDisconnectCount(self, signalrDisconnectCount: int):
+        self.__signalrDisconnectCount = signalrDisconnectCount
         
     @property
-    def SignalrDisconnectStatusUpdate(self):
+    def SignalrDisconnectStatusUpdateStatusFlag(self):
         return self.__signalrDisconnectStatusUpdate
     
-    @SignalrDisconnectStatusUpdate.setter
-    def SignalrDisconnectStatusUpdate(self, updateStatus: bool):
-        self.__signalrDisconnectStatusUpdate = updateStatus
+    @SignalrDisconnectStatusUpdateStatusFlag.setter
+    def SignalrDisconnectStatusUpdateStatusFlag(self, signalrDisconnectStatusUpdate: bool):
+        self.__signalrDisconnectStatusUpdate = signalrDisconnectStatusUpdate
            
     @property
     def EndUserId(self):

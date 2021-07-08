@@ -50,6 +50,12 @@ class Signalr(Itransport):
                         "headers": {
                         }
                     }) \
+        .with_automatic_reconnect({
+                "type": "raw",
+                "keep_alive_interval": 5,
+                "reconnect_interval": 5,
+                "max_attempts": 50
+                })\
         .build()
         return self
     
@@ -85,9 +91,9 @@ class Signalr(Itransport):
                 self.__logger.error("Disconnect signalr timeout")
                 t = datetime.datetime.now().timestamp()-60
                 s = System()
-                s.EliminateCurrentProgess()
                 s.UpdateDisconnectStatusToDb(DisconnectTime=datetime.datetime.fromtimestamp(t))
-                
+                s.EliminateCurrentProgess()
+
             self.__disconnectRetryCount = self.__disconnectRetryCount + 1
             print(f"Retry to disconnect signalr server {self.__disconnectRetryCount} times")
             await self.DisConnect()
@@ -101,29 +107,33 @@ class Signalr(Itransport):
             username (str, optional): [name of gateway]. Defaults to "RdGateway".
             mess (str, optional): [string need to send]. Defaults to "".
         """
-        try:
-            self.__hub.send("Send", [endUserProfileId, entity , message])
-        except Exception as err:
-            self.__logger.error(f"Error when send data to cloud: {err}")
+        self.__hub.send("Send", [endUserProfileId, entity , message])
        
     async def Init(self):
+        runOnlyOne = False
         while self.__cache.RefreshToken == "":
             await asyncio.sleep(1)
         self.__buildConnection()
-        connectSuccess = False
-        while connectSuccess == False:
-            try:
-                self.__hub.start()
-                connectSuccess = True
-            except Exception as err:
-                self.__logger.error(f"Exception when connect with signalr server: {err}")
-                print(f"Exception when connect with signalr server: {err}")
-                self.__cache.signalrConnectSuccess = False
-                await asyncio.sleep(5)
-        self.__cache.signalrConnectSuccess = True
         self.__onConnect()
         self.__onDisconnect()
         self.__onReceiveData()
+        while True:
+            try:
+                if self.__cache.SignalrConnectSuccessFlag == False and runOnlyOne == False:
+                    self.__hub.start()
+                    self.__cache.SignalrConnectSuccessFlag = True
+                    runOnlyOne = True
+                    
+                if self.__cache.ResetSignalrConnectFlag == True:
+                    await self.DisConnect()
+                    self.ReConnect()
+                    self.__cache.ResetSignalrConnectFlag = False    
+            except Exception as err:
+                self.__logger.error(f"Exception when connect with signalr server: {err}")
+                print(f"Exception when connect with signalr server: {err}")
+                self.__cache.SignalrConnectSuccessFlag = False
+            await asyncio.sleep(3)
+       
     
     def ReConnect(self):
         try:
