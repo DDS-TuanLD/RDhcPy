@@ -42,8 +42,7 @@ class System():
             self.__db.Services.SystemConfigurationServices.AddNewSysConfiguration(s)
         if r!=None and r["IsSync"]!="False":
             self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
-        
-    
+           
     async def RecheckReconnectStatusOfLastActiveInDb(self):
         if self.__cache.RecheckConnectionStatusInDbFlag == False:
             rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
@@ -51,8 +50,7 @@ class System():
             s =systemConfiguration(isConnect= r["IsConnect"], DisconnectTime= r['DisconnectTime'], ReconnectTime= r['ReconnectTime'], isSync=r['IsSync'])
 
             if r["ReconnectTime"] == None:
-                s = System()
-                await s.UpdateReconnectStatusToDb(reconnectTime=datetime.datetime.now())
+                await self.UpdateReconnectStatusToDb(reconnectTime=datetime.datetime.now())
                 return  
 
             if r["ReconnectTime"] != None and r["IsSync"] == "False":
@@ -62,6 +60,41 @@ class System():
                 return
         self.__cache.RecheckConnectionStatusInDbFlag = True
         return
+     
+    async def SendHttpRequestToHeardbeatUrl(self, h: Http):
+        endUser = self.__cache.EndUserId
+        token = await self.__getToken(h) 
+        cookie = f"Token={token}"
+        heardBeatUrl = const.SERVER_HOST + const.SIGNSLR_HEARDBEAT_URL
+        header = h.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
+        req = h.CreateNewHttpRequest(url=heardBeatUrl, header=header)
+        session = aiohttp.ClientSession()
+        res = await h.Post(session, req)
+        await session.close()
+        if res == "":
+            return False
+        if (res != "") and (res.status == http.HTTPStatus.OK):
+            return True
+        
+    async def __getToken(self, http: Http):
+        refreshToken = self.__cache.RefreshToken
+        if refreshToken == "":
+            return ""
+        tokenUrl = const.SERVER_HOST + const.TOKEN_URL
+        cookie = f"RefreshToken={refreshToken}"
+        header = http.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
+        req = http.CreateNewHttpRequest(url=tokenUrl, header=header)
+        session = aiohttp.ClientSession()
+        res = await http.Post(session, req)  
+        token = ""
+        if res != "":
+            try:
+                data = await res.json()
+                token = data['token']
+            except:
+                return ""
+        await session.close()
+        return token 
     
     async def __pushDataToCloud(self, referenceTime: datetime.datetime, dt: systemConfiguration):
         t = self.__timeSplit(time=referenceTime)
@@ -72,7 +105,7 @@ class System():
 
         data = []
         for r in rel:
-            if r['DeviceId'] == None or r['DeviceAttributeId'] == None or r['Value'] == None:
+            if r['DeviceId'] == "" or r['DeviceAttributeId'] == None or r['Value'] == None:
                 continue
             d = {
                 "deviceId": r['DeviceId'],
@@ -123,22 +156,4 @@ class System():
         updateTime = 60*time.hour + time.minute
         return updateDay, updateTime
     
-    async def __getToken(self, http: Http):
-        refreshToken = self.__cache.RefreshToken
-        if refreshToken == "":
-            return ""
-        tokenUrl = const.SERVER_HOST + const.TOKEN_URL
-        cookie = f"RefreshToken={refreshToken}"
-        header = http.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
-        req = http.CreateNewHttpRequest(url=tokenUrl, header=header)
-        session = aiohttp.ClientSession()
-        res = await http.Post(session, req)  
-        token = ""
-        if res != "":
-            try:
-                data = await res.json()
-                token = data['token']
-            except:
-                return ""
-        await session.close()
-        return token 
+    

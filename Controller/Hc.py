@@ -17,6 +17,9 @@ import json
 from Contracts.Itransport import Itransport
 from Contracts.IController import IController
 from Helper.System import System
+from Contracts.Ihandler import Ihandler
+from Handler.MqttDataHandler import MqttDataHandler
+from Handler.SignalrDataHandler import SignalrDataHandler
 
 class RdHc(IController):
     __httpServices: Http
@@ -26,7 +29,9 @@ class RdHc(IController):
     __cache : Cache
     __lock: threading.Lock
     __logger: logging.Logger
-
+    __mqttHandler: Ihandler
+    __signalrHandler: Ihandler
+    
     def __init__(self, log: logging.Logger):
         self.__logger = log
         self.__httpServices = Http()
@@ -35,10 +40,9 @@ class RdHc(IController):
         self.__db = Db()
         self.__cache = Cache()
         self.__lock = threading.Lock()
-           
-    async def __HcUpdateUserdata(self):
-       pass
-            
+        self.__mqttHandler =  MqttDataHandler(self.__logger, self.__mqttServices, self.__signalServices)
+        self.__signalrHandler =  SignalrDataHandler(self.__logger, self.__mqttServices, self.__signalServices)
+        
     #-----------------Ping cloud----------------------------------------------------------------------
     async def __HcCheckConnectWithCloud(self):
         s = System()
@@ -47,7 +51,7 @@ class RdHc(IController):
             self.__logger.info("Hc send heardbeat to cloud")
             if self.__cache.DisconnectTime == None:
                 self.__cache.DisconnectTime = datetime.datetime.now()
-            ok = await self.__hcSendHttpRequestToHeardbeatUrl()
+            ok = await s.SendHttpRequestToHeardbeatUrl(self.__httpServices)
             if ok == False:
                 print("can not ping to cloud")
                 self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1 
@@ -62,50 +66,50 @@ class RdHc(IController):
                 self.__cache.SignalrDisconnectCount = 0
             # if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdateStatusFlag == True):
             #     self.__cache.SignalrDisconnectStatusUpdateStatusFlag = False
-            #     await self.__hcUpdateReconnectStToDb()
-                
+            #     await self.__hcUpdateReconnectStToDb()     
             await asyncio.sleep(15)
-            if (self.__cache.SignalrDisconnectCount == 4) and (self.__cache.SignalrDisconnectStatusUpdateStatusFlag == False):
+            if (self.__cache.SignalrDisconnectCount == 1) and (self.__cache.SignalrDisconnectStatusUpdateStatusFlag == False):
                 # self.__cache.SignalrDisconnectStatusUpdateStatusFlag = True
                 # self.__cache.SignalrDisconnectCount = 0  
                 self.__hcUpdateDisconnectStToDb()
                 if self.__cache.FirstPingSuccessToCloudFlag == True:
                     s.EliminateCurrentProgess()
                                 
-    async def __hcSendHttpRequestToHeardbeatUrl(self):
-        endUser = self.__cache.EndUserId
-        token = await self.__hcGetToken() 
-        cookie = f"Token={token}"
-        heardBeatUrl = const.SERVER_HOST + const.SIGNSLR_HEARDBEAT_URL
-        header = self.__httpServices.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
-        req = self.__httpServices.CreateNewHttpRequest(url=heardBeatUrl, header=header)
-        session = aiohttp.ClientSession()
-        res = await self.__httpServices.Post(session, req)
-        await session.close()
-        if res == "":
-            return False
-        if (res != "") and (res.status == http.HTTPStatus.OK):
-            return True
+    # async def __hcSendHttpRequestToHeardbeatUrl(self):
+    #     s = System()
+    #     endUser = self.__cache.EndUserId
+    #     token = await s.GetToken(self.__httpServices) 
+    #     cookie = f"Token={token}"
+    #     heardBeatUrl = const.SERVER_HOST + const.SIGNSLR_HEARDBEAT_URL
+    #     header = self.__httpServices.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
+    #     req = self.__httpServices.CreateNewHttpRequest(url=heardBeatUrl, header=header)
+    #     session = aiohttp.ClientSession()
+    #     res = await self.__httpServices.Post(session, req)
+    #     await session.close()
+    #     if res == "":
+    #         return False
+    #     if (res != "") and (res.status == http.HTTPStatus.OK):
+    #         return True
         
-    async def __hcGetToken(self):
-        refreshToken = self.__cache.RefreshToken
-        if refreshToken == "":
-            return ""
-        tokenUrl = const.SERVER_HOST + const.TOKEN_URL
-        cookie = f"RefreshToken={refreshToken}"
-        header = self.__httpServices.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
-        req = self.__httpServices.CreateNewHttpRequest(url=tokenUrl, header=header)
-        session = aiohttp.ClientSession()
-        res = await self.__httpServices.Post(session, req)  
-        token = ""
-        if res != "":
-            try:
-                data = await res.json()
-                token = data['token']
-            except:
-                return ""
-        await session.close()
-        return token  
+    # async def __hcGetToken(self):
+    #     refreshToken = self.__cache.RefreshToken
+    #     if refreshToken == "":
+    #         return ""
+    #     tokenUrl = const.SERVER_HOST + const.TOKEN_URL
+    #     cookie = f"RefreshToken={refreshToken}"
+    #     header = self.__httpServices.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
+    #     req = self.__httpServices.CreateNewHttpRequest(url=tokenUrl, header=header)
+    #     session = aiohttp.ClientSession()
+    #     res = await self.__httpServices.Post(session, req)  
+    #     token = ""
+    #     if res != "":
+    #         try:
+    #             data = await res.json()
+    #             token = data['token']
+    #         except:
+    #             return ""
+    #     await session.close()
+    #     return token  
     
     async def __hcUpdateReconnectStToDb(self):
         self.__logger.info("Update cloud reconnect status to db")
@@ -121,7 +125,7 @@ class RdHc(IController):
     #--------------------------------------------------------------------------------------
     
     #------------------Mqtt data handler---------------------------------------------------         
-    async def __HcMqttHandlerData(self):
+    async def __HcHandlerMqttData(self):
         """ This function handler data received in queue
         """
         while True:
@@ -129,88 +133,102 @@ class RdHc(IController):
             if self.__mqttServices.mqttDataQueue.empty() == False:
                 with self.__lock:
                     item = self.__mqttServices.mqttDataQueue.get()
-                    await self.__hcMqttItemHandler(item)
+                    self.__mqttHandler.Handler(item)
                     self.__mqttServices.mqttDataQueue.task_done()
 
-    async def __hcMqttItemHandler(self, item):
-        try:
-            switcher = {
-                const.MQTT_SUB_RESPONSE_TOPIC: self.__mqttHandlerHcControlResponse,
-                const.MQTT_PUB_CONTROL_TOPIC: self.__mqttHandlerTopicHcControl
-            }
-            func = switcher.get(item["topic"])
-            await func(item["msg"])
-        except:
-            pass
-        return
+    # def __hcMqttItemHandler(self, item):
+    #     try:
+    #         switcher = {
+    #             const.MQTT_RESPONSE_TOPIC: self.__mqttHandlerHcControlResponse,
+    #             const.MQTT_CONTROL_TOPIC: self.__mqttHandlerTopicHcControl
+    #         }
+    #         func = switcher.get(item["topic"])
+    #         func(item["msg"])
+    #     except:
+    #         pass
+    #     return
     
-    async def __mqttHandlerHcControlResponse(self, data):
-        if self.__cache.PingCloudSuccessFlag == True:
-            print("data from topic HC.CONTROL.RESPONSE: " + data)
-            self.__signalServices.Send(endUserProfileId=self.__cache.EndUserId, entity=const.SIGNALR_APP_RESPONSE_ENTITY, message=data)
+    # def __mqttHandlerHcControlResponse(self, data):
+    #     print("data from topic HC.CONTROL.RESPONSE: " + data)
+    #     self.__logger.debug("data from topic HC.CONTROL.RESPONSE: " + data)
+
+    #     if self.__cache.PingCloudSuccessFlag == True:
+    #         self.__signalServices.Send(endUserProfileId=self.__cache.EndUserId, entity=const.SIGNALR_APP_RESPONSE_ENTITY, message=data)
             
-            try:
-                dt = json.loads(data)
-                try:
-                    cmd = dt["CMD"]
-                    data = dt["DATA"]
-                    switcher = {
-                        "DEVICE": self.__mqttHandlerCmdDevice
-                    }
-                    func = switcher.get(cmd)
-                    await func(data)
-                except:
-                    self.__logger.error("mqtt data receiver invalid")
-            except:
-                self.__logger.error("mqtt data receiver invalid")
+    #         try:
+    #             dt = json.loads(data)
+    #             try:
+    #                 cmd = dt["CMD"]
+    #                 data = dt["DATA"]
+    #                 switcher = {
+    #                     "DEVICE": self.__mqttHandlerCmdDevice
+    #                 }
+    #                 func = switcher.get(cmd)
+    #                 func(data)
+    #             except:
+    #                 self.__logger.error("mqtt data receiver in topic HC.CONTROL.RESPONSE invalid")
+    #         except:
+    #             self.__logger.error("mqtt data receiver in topic HC.CONTROL.RESPONSE invalid")
        
-    async def __mqttHandlerTopicHcControl(self, data):
-        try:
-            dt = json.loads(data)
-            try:
-                cmd = dt["CMD"]
-                data = dt["DATA"]
-                switcher = {
-                    "HC_CONNECT_TO_CLOUD": self.__mqttHandlerCmdConnectToCloud
-                }
-                func = switcher.get(cmd)
-                await func(data)
-            except:
-                self.__logger.error("mqtt data receiver invalid")
-        except:
-            self.__logger.error("mqtt data receiver invalid")
+    # def __mqttHandlerTopicHcControl(self, data):
+    #     print("data from topic HC.CONTROL: " + data)
+    #     self.__logger.debug("data from topic HC.CONTROL: " + data)
+        
+    #     try:
+    #         dt = json.loads(data)
+    #         try:
+    #             cmd = dt["CMD"]
+    #             data = dt["DATA"]
+    #             switcher = {
+    #                 "HC_CONNECT_TO_CLOUD": self.__mqttHandlerCmdConnectToCloud
+    #             }
+    #             func = switcher.get(cmd)
+    #             func(data)
+    #         except:
+    #             self.__logger.error("mqtt data receiver in topic HC.CONTROL invalid")
+    #     except:
+    #         self.__logger.error("mqtt data receiver in topic HC.CONTROL invalid")
           
-    async def __mqttHandlerCmdDevice(self, data):
-        await asyncio.sleep(0.1)
-        signal_data = []
-        for i in range (len(data['PROPERTIES'])):
-            d = {
-                "deviceId": data['DEVICE_ID'],
-                "deviceAttributeId": data['PROPERTIES'][i]['ID'],
-                "value": data['PROPERTIES'][i]['VALUE']
-            }
-            signal_data.append(d)
-        self.__signalServices.Send(endUserProfileId=self.__cache.EndUserId, entity=const.SIGNALR_CLOUD_RESPONSE_ENTITY, message=json.dumps(signal_data))  
+    # def __mqttHandlerCmdDevice(self, data):
+    #     signal_data = []
+    #     try:
+    #         for i in range (len(data['PROPERTIES'])):
+    #             d = {
+    #                 "deviceId": data['DEVICE_ID'],
+    #                 "deviceAttributeId": data['PROPERTIES'][i]['ID'],
+    #                 "value": data['PROPERTIES'][i]['VALUE']
+    #             }
+    #             signal_data.append(d)
+    #     except:
+    #         self.__logger.debug("data of cmd Device invalid")
+    #         print("data of cmd Device invalid")
+        
+    #     if signal_data != []:
+    #         self.__signalServices.Send(endUserProfileId=self.__cache.EndUserId, entity=const.SIGNALR_CLOUD_RESPONSE_ENTITY, message=json.dumps(signal_data))
+        
+    #     if signal_data == []:
+    #         self.__logger.debug("have no data to send to cloud via signalr")
+    #         print("have no data to send to cloud via signalr")              
           
-    async def __mqttHandlerCmdConnectToCloud(self, data):
-        await asyncio.sleep(0.1)
-        try:
-            endUserProfileId = data["END_USER_PROFILE_ID"]
-            refreshToken = data["REFRESH_TOKEN"]
-            self.__cache.EndUserId = str(endUserProfileId)
-            self.__cache.RefreshToken = refreshToken
-            userDt = userData(refreshToken=refreshToken, endUserProfileId=str(endUserProfileId))
-            rel = self.__db.Services.UserdataServices.FindUserDataById(id = 1)
-            dt = rel.first()
-            if dt != None:
-                self.__db.Services.UserdataServices.UpdateUserDataById(id = 1, newUserData=userDt)
-            if dt == None:
-                self.__db.Services.UserdataServices.AddNewUserData(newUserData=userDt)
+    # def __mqttHandlerCmdConnectToCloud(self, data):
+    #     try:
+    #         endUserProfileId = data["END_USER_PROFILE_ID"]
+    #         refreshToken = data["REFRESH_TOKEN"]
+    #         self.__cache.EndUserId = str(endUserProfileId)
+    #         self.__cache.RefreshToken = refreshToken
+    #         userDt = userData(refreshToken=refreshToken, endUserProfileId=str(endUserProfileId))
+    #         rel = self.__db.Services.UserdataServices.FindUserDataById(id = 1)
+    #         dt = rel.first()
+    #         if dt != None:
+    #             self.__db.Services.UserdataServices.UpdateUserDataById(id = 1, newUserData=userDt)
+    #         if dt == None:
+    #             self.__db.Services.UserdataServices.AddNewUserData(newUserData=userDt)
             
-            if self.__cache.PingCloudSuccessFlag == True:
-                self.__cache.ResetSignalrConnectFlag = True
-        except:
-            self.__logger.error("mqtt data receiver invalid")
+    #         if self.__cache.PingCloudSuccessFlag == True:
+    #             self.__cache.ResetSignalrConnectFlag = True
+    #     except:
+    #         self.__logger.error("data of cmd HcConnectToCLoud invalid")
+    #         print("data of cmd HcConnectToCLoud invalid")
     #------------------------------------------------------------------------------------------------
     
     #------------------- Signalr data handler--------------------------------------------------------
@@ -219,34 +237,31 @@ class RdHc(IController):
             await asyncio.sleep(0.1)
             if self.__signalServices.signalrDataQueue.empty() == False:
                 with self.__lock:
-                    try:
-                        item = self.__signalServices.signalrDataQueue.get()
-                        self.__signalrItemHandler(item)
-                        self.__signalServices.signalrDataQueue.task_done()
-                    except:
-                        pass
-        
-    def __signalrItemHandler(self, *args):
-        try:
-            self.__logger.debug(f"handler receive signal data in {args[0][0]} is {args[0][1]}")
-            print(f"handler receive signal data in {args[0][0]} is {args[0][1]}")
-            switcher = {
-                const.SIGNALR_COMMAND_ENTITY: self.__signalrHandlerCommand
-            }
-            func = switcher.get(args[0][0])
-            func(args[0][1])
-        except:
-            pass
-        return
+                    item = self.__signalServices.signalrDataQueue.get()
+                    self.__signalrHandler.Handler(item)
+                    self.__signalServices.signalrDataQueue.task_done()
+                     
+    # def __signalrItemHandler(self, *args):
+    #     try:
+    #         self.__logger.debug(f"handler receive signal data in {args[0][0]} is {args[0][1]}")
+    #         print(f"handler receive signal data in {args[0][0]} is {args[0][1]}")
+    #         switcher = {
+    #             const.SIGNALR_COMMAND_ENTITY: self.__signalrHandlerCommand
+    #         }
+    #         func = switcher.get(args[0][0])
+    #         func(args[0][1])
+    #     except:
+    #         pass
+    #     return
 
-    def __signalrHandlerCommand(self, data):
-        try:
-            print(f"Forward data to mqtt: {data}")
-            self.__mqttServices.Send(const.MQTT_PUB_CONTROL_TOPIC, data, const.MQTT_QOS)
-            self.__logger.debug("Forward data to mqtt")
-        except:
-            self.__logger.debug("Data receiver invalid")
-        return
+    # def __signalrHandlerCommand(self, data):
+    #     try:
+    #         print(f"Forward data to mqtt: {data}")
+    #         self.__mqttServices.Send(const.MQTT_CONTROL_TOPIC, data, const.MQTT_QOS)
+    #         self.__logger.debug("Forward data to mqtt")
+    #     except:
+    #         self.__logger.debug("Data receiver invalid")
+    #     return
     #------------------------------------------------------------------------------------------
   
     #-----------load userdata from db----------------------------------------------------------
@@ -271,7 +286,7 @@ class RdHc(IController):
         self.__HcLoadUserData()
         task1 = asyncio.ensure_future(self.__HcHandlerSignalRData())
         task2 = asyncio.ensure_future(self.__HcCheckConnectWithCloud())
-        task3 = asyncio.ensure_future(self.__HcMqttHandlerData())     
+        task3 = asyncio.ensure_future(self.__HcHandlerMqttData())     
         tasks = [task1, task2, task3]
         await asyncio.gather(*tasks)
         return

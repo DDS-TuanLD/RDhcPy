@@ -58,8 +58,8 @@ class Mqtt(Itransport):
         return
     
     def __on_connect(self, client, userdata, flags, rc):
-            self.__client.subscribe(topic=const.MQTT_SUB_RESPONSE_TOPIC, qos=self.__mqttConfig.qos)
-            self.__client.subscribe(topic=const.MQTT_PUB_CONTROL_TOPIC, qos=self.__mqttConfig.qos)
+            self.__client.subscribe(topic=const.MQTT_RESPONSE_TOPIC, qos=self.__mqttConfig.qos)
+            self.__client.subscribe(topic=const.MQTT_CONTROL_TOPIC, qos=self.__mqttConfig.qos)
 
     async def _connect(self):
         """  Connect to mqtt broker
@@ -70,9 +70,9 @@ class Mqtt(Itransport):
       
         self.__client.on_message = self.__on_message
         self.__client.on_connect = self.__on_connect
-        #self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
+        self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
         try:
-            self.__client.connect_async(self.__mqttConfig.host, self.__mqttConfig.port)
+            self.__client.connect_async("10.10.10.1", self.__mqttConfig.port)
             self.__client.reconnect()
             self.__client.loop_start()
         except Exception as err:

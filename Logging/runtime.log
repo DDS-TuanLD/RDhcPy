@@ -1398,3 +1398,86 @@
 2021-07-08 10:38:04,759:	INFO:	Hc.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud
 2021-07-08 10:38:19,768:	INFO:	Hc.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud
 2021-07-08 10:38:34,779:	INFO:	Hc.py:__hcUpdateDisconnectStToDb():117	Update cloud disconnect status to db
+2021-07-08 10:44:28,746:	INFO:	Hc.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud
+2021-07-08 10:44:45,235:	INFO:	Hc.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud
+2021-07-08 10:45:10,134:	INFO:	Hc.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud
+2021-07-08 10:45:11,169:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 10:45:14,178:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 10:45:17,187:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 10:45:20,197:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 10:45:22,930:	ERROR:	Hc.py:__mqttHandlerTopicHcControl():179	mqtt data receiver invalid
+2021-07-08 10:45:23,206:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 10:45:25,142:	INFO:	Hc.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud
+2021-07-08 10:45:26,219:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 10:45:29,230:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 10:45:32,240:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 10:45:35,250:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 10:45:38,261:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 10:45:40,152:	INFO:	Hc.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud
+2021-07-08 10:45:41,270:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 10:45:44,281:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 10:45:47,292:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 10:45:50,301:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 10:45:55,157:	INFO:	Hc.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud
+2021-07-08 10:46:06,070:	DEBUG:	Hc.py:__signalrItemHandler():231	handler receive signal data in Response is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-08 10:46:10,619:	INFO:	Hc.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud
+2021-07-08 10:46:11,018:	DEBUG:	Hc.py:__signalrItemHandler():231	handler receive signal data in Response is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-08 10:46:16,068:	DEBUG:	Hc.py:__signalrItemHandler():231	handler receive signal data in Response is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-08 10:46:26,315:	INFO:	Hc.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud
+2021-07-08 10:46:42,514:	INFO:	Hc.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud
+2021-07-08 10:46:58,016:	INFO:	Hc.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud
+2021-07-08 10:47:14,056:	INFO:	Hc.py:__HcCheckConnectWithCloud():47	Hc send heardbeat to cloud
+2021-07-08 13:28:53,946:	INFO:	Hc.py:__HcCheckConnectWithCloud():48	Hc send heardbeat to cloud
+2021-07-08 13:28:54,964:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 13:28:57,975:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 13:29:00,986:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 13:29:03,996:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 13:29:07,009:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 13:29:08,952:	INFO:	Hc.py:__HcCheckConnectWithCloud():48	Hc send heardbeat to cloud
+2021-07-08 13:29:10,016:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 13:29:13,024:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 13:29:16,031:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 13:31:30,096:	INFO:	Hc.py:__HcCheckConnectWithCloud():48	Hc send heardbeat to cloud
+2021-07-08 13:31:31,125:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 13:31:34,135:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 13:31:37,145:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 13:33:40,832:	INFO:	Hc.py:__HcCheckConnectWithCloud():48	Hc send heardbeat to cloud
+2021-07-08 13:33:41,864:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 13:33:42,768:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():62	data from topic HC.CONTROL: {"CMD":"HC_CONNECT_TO_CLOUD",
+"DATA":{"END_USER_PROFILE_ID":10150,"REFRESH_TOKEN":"OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="}
+}
+2021-07-08 13:33:44,874:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 14:00:15,993:	INFO:	Hc.py:__HcCheckConnectWithCloud():51	Hc send heardbeat to cloud
+2021-07-08 14:06:11,420:	INFO:	Hc.py:__HcCheckConnectWithCloud():51	Hc send heardbeat to cloud
+2021-07-08 14:14:42,879:	INFO:	Hc.py:__HcCheckConnectWithCloud():51	Hc send heardbeat to cloud
+2021-07-08 14:15:17,702:	INFO:	Hc.py:__HcCheckConnectWithCloud():51	Hc send heardbeat to cloud
+2021-07-08 14:20:30,585:	INFO:	Hc.py:__HcCheckConnectWithCloud():51	Hc send heardbeat to cloud
+2021-07-08 14:21:07,484:	INFO:	Hc.py:__HcCheckConnectWithCloud():51	Hc send heardbeat to cloud
+2021-07-08 14:29:51,906:	INFO:	Hc.py:__HcCheckConnectWithCloud():51	Hc send heardbeat to cloud
+2021-07-08 14:29:52,940:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 14:29:55,948:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 14:29:58,959:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 14:30:01,964:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 14:30:04,973:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 14:30:06,911:	INFO:	Hc.py:__hcUpdateDisconnectStToDb():121	Update cloud disconnect status to db
+2021-07-08 14:30:06,916:	INFO:	Hc.py:__HcCheckConnectWithCloud():51	Hc send heardbeat to cloud
+2021-07-08 14:30:07,984:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-08 14:30:10,995:	ERROR:	Signalr.py:Init():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str

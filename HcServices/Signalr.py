@@ -134,7 +134,6 @@ class Signalr(Itransport):
                 self.__cache.SignalrConnectSuccessFlag = False
             await asyncio.sleep(3)
        
-    
     def ReConnect(self):
         try:
             self.__hub.start()
