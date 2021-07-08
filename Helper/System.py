@@ -152,6 +152,7 @@ class System():
         d = str(time.day)
         if int(d) < 10:
             d = "0" + d
+            
         updateDay = int(str(time.year) + m + d)
         updateTime = 60*time.hour + time.minute
         return updateDay, updateTime
