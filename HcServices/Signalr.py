@@ -85,12 +85,12 @@ class Signalr(Itransport):
             self.__logger.error(f"Exception when disconnect with signalr server: {err}")
         await asyncio.sleep(1)
         if self.__disconnectFlag == 1:
-            if(self.__disconnectRetryCount == 60):
+            if(self.__disconnectRetryCount == 30):
                 self.__disconnectRetryCount = 0
                 print("Disconnect signalr server timeout")
                 self.__logger.error("Disconnect signalr timeout")
-                t = datetime.datetime.now().timestamp()-60
-                s = System()
+                t = datetime.datetime.now().timestamp()-30
+                s = System(self.__logger)
                 s.UpdateDisconnectStatusToDb(DisconnectTime=datetime.datetime.fromtimestamp(t))
                 s.EliminateCurrentProgess()
 

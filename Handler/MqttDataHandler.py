@@ -5,7 +5,6 @@ from HcServices.Mqtt import Mqtt
 from HcServices.Signalr import Signalr
 from Contracts.Itransport import Itransport
 from Cache.Cache import Cache
-from Helper.System import System
 import Constant.constant as const
 import json
 from Database.Db import Db

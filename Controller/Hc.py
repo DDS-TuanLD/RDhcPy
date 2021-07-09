@@ -45,7 +45,7 @@ class RdHc(IController):
         
     #-----------------Ping cloud----------------------------------------------------------------------
     async def __HcCheckConnectWithCloud(self):
-        s = System()
+        s = System(self.__logger)
         while True:  
             print("Hc send heardbeat to cloud")
             self.__logger.info("Hc send heardbeat to cloud")
@@ -78,13 +78,13 @@ class RdHc(IController):
     async def __hcUpdateReconnectStToDb(self):
         self.__logger.info("Update cloud reconnect status to db")
         print("Update cloud reconnect status to db")
-        s = System()
+        s = System(self.__logger)
         await s.UpdateReconnectStatusToDb(reconnectTime=datetime.datetime.now())
         
     def __hcUpdateDisconnectStToDb(self):
         self.__logger.info("Update cloud disconnect status to db")
         print("Update cloud disconnect status to db")
-        s = System()
+        s = System(self.__logger)
         s.UpdateDisconnectStatusToDb(DisconnectTime=self.__cache.DisconnectTime) 
     #--------------------------------------------------------------------------------------
     

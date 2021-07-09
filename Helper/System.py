@@ -12,10 +12,15 @@ import asyncio
 import Constant.constant as const
 import http
 import json
+import logging
 
 class System():
     __db=Db()
     __cache=Cache()
+    __logger = logging.Logger
+    
+    def __init__(self, logger: logging.Logger):
+        self.__logger = logger
     
     def EliminateCurrentProgess(self):
         t = Terminal()
@@ -113,6 +118,11 @@ class System():
                 "value": r['Value']
             }
             data.append(d)
+        if data == []:
+            self.__updateAsyncStatusSuccessToDb(dt)
+            print("hava no data to push")
+            self.__logger.info("hava no data to push")
+            
         data_send_to_cloud = json.dumps(data)
         print(f"push data: {data_send_to_cloud}")
         print(f"refresh token: {self.__cache.RefreshToken}")
@@ -129,11 +139,13 @@ class System():
         print(res)
         if res == "":
             print("Push data failure")
+            self.__logger.info("Push data failure")
             self.__updateAsyncStatusFailToDb(dt)
             return False
         if (res != "") and (res.status == http.HTTPStatus.OK):
             self.__updateAsyncStatusSuccessToDb(dt)
             print("Push data successfully")
+            self.__logger.info("Push data successfully")
             return True
        
     def __updateAsyncStatusSuccessToDb(self, s: systemConfiguration):
