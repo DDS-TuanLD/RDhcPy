@@ -129,6 +129,8 @@ class System():
             self.__updateAsyncStatusSuccessToDb(dt)
             print("hava no data to push")
             self.__logger.info("hava no data to push")
+            self.__updateAsyncStatusSuccessToDb(dt)
+            return True
             
         data_send_to_cloud = json.dumps(data)
         print(f"push data: {data_send_to_cloud}")

@@ -28,11 +28,6 @@ class userDataRepo():
         self.__context.execute(ins)
         
     def RemoveByCondition(self, userDataCondition: BinaryExpression):
-        """[summary]
-
-        Args:
-            userDataCondition (BinaryExpression): [description]
-        """
         ins = self.__userDataTable.delete().where(userDataCondition)
         self.__context.execute(ins)
     
@@ -48,14 +43,6 @@ class userDataRepo():
         return rel
             
     def FindWithCondition(self, condition: BinaryExpression):
-        """[summary]
-
-        Args:
-            condition (BinaryExpression): [description]
-
-        Returns:
-            [type]: [description]
-        """
         ins = self.__userDataTable.select().where(condition)
         rel = self.__context.execute(ins)
         return rel

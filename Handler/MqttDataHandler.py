@@ -100,6 +100,8 @@ class MqttDataHandler(Ihandler):
         try:
             endUserProfileId = data["END_USER_PROFILE_ID"]
             refreshToken = data["REFRESH_TOKEN"]
+            if self.__cache.EndUserId != str(endUserProfileId) and self.__cache.EndUserId != "":
+                return
             self.__cache.EndUserId = str(endUserProfileId)
             self.__cache.RefreshToken = refreshToken
             userDt = userData(refreshToken=refreshToken, endUserProfileId=str(endUserProfileId))

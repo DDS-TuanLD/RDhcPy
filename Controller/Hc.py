@@ -43,7 +43,6 @@ class RdHc(IController):
         self.__mqttHandler =  MqttDataHandler(self.__logger, self.__mqttServices, self.__signalServices)
         self.__signalrHandler =  SignalrDataHandler(self.__logger, self.__mqttServices, self.__signalServices)
         
-    #-----------------Ping cloud----------------------------------------------------------------------
     async def __HcCheckConnectWithCloud(self):
         s = System(self.__logger)
         while True:  
@@ -64,13 +63,8 @@ class RdHc(IController):
                 self.__cache.PingCloudSuccessFlag = True
                 self.__cache.DisconnectTime = None
                 self.__cache.SignalrDisconnectCount = 0
-            # if (ok == True) and (self.__cache.SignalrDisconnectStatusUpdateStatusFlag == True):
-            #     self.__cache.SignalrDisconnectStatusUpdateStatusFlag = False
-            #     await self.__hcUpdateReconnectStToDb()     
             await asyncio.sleep(15)
             if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdateStatusFlag == False):
-                # self.__cache.SignalrDisconnectStatusUpdateStatusFlag = True
-                # self.__cache.SignalrDisconnectCount = 0  
                 self.__hcUpdateDisconnectStToDb()
                 if self.__cache.FirstPingSuccessToCloudFlag == True:
                     s.EliminateCurrentProgess()
@@ -86,9 +80,7 @@ class RdHc(IController):
         print("Update cloud disconnect status to db")
         s = System(self.__logger)
         s.UpdateDisconnectStatusToDb(DisconnectTime=self.__cache.DisconnectTime) 
-    #--------------------------------------------------------------------------------------
     
-    #------------------Mqtt data handler---------------------------------------------------         
     async def __HcHandlerMqttData(self):
         """ This function handler data received in queue
         """
@@ -100,7 +92,6 @@ class RdHc(IController):
                     self.__mqttHandler.Handler(item)
                     self.__mqttServices.mqttDataQueue.task_done()
 
-    #------------------- Signalr data handler--------------------------------------------------------
     async def __HcHandlerSignalRData(self):
         while True:
             await asyncio.sleep(0.1)
@@ -110,16 +101,13 @@ class RdHc(IController):
                     self.__signalrHandler.Handler(item)
                     self.__signalServices.signalrDataQueue.task_done()
                      
-    #-----------load userdata from db----------------------------------------------------------
     def __HcLoadUserData(self):
         userData = self.__db.Services.UserdataServices.FindUserDataById(id=1)
         dt = userData.first()
         if dt != None:
             self.__cache.EndUserId = dt["EndUserProfileId"]
             self.__cache.RefreshToken = dt["RefreshToken"]   
-    #------------------------------------------------------------------------------------------
     
-    #-------------main function----------------------------------------------------------------
     async def ActionNoDb(self):
         task1 = asyncio.ensure_future(self.__signalServices.Init())
         task2 = asyncio.ensure_future(self.__mqttServices.Init())

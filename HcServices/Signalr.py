@@ -54,7 +54,7 @@ class Signalr(Itransport):
                 "type": "raw",
                 "keep_alive_interval": 5,
                 "reconnect_interval": 5,
-                "max_attempts": 50
+                "max_attempts": 40
                 })\
         .build()
         return self
@@ -101,12 +101,6 @@ class Signalr(Itransport):
             
     def Send(
         self, endUserProfileId: str = "", entity: str="", message: str=""):
-        """ This is function support send data to server
-
-        Args:
-            username (str, optional): [name of gateway]. Defaults to "RdGateway".
-            mess (str, optional): [string need to send]. Defaults to "".
-        """
         self.__hub.send("Send", [endUserProfileId, entity , message])
        
     async def Init(self):
@@ -118,16 +112,15 @@ class Signalr(Itransport):
         self.__onDisconnect()
         self.__onReceiveData()
         while True:
+            if self.__cache.ResetSignalrConnectFlag == True:
+                await self.DisConnect()
+                self.ReConnect()
+                self.__cache.ResetSignalrConnectFlag = False    
             try:
                 if self.__cache.SignalrConnectSuccessFlag == False and runOnlyOne == False:
                     self.__hub.start()
                     self.__cache.SignalrConnectSuccessFlag = True
                     runOnlyOne = True
-                    
-                if self.__cache.ResetSignalrConnectFlag == True:
-                    await self.DisConnect()
-                    self.ReConnect()
-                    self.__cache.ResetSignalrConnectFlag = False    
             except Exception as err:
                 self.__logger.error(f"Exception when connect with signalr server: {err}")
                 print(f"Exception when connect with signalr server: {err}")
