@@ -68,7 +68,7 @@ class RdHc(IController):
             #     self.__cache.SignalrDisconnectStatusUpdateStatusFlag = False
             #     await self.__hcUpdateReconnectStToDb()     
             await asyncio.sleep(15)
-            if (self.__cache.SignalrDisconnectCount == 1) and (self.__cache.SignalrDisconnectStatusUpdateStatusFlag == False):
+            if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdateStatusFlag == False):
                 # self.__cache.SignalrDisconnectStatusUpdateStatusFlag = True
                 # self.__cache.SignalrDisconnectCount = 0  
                 self.__hcUpdateDisconnectStToDb()

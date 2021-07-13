@@ -35,12 +35,12 @@ class System():
     async def UpdateReconnectStatusToDb(self, reconnectTime: datetime.datetime):
         rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
         r = rel.first()
-        s =systemConfiguration(isConnect= True, DisconnectTime= r['DisconnectTime'], ReconnectTime= reconnectTime, isSync=r['IsSync'])
+        s =systemConfiguration(IsConnect= True, DisconnectTime= r['DisconnectTime'], ReconnectTime= reconnectTime, IsSync=r['IsSync'])
         self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
         await self.__pushDataToCloud(referenceTime=r['DisconnectTime'], dt=s)
       
     def UpdateDisconnectStatusToDb(self, DisconnectTime: datetime.datetime):
-        s =systemConfiguration(isConnect= False, DisconnectTime= DisconnectTime, ReconnectTime= None, isSync=False)
+        s =systemConfiguration(IsConnect= False, DisconnectTime= DisconnectTime, ReconnectTime= None, IsSync=False)
         rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
         r = rel.first()
         if r == None:
@@ -52,7 +52,14 @@ class System():
         if self.__cache.RecheckConnectionStatusInDbFlag == False:
             rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
             r = rel.first()
-            s =systemConfiguration(isConnect= r["IsConnect"], DisconnectTime= r['DisconnectTime'], ReconnectTime= r['ReconnectTime'], isSync=r['IsSync'])
+            
+            if r == None:
+                s = systemConfiguration(IsConnect=True, DisconnectTime=datetime.datetime.now(), ReconnectTime=datetime.datetime.now(), IsSync=True)
+                self.__db.Services.SystemConfigurationServices.AddNewSysConfiguration(s)
+                self.__cache.RecheckConnectionStatusInDbFlag = True
+                return
+                
+            s =systemConfiguration(IsConnect= r["IsConnect"], DisconnectTime= r['DisconnectTime'], ReconnectTime= r['ReconnectTime'], IsSync=r['IsSync'])
 
             if r["ReconnectTime"] == None:
                 await self.UpdateReconnectStatusToDb(reconnectTime=datetime.datetime.now())
