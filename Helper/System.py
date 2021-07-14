@@ -126,10 +126,10 @@ class System():
             }
             data.append(d)
         if data == []:
-            self.__updateAsyncStatusSuccessToDb(dt)
+            self.__updateSyncDataStatusSuccessToDb(dt)
             print("hava no data to push")
             self.__logger.info("hava no data to push")
-            self.__updateAsyncStatusSuccessToDb(dt)
+            self.__updateSyncDataStatusSuccessToDb(dt)
             return True
             
         data_send_to_cloud = json.dumps(data)
@@ -149,19 +149,19 @@ class System():
         if res == "":
             print("Push data failure")
             self.__logger.info("Push data failure")
-            self.__updateAsyncStatusFailToDb(dt)
+            self.__updateSyncDataStatusFailToDb(dt)
             return False
         if (res != "") and (res.status == http.HTTPStatus.OK):
-            self.__updateAsyncStatusSuccessToDb(dt)
+            self.__updateSyncDataStatusSuccessToDb(dt)
             print("Push data successfully")
             self.__logger.info("Push data successfully")
             return True
        
-    def __updateAsyncStatusSuccessToDb(self, s: systemConfiguration):
+    def __updateSyncDataStatusSuccessToDb(self, s: systemConfiguration):
         s.IsSync = True
         self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
         
-    def __updateAsyncStatusFailToDb(self, s: systemConfiguration):
+    def __updateSyncDataStatusFailToDb(self, s: systemConfiguration):
         s.IsSync = False
         self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
         
