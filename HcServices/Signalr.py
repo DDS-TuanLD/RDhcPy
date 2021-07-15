@@ -78,14 +78,14 @@ class Signalr(Itransport):
         with self.__lock:
             self.signalrDataQueue.put(data)
         
-    async def ReConnect(self):
+    async def DisConnect(self):
         self.__disconnectFlag = 1
         try:
             self.__hub.stop()
         except Exception as err:
             self.__logger.error(f"Exception when disconnect with signalr server: {err}")
         await asyncio.sleep(1)
-        while self.__disconnectFlag == 1:
+        if self.__disconnectFlag == 1:
             if(self.__disconnectRetryCount == 30):
                 self.__disconnectRetryCount = 0
                 print("Disconnect signalr server timeout")
@@ -97,11 +97,9 @@ class Signalr(Itransport):
 
             self.__disconnectRetryCount = self.__disconnectRetryCount + 1
             print(f"Retry to disconnect signalr server {self.__disconnectRetryCount} times")
-            await self.ReConnect()
-        if self.__disconnectFlag == 0:
-            self.__hub.start()
-            return
+            await self.DisConnect()
 
+    
             
     def Send(
         self, endUserProfileId: str = "", entity: str="", message: str=""):
@@ -117,7 +115,8 @@ class Signalr(Itransport):
         self.__onReceiveData()
         while True:
             if self.__cache.ResetSignalrConnectFlag == True:
-                await self.ReConnect()
+                await self.DisConnect()
+                self.ReConnect()
                 self.__cache.ResetSignalrConnectFlag = False    
             try:
                 if self.__cache.SignalrConnectSuccessFlag == False and runOnlyOne == False:
@@ -130,8 +129,12 @@ class Signalr(Itransport):
                 self.__cache.SignalrConnectSuccessFlag = False
             await asyncio.sleep(3)
        
-    def DisConnect(self):
-        pass
+    def ReConnect(self):
+        try:
+            self.__hub.start()
+        except Exception as err:
+            self.__logger.error(f"Exception when connect with signalr server: {err}")
+
     
     def Receive(self):
         pass

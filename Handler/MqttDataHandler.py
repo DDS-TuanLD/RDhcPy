@@ -35,9 +35,13 @@ class MqttDataHandler(Ihandler):
         func(item["msg"])
         return
     
+    async def __signalReconnectWhenWifiChange(self):
+        await self.__signalr.DisConnect()
+        self.__signalr.ReConnect()
+            
     def __test(self, data):
         loop = asyncio.get_running_loop()
-        t = loop.create_task(self.__signalr.ReConnect())
+        t = loop.create_task(self.__signalReconnectWhenWifiChange())
         
   
     
