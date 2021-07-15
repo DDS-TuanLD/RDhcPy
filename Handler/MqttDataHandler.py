@@ -27,14 +27,21 @@ class MqttDataHandler(Ihandler):
         
     def Handler(self, item):
         switcher = {
-            const.MQTT_RESPONSE_TOPIC: self.__handlerTppicHcControlResponse,
-            const.MQTT_CONTROL_TOPIC: self.__handlerTopicHcControl
+            const.MQTT_RESPONSE_TOPIC: self.__handlerTopicHcControlResponse,
+            const.MQTT_CONTROL_TOPIC: self.__handlerTopicHcControl,
+            "test": self.__test,
         }
         func = switcher.get(item["topic"])
         func(item["msg"])
         return
     
-    def __handlerTppicHcControlResponse(self, data):
+    def __test(self, data):
+        loop = asyncio.get_running_loop()
+        t = loop.create_task(self.__signalr.ReConnect())
+        
+  
+    
+    def __handlerTopicHcControlResponse(self, data):
         print("data from topic HC.CONTROL.RESPONSE: " + data)
         self.__logger.debug("data from topic HC.CONTROL.RESPONSE: " + data)
 
@@ -101,6 +108,10 @@ class MqttDataHandler(Ihandler):
             endUserProfileId = data["END_USER_PROFILE_ID"]
             refreshToken = data["REFRESH_TOKEN"]
             if self.__cache.EndUserId != str(endUserProfileId) and self.__cache.EndUserId != "":
+                return
+            if self.__cache.EndUserId == "":
+                self.__cache.EndUserId = str(endUserProfileId)
+                self.__cache.RefreshToken = refreshToken
                 return
             self.__cache.EndUserId = str(endUserProfileId)
             self.__cache.RefreshToken = refreshToken

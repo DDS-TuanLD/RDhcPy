@@ -10,6 +10,7 @@ from Contracts.Itransport import Itransport
 import time
 from Helper.System import System
 import datetime
+import functools
 
 def getToken():
     cache = Cache()
@@ -77,14 +78,14 @@ class Signalr(Itransport):
         with self.__lock:
             self.signalrDataQueue.put(data)
         
-    async def DisConnect(self):
+    async def ReConnect(self):
         self.__disconnectFlag = 1
         try:
             self.__hub.stop()
         except Exception as err:
             self.__logger.error(f"Exception when disconnect with signalr server: {err}")
         await asyncio.sleep(1)
-        if self.__disconnectFlag == 1:
+        while self.__disconnectFlag == 1:
             if(self.__disconnectRetryCount == 30):
                 self.__disconnectRetryCount = 0
                 print("Disconnect signalr server timeout")
@@ -96,7 +97,10 @@ class Signalr(Itransport):
 
             self.__disconnectRetryCount = self.__disconnectRetryCount + 1
             print(f"Retry to disconnect signalr server {self.__disconnectRetryCount} times")
-            await self.DisConnect()
+            await self.ReConnect()
+        if self.__disconnectFlag == 0:
+            self.__hub.start()
+            return
 
             
     def Send(
@@ -113,8 +117,7 @@ class Signalr(Itransport):
         self.__onReceiveData()
         while True:
             if self.__cache.ResetSignalrConnectFlag == True:
-                await self.DisConnect()
-                self.ReConnect()
+                await self.ReConnect()
                 self.__cache.ResetSignalrConnectFlag = False    
             try:
                 if self.__cache.SignalrConnectSuccessFlag == False and runOnlyOne == False:
@@ -127,14 +130,11 @@ class Signalr(Itransport):
                 self.__cache.SignalrConnectSuccessFlag = False
             await asyncio.sleep(3)
        
-    def ReConnect(self):
-        try:
-            self.__hub.start()
-        except Exception as err:
-            self.__logger.error(f"Exception when connect with signalr server: {err}")
-        
-    def Receive(self):
+    def DisConnect(self):
         pass
     
-    def HandlerData(self):
+    def Receive(self):
         pass
+        
+        
+        

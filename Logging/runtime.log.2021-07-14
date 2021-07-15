@@ -1,0 +1,706 @@
+2021-07-14 07:27:26,230:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 07:27:42,467:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 07:27:57,721:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 07:28:13,181:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 07:28:26,192:	ERROR:	Mqtt.py:_connect():79	Exception in connect to mqtt: timed out
+2021-07-14 07:28:28,737:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:11:38,706:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:11:51,889:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10150,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 15:11:54,785:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:15:07,009:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:15:16,566:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10150,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 15:15:22,697:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:15:38,467:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:15:48,630:	DEBUG:	SignalrDataHandler.py:Handler():26	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 15:15:48,831:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 15:15:48,831:	ERROR:	MqttDataHandler.py:__handlerTopicHcControl():74	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-14 15:15:53,746:	DEBUG:	SignalrDataHandler.py:Handler():26	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 15:15:53,847:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 15:15:53,847:	ERROR:	MqttDataHandler.py:__handlerTopicHcControl():74	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-14 15:15:54,838:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:15:58,565:	DEBUG:	SignalrDataHandler.py:Handler():26	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 15:15:58,666:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 15:15:58,666:	ERROR:	MqttDataHandler.py:__handlerTopicHcControl():74	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-14 15:16:03,983:	DEBUG:	SignalrDataHandler.py:Handler():26	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 15:16:04,083:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 15:16:04,083:	ERROR:	MqttDataHandler.py:__handlerTopicHcControl():74	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-14 15:16:08,601:	DEBUG:	SignalrDataHandler.py:Handler():26	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 15:16:08,902:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 15:16:08,902:	ERROR:	MqttDataHandler.py:__handlerTopicHcControl():74	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-14 15:16:10,702:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:16:13,522:	DEBUG:	SignalrDataHandler.py:Handler():26	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 15:16:13,623:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 15:16:13,623:	ERROR:	MqttDataHandler.py:__handlerTopicHcControl():74	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-14 15:16:26,944:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:16:42,912:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:16:59,711:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:17:15,235:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:17:31,391:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:17:49,321:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:18:05,041:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:18:21,083:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:18:37,099:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:18:53,043:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:19:09,764:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:19:25,602:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:19:41,327:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:19:57,602:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:20:13,523:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:20:29,594:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:20:47,128:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:21:03,520:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:21:19,704:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:21:36,289:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:21:51,704:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:22:07,094:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:22:22,409:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:22:37,835:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:22:53,134:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:23:09,574:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:23:25,715:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:23:41,508:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:23:57,227:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:24:15,230:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:24:31,697:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:24:47,125:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:25:03,244:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:25:19,368:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:25:35,595:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:25:51,533:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:26:07,022:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:26:22,452:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:26:38,878:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:26:54,301:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:27:13,151:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:27:29,258:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:27:46,578:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:28:02,446:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:28:20,213:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:28:36,638:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:28:52,260:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:29:07,929:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:29:24,362:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:29:40,622:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:29:42,549:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10150,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 15:29:56,643:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:30:07,600:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10150,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 15:30:14,515:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:30:23,096:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10150,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 15:30:30,242:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10150,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 15:30:30,288:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:30:46,198:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:31:02,497:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:31:05,461:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10150,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 15:31:20,413:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:31:36,839:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:31:53,550:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:32:09,628:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:32:25,006:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:32:41,304:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:32:57,219:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:33:13,891:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:33:29,315:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:33:48,733:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:34:04,575:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:34:21,403:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:34:37,290:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:34:52,732:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:35:09,034:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:35:25,212:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:35:41,442:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:35:57,188:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:36:13,112:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:36:28,531:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:36:45,020:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:37:01,469:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:37:17,281:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:37:33,591:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:37:49,511:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:38:05,369:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:38:20,889:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:38:37,318:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:38:52,749:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:39:08,998:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:39:24,724:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:39:40,427:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:39:56,458:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:40:12,597:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:40:28,412:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:40:44,581:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:41:00,468:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:41:16,049:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:41:31,804:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:41:48,457:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:42:04,573:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:42:20,580:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:42:36,320:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:42:52,392:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:43:08,284:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:43:24,409:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:43:40,237:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:43:56,819:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:44:13,463:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:44:30,374:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:44:48,622:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:45:06,015:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:45:21,680:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:45:38,196:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:45:53,891:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:46:09,533:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:46:25,306:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:46:41,093:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:46:57,460:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:47:13,387:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:47:29,614:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:47:46,518:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:48:02,374:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:48:19,160:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:48:34,949:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:48:51,661:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:49:08,522:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:49:23,952:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:49:39,455:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:49:55,188:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:50:11,329:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:50:16,647:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10150,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 15:50:26,924:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:50:37,582:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10150,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 15:50:43,487:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:50:58,928:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:51:14,843:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:51:25,163:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10150,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 15:51:30,959:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:51:46,349:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10150,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 15:51:50,499:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:52:06,128:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:52:21,938:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:52:35,551:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10150,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 15:52:39,000:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:52:54,710:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:53:05,776:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10000,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 15:53:07,482:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10000,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 15:53:10,469:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:53:25,908:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:53:42,250:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:53:51,753:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10000,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 15:53:53,058:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10000,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 15:53:59,310:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:54:15,955:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:54:31,707:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:54:47,940:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:55:03,541:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:55:20,268:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:55:35,794:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:55:51,491:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:56:07,767:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:56:24,084:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:56:40,141:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:56:55,952:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:57:13,784:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:57:29,717:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:57:49,348:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:58:05,731:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:58:21,563:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:58:38,251:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:58:54,081:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:59:09,502:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:59:26,621:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:59:42,781:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 15:59:58,233:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:00:14,711:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:00:30,295:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:00:46,490:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:01:02,883:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:01:18,723:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:01:35,263:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:01:51,566:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:02:08,033:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:02:23,817:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:02:39,777:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:02:56,246:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:03:12,156:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:03:28,134:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:03:45,647:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:04:01,401:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:04:34,338:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:04:50,214:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:05:05,218:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:05:21,119:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:05:37,153:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:05:52,738:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:06:08,649:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:06:24,549:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:06:40,195:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:06:56,367:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:07:11,769:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:07:27,702:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:07:43,268:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:07:59,447:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:08:15,422:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:08:31,399:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:08:47,165:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:09:03,347:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:09:20,140:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:09:35,698:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:09:51,168:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:10:06,595:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:10:23,013:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:10:38,990:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:10:54,758:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:11:10,734:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:11:14,069:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10000,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 16:11:26,435:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:11:36,555:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10000,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 16:11:42,522:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:11:58,390:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:12:13,875:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:12:29,345:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:12:45,351:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:13:00,867:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:13:16,297:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:13:32,456:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:13:48,579:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:14:04,689:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:14:20,570:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:14:36,765:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:14:41,136:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10000,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 16:14:52,538:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:15:08,708:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:15:24,585:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:15:40,588:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:15:56,590:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:16:12,589:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:16:24,628:	DEBUG:	SignalrDataHandler.py:Handler():26	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 16:16:24,729:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 16:16:24,729:	ERROR:	MqttDataHandler.py:__handlerTopicHcControl():74	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-14 16:16:28,018:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:16:29,650:	DEBUG:	SignalrDataHandler.py:Handler():26	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 16:16:29,750:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 16:16:29,751:	ERROR:	MqttDataHandler.py:__handlerTopicHcControl():74	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-14 16:16:43,898:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:17:00,022:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:17:15,695:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:17:31,435:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:17:46,440:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:18:01,651:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:18:49,444:	INFO:	Hc.py:__hcUpdateDisconnectStToDb():79	Update cloud disconnect status to db
+2021-07-14 16:19:35,263:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:19:37,608:	ERROR:	Mqtt.py:_connect():77	Exception in connect to mqtt: [Errno 113] No route to host
+2021-07-14 16:20:54,656:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:20:55,349:	INFO:	System.py:__pushDataToCloud():129	hava no data to push
+2021-07-14 16:21:10,355:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:21:26,111:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:21:41,767:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:21:49,183:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:22:28,006:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:22:29,819:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10000,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 16:22:34,048:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10000,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 16:36:10,730:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:45:54,284:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:46:09,463:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:46:25,598:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:46:41,523:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:46:57,712:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:47:14,331:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:47:30,447:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:47:36,666:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:47:52,675:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:50:21,548:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:50:37,678:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:50:53,445:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:51:09,924:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:51:25,706:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:51:41,764:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:51:45,897:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10000,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 16:52:00,241:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 16:52:15,622:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:17:05,556:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:17:20,976:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:17:35,329:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10000,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 17:17:36,655:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:17:52,298:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:18:07,565:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:18:23,996:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:18:39,284:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:18:54,760:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:19:10,011:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:19:25,274:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:19:40,542:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:19:46,815:	DEBUG:	SignalrDataHandler.py:Handler():26	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 17:19:46,917:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 17:19:46,917:	ERROR:	MqttDataHandler.py:__handlerTopicHcControl():74	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-14 17:19:56,152:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:20:11,438:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:20:26,780:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:20:42,074:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:20:57,491:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:21:13,206:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:21:28,927:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:21:44,748:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:22:00,632:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:22:16,684:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:22:31,830:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:22:47,494:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:23:04,437:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:23:20,612:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:23:35,911:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:23:51,766:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:24:06,949:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:24:22,239:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:24:37,543:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:24:53,416:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:25:08,693:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:25:14,005:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:25:14,006:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:25:17,049:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:25:20,058:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:25:23,065:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:25:26,074:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:25:29,011:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:25:29,079:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:25:32,085:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:25:35,093:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:25:38,101:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:25:41,104:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:25:44,020:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:25:44,109:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:25:47,117:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:25:50,126:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:25:53,133:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:25:56,141:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:25:59,030:	INFO:	Hc.py:__hcUpdateDisconnectStToDb():79	Update cloud disconnect status to db
+2021-07-14 17:25:59,041:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:25:59,144:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:26:02,152:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:26:05,158:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:26:08,168:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:26:11,174:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:26:14,045:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:26:14,182:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:26:17,186:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:26:20,194:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:26:23,202:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:26:26,211:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:26:29,055:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:26:29,220:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-14 17:26:44,064:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:26:44,274:	INFO:	System.py:__pushDataToCloud():129	hava no data to push
+2021-07-14 17:26:59,280:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:27:10,312:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "END_USER_PROFILE_ID": 10000,
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
+  }
+}
+2021-07-14 17:27:15,360:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:27:24,092:	DEBUG:	SignalrDataHandler.py:Handler():26	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 17:27:24,193:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 17:27:24,193:	ERROR:	MqttDataHandler.py:__handlerTopicHcControl():74	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-14 17:27:30,664:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:27:46,721:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:28:01,730:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:28:16,740:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:28:31,329:	DEBUG:	SignalrDataHandler.py:Handler():26	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 17:28:31,430:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 17:28:31,431:	ERROR:	MqttDataHandler.py:__handlerTopicHcControl():74	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-14 17:28:32,185:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:28:36,068:	DEBUG:	SignalrDataHandler.py:Handler():26	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 17:28:36,170:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():61	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-14 17:28:36,171:	ERROR:	MqttDataHandler.py:__handlerTopicHcControl():74	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-14 17:28:47,315:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:29:03,504:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:29:18,990:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:29:34,443:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:29:49,730:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:30:05,016:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:30:20,708:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:30:35,926:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:30:51,525:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:31:07,076:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:31:23,074:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:32:48,133:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:33:23,187:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
+2021-07-14 17:33:58,220:	INFO:	Hc.py:__hcUpdateDisconnectStToDb():79	Update cloud disconnect status to db

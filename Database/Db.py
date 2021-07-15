@@ -23,7 +23,7 @@ class Db(metaclass=MetaDb):
     def Init(self):
         self.__engine = create_engine('sqlite:///' + const.DB_NAME, echo=True)
         self.__dbTable = tableManager(self.__metadata)
-        self.__metadata.create_all(self.__engine)
+        self.__metadata.reflect(self.__engine)
         self.__connect = self.__engine.connect()  
         self.__servicesManager = modelServicesManager(self.__dbTable, self.__connect) 
         

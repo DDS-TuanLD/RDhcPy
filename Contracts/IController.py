@@ -4,9 +4,6 @@ import logging
 class IController(metaclass=ABCMeta):
     
     @abstractmethod
-    def ActionDb(self):
+    def Run(self):
         return
     
-    @abstractmethod
-    async def ActionNoDb(self):
-        return

@@ -64,7 +64,7 @@ class RdHc(IController):
                 self.__cache.DisconnectTime = None
                 self.__cache.SignalrDisconnectCount = 0
             await asyncio.sleep(15)
-            if (self.__cache.SignalrDisconnectCount == 3) and (self.__cache.SignalrDisconnectStatusUpdateStatusFlag == False):
+            if (self.__cache.SignalrDisconnectCount == 6) and (self.__cache.SignalrDisconnectStatusUpdateStatusFlag == False):
                 self.__hcUpdateDisconnectStToDb()
                 if self.__cache.FirstPingSuccessToCloudFlag == True:
                     s.EliminateCurrentProgess()
@@ -107,20 +107,14 @@ class RdHc(IController):
         if dt != None:
             self.__cache.EndUserId = dt["EndUserProfileId"]
             self.__cache.RefreshToken = dt["RefreshToken"]   
-    
-    async def ActionNoDb(self):
-        task1 = asyncio.ensure_future(self.__signalServices.Init())
-        task2 = asyncio.ensure_future(self.__mqttServices.Init())
-        tasks = [task1, task2]
-        await asyncio.gather(*tasks)
-        return
-
-    async def ActionDb(self): 
+   
+    async def Run(self): 
         self.__HcLoadUserData()
-        task1 = asyncio.ensure_future(self.__HcHandlerSignalRData())
-        task2 = asyncio.ensure_future(self.__HcCheckConnectWithCloud())
-        task3 = asyncio.ensure_future(self.__HcHandlerMqttData())     
-        tasks = [task1, task2, task3]
+        self.__mqttServices.Init()
+        task0 = asyncio.create_task(self.__signalServices.Init())
+        task1 = asyncio.create_task(self.__HcHandlerSignalRData())
+        task2 = asyncio.create_task(self.__HcCheckConnectWithCloud())
+        task3 = asyncio.create_task(self.__HcHandlerMqttData())     
+        tasks = [task0, task1, task2, task3]
         await asyncio.gather(*tasks)
-        return
     

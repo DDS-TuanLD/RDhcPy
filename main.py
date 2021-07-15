@@ -32,21 +32,10 @@ logger.setLevel(logging.DEBUG)
 db= Db()
 hc= RdHc(logger)
 
-def hc_db_thread(db: Db, hc: IController):
+async def main():      
     db.Init()
-    asyncio.run(hc.ActionDb())
-    
-def hc_no_db_thread(hc: IController):
-    asyncio.run(hc.ActionNoDb())
+    await hc.Run()
 
-def main():      
-    threads = []
-    threads.append(threading.Thread(target = hc_db_thread, args=(db, hc,)))
-    threads.append(threading.Thread(target = hc_no_db_thread, args=(hc,)))
-    
-    [thread.start() for thread in threads]
-    [thread.join() for thread in threads]
-
-
-if __name__ == "__main__":
-    main()
+loop = asyncio.get_event_loop()
+loop.create_task(main())
+loop.run_forever()

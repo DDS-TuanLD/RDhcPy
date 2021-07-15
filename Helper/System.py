@@ -114,7 +114,6 @@ class System():
         updateTime = t[1]
         print(f"updateDay: {updateDay}, updateTime: {updateTime}")
         rel = self.__db.Services.DeviceAttributeValueServices.FindDeviceAttributeValueWithCondition(or_(and_(self.__db.Table.DeviceAttributeValueTable.c.UpdateDay == updateDay, self.__db.Table.DeviceAttributeValueTable.c.UpdateTime >= updateTime), self.__db.Table.DeviceAttributeValueTable.c.UpdateDay > updateDay))
-
         data = []
         for r in rel:
             if r['DeviceId'] == "" or r['DeviceAttributeId'] == None or r['Value'] == None:
@@ -126,26 +125,13 @@ class System():
             }
             data.append(d)
         if data == []:
-            self.__updateSyncDataStatusSuccessToDb(dt)
             print("hava no data to push")
             self.__logger.info("hava no data to push")
             self.__updateSyncDataStatusSuccessToDb(dt)
             return True
-            
         data_send_to_cloud = json.dumps(data)
         print(f"push data: {data_send_to_cloud}")
-        print(f"refresh token: {self.__cache.RefreshToken}")
-        h = Http()
-        token = await self.__getToken(h) 
-        cookie = f"Token={token}"
-        print(f"cookie: {cookie}")
-        pullDataUrl = const.SERVER_HOST + const.CLOUD_PUSH_DATA_URL
-        header = h.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
-        req = h.CreateNewHttpRequest(url=pullDataUrl, body_data=json.loads(data_send_to_cloud) , header=header)
-        session = aiohttp.ClientSession()
-        res = await h.Post(session, req)
-        await session.close()
-        print(res)
+        res = await self.__sendHttpRequestToPushUrl(data=data_send_to_cloud)
         if res == "":
             print("Push data failure")
             self.__logger.info("Push data failure")
@@ -156,6 +142,20 @@ class System():
             print("Push data successfully")
             self.__logger.info("Push data successfully")
             return True
+    
+    async def __sendHttpRequestToPushUrl(self, data: list):
+        h = Http()
+        token = await self.__getToken(h) 
+        cookie = f"Token={token}"
+        print(f"cookie: {cookie}")
+        pullDataUrl = const.SERVER_HOST + const.CLOUD_PUSH_DATA_URL
+        header = h.CreateNewHttpHeader(cookie = cookie, endProfileId=self.__cache.EndUserId)
+        req = h.CreateNewHttpRequest(url=pullDataUrl, body_data=json.loads(data) , header=header)
+        session = aiohttp.ClientSession()
+        res = await h.Post(session, req)
+        await session.close()
+        print(res)
+
        
     def __updateSyncDataStatusSuccessToDb(self, s: systemConfiguration):
         s.IsSync = True
