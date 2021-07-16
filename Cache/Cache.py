@@ -9,35 +9,23 @@ class MetaCache(type):
 class Cache(metaclass=MetaCache):
     __refreshToken: str
     __endUserId: str
-    __signalrDisconnectCount: int
     __signalrDisconnectStatusUpdate: bool
     __disconectTime: datetime.datetime
     __recheckConnectionStatusInDb: bool
     __resetSignalrConnect: bool
     __signalrConnectSuccess: bool
     __pingCloudSuccess: bool
-    __firstPingSuccessToCloud: bool
     
     def __init__(self):
         self.__signalrConnectSuccess = False
         self.__refreshToken = ""
-        self.__signalrDisconnectCount = 0
         self.__signalrDisconnectStatusUpdate = False
         self.__endUserId = ""
         self.__disconectTime = None
         self.__recheckConnectionStatusInDb = False
         self.__resetSignalrConnect = False
         self.__pingCloudSuccess = None
-        self.__firstPingSuccessToCloud = False
 
-    @property
-    def FirstPingSuccessToCloudFlag(self):
-        return self.__firstPingSuccessToCloud
-    
-    @FirstPingSuccessToCloudFlag.setter
-    def FirstPingSuccessToCloudFlag(self, firstPingSuccessToCloud: bool):
-        self.__firstPingSuccessToCloud = firstPingSuccessToCloud
-    
     @property    
     def PingCloudSuccessFlag(self):
         return self.__pingCloudSuccess
@@ -78,15 +66,7 @@ class Cache(metaclass=MetaCache):
     @RefreshToken.setter
     def RefreshToken(self, refreshToken: str):
         self.__refreshToken = refreshToken
-            
-    @property
-    def SignalrDisconnectCount(self):
-        return self.__signalrDisconnectCount
-    
-    @SignalrDisconnectCount.setter
-    def SignalrDisconnectCount(self, signalrDisconnectCount: int):
-        self.__signalrDisconnectCount = signalrDisconnectCount
-        
+                    
     @property
     def SignalrDisconnectStatusUpdateStatusFlag(self):
         return self.__signalrDisconnectStatusUpdate

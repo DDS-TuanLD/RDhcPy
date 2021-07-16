@@ -45,28 +45,35 @@ class RdHc(IController):
         
     async def __HcCheckConnectWithCloud(self):
         s = System(self.__logger)
+        signalrDisconnectCount = 0
+        requestTimeCount = 0
+        firstPingSuccessToCloudFlag = False
         while True:  
             print("Hc send heardbeat to cloud")
             self.__logger.info("Hc send heardbeat to cloud")
+            requestTimeCount = datetime.datetime.now().timestamp()
             if self.__cache.DisconnectTime == None:
                 self.__cache.DisconnectTime = datetime.datetime.now()
             ok = await s.SendHttpRequestToHeardbeatUrl(self.__httpServices)
             if ok == False:
                 print("can not ping to cloud")
-                self.__cache.SignalrDisconnectCount = self.__cache.SignalrDisconnectCount + 1 
+                if datetime.datetime.now().timestamp() - requestTimeCount > 20:
+                    requestTimeCount = 0
+                    self.__hcUpdateDisconnectStToDb()
+                signalrDisconnectCount = signalrDisconnectCount + 1 
                 self.__cache.SignalrConnectSuccessFlag = False 
                 self.__cache.PingCloudSuccessFlag = False
             if ok == True:
                 await s.RecheckReconnectStatusOfLastActiveInDb()
-                if self.__cache.FirstPingSuccessToCloudFlag == False:
-                    self.__cache.FirstPingSuccessToCloudFlag = True
+                if firstPingSuccessToCloudFlag == False:
+                    firstPingSuccessToCloudFlag = True
                 self.__cache.PingCloudSuccessFlag = True
                 self.__cache.DisconnectTime = None
-                self.__cache.SignalrDisconnectCount = 0
+                signalrDisconnectCount = 0
             await asyncio.sleep(15)
-            if (self.__cache.SignalrDisconnectCount == 6) and (self.__cache.SignalrDisconnectStatusUpdateStatusFlag == False):
+            if (signalrDisconnectCount == 12) and (self.__cache.SignalrDisconnectStatusUpdateStatusFlag == False):
                 self.__hcUpdateDisconnectStToDb()
-                if self.__cache.FirstPingSuccessToCloudFlag == True:
+                if firstPingSuccessToCloudFlag == True:
                     s.EliminateCurrentProgess()
      
     async def __hcUpdateReconnectStToDb(self):

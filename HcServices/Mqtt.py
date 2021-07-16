@@ -71,7 +71,7 @@ class Mqtt(Itransport):
       
         self.__client.on_message = self.__on_message
         self.__client.on_connect = self.__on_connect
-        #self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
+        self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
         try:
             self.__client.connect(self.__mqttConfig.host, self.__mqttConfig.port)
             self.__client.loop_start()
