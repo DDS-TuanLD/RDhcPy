@@ -10,6 +10,7 @@ import json
 from Database.Db import Db
 from Model.systemConfiguration import systemConfiguration
 from Model.userData import userData
+from Helper.System import System
 
 class MqttDataHandler(Ihandler):
     __logger: logging.Logger
@@ -35,21 +36,24 @@ class MqttDataHandler(Ihandler):
         func(item["msg"])
         return
     
-    async def __signalReconnectWhenWifiChange(self):
-        await self.__signalr.DisConnect()
-        self.__signalr.ReConnect()
+    # async def __signalReconnectWhenWifiChange(self):
+    #     s = System(self.__logger)
+    #     rel = s.pingGoogle()
+    #     if rel:
+    #         await self.__signalr.DisConnect()
+    #         self.__signalr.ReConnect()
+    #     if not rel:
+    #         self.__cache.NeedReconnectSignalrServerFlag = True
             
     def __test(self, data):
-        loop = asyncio.get_running_loop()
-        t = loop.create_task(self.__signalReconnectWhenWifiChange())
+        if not self.__cache.NeedReconnectSignalrServerFlag:
+            self.__cache.NeedReconnectSignalrServerFlag = True
         
-  
-    
     def __handlerTopicHcControlResponse(self, data):
         print("data from topic HC.CONTROL.RESPONSE: " + data)
         self.__logger.debug("data from topic HC.CONTROL.RESPONSE: " + data)
 
-        if self.__cache.PingCloudSuccessFlag == True:
+        if self.__cache.PingCloudSuccessFlag:
             self.__signalr.Send(endUserProfileId=self.__cache.EndUserId, entity=const.SIGNALR_APP_RESPONSE_ENTITY, message=data)
             
             try:
@@ -89,7 +93,7 @@ class MqttDataHandler(Ihandler):
     def __handlerCmdDevice(self, data):
         signal_data = []
         try:
-            for i in range (len(data['PROPERTIES'])):
+            for i in range(len(data['PROPERTIES'])):
                 d = {
                     "deviceId": data['DEVICE_ID'],
                     "deviceAttributeId": data['PROPERTIES'][i]['ID'],
@@ -100,10 +104,10 @@ class MqttDataHandler(Ihandler):
             self.__logger.debug("data of cmd Device invalid")
             print("data of cmd Device invalid")
         
-        if signal_data != []:
+        if signal_data:
             self.__signalr.Send(endUserProfileId=self.__cache.EndUserId, entity=const.SIGNALR_CLOUD_RESPONSE_ENTITY, message=json.dumps(signal_data))
         
-        if signal_data == []:
+        if not signal_data:
             self.__logger.debug("have no data to send to cloud via signalr")
             print("have no data to send to cloud via signalr")              
           
@@ -122,12 +126,12 @@ class MqttDataHandler(Ihandler):
             userDt = userData(refreshToken=refreshToken, endUserProfileId=str(endUserProfileId))
             rel = self.__db.Services.UserdataServices.FindUserDataById(id = 1)
             dt = rel.first()
-            if dt != None:
+            if dt is not None:
                 self.__db.Services.UserdataServices.UpdateUserDataById(id = 1, newUserData=userDt)
-            if dt == None:
+            if dt is None:
                 self.__db.Services.UserdataServices.AddNewUserData(newUserData=userDt)
             
-            if self.__cache.PingCloudSuccessFlag == True:
+            if self.__cache.PingCloudSuccessFlag:
                 self.__cache.ResetSignalrConnectFlag = True
         except:
             self.__logger.error("data of cmd HcConnectToCLoud invalid")

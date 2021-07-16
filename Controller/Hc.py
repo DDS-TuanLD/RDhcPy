@@ -21,17 +21,18 @@ from Contracts.Ihandler import Ihandler
 from Handler.MqttDataHandler import MqttDataHandler
 from Handler.SignalrDataHandler import SignalrDataHandler
 
+
 class RdHc(IController):
     __httpServices: Http
     __signalServices: Itransport
     __mqttServices: Itransport
     __db: Db
-    __cache : Cache
+    __cache: Cache
     __lock: threading.Lock
     __logger: logging.Logger
     __mqttHandler: Ihandler
     __signalrHandler: Ihandler
-    
+
     def __init__(self, log: logging.Logger):
         self.__logger = log
         self.__httpServices = Http()
@@ -40,60 +41,58 @@ class RdHc(IController):
         self.__db = Db()
         self.__cache = Cache()
         self.__lock = threading.Lock()
-        self.__mqttHandler =  MqttDataHandler(self.__logger, self.__mqttServices, self.__signalServices)
-        self.__signalrHandler =  SignalrDataHandler(self.__logger, self.__mqttServices, self.__signalServices)
-        
+        self.__mqttHandler = MqttDataHandler(self.__logger, self.__mqttServices, self.__signalServices)
+        self.__signalrHandler = SignalrDataHandler(self.__logger, self.__mqttServices, self.__signalServices)
+
     async def __HcCheckConnectWithCloud(self):
         s = System(self.__logger)
         signalrDisconnectCount = 0
         requestTimeCount = 0
         firstPingSuccessToCloudFlag = False
-        while True:  
+        while True:
             print("Hc send heardbeat to cloud")
             self.__logger.info("Hc send heardbeat to cloud")
             requestTimeCount = datetime.datetime.now().timestamp()
-            if self.__cache.DisconnectTime == None:
+            if self.__cache.DisconnectTime is None:
                 self.__cache.DisconnectTime = datetime.datetime.now()
             ok = await s.SendHttpRequestToHeardbeatUrl(self.__httpServices)
-            if ok == False:
+            if not ok:
                 print("can not ping to cloud")
                 if datetime.datetime.now().timestamp() - requestTimeCount > 20:
                     requestTimeCount = 0
                     self.__hcUpdateDisconnectStToDb()
-                signalrDisconnectCount = signalrDisconnectCount + 1 
-                self.__cache.SignalrConnectSuccessFlag = False 
+                signalrDisconnectCount = signalrDisconnectCount + 1
+                self.__cache.SignalrConnectSuccessFlag = False
                 self.__cache.PingCloudSuccessFlag = False
-            if ok == True:
+            if ok:
                 await s.RecheckReconnectStatusOfLastActiveInDb()
-                if firstPingSuccessToCloudFlag == False:
+                if not firstPingSuccessToCloudFlag:
                     firstPingSuccessToCloudFlag = True
                 self.__cache.PingCloudSuccessFlag = True
                 self.__cache.DisconnectTime = None
                 signalrDisconnectCount = 0
             await asyncio.sleep(15)
-            if (signalrDisconnectCount == 12) and (self.__cache.SignalrDisconnectStatusUpdateStatusFlag == False):
+            if (signalrDisconnectCount == 12) and (not self.__cache.SignalrDisconnectStatusUpdateStatusFlag):
                 self.__hcUpdateDisconnectStToDb()
-                if firstPingSuccessToCloudFlag == True:
+                if firstPingSuccessToCloudFlag:
                     s.EliminateCurrentProgess()
-     
+
     async def __hcUpdateReconnectStToDb(self):
         self.__logger.info("Update cloud reconnect status to db")
         print("Update cloud reconnect status to db")
         s = System(self.__logger)
         await s.UpdateReconnectStatusToDb(reconnectTime=datetime.datetime.now())
-        
+
     def __hcUpdateDisconnectStToDb(self):
         self.__logger.info("Update cloud disconnect status to db")
         print("Update cloud disconnect status to db")
         s = System(self.__logger)
-        s.UpdateDisconnectStatusToDb(DisconnectTime=self.__cache.DisconnectTime) 
-    
+        s.UpdateDisconnectStatusToDb(DisconnectTime=self.__cache.DisconnectTime)
+
     async def __HcHandlerMqttData(self):
-        """ This function handler data received in queue
-        """
         while True:
             await asyncio.sleep(0.1)
-            if self.__mqttServices.mqttDataQueue.empty() == False:
+            if not self.__mqttServices.mqttDataQueue.empty():
                 with self.__lock:
                     item = self.__mqttServices.mqttDataQueue.get()
                     self.__mqttHandler.Handler(item)
@@ -102,26 +101,39 @@ class RdHc(IController):
     async def __HcHandlerSignalRData(self):
         while True:
             await asyncio.sleep(0.1)
-            if self.__signalServices.signalrDataQueue.empty() == False:
+            if not self.__signalServices.signalrDataQueue.empty():
                 with self.__lock:
                     item = self.__signalServices.signalrDataQueue.get()
                     self.__signalrHandler.Handler(item)
                     self.__signalServices.signalrDataQueue.task_done()
-                     
+
+    async def __HcCheckAndReconnectSignalrWhenHaveInternet(self):
+        while True:
+            while not self.__cache.NeedReconnectSignalrServerFlag:
+                await asyncio.sleep(2)
+            s = System(self.__logger)
+            while not s.pingGoogle():
+                await asyncio.sleep(2)
+            while not self.__cache.PingCloudSuccessFlag:
+                await asyncio.sleep(2)
+            await self.__signalServices.DisConnect()
+            self.__signalServices.ReConnect()
+            self.__cache.NeedReconnectSignalrServerFlag = False
+
     def __HcLoadUserData(self):
         userData = self.__db.Services.UserdataServices.FindUserDataById(id=1)
         dt = userData.first()
-        if dt != None:
+        if dt is not None:
             self.__cache.EndUserId = dt["EndUserProfileId"]
-            self.__cache.RefreshToken = dt["RefreshToken"]   
-   
-    async def Run(self): 
+            self.__cache.RefreshToken = dt["RefreshToken"]
+
+    async def Run(self):
         self.__HcLoadUserData()
         self.__mqttServices.Init()
         task0 = asyncio.create_task(self.__signalServices.Init())
         task1 = asyncio.create_task(self.__HcHandlerSignalRData())
         task2 = asyncio.create_task(self.__HcCheckConnectWithCloud())
-        task3 = asyncio.create_task(self.__HcHandlerMqttData())     
-        tasks = [task0, task1, task2, task3]
+        task3 = asyncio.create_task(self.__HcHandlerMqttData())
+        task4 = asyncio.create_task(self.__HcCheckAndReconnectSignalrWhenHaveInternet())
+        tasks = [task0, task1, task2, task3, task4]
         await asyncio.gather(*tasks)
-    

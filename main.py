@@ -1,16 +1,9 @@
 from Controller.Hc import RdHc
 import asyncio
-import requests
 from Database.Db import Db
-import datetime
-import threading        
 import logging
 from logging.handlers import TimedRotatingFileHandler
 import os
-import Constant.constant as const 
-import socket
-from Contracts.IController import IController
-from sqlalchemy.sql.expression import BinaryExpression
 
 
 d = os.path.dirname(__file__)
@@ -29,8 +22,9 @@ loghandler.setFormatter(logfomatter)
 logger.addHandler(loghandler)
 logger.setLevel(logging.DEBUG)
 
-db= Db()
-hc= RdHc(logger)
+db = Db()
+hc = RdHc(logger)
+
 
 async def main():      
     db.Init()

@@ -13,7 +13,7 @@ class SignalrDataHandler(Ihandler):
     __mqtt: Itransport
     __signalr: Itransport
     __db: Db
-    __cache : Cache
+    __cache: Cache
 
     def __init__(self, log: logging.Logger, mqtt: Itransport, signalr: Itransport):
         self.__logger = log
@@ -38,4 +38,3 @@ class SignalrDataHandler(Ihandler):
 
     def __handlerEntityCommand(self, data):
         self.__mqtt.Send(const.MQTT_CONTROL_TOPIC, data, const.MQTT_QOS)
-           

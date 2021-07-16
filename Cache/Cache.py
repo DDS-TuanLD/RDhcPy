@@ -15,7 +15,8 @@ class Cache(metaclass=MetaCache):
     __resetSignalrConnect: bool
     __signalrConnectSuccess: bool
     __pingCloudSuccess: bool
-    
+    __needReconnectSignalrServer: bool
+
     def __init__(self):
         self.__signalrConnectSuccess = False
         self.__refreshToken = ""
@@ -25,6 +26,15 @@ class Cache(metaclass=MetaCache):
         self.__recheckConnectionStatusInDb = False
         self.__resetSignalrConnect = False
         self.__pingCloudSuccess = None
+        self.__needReconnectSignalrServer = False
+
+    @property
+    def NeedReconnectSignalrServerFlag(self):
+        return self.__needReconnectSignalrServer
+
+    @NeedReconnectSignalrServerFlag.setter
+    def NeedReconnectSignalrServerFlag(self, needReconnectSignalrServer: bool):
+        self.__needReconnectSignalrServer = needReconnectSignalrServer
 
     @property    
     def PingCloudSuccessFlag(self):
@@ -33,8 +43,7 @@ class Cache(metaclass=MetaCache):
     @PingCloudSuccessFlag.setter
     def PingCloudSuccessFlag(self, pingCloudSuccess: bool):
         self.__pingCloudSuccess = pingCloudSuccess
-    
-    
+
     @property
     def SignalrConnectSuccessFlag(self):
         return self.__signalrConnectSuccess

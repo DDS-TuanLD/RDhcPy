@@ -69,3 +69,90 @@
 2021-07-16 08:54:32,315:	INFO:	Hc.py:__HcCheckConnectWithCloud():53	Hc send heardbeat to cloud
 2021-07-16 08:54:49,354:	INFO:	Hc.py:__HcCheckConnectWithCloud():53	Hc send heardbeat to cloud
 2021-07-16 08:55:05,369:	INFO:	Hc.py:__HcCheckConnectWithCloud():53	Hc send heardbeat to cloud
+2021-07-16 08:58:20,315:	INFO:	Hc.py:__HcCheckConnectWithCloud():53	Hc send heardbeat to cloud
+2021-07-16 08:58:36,178:	INFO:	Hc.py:__HcCheckConnectWithCloud():53	Hc send heardbeat to cloud
+2021-07-16 08:58:51,696:	INFO:	Hc.py:__HcCheckConnectWithCloud():53	Hc send heardbeat to cloud
+2021-07-16 08:59:07,010:	INFO:	Hc.py:__HcCheckConnectWithCloud():53	Hc send heardbeat to cloud
+2021-07-16 08:59:22,716:	INFO:	Hc.py:__HcCheckConnectWithCloud():53	Hc send heardbeat to cloud
+2021-07-16 10:32:39,305:	INFO:	Hc.py:__HcCheckConnectWithCloud():53	Hc send heardbeat to cloud
+2021-07-16 10:32:54,983:	INFO:	Hc.py:__HcCheckConnectWithCloud():53	Hc send heardbeat to cloud
+2021-07-16 11:28:56,922:	ERROR:	Signalr.py:Init():127	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-16 11:28:56,930:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 11:29:09,942:	ERROR:	Signalr.py:Init():127	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-07-16 12:50:46,260:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:51:01,712:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:51:18,003:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:51:33,773:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:51:49,836:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:52:05,603:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:52:21,753:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:52:37,896:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:52:53,959:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:53:09,943:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:53:26,513:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:53:42,472:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:53:58,426:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:54:14,537:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:54:30,938:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:54:47,109:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:55:04,119:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:55:19,862:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:56:34,009:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():75	data from topic HC.CONTROL: "bbbb"
+2021-07-16 12:56:34,010:	ERROR:	MqttDataHandler.py:__handlerTopicHcControl():88	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-16 12:57:23,395:	INFO:	Hc.py:__hcUpdateDisconnectStToDb():87	Update cloud disconnect status to db
+2021-07-16 12:57:38,408:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:57:54,933:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:58:14,027:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:58:30,898:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:58:47,410:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:59:05,127:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:59:20,996:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:59:36,367:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 12:59:52,332:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 13:00:08,945:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 13:00:32,985:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 13:00:38,144:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 13:00:38,822:	INFO:	System.py:__pushDataToCloud():143	hava no data to push
+2021-07-16 13:00:53,827:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 13:01:09,958:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 13:01:25,472:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 13:02:33,362:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 13:02:49,392:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 13:03:04,985:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 13:03:28,360:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():76	data from topic HC.CONTROL: "bbbb"
+2021-07-16 13:03:28,361:	ERROR:	MqttDataHandler.py:__handlerTopicHcControl():89	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-16 13:03:28,361:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 13:04:30,588:	DEBUG:	SignalrDataHandler.py:Handler():26	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-16 13:04:30,688:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():76	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-16 13:04:30,689:	ERROR:	MqttDataHandler.py:__handlerTopicHcControl():89	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-16 13:04:35,311:	DEBUG:	SignalrDataHandler.py:Handler():26	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-16 13:04:35,412:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():76	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-16 13:04:35,412:	ERROR:	MqttDataHandler.py:__handlerTopicHcControl():89	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-16 13:04:44,066:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 13:05:00,463:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 13:05:16,574:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud
+2021-07-16 13:05:32,051:	INFO:	Hc.py:__HcCheckConnectWithCloud():54	Hc send heardbeat to cloud

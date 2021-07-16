@@ -4,5 +4,5 @@ import logging
 
 class Ihandler(metaclass=ABCMeta):
     @abstractmethod
-    def Handler(self):
+    def Handler(self, data):
         pass
