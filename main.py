@@ -5,7 +5,6 @@ import logging
 from logging.handlers import TimedRotatingFileHandler
 import os
 
-
 d = os.path.dirname(__file__)
 
 loghandler = logging.handlers.TimedRotatingFileHandler(filename= d + '/Logging/runtime.log', when="MIDNIGHT", backupCount=4)

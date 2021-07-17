@@ -2,7 +2,7 @@ import paho.mqtt.client as mqtt
 import asyncio
 import queue
 import Constant.constant as const
-from Cache.Cache import Cache
+from Cache.GlobalVariables import GlobalVariables
 import logging
 import threading
 import socket
@@ -31,7 +31,7 @@ class Mqtt(Itransport):
     __mqttConfig: MqttConfig
     __client: mqtt.Client
     mqttDataQueue: queue.Queue
-    __cache: Cache
+    __globalVariables: GlobalVariables
     __logger: logging.Logger
     __lock: threading.Lock
     
@@ -40,17 +40,10 @@ class Mqtt(Itransport):
         self.__mqttConfig = MqttConfig()
         self.__client = mqtt.Client()
         self.mqttDataQueue = queue.Queue()
-        self.__cache = Cache()
+        self.__globalVariables = GlobalVariables()
         self.__lock = threading.Lock()
     
     def __on_message(self, client, userdata, msg):
-        """[summary]
-
-        Args:
-            client ([type]): [description]
-            userdata ([type]): [description]
-            msg ([type]): [description]
-        """
         message = msg.payload.decode("utf-8")
         topic = msg.topic
         item = {"topic": topic, "msg": message}
@@ -64,12 +57,6 @@ class Mqtt(Itransport):
             self.__client.subscribe(topic="test", qos=self.__mqttConfig.qos)
 
     def _connect(self):
-        """  Connect to mqtt broker
-
-        Returns:
-            [bool]: [connect status: false/true]
-        """
-      
         self.__client.on_message = self.__on_message
         self.__client.on_connect = self.__on_connect
         self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
@@ -80,15 +67,7 @@ class Mqtt(Itransport):
             self.__logger.error(f"Exception in connect to mqtt: {err}")
             print(f"Exception in connect to mqtt: {err}")
 
-    def Send(
-        self, topic:str, send_data:str, qos: int):
-        """ Public data to mqtt server
-
-        Args:
-            send_data ([type]): [description]
-            qos (int, optional): [description]. Defaults to 0.
-        """
-        
+    def Send(self, topic:str, send_data:str, qos: int):
         self.__client.publish(topic, payload=send_data, qos=qos)
              
     def DisConnect(self):

@@ -2,7 +2,7 @@ import signalrcore.hub_connection_builder as SignalrBuilder
 import asyncio
 import queue
 import requests
-from Cache.Cache import Cache
+from Cache.GlobalVariables import GlobalVariables
 import Constant.constant as const
 import logging
 import threading
@@ -12,8 +12,9 @@ from Helper.System import System
 import datetime
 import functools
 
+
 def getToken():
-    cache = Cache()
+    cache = GlobalVariables()
     try:
         renew_token = "https://iot-dev.truesight.asia/rpc/iot-ebe/account/renew-token"
         headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
@@ -29,7 +30,7 @@ def getToken():
 class Signalr(Itransport):
     __hub: SignalrBuilder.HubConnectionBuilder
     signalrDataQueue: queue.Queue
-    __cache: Cache
+    __globalVariables: GlobalVariables
     __logger: logging.Logger
     __lock: threading.Lock
     __disconnectFlag: int
@@ -37,7 +38,7 @@ class Signalr(Itransport):
     
     def __init__(self, log: logging.Logger):
         self.__logger = log
-        self.__cache = Cache()
+        self.__globalVariables = GlobalVariables()
         self.__lock = threading.Lock()
         self.signalrDataQueue = queue.Queue()
         self.__disconnectFlag = 1
@@ -55,7 +56,7 @@ class Signalr(Itransport):
                 "type": "raw",
                 "keep_alive_interval": 5,
                 "reconnect_interval": 5,
-                "max_attempts": 40
+                "max_attempts": 50
                 })\
         .build()
         return self
@@ -107,26 +108,26 @@ class Signalr(Itransport):
        
     async def Init(self):
         runOnlyOne = False
-        while self.__cache.RefreshToken == "":
+        while self.__globalVariables.RefreshToken == "":
             await asyncio.sleep(1)
         self.__buildConnection()
         self.__onConnect()
         self.__onDisconnect()
         self.__onReceiveData()
         while True:
-            if self.__cache.ResetSignalrConnectFlag == True:
+            if self.__globalVariables.ResetSignalrConnectFlag:
                 await self.DisConnect()
                 self.ReConnect()
-                self.__cache.ResetSignalrConnectFlag = False    
+                self.__globalVariables.ResetSignalrConnectFlag = False    
             try:
-                if self.__cache.SignalrConnectSuccessFlag == False and runOnlyOne == False:
+                if self.__globalVariables.SignalrConnectSuccessFlag == False and runOnlyOne == False:
                     self.__hub.start()
-                    self.__cache.SignalrConnectSuccessFlag = True
+                    self.__globalVariables.SignalrConnectSuccessFlag = True
                     runOnlyOne = True
             except Exception as err:
                 self.__logger.error(f"Exception when connect with signalr server: {err}")
                 print(f"Exception when connect with signalr server: {err}")
-                self.__cache.SignalrConnectSuccessFlag = False
+                self.__globalVariables.SignalrConnectSuccessFlag = False
             await asyncio.sleep(3)
        
     def ReConnect(self):
@@ -135,9 +136,5 @@ class Signalr(Itransport):
         except Exception as err:
             self.__logger.error(f"Exception when connect with signalr server: {err}")
 
-    
     def Receive(self):
         pass
-        
-        
-        

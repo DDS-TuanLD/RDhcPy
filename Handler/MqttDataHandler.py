@@ -4,7 +4,7 @@ import logging
 from HcServices.Mqtt import Mqtt
 from HcServices.Signalr import Signalr
 from Contracts.Itransport import Itransport
-from Cache.Cache import Cache
+from Cache.GlobalVariables import GlobalVariables
 import Constant.constant as const
 import json
 from Database.Db import Db
@@ -12,18 +12,19 @@ from Model.systemConfiguration import systemConfiguration
 from Model.userData import userData
 from Helper.System import System
 
+
 class MqttDataHandler(Ihandler):
     __logger: logging.Logger
     __mqtt: Itransport
     __signalr: Itransport
     __db: Db
-    __cache : Cache
+    __globalVariables: GlobalVariables
     
     def __init__(self, log: logging.Logger, mqtt: Itransport, signalr: Itransport):
         self.__logger = log
         self.__mqtt = mqtt
         self.__db = Db()
-        self.__cache = Cache()
+        self.__globalVariables = GlobalVariables()
         self.__signalr = signalr
         
     def Handler(self, item):
@@ -35,26 +36,27 @@ class MqttDataHandler(Ihandler):
         func = switcher.get(item["topic"])
         func(item["msg"])
         return
-    
-    # async def __signalReconnectWhenWifiChange(self):
-    #     s = System(self.__logger)
-    #     rel = s.pingGoogle()
-    #     if rel:
-    #         await self.__signalr.DisConnect()
-    #         self.__signalr.ReConnect()
-    #     if not rel:
-    #         self.__cache.NeedReconnectSignalrServerFlag = True
-            
+
+    async def __checkAndReconnectSignalrWhenHaveInternet(self):
+        s = System(self.__logger)
+        while not s.PingGoogle():
+            await asyncio.sleep(2)
+        while not self.__globalVariables.PingCloudSuccessFlag:
+            await asyncio.sleep(2)
+        await self.__signalr.DisConnect()
+        self.__signalr.ReConnect()
+        self.__globalVariables.NeedReconnectSignalrServerFlag = False
+
     def __test(self, data):
-        if not self.__cache.NeedReconnectSignalrServerFlag:
-            self.__cache.NeedReconnectSignalrServerFlag = True
-        
+        loop = asyncio.get_running_loop()
+        loop.create_task(self.__checkAndReconnectSignalrWhenHaveInternet())
+
     def __handlerTopicHcControlResponse(self, data):
         print("data from topic HC.CONTROL.RESPONSE: " + data)
         self.__logger.debug("data from topic HC.CONTROL.RESPONSE: " + data)
 
-        if self.__cache.PingCloudSuccessFlag:
-            self.__signalr.Send(endUserProfileId=self.__cache.EndUserId, entity=const.SIGNALR_APP_RESPONSE_ENTITY, message=data)
+        if self.__globalVariables.PingCloudSuccessFlag:
+            self.__signalr.Send(endUserProfileId=self.__globalVariables.EndUserId, entity=const.SIGNALR_APP_RESPONSE_ENTITY, message=data)
             
             try:
                 dt = json.loads(data)
@@ -105,7 +107,7 @@ class MqttDataHandler(Ihandler):
             print("data of cmd Device invalid")
         
         if signal_data:
-            self.__signalr.Send(endUserProfileId=self.__cache.EndUserId, entity=const.SIGNALR_CLOUD_RESPONSE_ENTITY, message=json.dumps(signal_data))
+            self.__signalr.Send(endUserProfileId=self.__globalVariables.EndUserId, entity=const.SIGNALR_CLOUD_RESPONSE_ENTITY, message=json.dumps(signal_data))
         
         if not signal_data:
             self.__logger.debug("have no data to send to cloud via signalr")
@@ -115,14 +117,14 @@ class MqttDataHandler(Ihandler):
         try:
             endUserProfileId = data["END_USER_PROFILE_ID"]
             refreshToken = data["REFRESH_TOKEN"]
-            if self.__cache.EndUserId != str(endUserProfileId) and self.__cache.EndUserId != "":
+            if self.__globalVariables.EndUserId != str(endUserProfileId) and self.__globalVariables.EndUserId != "":
                 return
-            if self.__cache.EndUserId == "":
-                self.__cache.EndUserId = str(endUserProfileId)
-                self.__cache.RefreshToken = refreshToken
+            if self.__globalVariables.EndUserId == "":
+                self.__globalVariables.EndUserId = str(endUserProfileId)
+                self.__globalVariables.RefreshToken = refreshToken
                 return
-            self.__cache.EndUserId = str(endUserProfileId)
-            self.__cache.RefreshToken = refreshToken
+            self.__globalVariables.EndUserId = str(endUserProfileId)
+            self.__globalVariables.RefreshToken = refreshToken
             userDt = userData(refreshToken=refreshToken, endUserProfileId=str(endUserProfileId))
             rel = self.__db.Services.UserdataServices.FindUserDataById(id = 1)
             dt = rel.first()
@@ -131,8 +133,8 @@ class MqttDataHandler(Ihandler):
             if dt is None:
                 self.__db.Services.UserdataServices.AddNewUserData(newUserData=userDt)
             
-            if self.__cache.PingCloudSuccessFlag:
-                self.__cache.ResetSignalrConnectFlag = True
+            if self.__globalVariables.PingCloudSuccessFlag:
+                self.__globalVariables.ResetSignalrConnectFlag = True
         except:
             self.__logger.error("data of cmd HcConnectToCLoud invalid")
             print("data of cmd HcConnectToCLoud invalid")

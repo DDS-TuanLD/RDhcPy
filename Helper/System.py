@@ -1,7 +1,7 @@
 from Helper.Terminal import Terminal
 from Database.Db import Db
 from Model.systemConfiguration import systemConfiguration
-from Cache.Cache import Cache
+from Cache.GlobalVariables import GlobalVariables
 import datetime
 from HcServices.Mqtt import Mqtt
 from HcServices.Http import Http
@@ -17,7 +17,7 @@ import logging
 
 class System:
     __db = Db()
-    __cache = Cache()
+    __globalVariables = GlobalVariables()
     __logger = logging.Logger
 
     def __init__(self, logger: logging.Logger):
@@ -27,11 +27,12 @@ class System:
         t = Terminal()
         s = t.ExecuteWithResult(f'ps | grep python3')
         dt = s[1].split(" ")
+        currentProgessPort = ""
         for i in range(len(dt)):
             if dt[i] != "":
-                print(dt[i])
+                currentProgessPort = dt[i]
                 break
-        s = t.Execute(f'kill -9 {dt[i]}')
+        s = t.Execute(f'kill -9 {currentProgessPort}')
 
     async def UpdateReconnectStatusToDb(self, reconnectTime: datetime.datetime):
         rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
@@ -51,7 +52,7 @@ class System:
             self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
 
     async def RecheckReconnectStatusOfLastActiveInDb(self):
-        if not self.__cache.RecheckConnectionStatusInDbFlag:
+        if not self.__globalVariables.RecheckConnectionStatusInDbFlag:
             rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
             r = rel.first()
 
@@ -59,7 +60,7 @@ class System:
                 s = systemConfiguration(IsConnect=True, DisconnectTime=datetime.datetime.now(),
                                         ReconnectTime=datetime.datetime.now(), IsSync=True)
                 self.__db.Services.SystemConfigurationServices.AddNewSysConfiguration(s)
-                self.__cache.RecheckConnectionStatusInDbFlag = True
+                self.__globalVariables.RecheckConnectionStatusInDbFlag = True
                 return
 
             s = systemConfiguration(IsConnect=r["IsConnect"], DisconnectTime=r['DisconnectTime'],
@@ -72,16 +73,16 @@ class System:
             if r["ReconnectTime"] is not None and r["IsSync"] == "False":
                 ok = await self.__pushDataToCloud(referenceTime=r["DisconnectTime"], dt=s)
                 if ok:
-                    self.__cache.RecheckConnectionStatusInDbFlag = True
+                    self.__globalVariables.RecheckConnectionStatusInDbFlag = True
                 return
-        self.__cache.RecheckConnectionStatusInDbFlag = True
+        self.__globalVariables.RecheckConnectionStatusInDbFlag = True
         return
 
     async def SendHttpRequestToHeardbeatUrl(self, h: Http):
         token = await self.__getToken(h)
         cookie = f"Token={token}"
         heardBeatUrl = const.SERVER_HOST + const.SIGNSLR_HEARDBEAT_URL
-        header = h.CreateNewHttpHeader(cookie=cookie, endProfileId=self.__cache.EndUserId)
+        header = h.CreateNewHttpHeader(cookie=cookie, endProfileId=self.__globalVariables.EndUserId)
         req = h.CreateNewHttpRequest(url=heardBeatUrl, header=header)
         session = aiohttp.ClientSession()
         res = await h.Post(session, req)
@@ -91,21 +92,24 @@ class System:
         if (res != "") and (res.status == http.HTTPStatus.OK):
             return True
 
-    def pingGoogle(self):
+    def PingGoogle(self):
         t = Terminal()
         rel = t.ExecuteWithResult("ping -c3 www.google.com|grep packet")[1]
-        rel2 = rel.split(", ")
-        rel3 = rel2[2].split(" ")
-        r = rel3[0] == "0%"
+        try:
+            rel2 = rel.split(", ")
+            rel3 = rel2[2].split(" ")
+            r = rel3[0] == "0%"
+        except:
+            r = False
         return r
 
     async def __getToken(self, http: Http):
-        refreshToken = self.__cache.RefreshToken
+        refreshToken = self.__globalVariables.RefreshToken
         if refreshToken == "":
             return ""
         tokenUrl = const.SERVER_HOST + const.TOKEN_URL
         cookie = f"RefreshToken={refreshToken}"
-        header = http.CreateNewHttpHeader(cookie=cookie, endProfileId=self.__cache.EndUserId)
+        header = http.CreateNewHttpHeader(cookie=cookie, endProfileId=self.__globalVariables.EndUserId)
         req = http.CreateNewHttpRequest(url=tokenUrl, header=header)
         session = aiohttp.ClientSession()
         res = await http.Post(session, req)
@@ -163,7 +167,7 @@ class System:
         cookie = f"Token={token}"
         print(f"cookie: {cookie}")
         pullDataUrl = const.SERVER_HOST + const.CLOUD_PUSH_DATA_URL
-        header = h.CreateNewHttpHeader(cookie=cookie, endProfileId=self.__cache.EndUserId)
+        header = h.CreateNewHttpHeader(cookie=cookie, endProfileId=self.__globalVariables.EndUserId)
         req = h.CreateNewHttpRequest(url=pullDataUrl, body_data=json.loads(data), header=header)
         session = aiohttp.ClientSession()
         res = await h.Post(session, req)
