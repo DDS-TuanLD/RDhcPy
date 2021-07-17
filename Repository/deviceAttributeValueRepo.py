@@ -14,14 +14,6 @@ class deviceAttributeValueRepo():
         self.__context = context
     
     def FindWithCondition(self, condition: BinaryExpression):
-        """[summary]
-
-        Args:
-            condition (BinaryExpression): [description]
-
-        Returns:
-            [type]: [description]
-        """
         ins = self.__deviceAttributeValue.select().where(condition)
         rel = self.__context.execute(ins)
         return rel

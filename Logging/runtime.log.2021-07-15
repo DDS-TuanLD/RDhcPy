@@ -1,5 +1,5 @@
 2021-07-15 10:16:34,879:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
-2021-07-15 10:16:35,319:	INFO:	System.py:__pushDataToCloud():129	hava no data to push
+2021-07-15 10:16:35,319:	INFO:	System.py:__push_data_to_cloud():129	hava no data to push
 2021-07-15 10:17:04,964:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
 2021-07-15 10:17:21,611:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
 2021-07-15 10:17:37,970:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
@@ -320,7 +320,7 @@
 2021-07-15 10:41:51,803:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
 2021-07-15 10:42:06,810:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
 2021-07-15 10:42:21,816:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
-2021-07-15 10:42:36,821:	INFO:	Hc.py:__hcUpdateDisconnectStToDb():82	Update cloud disconnect status to db
+2021-07-15 10:42:36,821:	INFO:	Hc.py:__hc_update_disconnect_status_to_db():82	Update cloud disconnect status to db
 2021-07-15 10:42:46,524:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
 2021-07-15 10:42:46,524:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
 2021-07-15 10:42:49,570:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
@@ -328,7 +328,7 @@
 2021-07-15 10:42:55,585:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
 2021-07-15 10:42:58,594:	ERROR:	Signalr.py:Init():125	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
 2021-07-15 10:43:01,528:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
-2021-07-15 10:43:08,097:	INFO:	System.py:__pushDataToCloud():129	hava no data to push
+2021-07-15 10:43:08,097:	INFO:	System.py:__push_data_to_cloud():129	hava no data to push
 2021-07-15 10:43:30,399:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
 2021-07-15 10:43:51,958:	DEBUG:	SignalrDataHandler.py:Handler():26	handler receive signal data in Command is {
     "CMD": "EVENT_TRIGGER",
@@ -12345,9 +12345,9 @@
 2021-07-15 20:09:44,239:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
 2021-07-15 20:12:01,955:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
 2021-07-15 20:14:17,367:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
-2021-07-15 20:15:39,767:	INFO:	Hc.py:__hcUpdateDisconnectStToDb():79	Update cloud disconnect status to db
+2021-07-15 20:15:39,767:	INFO:	Hc.py:__hc_update_disconnect_status_to_db():79	Update cloud disconnect status to db
 2021-07-15 22:49:25,979:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
-2021-07-15 22:49:26,611:	INFO:	System.py:__pushDataToCloud():129	hava no data to push
+2021-07-15 22:49:26,611:	INFO:	System.py:__push_data_to_cloud():129	hava no data to push
 2021-07-15 22:49:41,624:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
 2021-07-15 22:49:57,875:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud
 2021-07-15 22:51:29,227:	INFO:	Hc.py:__HcCheckConnectWithCloud():50	Hc send heardbeat to cloud

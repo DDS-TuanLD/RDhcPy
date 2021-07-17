@@ -1,4 +1,4 @@
-import signalrcore.hub_connection_builder as SignalrBuilder
+from signalrcore.hub_connection_builder import HubConnectionBuilder
 import asyncio
 import queue
 import requests
@@ -6,80 +6,77 @@ from Cache.GlobalVariables import GlobalVariables
 import Constant.constant as const
 import logging
 import threading
-from Contracts.Itransport import Itransport
-import time
-from Helper.System import System
+from Contracts.ITransport import ITransport
+from Helper.System import System, eliminate_current_progress
 import datetime
-import functools
 
 
-def getToken():
+def get_token():
     cache = GlobalVariables()
     try:
         renew_token = "https://iot-dev.truesight.asia/rpc/iot-ebe/account/renew-token"
-        headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
-        headers['X-EndUserProfileId'] = cache.EndUserId
-        headers['Cookie'] = "RefreshToken={refresh_token}".format(refresh_token=cache.RefreshToken)
+        headers = {'Content-type': 'application/json', 'Accept': 'text/plain', 'X-EndUserProfileId': cache.EndUserId,
+                   'Cookie': "RefreshToken={refresh_token}".format(refresh_token=cache.RefreshToken)}
         response = requests.post(renew_token, json=None, headers=headers).json()
         token = response['token']
         headers['Cookie'] = "Token={token}".format(token=token)
         return token
     except Exception as e:
         return None
-  
-class Signalr(Itransport):
-    __hub: SignalrBuilder.HubConnectionBuilder
-    signalrDataQueue: queue.Queue
+
+
+class Signalr(ITransport):
+    __hub: HubConnectionBuilder
     __globalVariables: GlobalVariables
     __logger: logging.Logger
     __lock: threading.Lock
     __disconnectFlag: int
     __disconnectRetryCount: int
-    
+
     def __init__(self, log: logging.Logger):
+        super().__init__()
         self.__logger = log
         self.__globalVariables = GlobalVariables()
         self.__lock = threading.Lock()
-        self.signalrDataQueue = queue.Queue()
         self.__disconnectFlag = 1
         self.__disconnectRetryCount = 0
-        
-    def __buildConnection(self):
-        self.__hub = SignalrBuilder.HubConnectionBuilder()\
-        .with_url(const.SERVER_HOST + const.SIGNALR_SERVER_URL, 
-                options={
-                        "access_token_factory": getToken,
-                        "headers": {
-                        }
-                    }) \
-        .with_automatic_reconnect({
+
+    def __build_connection(self):
+        self.__hub = HubConnectionBuilder() \
+            .with_url(const.SERVER_HOST + const.SIGNALR_SERVER_URL,
+                      options={
+                          "access_token_factory": get_token,
+                          "headers": {
+                          }
+                      }) \
+            .with_automatic_reconnect({
                 "type": "raw",
                 "keep_alive_interval": 5,
                 "reconnect_interval": 5,
-                "max_attempts": 50
-                })\
-        .build()
+                "max_attempts": 45
+            }) \
+            .build()
         return self
-    
-    def __onReceiveData(self):
-        self.__hub.on("Receive", self.__dataPreHandler)
-      
-    def __onDisconnect(self):
+
+    def __on_receive_event(self):
+        self.__hub.on("Receive", self.__data_pre_handler)
+
+    def __on_disconnect_event(self):
         self.__hub.on_close(self.__disconnect)
-    
+
     def __disconnect(self):
         print("disconnect to signalr server")
         self.__disconnectFlag = 0
         self.__disconnectRetryCount = 0
-    
-    def __onConnect(self):
+
+    def __on_connect_event(self):
         self.__hub.on_open(lambda: print("Connect to signalr server"))
-        
-    def __dataPreHandler(self, data):
+
+    def __data_pre_handler(self, data):
         with self.__lock:
-            self.signalrDataQueue.put(data)
-        
-    async def DisConnect(self):
+            self.receive_data_queue.put(data)
+
+    async def disconnect(self):
         self.__disconnectFlag = 1
         try:
             self.__hub.stop()
@@ -87,54 +84,53 @@ class Signalr(Itransport):
             self.__logger.error(f"Exception when disconnect with signalr server: {err}")
         await asyncio.sleep(1)
         if self.__disconnectFlag == 1:
-            if(self.__disconnectRetryCount == 30):
+            if self.__disconnectRetryCount == 30:
                 self.__disconnectRetryCount = 0
                 print("Disconnect signalr server timeout")
                 self.__logger.error("Disconnect signalr timeout")
-                t = datetime.datetime.now().timestamp()-30
+                t = datetime.datetime.now().timestamp() - 30
                 s = System(self.__logger)
-                s.UpdateDisconnectStatusToDb(DisconnectTime=datetime.datetime.fromtimestamp(t))
-                s.EliminateCurrentProgess()
+                s.update_disconnect_status_to_db(datetime.datetime.fromtimestamp(t))
+                eliminate_current_progress()
 
             self.__disconnectRetryCount = self.__disconnectRetryCount + 1
             print(f"Retry to disconnect signalr server {self.__disconnectRetryCount} times")
-            await self.DisConnect()
+            await self.disconnect()
 
-    
-            
-    def Send(
-        self, endUserProfileId: str = "", entity: str="", message: str=""):
-        self.__hub.send("Send", [endUserProfileId, entity , message])
-       
-    async def Init(self):
-        runOnlyOne = False
+    def send(self, destination, data_send):
+        entity = data_send[0]
+        message = data_send[1]
+        self.__hub.send("Send", [destination, entity, message])
+
+    async def connect(self):
+        run_only_one = False
         while self.__globalVariables.RefreshToken == "":
             await asyncio.sleep(1)
-        self.__buildConnection()
-        self.__onConnect()
-        self.__onDisconnect()
-        self.__onReceiveData()
+        self.__build_connection()
+        self.__on_connect_event()
+        self.__on_disconnect_event()
+        self.__on_receive_event()
         while True:
             if self.__globalVariables.ResetSignalrConnectFlag:
-                await self.DisConnect()
-                self.ReConnect()
-                self.__globalVariables.ResetSignalrConnectFlag = False    
+                await self.disconnect()
+                self.reconnect()
+                self.__globalVariables.ResetSignalrConnectFlag = False
             try:
-                if self.__globalVariables.SignalrConnectSuccessFlag == False and runOnlyOne == False:
+                if not self.__globalVariables.SignalrConnectSuccessFlag and not run_only_one:
                     self.__hub.start()
                     self.__globalVariables.SignalrConnectSuccessFlag = True
-                    runOnlyOne = True
+                    run_only_one = True
             except Exception as err:
                 self.__logger.error(f"Exception when connect with signalr server: {err}")
                 print(f"Exception when connect with signalr server: {err}")
                 self.__globalVariables.SignalrConnectSuccessFlag = False
             await asyncio.sleep(3)
-       
-    def ReConnect(self):
+
+    def reconnect(self):
         try:
             self.__hub.start()
         except Exception as err:
             self.__logger.error(f"Exception when connect with signalr server: {err}")
 
-    def Receive(self):
+    def receive(self):
         pass

@@ -1,36 +1,32 @@
 from HcServices.Mqtt import Mqtt
 from HcServices.Signalr import Signalr
-from Contracts.Itransport import Itransport
-from Contracts.Ihandler import Ihandler
-import asyncio
+from Contracts.ITransport import ITransport
+from Contracts.IHandler import IHandler
 import logging
 from Cache.GlobalVariables import GlobalVariables
-from Database.Db import Db
 import Constant.constant as const
 
 
-class SignalrDataHandler(Ihandler):
+class SignalrDataHandler(IHandler):
     __logger: logging.Logger
-    __mqtt: Itransport
-    __signalr: Itransport
-    __db: Db
+    __mqtt: ITransport
+    __signalr: ITransport
     __globalVariables: GlobalVariables
 
-    def __init__(self, log: logging.Logger, mqtt: Itransport, signalr: Itransport):
+    def __init__(self, log: logging.Logger, mqtt: ITransport, signalr: ITransport):
         self.__logger = log
         self.__mqtt = mqtt
-        self.__db = Db()
         self.__globalVariables = GlobalVariables()
         self.__signalr = signalr
-        
-    def Handler(self, args):
-        entity = args[0]
-        data = args[1]
+
+    def handler(self, item):
+        entity = item[0]
+        data = item[1]
         self.__logger.debug(f"handler receive signal data in {entity} is {data}")
         print(f"handler receive signal data in {entity} is {data}")
         try:
             switcher = {
-                const.SIGNALR_APP_COMMAND_ENTITY: self.__handlerEntityCommand
+                const.SIGNALR_APP_COMMAND_ENTITY: self.__handler_entity_command
             }
             func = switcher.get(entity)
             func(data)
@@ -39,5 +35,5 @@ class SignalrDataHandler(Ihandler):
             print("data receive from signal invalid")
         return
 
-    def __handlerEntityCommand(self, data):
-        self.__mqtt.Send(const.MQTT_CONTROL_TOPIC, data, const.MQTT_QOS)
+    def __handler_entity_command(self, data):
+        self.__mqtt.send(const.MQTT_CONTROL_TOPIC, data)

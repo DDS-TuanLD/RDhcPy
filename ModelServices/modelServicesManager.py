@@ -4,6 +4,7 @@ from ModelServices.deviceAttributeValueServices import deviceAttributeValueServi
 from Table.tableManager import tableManager
 from sqlalchemy.engine.base import Connection
 
+
 class MetaService(type):
     _instances = {}
     def __call__(cls, *args, **kwargs):
@@ -11,7 +12,8 @@ class MetaService(type):
             cls._instances[cls] = super(MetaService, cls).__call__(*args, **kwargs)
         return cls._instances[cls]
 
-class  modelServicesManager(metaclass=MetaService):
+
+class modelServicesManager(metaclass=MetaService):
     __systemConfigurationServices: systemConfigurationServices
     __userDataService: userDataServices
     __deviceAttributeValueService: deviceAttributeValueServices
@@ -32,4 +34,3 @@ class  modelServicesManager(metaclass=MetaService):
     @property
     def DeviceAttributeValueServices(self):
         return self.__deviceAttributeValueService
-    

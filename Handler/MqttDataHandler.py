@@ -1,62 +1,63 @@
-from Contracts.Ihandler import Ihandler
+from Contracts.IHandler import IHandler
 import asyncio
 import logging
 from HcServices.Mqtt import Mqtt
 from HcServices.Signalr import Signalr
-from Contracts.Itransport import Itransport
+from Contracts.ITransport import ITransport
 from Cache.GlobalVariables import GlobalVariables
 import Constant.constant as const
 import json
 from Database.Db import Db
 from Model.systemConfiguration import systemConfiguration
 from Model.userData import userData
-from Helper.System import System
+from Helper.System import System, ping_google
 
 
-class MqttDataHandler(Ihandler):
+class MqttDataHandler(IHandler):
     __logger: logging.Logger
-    __mqtt: Itransport
-    __signalr: Itransport
-    __db: Db
+    __mqtt: ITransport
+    __signalr: ITransport
     __globalVariables: GlobalVariables
-    
-    def __init__(self, log: logging.Logger, mqtt: Itransport, signalr: Itransport):
+
+    def __init__(self, log: logging.Logger, mqtt: ITransport, signalr: ITransport):
         self.__logger = log
         self.__mqtt = mqtt
-        self.__db = Db()
         self.__globalVariables = GlobalVariables()
         self.__signalr = signalr
-        
-    def Handler(self, item):
+
+    def handler(self, item):
+        topic = item['topic']
+        message = item['msg']
         switcher = {
-            const.MQTT_RESPONSE_TOPIC: self.__handlerTopicHcControlResponse,
-            const.MQTT_CONTROL_TOPIC: self.__handlerTopicHcControl,
+            const.MQTT_RESPONSE_TOPIC: self.__handler_topic_hc_control_response,
+            const.MQTT_CONTROL_TOPIC: self.__handler_topic_hc_control,
             "test": self.__test,
         }
-        func = switcher.get(item["topic"])
-        func(item["msg"])
+        func = switcher.get(topic)
+        func(message)
         return
 
-    async def __checkAndReconnectSignalrWhenHaveInternet(self):
+    async def __check_and_reconnect_signalr_when_have_internet(self):
         s = System(self.__logger)
-        while not s.PingGoogle():
+        while not ping_google():
             await asyncio.sleep(2)
         while not self.__globalVariables.PingCloudSuccessFlag:
             await asyncio.sleep(2)
-        await self.__signalr.DisConnect()
-        self.__signalr.ReConnect()
+        await self.__signalr.disconnect()
+        self.__signalr.reconnect()
         self.__globalVariables.NeedReconnectSignalrServerFlag = False
 
     def __test(self, data):
         loop = asyncio.get_running_loop()
-        loop.create_task(self.__checkAndReconnectSignalrWhenHaveInternet())
+        loop.create_task(self.__check_and_reconnect_signalr_when_have_internet())
 
-    def __handlerTopicHcControlResponse(self, data):
+    def __handler_topic_hc_control_response(self, data):
         print("data from topic HC.CONTROL.RESPONSE: " + data)
         self.__logger.debug("data from topic HC.CONTROL.RESPONSE: " + data)
 
         if self.__globalVariables.PingCloudSuccessFlag:
-            self.__signalr.Send(endUserProfileId=self.__globalVariables.EndUserId, entity=const.SIGNALR_APP_RESPONSE_ENTITY, message=data)
+            send_data = [const.SIGNALR_APP_RESPONSE_ENTITY, data]
+            self.__signalr.send(self.__globalVariables.EndUserId, send_data)
             
             try:
                 dt = json.loads(data)
@@ -64,7 +65,7 @@ class MqttDataHandler(Ihandler):
                     cmd = dt["CMD"]
                     data = dt["DATA"]
                     switcher = {
-                        "DEVICE": self.__handlerCmdDevice
+                        "DEVICE": self.__handler_cmd_device
                     }
                     func = switcher.get(cmd)
                     func(data)
@@ -73,7 +74,7 @@ class MqttDataHandler(Ihandler):
             except:
                 self.__logger.error("mqtt data receiver in topic HC.CONTROL.RESPONSE invalid")
        
-    def __handlerTopicHcControl(self, data):
+    def __handler_topic_hc_control(self, data):
         print("data from topic HC.CONTROL: " + data)
         self.__logger.debug("data from topic HC.CONTROL: " + data)
         
@@ -83,7 +84,7 @@ class MqttDataHandler(Ihandler):
                 cmd = dt["CMD"]
                 data = dt["DATA"]
                 switcher = {
-                    "HC_CONNECT_TO_CLOUD": self.__handlerCmdHcConnectToCloud
+                    "HC_CONNECT_TO_CLOUD": self.__handler_cmd_hc_connect_to_cloud
                 }
                 func = switcher.get(cmd)
                 func(data)
@@ -92,7 +93,7 @@ class MqttDataHandler(Ihandler):
         except:
             self.__logger.error("mqtt data receiver in topic HC.CONTROL invalid")
           
-    def __handlerCmdDevice(self, data):
+    def __handler_cmd_device(self, data):
         signal_data = []
         try:
             for i in range(len(data['PROPERTIES'])):
@@ -107,32 +108,33 @@ class MqttDataHandler(Ihandler):
             print("data of cmd Device invalid")
         
         if signal_data:
-            self.__signalr.Send(endUserProfileId=self.__globalVariables.EndUserId, entity=const.SIGNALR_CLOUD_RESPONSE_ENTITY, message=json.dumps(signal_data))
+            send_data = [const.SIGNALR_CLOUD_RESPONSE_ENTITY, json.dumps(signal_data)]
+            self.__signalr.send(self.__globalVariables.EndUserId, send_data)
         
         if not signal_data:
             self.__logger.debug("have no data to send to cloud via signalr")
             print("have no data to send to cloud via signalr")              
           
-    def __handlerCmdHcConnectToCloud(self, data):
+    def __handler_cmd_hc_connect_to_cloud(self, data):
+        db = Db()
         try:
-            endUserProfileId = data["END_USER_PROFILE_ID"]
-            refreshToken = data["REFRESH_TOKEN"]
-            if self.__globalVariables.EndUserId != str(endUserProfileId) and self.__globalVariables.EndUserId != "":
+            end_user_profile_id = data["END_USER_PROFILE_ID"]
+            refresh_token = data["REFRESH_TOKEN"]
+            if self.__globalVariables.EndUserId != str(end_user_profile_id) and self.__globalVariables.EndUserId != "":
                 return
             if self.__globalVariables.EndUserId == "":
-                self.__globalVariables.EndUserId = str(endUserProfileId)
-                self.__globalVariables.RefreshToken = refreshToken
+                self.__globalVariables.EndUserId = str(end_user_profile_id)
+                self.__globalVariables.RefreshToken = refresh_token
                 return
-            self.__globalVariables.EndUserId = str(endUserProfileId)
-            self.__globalVariables.RefreshToken = refreshToken
-            userDt = userData(refreshToken=refreshToken, endUserProfileId=str(endUserProfileId))
-            rel = self.__db.Services.UserdataServices.FindUserDataById(id = 1)
+            self.__globalVariables.EndUserId = str(end_user_profile_id)
+            self.__globalVariables.RefreshToken = refresh_token
+            user_data = userData(refreshToken=refresh_token, endUserProfileId=str(end_user_profile_id))
+            rel = db.Services.UserdataServices.FindUserDataById(id=1)
             dt = rel.first()
             if dt is not None:
-                self.__db.Services.UserdataServices.UpdateUserDataById(id = 1, newUserData=userDt)
+                db.Services.UserdataServices.UpdateUserDataById(id=1, newUserData=user_data)
             if dt is None:
-                self.__db.Services.UserdataServices.AddNewUserData(newUserData=userDt)
-            
+                db.Services.UserdataServices.AddNewUserData(newUserData=user_data)
             if self.__globalVariables.PingCloudSuccessFlag:
                 self.__globalVariables.ResetSignalrConnectFlag = True
         except:

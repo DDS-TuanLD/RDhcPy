@@ -1,8 +1,13 @@
-from Controller.Hc import RdHc
+from Controller.RdHc import RdHc
 import asyncio
 from Database.Db import Db
 import logging
 from logging.handlers import TimedRotatingFileHandler
+from HcServices.Http import Http
+from HcServices.Signalr import Signalr
+from HcServices.Mqtt import Mqtt
+from Handler.MqttDataHandler import MqttDataHandler
+from Handler.SignalrDataHandler import SignalrDataHandler
 import os
 
 d = os.path.dirname(__file__)
@@ -21,13 +26,20 @@ loghandler.setFormatter(logfomatter)
 logger.addHandler(loghandler)
 logger.setLevel(logging.DEBUG)
 
+http = Http()
+signalr = Signalr(logger)
+mqtt = Mqtt(logger)
+
+signalrHandler = SignalrDataHandler(logger, mqtt, signalr)
+mqttHandler = MqttDataHandler(logger, mqtt, signalr)
+
 db = Db()
-hc = RdHc(logger)
+hc = RdHc(logger, http, signalr, mqtt, mqttHandler, signalrHandler)
 
 
 async def main():      
-    db.Init()
-    await hc.Run()
+    db.init()
+    await hc.run()
 
 loop = asyncio.get_event_loop()
 loop.create_task(main())
