@@ -53,7 +53,7 @@ class Signalr(ITransport):
                 "type": "raw",
                 "keep_alive_interval": 5,
                 "reconnect_interval": 5,
-                "max_attempts": 45
+                "max_attempts": 40
             }) \
             .build()
         return self

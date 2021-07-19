@@ -107,10 +107,10 @@ class System:
         token = await self.__get_token(h)
         cookie = f"Token={token}"
         heartbeat_url = const.SERVER_HOST + const.SIGNSLR_HEARDBEAT_URL
-        header = h.CreateNewHttpHeader(cookie=cookie, endProfileId=self.__globalVariables.EndUserId)
-        req = h.CreateNewHttpRequest(url=heartbeat_url, header=header)
+        header = h.create_new_http_header(cookie=cookie, endProfileId=self.__globalVariables.EndUserId)
+        req = h.create_new_http_request(url=heartbeat_url, header=header)
         session = aiohttp.ClientSession()
-        res = await h.Post(session, req)
+        res = await h.post(session, req)
         await session.close()
         if res == "":
             return False
@@ -123,10 +123,10 @@ class System:
             return ""
         token_url = const.SERVER_HOST + const.TOKEN_URL
         cookie = f"RefreshToken={refresh_token}"
-        header = http.CreateNewHttpHeader(cookie=cookie, endProfileId=self.__globalVariables.EndUserId)
-        req = http.CreateNewHttpRequest(url=token_url, header=header)
+        header = http.create_new_http_header(cookie=cookie, endProfileId=self.__globalVariables.EndUserId)
+        req = http.create_new_http_request(url=token_url, header=header)
         session = aiohttp.ClientSession()
-        res = await http.Post(session, req)
+        res = await http.post(session, req)
         token = ""
         if res != "":
             try:
@@ -181,10 +181,10 @@ class System:
         cookie = f"Token={token}"
         print(f"cookie: {cookie}")
         pull_data_url = const.SERVER_HOST + const.CLOUD_PUSH_DATA_URL
-        header = h.CreateNewHttpHeader(cookie=cookie, endProfileId=self.__globalVariables.EndUserId)
-        req = h.CreateNewHttpRequest(url=pull_data_url, body_data=json.loads(data), header=header)
+        header = h.create_new_http_header(cookie=cookie, endProfileId=self.__globalVariables.EndUserId)
+        req = h.create_new_http_request(url=pull_data_url, body_data=json.loads(data), header=header)
         session = aiohttp.ClientSession()
-        res = await h.Post(session, req)
+        res = await h.post(session, req)
         await session.close()
         print(res)
 

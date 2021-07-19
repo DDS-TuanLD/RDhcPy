@@ -6,60 +6,59 @@ import aiohttp
 import logging
 
 
-class HttpRequest():
+class HttpRequest:
     __header: CaseInsensitiveDict
     __body: dict
     __url: str
     __cookie: dict
     
     @property
-    def Body(self):
+    def body(self):
         return self.__body
     
     @property
-    def Header(self):
+    def header(self):
         return self.__header
     
     @property 
-    def Url(self):
+    def url(self):
         return self.__url
 
-    @Header.setter
-    def Header(self, header: CaseInsensitiveDict):
+    @header.setter
+    def header(self, header: CaseInsensitiveDict):
         self.__header = header
         return self
     
-    @Body.setter
-    def Body(self, body: dict):
+    @body.setter
+    def body(self, body: dict):
         self.__body = body
         return self
     
-    @Url.setter
-    def Url(self, url: str):
+    @url.setter
+    def url(self, url: str):
         self.__url = url
         return self
-class Http():
+class Http:
     
-    def CreateNewHttpHeader(self, token: str = "", endProfileId: str = "", cookie: str = ""):
-        newHttpHeader = CaseInsensitiveDict()
-        newHttpHeader["Accept"] = "application/json"
-        newHttpHeader["Authorization"] = "Bearer " + token
-        newHttpHeader["X-EndUserProfileId"] = endProfileId
-        newHttpHeader["Cookie"] = cookie
-        return newHttpHeader
+    def create_new_http_header(self, endProfileId: str = "", cookie: str = ""):
+        new_http_header = CaseInsensitiveDict()
+        new_http_header["Accept"] = "application/json"
+        new_http_header["X-EndUserProfileId"] = endProfileId
+        new_http_header["Cookie"] = cookie
+        return new_http_header
     
-    def CreateNewHttpRequest(self, url: str = None, body_data: dict = {}, header: CaseInsensitiveDict = {}):
-        newHttpRequest = HttpRequest()
-        newHttpRequest.Body = body_data
-        newHttpRequest.Header = header
-        newHttpRequest.Url = url
+    def create_new_http_request(self, url: str = None, body_data: dict = {}, header: CaseInsensitiveDict = {}):
+        new_http_request = HttpRequest()
+        new_http_request.body = body_data
+        new_http_request.header = header
+        new_http_request.url = url
         
-        return newHttpRequest
+        return new_http_request
 
-    async def Get(self, session: aiohttp.ClientSession, req: HttpRequest):
+    async def get(self, session: aiohttp.ClientSession, req: HttpRequest):
         resp = None
         try:
-            async with session.get(req.Url, headers=req.Header, json=req.Body) as resp:
+            async with session.get(req.url, headers=req.header, json=req.body) as resp:
                 resp.raise_for_status()
                 await resp.json()
         except HTTPError as err:  
@@ -68,9 +67,9 @@ class Http():
             return ""
         return resp
 
-    async def Post(self, session: aiohttp.ClientSession, req: HttpRequest):
+    async def post(self, session: aiohttp.ClientSession, req: HttpRequest):
         try:
-            async with session.post(req.Url, headers=req.Header, json=req.Body) as resp:
+            async with session.post(req.url, headers=req.header, json=req.body) as resp:
                 resp.raise_for_status()
                 await resp.json()
                 return resp
@@ -79,10 +78,10 @@ class Http():
         except Exception as err:
             return ""
     
-    async def Put(self, session: aiohttp.ClientSession, req: HttpRequest):
+    async def put(self, session: aiohttp.ClientSession, req: HttpRequest):
         resp = None
         try:
-            async with session.put(req.Url, headers=req.Header, json=req.Body) as resp:
+            async with session.put(req.url, headers=req.header, json=req.body) as resp:
                 resp.raise_for_status()
                 await resp.json()
         except HTTPError as err:  
@@ -91,10 +90,10 @@ class Http():
             return ""
         return resp
 
-    async def Delete(self, session: aiohttp.ClientSession, req: HttpRequest):
+    async def delete(self, session: aiohttp.ClientSession, req: HttpRequest):
         resp = None
         try:
-            async with session.delete(req.Url, headers=req.Header, json=req.Body) as resp:
+            async with session.delete(req.url, headers=req.header, json=req.body) as resp:
                 resp.raise_for_status()
                 await resp.json()
         except HTTPError as err:  
