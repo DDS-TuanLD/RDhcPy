@@ -27,23 +27,22 @@ class HttpRequest:
     @header.setter
     def header(self, header: CaseInsensitiveDict):
         self.__header = header
-        return self
-    
+
     @body.setter
     def body(self, body: dict):
         self.__body = body
-        return self
-    
+
     @url.setter
     def url(self, url: str):
         self.__url = url
-        return self
+
+
 class Http:
     
-    def create_new_http_header(self, endProfileId: str = "", cookie: str = ""):
+    def create_new_http_header(self, end_user_profile_id: str = "", cookie: str = ""):
         new_http_header = CaseInsensitiveDict()
         new_http_header["Accept"] = "application/json"
-        new_http_header["X-EndUserProfileId"] = endProfileId
+        new_http_header["X-EndUserProfileId"] = end_user_profile_id
         new_http_header["Cookie"] = cookie
         return new_http_header
     

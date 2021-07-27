@@ -3,7 +3,8 @@ from Table.userDataTable import userDataTable
 from Table.deviceAttributeValueTable import deviceAttributeValueTable
 from sqlalchemy import MetaData
 
-class tableManager():
+
+class tableManager:
     __systemConfigurationTable: systemConfigurationTable
     __userDataTable: userDataTable
     __deviceAttributeTable: deviceAttributeValueTable

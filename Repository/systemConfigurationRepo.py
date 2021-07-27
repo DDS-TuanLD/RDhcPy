@@ -1,12 +1,11 @@
 from Model.systemConfiguration import systemConfiguration
-from sqlalchemy import Table, select
-import sqlalchemy
+from sqlalchemy import Table
 from sqlalchemy.sql.expression import BinaryExpression
-import asyncio
 import datetime
 from sqlalchemy.engine.base import Connection
 
-class systemConfigurationRepo():
+
+class systemConfigurationRepo:
     __systemConfigurationTable: Table
     __context: Connection
     

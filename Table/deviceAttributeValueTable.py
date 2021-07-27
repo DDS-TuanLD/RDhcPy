@@ -1,9 +1,7 @@
-from sqlalchemy import Column, Integer, String
-from sqlalchemy import DateTime
-from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
+from sqlalchemy import Table, Column, Integer, String, MetaData
 
 
-class deviceAttributeValueTable():
+class deviceAttributeValueTable:
     def __init__(self, metadata: MetaData):
         self.deviceAttributeValueTable = Table('DeviceAttributeValue', metadata,
                                                Column('DeviceId', String, primary_key=True, nullable=False),

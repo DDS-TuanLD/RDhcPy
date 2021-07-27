@@ -3,12 +3,16 @@ from Model.systemConfiguration import systemConfiguration
 from sqlalchemy import Table
 from sqlalchemy.engine.base import Connection
 
+
 class MetaSystemConfigurationServices(type):
     _instances = {}
+
     def __call__(cls, *args, **kwargs):
         if cls not in cls._instances:
             cls._instances[cls] = super(MetaSystemConfigurationServices, cls).__call__(*args, **kwargs)
         return cls._instances[cls]
+
+
 class systemConfigurationServices(metaclass=MetaSystemConfigurationServices):
     __systemConfigurationRepo: systemConfigurationRepo
     

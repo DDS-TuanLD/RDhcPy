@@ -107,7 +107,7 @@ class System:
         token = await self.__get_token(h)
         cookie = f"Token={token}"
         heartbeat_url = const.SERVER_HOST + const.SIGNSLR_HEARDBEAT_URL
-        header = h.create_new_http_header(cookie=cookie, endProfileId=self.__globalVariables.EndUserId)
+        header = h.create_new_http_header(cookie=cookie, end_user_profile_id=self.__globalVariables.EndUserId)
         req = h.create_new_http_request(url=heartbeat_url, header=header)
         session = aiohttp.ClientSession()
         res = await h.post(session, req)
@@ -123,7 +123,7 @@ class System:
             return ""
         token_url = const.SERVER_HOST + const.TOKEN_URL
         cookie = f"RefreshToken={refresh_token}"
-        header = http.create_new_http_header(cookie=cookie, endProfileId=self.__globalVariables.EndUserId)
+        header = http.create_new_http_header(cookie=cookie, end_user_profile_id=self.__globalVariables.EndUserId)
         req = http.create_new_http_request(url=token_url, header=header)
         session = aiohttp.ClientSession()
         res = await http.post(session, req)
@@ -162,7 +162,7 @@ class System:
             self.__update_sync_data_status_success_to_db(dt)
             return True
         data_send_to_cloud = json.dumps(data)
-        print(f"push data: {data_send_to_cloud}")
+        print(f"data push to cloud: {data_send_to_cloud}")
         res = await self.__send_http_request_to_push_url(data=data_send_to_cloud)
         if res == "":
             print("Push data failure")
@@ -179,9 +179,8 @@ class System:
         h = Http()
         token = await self.__get_token(h)
         cookie = f"Token={token}"
-        print(f"cookie: {cookie}")
         pull_data_url = const.SERVER_HOST + const.CLOUD_PUSH_DATA_URL
-        header = h.create_new_http_header(cookie=cookie, endProfileId=self.__globalVariables.EndUserId)
+        header = h.create_new_http_header(cookie=cookie, end_user_profile_id=self.__globalVariables.EndUserId)
         req = h.create_new_http_request(url=pull_data_url, body_data=json.loads(data), header=header)
         session = aiohttp.ClientSession()
         res = await h.post(session, req)

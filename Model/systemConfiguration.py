@@ -1,10 +1,7 @@
-import asyncio
-from sqlalchemy import Column, Integer, String
-from sqlalchemy import DateTime
-from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
 import datetime
-import time
-class systemConfiguration():
+
+
+class systemConfiguration:
     __id: int
     __isConnect: bool
     __disconnectTime: datetime.datetime
@@ -56,4 +53,4 @@ class systemConfiguration():
     @IsSync.setter
     def IsSync(self, IsSync:bool):
         self.__isSync = IsSync
-           
+

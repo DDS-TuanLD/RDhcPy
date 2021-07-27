@@ -1,11 +1,9 @@
-from sqlalchemy import Table, select
-import sqlalchemy
+from sqlalchemy import Table
 from sqlalchemy.sql.expression import BinaryExpression
-import asyncio
-import datetime
 from sqlalchemy.engine.base import Connection
 
-class deviceAttributeValueRepo():
+
+class deviceAttributeValueRepo:
     __deviceAttributeValue: Table
     __context: Connection
     

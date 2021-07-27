@@ -1,4 +1,6 @@
 import datetime
+
+
 class MetaGlobalVariables(type):
     _instances = {}
 
@@ -17,6 +19,7 @@ class GlobalVariables(metaclass=MetaGlobalVariables):
     __resetSignalrConnect: bool
     __signalrConnectSuccess: bool
     __pingCloudSuccess: bool
+    __pingGoogleStatus: bool
 
     def __init__(self):
         self.__signalrConnectSuccess = False
@@ -27,8 +30,17 @@ class GlobalVariables(metaclass=MetaGlobalVariables):
         self.__recheckConnectionStatusInDb = False
         self.__resetSignalrConnect = False
         self.__pingCloudSuccess = None
+        self.__pingGoogleStatus = False
 
-    @property    
+    @property
+    def PingGoogleSuccessFlag(self):
+        return self.__pingGoogleStatus
+
+    @PingGoogleSuccessFlag.setter
+    def PingGoogleSuccessFlag(self, pingGoogleStatus: bool):
+        self.__pingGoogleStatus = pingGoogleStatus
+
+    @property
     def PingCloudSuccessFlag(self):
         return self.__pingCloudSuccess
 
@@ -39,64 +51,55 @@ class GlobalVariables(metaclass=MetaGlobalVariables):
     @property
     def SignalrConnectSuccessFlag(self):
         return self.__signalrConnectSuccess
-    
+
     @SignalrConnectSuccessFlag.setter
     def SignalrConnectSuccessFlag(self, signalrConnectSuccess: bool):
         self.__signalrConnectSuccess = signalrConnectSuccess
-      
+
     @property
     def ResetSignalrConnectFlag(self):
         return self.__resetSignalrConnect
-    
+
     @ResetSignalrConnectFlag.setter
     def ResetSignalrConnectFlag(self, resetSignalrConnect: bool):
         self.__resetSignalrConnect = resetSignalrConnect
-        
+
     @property
     def RecheckConnectionStatusInDbFlag(self):
         return self.__recheckConnectionStatusInDb
-    
+
     @RecheckConnectionStatusInDbFlag.setter
     def RecheckConnectionStatusInDbFlag(self, recheckConnectionStatusInDb: bool):
         self.__recheckConnectionStatusInDb = recheckConnectionStatusInDb
-    
+
     @property
     def RefreshToken(self):
         return self.__refreshToken
-    
+
     @RefreshToken.setter
     def RefreshToken(self, refreshToken: str):
         self.__refreshToken = refreshToken
-                    
+
     @property
-    def SignalrDisconnectStatusUpdateStatusFlag(self):
+    def SignalrDisconnectStatusUpdateFlag(self):
         return self.__signalrDisconnectStatusUpdate
-    
-    @SignalrDisconnectStatusUpdateStatusFlag.setter
-    def SignalrDisconnectStatusUpdateStatusFlag(self, signalrDisconnectStatusUpdate: bool):
+
+    @SignalrDisconnectStatusUpdateFlag.setter
+    def SignalrDisconnectStatusUpdateFlag(self, signalrDisconnectStatusUpdate: bool):
         self.__signalrDisconnectStatusUpdate = signalrDisconnectStatusUpdate
-           
+
     @property
     def EndUserId(self):
         return self.__endUserId
-    
+
     @EndUserId.setter
     def EndUserId(self, EndUserId: str):
         self.__endUserId = EndUserId
-        
-    @property
-    def Token(self):
-        return self.__token
-    
-    @EndUserId.setter
-    def Token(self, token: str):
-        self.__token = token
-        
-          
+
     @property
     def DisconnectTime(self):
         return self.__disconectTime
-    
+
     @DisconnectTime.setter
     def DisconnectTime(self, disconnectTime: datetime.datetime):
         self.__disconectTime = disconnectTime
