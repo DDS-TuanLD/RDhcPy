@@ -2,3 +2,8 @@
 2021-07-27 13:11:27,494:	INFO:	System.py:__push_data_to_cloud():161	have no data to push
 2021-07-27 13:16:38,300:	INFO:	RdHc.py:__hc_check_connect_with_cloud():50	Hc send heartbeat to cloud
 2021-07-27 13:16:48,433:	INFO:	RdHc.py:__hc_check_connect_with_cloud():50	Hc send heartbeat to cloud
+2021-07-27 13:20:13,731:	INFO:	RdHc.py:__hc_check_connect_with_cloud():48	Hc send heartbeat to cloud
+2021-07-27 13:20:47,557:	INFO:	RdHc.py:__hc_check_connect_with_cloud():48	Hc send heartbeat to cloud
+2021-07-27 13:20:57,559:	INFO:	RdHc.py:__hc_check_connect_with_cloud():48	Hc send heartbeat to cloud
+2021-07-27 13:21:09,278:	INFO:	RdHc.py:__hc_check_connect_with_cloud():48	Hc send heartbeat to cloud
+2021-07-27 13:21:19,394:	INFO:	RdHc.py:__hc_check_connect_with_cloud():48	Hc send heartbeat to cloud

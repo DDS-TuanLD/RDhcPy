@@ -44,8 +44,6 @@ class RdHc(IController):
         first_success_ping_to_cloud_flag = False
 
         while True:
-            await asyncio.sleep(60)
-
             print("Hc send heartbeat to cloud")
             self.__logger.info("Hc send heartbeat to cloud")
 
@@ -72,6 +70,8 @@ class RdHc(IController):
                     first_success_ping_to_cloud_flag = True
                 self.__globalVariables.DisconnectTime = None
                 signalr_disconnect_count = 0
+                
+            await asyncio.sleep(20)
 
             if (signalr_disconnect_count == 3) and (not self.__globalVariables.SignalrDisconnectStatusUpdateFlag):
                 self.__hc_update_disconnect_status_to_db()
