@@ -46,6 +46,8 @@ class RdHc(IController):
         while True:
             print("Hc send heartbeat to cloud")
             self.__logger.info("Hc send heartbeat to cloud")
+            
+            await asyncio.sleep(20)
 
             request_time_count = datetime.datetime.now().timestamp()
             if self.__globalVariables.DisconnectTime is None:
@@ -56,6 +58,7 @@ class RdHc(IController):
             if self.__globalVariables.PingGoogleSuccessFlag:
                 self.__globalVariables.PingCloudSuccessFlag = \
                     await s.send_http_request_to_heartbeat_url(self.__httpServices)
+                print(self.__globalVariables.PingCloudSuccessFlag)
 
             if not self.__globalVariables.PingCloudSuccessFlag:
                 print("can not ping to cloud")
@@ -71,8 +74,6 @@ class RdHc(IController):
                 self.__globalVariables.DisconnectTime = None
                 signalr_disconnect_count = 0
                 
-            await asyncio.sleep(20)
-
             if (signalr_disconnect_count == 3) and (not self.__globalVariables.SignalrDisconnectStatusUpdateFlag):
                 self.__hc_update_disconnect_status_to_db()
                 if first_success_ping_to_cloud_flag:

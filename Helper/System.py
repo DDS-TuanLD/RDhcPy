@@ -112,10 +112,12 @@ class System:
         session = aiohttp.ClientSession()
         res = await h.post(session, req)
         await session.close()
+        print(res)
         if res == "":
             return False
         if (res != "") and (res.status == http.HTTPStatus.OK):
             return True
+        return False
 
     async def __get_token(self, http: Http):
         refresh_token = self.__globalVariables.RefreshToken
