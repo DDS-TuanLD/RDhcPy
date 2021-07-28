@@ -104,17 +104,12 @@ class System:
         return
 
     async def send_http_request_to_heartbeat_url(self, h: Http):
-        token = await self.__get_token(h)
-        cookie = f"Token={token}"
         heartbeat_url = const.SERVER_HOST + const.SIGNSLR_HEARDBEAT_URL
-        header = h.create_new_http_header(cookie=cookie, end_user_profile_id=self.__globalVariables.EndUserId)
+        header = h.create_new_http_header(cookie="", domitory_id=self.__globalVariables.DormitoryId)
         req = h.create_new_http_request(url=heartbeat_url, header=header)
         session = aiohttp.ClientSession()
         res = await h.post(session, req)
         await session.close()
-        print(res)
-        if res == "":
-            return False
         if (res != "") and (res.status == http.HTTPStatus.OK):
             return True
         return False
@@ -125,7 +120,7 @@ class System:
             return ""
         token_url = const.SERVER_HOST + const.TOKEN_URL
         cookie = f"RefreshToken={refresh_token}"
-        header = http.create_new_http_header(cookie=cookie, end_user_profile_id=self.__globalVariables.EndUserId)
+        header = http.create_new_http_header(cookie=cookie, domitory_id=self.__globalVariables.DormitoryId)
         req = http.create_new_http_request(url=token_url, header=header)
         session = aiohttp.ClientSession()
         res = await http.post(session, req)
@@ -182,7 +177,7 @@ class System:
         token = await self.__get_token(h)
         cookie = f"Token={token}"
         pull_data_url = const.SERVER_HOST + const.CLOUD_PUSH_DATA_URL
-        header = h.create_new_http_header(cookie=cookie, end_user_profile_id=self.__globalVariables.EndUserId)
+        header = h.create_new_http_header(cookie=cookie, domitory_id=self.__globalVariables.DormitoryId)
         req = h.create_new_http_request(url=pull_data_url, body_data=json.loads(data), header=header)
         session = aiohttp.ClientSession()
         res = await h.post(session, req)

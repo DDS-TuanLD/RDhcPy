@@ -17,7 +17,7 @@ class userDataRepo:
         ins = self.__userDataTable.insert()
         values = {
             "RefreshToken" : userData.RefreshToken,
-            "EndUserProfileId": userData.EndUserProfileId,
+            "DormitoryId": userData.DormitoryId,
             "CreateAt": datetime.datetime.now()
         }
         self.__context.execute(ins, values)
@@ -33,7 +33,7 @@ class userDataRepo:
     def UpdateById(self, id: int, newUserData: userData):
         ins = self.__userDataTable.update().where(self.__userDataTable.c.Id == id).\
             values({"RefreshToken": newUserData.RefreshToken,
-                    "EndUserProfileId": newUserData.EndUserProfileId,
+                    "DormitoryId": newUserData.DormitoryId,
                     "UpdateAt": datetime.datetime.now()})
         self.__context.execute(ins)
 

@@ -39,10 +39,10 @@ class HttpRequest:
 
 class Http:
     
-    def create_new_http_header(self, end_user_profile_id: str = "", cookie: str = ""):
+    def create_new_http_header(self, domitory_id: str = "", cookie: str = ""):
         new_http_header = CaseInsensitiveDict()
         new_http_header["Accept"] = "application/json"
-        new_http_header["X-EndUserProfileId"] = end_user_profile_id
+        new_http_header["X-DormitoryId"] = domitory_id
         new_http_header["Cookie"] = cookie
         return new_http_header
     

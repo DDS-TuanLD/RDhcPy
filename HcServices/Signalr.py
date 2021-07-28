@@ -15,7 +15,7 @@ def get_token():
     cache = GlobalVariables()
     try:
         renew_token = "https://iot-dev.truesight.asia/rpc/iot-ebe/account/renew-token"
-        headers = {'Content-type': 'application/json', 'Accept': 'text/plain', 'X-EndUserProfileId': cache.EndUserId,
+        headers = {'Content-type': 'application/json', 'Accept': 'text/plain', 'X-DormitoryId': cache.DormitoryId,
                    'Cookie': "RefreshToken={refresh_token}".format(refresh_token=cache.RefreshToken)}
         response = requests.post(renew_token, json=None, headers=headers).json()
         token = response['token']

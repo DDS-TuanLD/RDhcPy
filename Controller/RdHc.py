@@ -58,7 +58,6 @@ class RdHc(IController):
             if self.__globalVariables.PingGoogleSuccessFlag:
                 self.__globalVariables.PingCloudSuccessFlag = \
                     await s.send_http_request_to_heartbeat_url(self.__httpServices)
-                print(self.__globalVariables.PingCloudSuccessFlag)
 
             if not self.__globalVariables.PingCloudSuccessFlag:
                 print("can not ping to cloud")
@@ -121,7 +120,7 @@ class RdHc(IController):
         user_data = db.Services.UserdataServices.FindUserDataById(id=1)
         dt = user_data.first()
         if dt is not None:
-            self.__globalVariables.EndUserId = dt["EndUserProfileId"]
+            self.__globalVariables.DormitoryId = dt["DormitoryId"]
             self.__globalVariables.RefreshToken = dt["RefreshToken"]
 
     async def run(self):

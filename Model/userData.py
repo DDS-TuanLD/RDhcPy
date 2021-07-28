@@ -1,11 +1,11 @@
 class userData:
     __id: int
     __refreshToken: str
-    __endUserProfileId: str
+    _dormitoryId: str
 
-    def __init__(self, refreshToken: str, endUserProfileId: str):
+    def __init__(self, refreshToken: str, dormitoryId: str):
         self.__refreshToken = refreshToken
-        self.__endUserProfileId = endUserProfileId
+        self._dormitoryId = dormitoryId
 
     @property
     def RefreshToken(self):
@@ -16,9 +16,9 @@ class userData:
         self.__refreshToken = refreshToken
 
     @property
-    def EndUserProfileId(self):
-        return self.__endUserProfileId
+    def DormitoryId(self):
+        return self._dormitoryId
 
-    @EndUserProfileId.setter
-    def EndUserProfileId(self, EndUserProfileId: str):
-        self.__endUserProfileId = EndUserProfileId
+    @DormitoryId.setter
+    def DormitoryId(self, DormitoryId: str):
+        self._dormitoryId = DormitoryId

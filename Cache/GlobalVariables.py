@@ -12,7 +12,7 @@ class MetaGlobalVariables(type):
 
 class GlobalVariables(metaclass=MetaGlobalVariables):
     __refreshToken: str
-    __endUserId: str
+    __dormitoryId: str
     __signalrDisconnectStatusUpdate: bool
     __disconectTime: datetime.datetime
     __recheckConnectionStatusInDb: bool
@@ -25,7 +25,7 @@ class GlobalVariables(metaclass=MetaGlobalVariables):
         self.__signalrConnectSuccess = False
         self.__refreshToken = ""
         self.__signalrDisconnectStatusUpdate = False
-        self.__endUserId = ""
+        self.__dormitoryId = ""
         self.__disconectTime = None
         self.__recheckConnectionStatusInDb = False
         self.__resetSignalrConnect = False
@@ -89,12 +89,12 @@ class GlobalVariables(metaclass=MetaGlobalVariables):
         self.__signalrDisconnectStatusUpdate = signalrDisconnectStatusUpdate
 
     @property
-    def EndUserId(self):
-        return self.__endUserId
+    def DormitoryId(self):
+        return self.__dormitoryId
 
-    @EndUserId.setter
-    def EndUserId(self, EndUserId: str):
-        self.__endUserId = EndUserId
+    @DormitoryId.setter
+    def DormitoryId(self, DormitoryId: str):
+        self.__dormitoryId = DormitoryId
 
     @property
     def DisconnectTime(self):

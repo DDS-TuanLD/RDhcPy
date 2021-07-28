@@ -57,7 +57,7 @@ class MqttDataHandler(IHandler):
 
         if self.__globalVariables.PingCloudSuccessFlag:
             send_data = [const.SIGNALR_APP_RESPONSE_ENTITY, data]
-            self.__signalr.send(self.__globalVariables.EndUserId, send_data)
+            self.__signalr.send(self.__globalVariables.DormitoryId, send_data)
             
             try:
                 dt = json.loads(data)
@@ -109,7 +109,7 @@ class MqttDataHandler(IHandler):
         
         if signal_data:
             send_data = [const.SIGNALR_CLOUD_RESPONSE_ENTITY, json.dumps(signal_data)]
-            self.__signalr.send(self.__globalVariables.EndUserId, send_data)
+            self.__signalr.send(self.__globalVariables.DormitoryId, send_data)
         
         if not signal_data:
             self.__logger.debug("have no data to send to cloud via signalr")
@@ -118,17 +118,17 @@ class MqttDataHandler(IHandler):
     def __handler_cmd_hc_connect_to_cloud(self, data):
         db = Db()
         try:
-            end_user_profile_id = data["END_USER_PROFILE_ID"]
+            domitory_id = data["DORMITORY_ID"]
             refresh_token = data["REFRESH_TOKEN"]
-            if self.__globalVariables.EndUserId != str(end_user_profile_id) and self.__globalVariables.EndUserId != "":
+            if self.__globalVariables.DormitoryId != str(domitory_id) and self.__globalVariables.DormitoryId != "":
                 return
-            if self.__globalVariables.EndUserId == "":
-                self.__globalVariables.EndUserId = str(end_user_profile_id)
+            if self.__globalVariables.DormitoryId == "":
+                self.__globalVariables.DormitoryId = str(domitory_id)
                 self.__globalVariables.RefreshToken = refresh_token
                 return
-            self.__globalVariables.EndUserId = str(end_user_profile_id)
+            self.__globalVariables.DormitoryId = str(domitory_id)
             self.__globalVariables.RefreshToken = refresh_token
-            user_data = userData(refreshToken=refresh_token, endUserProfileId=str(end_user_profile_id))
+            user_data = userData(refreshToken=refresh_token, dormitoryId=str(domitory_id))
             rel = db.Services.UserdataServices.FindUserDataById(id=1)
             dt = rel.first()
             if dt is not None:

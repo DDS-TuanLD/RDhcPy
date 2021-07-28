@@ -997,7 +997,7 @@
 2021-07-17 08:07:50,051:	DEBUG:	MqttDataHandler.py:__handlerTopicHcControl():68	data from topic HC.CONTROL: {
   "CMD": "HC_CONNECT_TO_CLOUD",
   "DATA": {
-    "END_USER_PROFILE_ID": 10150,
+    "DORMITORY_ID": 10150,
     "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2ltoMK2SEGJ7FXq7tlFsZ++gbFYMH0diPrHTDnULBbR1KsFTrXir+53nivFMtgFO7sKnF0+HRlEoTKkpXE72M9++Vvl4FpIEr3BZ2QQ7541O79ApCvSbzoiywK8E7pqYauIuX+nGOANkUcSg5rwkY7a2QLaaglVCWf/FFtzlpfJlCsxmF/rrdseeM7gi/RhMzpBC/Zr2SMx4ZZ19PNAHvzxM="
   }
 }

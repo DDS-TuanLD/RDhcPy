@@ -7,7 +7,7 @@ class userDataTable:
         self.userDataTable = Table('UserData', metadata,
                                    Column('Id', Integer, primary_key=True, nullable=False),
                                    Column('RefreshToken', String),
-                                   Column('EndUserProfileId', String),
+                                   Column('DormitoryId', String),
                                    Column('CreateAt', DateTime),
                                    Column('UpdateAt', DateTime),
                                    )
