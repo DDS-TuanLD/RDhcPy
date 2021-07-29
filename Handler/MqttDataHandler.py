@@ -1,14 +1,11 @@
 from Contracts.IHandler import IHandler
 import asyncio
 import logging
-from HcServices.Mqtt import Mqtt
-from HcServices.Signalr import Signalr
 from Contracts.ITransport import ITransport
 from Cache.GlobalVariables import GlobalVariables
 import Constant.constant as const
 import json
 from Database.Db import Db
-from Model.systemConfiguration import systemConfiguration
 from Model.userData import userData
 from Helper.System import System, ping_google
 
@@ -117,26 +114,41 @@ class MqttDataHandler(IHandler):
           
     def __handler_cmd_hc_connect_to_cloud(self, data):
         db = Db()
+        dormitory_id: str
+        refresh_token: str
+
         try:
-            domitory_id = data["DORMITORY_ID"]
-            refresh_token = data["REFRESH_TOKEN"]
-            if self.__globalVariables.DormitoryId != str(domitory_id) and self.__globalVariables.DormitoryId != "":
-                return
-            if self.__globalVariables.DormitoryId == "":
-                self.__globalVariables.DormitoryId = str(domitory_id)
-                self.__globalVariables.RefreshToken = refresh_token
-                return
-            self.__globalVariables.DormitoryId = str(domitory_id)
-            self.__globalVariables.RefreshToken = refresh_token
-            user_data = userData(refreshToken=refresh_token, dormitoryId=str(domitory_id))
-            rel = db.Services.UserdataServices.FindUserDataById(id=1)
-            dt = rel.first()
-            if dt is not None:
-                db.Services.UserdataServices.UpdateUserDataById(id=1, newUserData=user_data)
-            if dt is None:
-                db.Services.UserdataServices.AddNewUserData(newUserData=user_data)
-            if self.__globalVariables.PingCloudSuccessFlag:
-                self.__globalVariables.ResetSignalrConnectFlag = True
+            dormitory_id = data["DORMITORY_ID"]
         except:
-            self.__logger.error("data of cmd HcConnectToCLoud invalid")
-            print("data of cmd HcConnectToCLoud invalid")
+            dormitory_id = ""
+
+        try:
+            refresh_token = data["REFRESH_TOKEN"]
+        except:
+            refresh_token = ""
+
+        if dormitory_id == "":
+            return
+
+        if self.__globalVariables.DormitoryId != dormitory_id and self.__globalVariables.DormitoryId != "":
+            return
+
+        if self.__globalVariables.DormitoryId == "":
+            self.__globalVariables.DormitoryId = dormitory_id
+            self.__globalVariables.RefreshToken = refresh_token
+            return
+
+        if refresh_token == "":
+            refresh_token = self.__globalVariables.RefreshToken
+
+        self.__globalVariables.DormitoryId = dormitory_id
+        self.__globalVariables.RefreshToken = refresh_token
+        user_data = userData(refreshToken=refresh_token, dormitoryId=str(dormitory_id))
+        rel = db.Services.UserdataServices.FindUserDataById(id=1)
+        dt = rel.first()
+        if dt is not None:
+            db.Services.UserdataServices.UpdateUserDataById(id=1, newUserData=user_data)
+        if dt is None:
+            db.Services.UserdataServices.AddNewUserData(newUserData=user_data)
+        if self.__globalVariables.PingCloudSuccessFlag:
+            self.__globalVariables.ResetSignalrConnectFlag = True

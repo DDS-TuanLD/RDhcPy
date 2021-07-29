@@ -110,9 +110,11 @@ class System:
         session = aiohttp.ClientSession()
         res = await h.post(session, req)
         await session.close()
-        if (res != "") and (res.status == http.HTTPStatus.OK):
-            return True
-        return False
+        try:
+            if (res != "") and (res.status == http.HTTPStatus.OK):
+                return True
+        except:
+            return False
 
     async def __get_token(self, http: Http):
         refresh_token = self.__globalVariables.RefreshToken
@@ -166,11 +168,17 @@ class System:
             self.__logger.info("Push data failure")
             self.__update_sync_data_status_fail_to_db(dt)
             return False
-        if (res != "") and (res.status == http.HTTPStatus.OK):
-            self.__update_sync_data_status_success_to_db(dt)
-            print("Push data successfully")
-            self.__logger.info("Push data successfully")
-            return True
+        try:
+            if (res != "") and (res.status == http.HTTPStatus.OK):
+                self.__update_sync_data_status_success_to_db(dt)
+                print("Push data successfully")
+                self.__logger.info("Push data successfully")
+                return True
+        except:
+            print("Push data failure")
+            self.__logger.info("Push data failure")
+            self.__update_sync_data_status_fail_to_db(dt)
+            return False
 
     async def __send_http_request_to_push_url(self, data: str):
         h = Http()
@@ -182,7 +190,7 @@ class System:
         session = aiohttp.ClientSession()
         res = await h.post(session, req)
         await session.close()
-        print(res)
+        return res
 
     def __update_sync_data_status_success_to_db(self, s: systemConfiguration):
         s.IsSync = True
