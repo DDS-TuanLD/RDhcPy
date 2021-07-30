@@ -48,7 +48,24 @@ def eliminate_current_progress():
         if dt[i] != "":
             current_progress_port = dt[i]
             break
-    s = execute(f'kill -9 {current_progress_port}')
+    execute(f'kill -9 {current_progress_port}')
+
+
+def check_and_kill_all_repeat_progress():
+    s = execute_with_result(f'ps|grep python3')
+    current_self_repeat_process_list_info = s[1].split("\n")
+    current_self_repeat_process_list_port = []
+    for i in range(len(current_self_repeat_process_list_info)):
+        p = current_self_repeat_process_list_info[i].split(" ")
+        if p[len(p) - 1] != "RDhcPy/main.py":
+            continue
+        current_self_repeat_process_list_port.append(p[1])
+
+    if len(current_self_repeat_process_list_port) > 1:
+        kill_all_cmd = "kill -9"
+        for i in range(len(current_self_repeat_process_list_port)):
+            kill_all_cmd = kill_all_cmd + " " + current_self_repeat_process_list_port[i]
+        execute(kill_all_cmd)
 
 
 class System:
@@ -141,6 +158,7 @@ class System:
         update_day = t[0]
         update_time = t[1]
         print(f"updateDay: {update_day}, updateTime: {update_time}")
+
         rel = self.__db.Services.DeviceAttributeValueServices.FindDeviceAttributeValueWithCondition(
             or_(and_(self.__db.Table.DeviceAttributeValueTable.c.UpdateDay == update_day,
                      self.__db.Table.DeviceAttributeValueTable.c.UpdateTime >= update_time),
@@ -160,25 +178,29 @@ class System:
             self.__logger.info("have no data to push")
             self.__update_sync_data_status_success_to_db(dt)
             return True
+
         data_send_to_cloud = json.dumps(data)
         print(f"data push to cloud: {data_send_to_cloud}")
+        self.__logger.info(f"data push to cloud: {data_send_to_cloud}")
         res = await self.__send_http_request_to_push_url(data=data_send_to_cloud)
+        print(f"pull data response: {res}")
+        self.__logger.info(f"pull data response: {res}")
         if res == "":
             print("Push data failure")
             self.__logger.info("Push data failure")
             self.__update_sync_data_status_fail_to_db(dt)
             return False
-        try:
-            if (res != "") and (res.status == http.HTTPStatus.OK):
-                self.__update_sync_data_status_success_to_db(dt)
-                print("Push data successfully")
-                self.__logger.info("Push data successfully")
-                return True
-        except:
-            print("Push data failure")
-            self.__logger.info("Push data failure")
-            self.__update_sync_data_status_fail_to_db(dt)
-            return False
+
+        if (res != "") and (res.status == http.HTTPStatus.OK):
+            self.__update_sync_data_status_success_to_db(dt)
+            print("Push data successfully")
+            self.__logger.info("Push data successfully")
+            return True
+
+        print("Push data failure")
+        self.__logger.info("Push data failure")
+        self.__update_sync_data_status_fail_to_db(dt)
+        return False
 
     async def __send_http_request_to_push_url(self, data: str):
         h = Http()

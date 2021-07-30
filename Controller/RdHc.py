@@ -7,8 +7,9 @@ import logging
 import threading
 from Contracts.ITransport import ITransport
 from Contracts.IController import IController
-from Helper.System import System, eliminate_current_progress, ping_google
+from Helper.System import System, eliminate_current_progress, ping_google, check_and_kill_all_repeat_progress
 from Contracts.IHandler import IHandler
+from Helper.Terminal import execute_with_result, execute
 
 
 class RdHc(IController):
@@ -35,7 +36,7 @@ class RdHc(IController):
     async def __hc_check_connect_with_internet(self):
         while True:
             self.__globalVariables.PingGoogleSuccessFlag = ping_google()
-            await asyncio.sleep(15)
+            await asyncio.sleep(10)
 
     async def __hc_check_connect_with_cloud(self):
         s = System(self.__logger)
@@ -61,6 +62,8 @@ class RdHc(IController):
 
             if not self.__globalVariables.PingCloudSuccessFlag:
                 print("can not ping to cloud")
+                self.__logger.info("can not ping to cloud")
+
                 self.__hc_check_request_timeout(request_time_count)
                 request_time_count = 0
                 signalr_disconnect_count = signalr_disconnect_count + 1
@@ -76,6 +79,8 @@ class RdHc(IController):
             if (signalr_disconnect_count == 3) and (not self.__globalVariables.SignalrDisconnectStatusUpdateFlag):
                 self.__hc_update_disconnect_status_to_db()
                 if first_success_ping_to_cloud_flag:
+                    self.__logger.info("program had been eliminated")
+                    print("program had been eliminated")
                     eliminate_current_progress()
 
     def __hc_check_request_timeout(self, request_time_count: float):
@@ -124,6 +129,7 @@ class RdHc(IController):
             self.__globalVariables.RefreshToken = dt["RefreshToken"]
 
     async def run(self):
+        check_and_kill_all_repeat_progress()
         self.__hc_load_user_data()
         self.__mqttServices.connect()
         task0 = asyncio.create_task(self.__signalServices.connect())
