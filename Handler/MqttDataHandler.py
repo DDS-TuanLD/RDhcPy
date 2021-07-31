@@ -55,41 +55,56 @@ class MqttDataHandler(IHandler):
         if self.__globalVariables.PingCloudSuccessFlag:
             send_data = [const.SIGNALR_APP_RESPONSE_ENTITY, data]
             self.__signalr.send(self.__globalVariables.DormitoryId, send_data)
-            
+            cmd: str
+            data: str
+
             try:
                 dt = json.loads(data)
                 try:
                     cmd = dt["CMD"]
-                    data = dt["DATA"]
-                    switcher = {
-                        "DEVICE": self.__handler_cmd_device
-                    }
-                    func = switcher.get(cmd)
-                    func(data)
                 except:
-                    self.__logger.error("mqtt data receiver in topic HC.CONTROL.RESPONSE invalid")
-            except:
-                self.__logger.error("mqtt data receiver in topic HC.CONTROL.RESPONSE invalid")
-       
-    def __handler_topic_hc_control(self, data):
-        print("data from topic HC.CONTROL: " + data)
-        self.__logger.debug("data from topic HC.CONTROL: " + data)
-        
-        try:
-            dt = json.loads(data)
-            try:
-                cmd = dt["CMD"]
-                data = dt["DATA"]
+                    cmd = ""
+
+                try:
+                    data = dt["DATA"]
+                except:
+                    data = ""
+
                 switcher = {
-                    "HC_CONNECT_TO_CLOUD": self.__handler_cmd_hc_connect_to_cloud
+                    "DEVICE": self.__handler_cmd_device
                 }
                 func = switcher.get(cmd)
                 func(data)
             except:
-                self.__logger.error("mqtt data receiver in topic HC.CONTROL invalid")
+                self.__logger.error("mqtt data receiver in topic HC.CONTROL.RESPONSE invalid")
+
+    def __handler_topic_hc_control(self, data):
+        print("data from topic HC.CONTROL: " + data)
+        self.__logger.debug("data from topic HC.CONTROL: " + data)
+        cmd: str
+        data: str
+
+        try:
+            dt = json.loads(data)
+            try:
+                cmd = dt["CMD"]
+            except:
+                cmd = ""
+
+            try:
+                data = dt["DATA"]
+            except:
+                data = ""
+
+            switcher = {
+                "HC_CONNECT_TO_CLOUD": self.__handler_cmd_hc_connect_to_cloud,
+                "HC_DISCONNECT_WITH_APP": self.__handler_cmd_hc_disconnect_with_app
+            }
+            func = switcher.get(cmd)
+            func(data)
         except:
             self.__logger.error("mqtt data receiver in topic HC.CONTROL invalid")
-          
+
     def __handler_cmd_device(self, data):
         signal_data = []
         try:
@@ -103,15 +118,15 @@ class MqttDataHandler(IHandler):
         except:
             self.__logger.debug("data of cmd Device invalid")
             print("data of cmd Device invalid")
-        
+
         if signal_data:
             send_data = [const.SIGNALR_CLOUD_RESPONSE_ENTITY, json.dumps(signal_data)]
             self.__signalr.send(self.__globalVariables.DormitoryId, send_data)
-        
+
         if not signal_data:
             self.__logger.debug("have no data to send to cloud via signalr")
-            print("have no data to send to cloud via signalr")              
-          
+            print("have no data to send to cloud via signalr")
+
     def __handler_cmd_hc_connect_to_cloud(self, data):
         db = Db()
         dormitory_id: str
@@ -127,28 +142,33 @@ class MqttDataHandler(IHandler):
         except:
             refresh_token = ""
 
-        if dormitory_id == "":
+        if not self.__globalVariables.AllowChangeCloudAccountFlag and self.__globalVariables.DormitoryId != "":
             return
 
-        if self.__globalVariables.DormitoryId != dormitory_id and self.__globalVariables.DormitoryId != "":
-            return
-
-        if self.__globalVariables.DormitoryId == "":
-            self.__globalVariables.DormitoryId = dormitory_id
+        if refresh_token != "":
             self.__globalVariables.RefreshToken = refresh_token
-            return
-
-        if refresh_token == "":
-            refresh_token = self.__globalVariables.RefreshToken
-
         self.__globalVariables.DormitoryId = dormitory_id
-        self.__globalVariables.RefreshToken = refresh_token
-        user_data = userData(refreshToken=refresh_token, dormitoryId=str(dormitory_id))
+
+        self.__globalVariables.AllowChangeCloudAccountFlag = False
+
+        user_data = userData(refreshToken=refresh_token, dormitoryId=dormitory_id, allowChangeAccount=False)
         rel = db.Services.UserdataServices.FindUserDataById(id=1)
         dt = rel.first()
         if dt is not None:
             db.Services.UserdataServices.UpdateUserDataById(id=1, newUserData=user_data)
         if dt is None:
             db.Services.UserdataServices.AddNewUserData(newUserData=user_data)
+            return
         if self.__globalVariables.PingCloudSuccessFlag:
             self.__globalVariables.ResetSignalrConnectFlag = True
+
+    def __handler_cmd_hc_disconnect_with_app(self, data):
+        print("Allow to change account")
+        self.__logger.info("Allow to change account")
+        db = Db()
+        self.__globalVariables.AllowChangeCloudAccountFlag = True
+        user_data = userData(refreshToken=self.__globalVariables.RefreshToken,
+                             dormitoryId=self.__globalVariables.DormitoryId,
+                             allowChangeAccount=self.__globalVariables.AllowChangeCloudAccountFlag)
+        db.Services.UserdataServices.UpdateUserDataById(id=1, newUserData=user_data)
+

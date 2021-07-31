@@ -14,23 +14,25 @@ class GlobalVariables(metaclass=MetaGlobalVariables):
     __refreshToken: str
     __dormitoryId: str
     __signalrDisconnectStatusUpdate: bool
-    __disconectTime: datetime.datetime
+    __disconnectTime: datetime.datetime
     __recheckConnectionStatusInDb: bool
     __resetSignalrConnect: bool
     __signalrConnectSuccess: bool
     __pingCloudSuccess: bool
     __pingGoogleStatus: bool
+    __allowChangeCloudAccount: bool
 
     def __init__(self):
         self.__signalrConnectSuccess = False
         self.__refreshToken = ""
         self.__signalrDisconnectStatusUpdate = False
         self.__dormitoryId = ""
-        self.__disconectTime = None
+        self.__disconnectTime = None
         self.__recheckConnectionStatusInDb = False
         self.__resetSignalrConnect = False
         self.__pingCloudSuccess = None
         self.__pingGoogleStatus = False
+        self.__allowChangeCloudAccount = False
 
     @property
     def PingGoogleSuccessFlag(self):
@@ -98,8 +100,16 @@ class GlobalVariables(metaclass=MetaGlobalVariables):
 
     @property
     def DisconnectTime(self):
-        return self.__disconectTime
+        return self.__disconnectTime
 
     @DisconnectTime.setter
     def DisconnectTime(self, disconnectTime: datetime.datetime):
-        self.__disconectTime = disconnectTime
+        self.__disconnectTime = disconnectTime
+
+    @property
+    def AllowChangeCloudAccountFlag(self):
+        return self.__allowChangeCloudAccount
+
+    @AllowChangeCloudAccountFlag.setter
+    def AllowChangeCloudAccountFlag(self, allowChangeCloudAccount: bool):
+        self.__allowChangeCloudAccount = allowChangeCloudAccount

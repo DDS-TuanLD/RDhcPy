@@ -18,6 +18,7 @@ class userDataRepo:
         values = {
             "RefreshToken" : userData.RefreshToken,
             "DormitoryId": userData.DormitoryId,
+            "AllowChangeAccount": userData.AllowChangeAccount,
             "CreateAt": datetime.datetime.now()
         }
         self.__context.execute(ins, values)
@@ -34,6 +35,7 @@ class userDataRepo:
         ins = self.__userDataTable.update().where(self.__userDataTable.c.Id == id).\
             values({"RefreshToken": newUserData.RefreshToken,
                     "DormitoryId": newUserData.DormitoryId,
+                    "AllowChangeAccount": newUserData.AllowChangeAccount,
                     "UpdateAt": datetime.datetime.now()})
         self.__context.execute(ins)
 

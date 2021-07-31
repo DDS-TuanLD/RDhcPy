@@ -127,6 +127,8 @@ class RdHc(IController):
         if dt is not None:
             self.__globalVariables.DormitoryId = dt["DormitoryId"]
             self.__globalVariables.RefreshToken = dt["RefreshToken"]
+            self.__globalVariables.AllowChangeCloudAccountFlag = dt["AllowChangeAccount"]
+            
 
     async def run(self):
         check_and_kill_all_repeat_progress()

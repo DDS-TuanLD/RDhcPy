@@ -1,4 +1,4 @@
-from sqlalchemy import DateTime
+from sqlalchemy import DateTime, Boolean
 from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
 
 
@@ -8,6 +8,7 @@ class userDataTable:
                                    Column('Id', Integer, primary_key=True, nullable=False),
                                    Column('RefreshToken', String),
                                    Column('DormitoryId', String),
+                                   Column('AllowChangeAccount', Boolean),
                                    Column('CreateAt', DateTime),
                                    Column('UpdateAt', DateTime),
                                    )

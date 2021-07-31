@@ -1,11 +1,13 @@
 class userData:
     __id: int
     __refreshToken: str
-    _dormitoryId: str
+    __dormitoryId: str
+    __allowChangeAccount: bool
 
-    def __init__(self, refreshToken: str, dormitoryId: str):
+    def __init__(self, refreshToken: str, dormitoryId: str, allowChangeAccount: bool):
         self.__refreshToken = refreshToken
-        self._dormitoryId = dormitoryId
+        self.__dormitoryId = dormitoryId
+        self.__allowChangeAccount = allowChangeAccount
 
     @property
     def RefreshToken(self):
@@ -17,8 +19,16 @@ class userData:
 
     @property
     def DormitoryId(self):
-        return self._dormitoryId
+        return self.__dormitoryId
 
     @DormitoryId.setter
     def DormitoryId(self, DormitoryId: str):
-        self._dormitoryId = DormitoryId
+        self.__dormitoryId = DormitoryId
+        
+    @property
+    def AllowChangeAccount(self):
+        return self.__allowChangeAccount
+    
+    @AllowChangeAccount.setter
+    def AllowChangeAccount(self, allowChangeAccount: bool):
+        self.__allowChangeAccount = allowChangeAccount
