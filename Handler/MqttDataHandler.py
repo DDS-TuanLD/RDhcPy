@@ -167,6 +167,12 @@ class MqttDataHandler(IHandler):
         self.__logger.info("Allow to change account")
         db = Db()
         self.__globalVariables.AllowChangeCloudAccountFlag = True
+
+        rel = db.Services.UserdataServices.FindUserDataById(id=1)
+        dt = rel.first()
+        if dt is None:
+            return
+
         user_data = userData(refreshToken=self.__globalVariables.RefreshToken,
                              dormitoryId=self.__globalVariables.DormitoryId,
                              allowChangeAccount=self.__globalVariables.AllowChangeCloudAccountFlag)
