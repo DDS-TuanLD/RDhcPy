@@ -1,0 +1,722 @@
+2021-07-31 17:27:47,705:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:28:07,798:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:28:17,056:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():76	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "881efd8a-0b60-4ff3-9075-b436fae31f7f",
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2lnqbl3sZk+Uv/gjwvlmJNLhu1dycAYjDIGAt6PXW0KEI1AkAdWvsj/lnvB8D/c5m+WI+Wuk+OapvTTSjwSliKA9ZvaqRv4sUWqJdGiyRnV/bNa+vMMcajFlpZa1+tI/CtLe4bN5RwJTwNH7Gx2jylR+QDAc3sJeht3c/zStBusmTswgLAx7LBfw10/OeFsWxi+XlSRRXwY9xd1i9BxMABEoCWyY4Qfj0Kp2l51FRxPVX"
+  }
+}
+2021-07-31 17:28:17,543:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-07-31 17:28:27,855:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:28:48,162:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:29:08,270:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:29:28,324:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:29:48,375:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:30:08,507:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:30:28,609:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:30:48,659:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:31:08,706:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:31:29,052:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:31:49,104:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:32:09,263:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:32:29,756:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:32:49,810:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:33:09,872:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:33:30,429:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:33:50,484:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:34:10,546:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:34:31,253:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:34:51,333:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:35:11,389:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:35:36,307:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:35:56,446:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:36:16,794:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:36:32,890:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:36:36,999:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():76	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "881efd8a-0b60-4ff3-9075-b436fae31f7f",
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2lnqbl3sZk+Uv/gjwvlmJNLhu1dycAYjDIGAt6PXW0KEI1AkAdWvsj/lnvB8D/c5m+WI+Wuk+OapvTTSjwSliKA9ZvaqRv4sUWqJdGiyRnV/bNa+vMMcajFlpZa1+tI/CtLe4bN5RwJTwNH7Gx2jylR+QDAc3sJeht3c/zStBusmTswgLAx7LBfw10/OeFsWxi+XlSRRXwY9xd1i9BxMABEoCWyY4Qfj0Kp2l51FRxPVX"
+  }
+}
+2021-07-31 17:36:37,096:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-07-31 17:36:53,007:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:37:13,138:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:37:33,282:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:37:53,341:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:38:13,481:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:38:33,945:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:38:54,080:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:39:14,632:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:39:25,553:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:39:45,738:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:40:30,727:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:40:50,924:	INFO:	System.py:__push_data_to_cloud():184	data push to cloud: [{"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 0, "value": 1}, {"deviceId": "7a0cc3c6-6e72-083f-a4e2-7821098fc392", "deviceAttributeId": 0, "value": 0}, {"deviceId": "268f9df6-95df-c43c-bf52-bb4b2dac442e", "deviceAttributeId": 0, "value": 0}, {"deviceId": "ef6bd418-af94-8c32-8a62-de1627c59044", "deviceAttributeId": 0, "value": 0}, {"deviceId": "2c9c860b-eb2a-c033-9eb7-37b716b9a1d0", "deviceAttributeId": 0, "value": 0}, {"deviceId": "34e64f13-3c72-d23f-bf5b-6d929b4b3816", "deviceAttributeId": 0, "value": 0}, {"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 3, "value": 25304}, {"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 4, "value": 65535}, {"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 5, "value": 32768}]
+2021-07-31 17:40:50,968:	INFO:	System.py:__push_data_to_cloud():187	pull data response: 
+2021-07-31 17:40:50,968:	INFO:	System.py:__push_data_to_cloud():190	Push data failure
+2021-07-31 17:40:50,975:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:41:11,044:	INFO:	System.py:__push_data_to_cloud():184	data push to cloud: [{"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 0, "value": 1}, {"deviceId": "7a0cc3c6-6e72-083f-a4e2-7821098fc392", "deviceAttributeId": 0, "value": 0}, {"deviceId": "268f9df6-95df-c43c-bf52-bb4b2dac442e", "deviceAttributeId": 0, "value": 0}, {"deviceId": "ef6bd418-af94-8c32-8a62-de1627c59044", "deviceAttributeId": 0, "value": 0}, {"deviceId": "2c9c860b-eb2a-c033-9eb7-37b716b9a1d0", "deviceAttributeId": 0, "value": 0}, {"deviceId": "34e64f13-3c72-d23f-bf5b-6d929b4b3816", "deviceAttributeId": 0, "value": 0}, {"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 3, "value": 25304}, {"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 4, "value": 65535}, {"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 5, "value": 32768}]
+2021-07-31 17:41:11,087:	INFO:	System.py:__push_data_to_cloud():187	pull data response: 
+2021-07-31 17:41:11,087:	INFO:	System.py:__push_data_to_cloud():190	Push data failure
+2021-07-31 17:41:11,091:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 17:41:18,542:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():76	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "881efd8a-0b60-4ff3-9075-b436fae31f7f",
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2lnqbl3sZk+Uv/gjwvlmJNLhu1dycAYjDIGAt6PXW0KEI1AkAdWvsj/lnvB8D/c5m+WI+Wuk+OapvTTSjwSliKA9ZvaqRv4sUWqJdGiyRnV/bNa+vMMcajFlpZa1+tI/CtLe4bN5RwJTwNH7Gx2jylR+QDAc3sJeht3c/zStBusmTswgLAx7LBfw10/OeFsWxi+XlSRRXwY9xd1i9BxMABEoCWyY4Qfj0Kp2l51FRxPVX"
+  }
+}
+2021-07-31 17:41:21,270:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-07-31 17:41:31,153:	INFO:	System.py:__push_data_to_cloud():184	data push to cloud: [{"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 0, "value": 1}, {"deviceId": "7a0cc3c6-6e72-083f-a4e2-7821098fc392", "deviceAttributeId": 0, "value": 0}, {"deviceId": "268f9df6-95df-c43c-bf52-bb4b2dac442e", "deviceAttributeId": 0, "value": 0}, {"deviceId": "ef6bd418-af94-8c32-8a62-de1627c59044", "deviceAttributeId": 0, "value": 0}, {"deviceId": "2c9c860b-eb2a-c033-9eb7-37b716b9a1d0", "deviceAttributeId": 0, "value": 0}, {"deviceId": "34e64f13-3c72-d23f-bf5b-6d929b4b3816", "deviceAttributeId": 0, "value": 0}, {"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 3, "value": 25304}, {"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 4, "value": 65535}, {"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 5, "value": 32768}]
+2021-07-31 17:41:33,345:	INFO:	System.py:__push_data_to_cloud():187	pull data response: <ClientResponse(https://iot-dev.truesight.asia/rpc/iot-ebe/sync/hc/merge-device-attribute-value) [200 OK]>
+<CIMultiDictProxy('Server': 'nginx', 'Date': 'Sat, 31 Jul 2021 10:41:31 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '4', 'Connection': 'keep-alive')>
+
+2021-07-31 17:41:33,353:	INFO:	System.py:__push_data_to_cloud():197	Push data successfully
+2021-07-31 17:41:33,354:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:42:09,627:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:42:42,855:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:43:03,104:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:43:23,336:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:43:25,734:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "881efd8a-0b60-4ff3-9075-b436fae31f7f",
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2lnqbl3sZk+Uv/gjwvlmJNLhu1dycAYjDIGAt6PXW0KEI1AkAdWvsj/lnvB8D/c5m+WI+Wuk+OapvTTSjwSliKA9ZvaqRv4sUWqJdGiyRnV/bNa+vMMcajFlpZa1+tI/CtLe4bN5RwJTwNH7Gx2jylR+QDAc3sJeht3c/zStBusmTswgLAx7LBfw10/OeFsWxi+XlSRRXwY9xd1i9BxMABEoCWyY4Qfj0Kp2l51FRxPVX"
+  }
+}
+2021-07-31 20:43:26,599:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-07-31 20:43:43,611:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:43:58,457:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-07-31 20:43:58,458:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 20:44:16,627:	INFO:	RdHc.py:__hc_check_connect_with_cloud():65	can not ping to cloud
+2021-07-31 20:44:16,627:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:46:35,082:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:46:46,316:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-07-31 20:46:46,316:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 20:46:55,266:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:47:20,524:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:47:36,580:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:47:56,714:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:48:17,125:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:48:33,374:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "881efd8a-0b60-4ff3-9075-b436fae31f7f",
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2lnqbl3sZk+Uv/gjwvlmJNLhu1dycAYjDIGAt6PXW0KEI1AkAdWvsj/lnvB8D/c5m+WI+Wuk+OapvTTSjwSliKA9ZvaqRv4sUWqJdGiyRnV/bNa+vMMcajFlpZa1+tI/CtLe4bN5RwJTwNH7Gx2jylR+QDAc3sJeht3c/zStBusmTswgLAx7LBfw10/OeFsWxi+XlSRRXwY9xd1i9BxMABEoCWyY4Qfj0Kp2l51FRxPVX"
+  }
+}
+2021-07-31 20:48:33,739:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-07-31 20:48:37,385:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:48:57,537:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:49:22,601:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:49:42,759:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:50:02,821:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:50:22,893:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:50:43,524:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:51:03,667:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:51:24,015:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:51:49,247:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:52:09,576:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:52:29,693:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:52:49,914:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:53:09,981:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:53:30,078:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:53:50,161:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:54:10,390:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:54:30,614:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:54:50,796:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:55:10,853:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:55:30,908:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:55:51,011:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:55:54,365:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:55:57,534:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "881efd8a-0b60-4ff3-9075-b436fae31f7f",
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2lnqbl3sZk+Uv/gjwvlmJNLhu1dycAYjDIGAt6PXW0KEI1AkAdWvsj/lnvB8D/c5m+WI+Wuk+OapvTTSjwSliKA9ZvaqRv4sUWqJdGiyRnV/bNa+vMMcajFlpZa1+tI/CtLe4bN5RwJTwNH7Gx2jylR+QDAc3sJeht3c/zStBusmTswgLAx7LBfw10/OeFsWxi+XlSRRXwY9xd1i9BxMABEoCWyY4Qfj0Kp2l51FRxPVX"
+  }
+}
+2021-07-31 20:55:58,431:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-07-31 20:56:14,504:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:56:34,652:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:56:37,592:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-07-31 20:56:37,933:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:56:58,021:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:57:18,078:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:57:37,653:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-07-31 20:57:38,259:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:57:58,309:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:58:18,362:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:58:19,157:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "bd25cee0-3864-481b-ade9-c3408a812532",
+    "REFRESH_TOKEN": "yEj5jA1mfZQ2kLkdzap86PkcL0IuTv3y2/92TcwOCrehrBc02n8OvfQ5/jovFX4oJ4PL0qs6TB+5NOyBaGvr95uuvq/Pw1uWUEWWrIJAfFOOVNVf9VdvCX6Kn69UqTmcDbB1845S8f50FjQnBGhsVs0SXPVl1Ccvnw7Y/rZtOzNB/rVxJQR/iyxIXTbeZPLlC69/ZHjFF8i6+b+T1aL4SgGBxcBrILT4W/YJfoSwQ0A="
+  }
+}
+2021-07-31 20:58:21,431:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-07-31 20:58:21,432:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-07-31 20:58:38,414:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:58:58,464:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:59:04,301:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:59:14,624:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 20:59:14,726:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 20:59:14,727:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 20:59:18,523:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 20:59:19,669:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 20:59:19,771:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 20:59:19,772:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:32:01,431:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:32:22,151:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:32:42,344:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:33:02,513:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:33:02,971:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "bd25cee0-3864-481b-ade9-c3408a812532",
+    "REFRESH_TOKEN": "yEj5jA1mfZQ2kLkdzap86PkcL0IuTv3y2/92TcwOCrehrBc02n8OvfQ5/jovFX4oJ4PL0qs6TB+5NOyBaGvr95uuvq/Pw1uWUEWWrIJAfFOOVNVf9VdvCX6Kn69UqTmcDbB1845S8f50FjQnBGhsVs0SXPVl1Ccvnw7Y/rZtOzNB/rVxJQR/iyxIXTbeZPLlC69/ZHjFF8i6+b+T1aL4SgGBxcBrILT4W/YJfoSwQ0A="
+  }
+}
+2021-07-31 21:33:05,995:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-07-31 21:33:19,488:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"2c9c860b-eb2a-c033-9eb7-37b716b9a1d0","DEVICE_UNICAST_ID":12,"PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-07-31 21:33:19,489:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:19,590:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "2c9c860b-eb2a-c033-9eb7-37b716b9a1d0", "deviceAttributeId": 0, "value": 1}]
+2021-07-31 21:33:19,590:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:19,790:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"34e64f13-3c72-d23f-bf5b-6d929b4b3816","DEVICE_UNICAST_ID":10,"PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-07-31 21:33:19,791:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:19,891:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "34e64f13-3c72-d23f-bf5b-6d929b4b3816", "deviceAttributeId": 0, "value": 1}]
+2021-07-31 21:33:19,892:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:20,293:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"5817e6b0-8258-203d-bd37-c4a3b9d2cd26","DEVICE_UNICAST_ID":4,"PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-07-31 21:33:20,293:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:20,394:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 0, "value": 1}]
+2021-07-31 21:33:20,394:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:20,595:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"ef6bd418-af94-8c32-8a62-de1627c59044","DEVICE_UNICAST_ID":2,"PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-07-31 21:33:20,595:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:20,696:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "ef6bd418-af94-8c32-8a62-de1627c59044", "deviceAttributeId": 0, "value": 1}]
+2021-07-31 21:33:20,696:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:21,099:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"268f9df6-95df-c43c-bf52-bb4b2dac442e","DEVICE_UNICAST_ID":8,"PROPERTIES":[{"ID":1,"VALUE":100}]}}
+2021-07-31 21:33:21,100:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:21,200:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "268f9df6-95df-c43c-bf52-bb4b2dac442e", "deviceAttributeId": 1, "value": 100}]
+2021-07-31 21:33:21,201:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:21,402:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"2c9c860b-eb2a-c033-9eb7-37b716b9a1d0","DEVICE_UNICAST_ID":12,"PROPERTIES":[{"ID":1,"VALUE":100}]}}
+2021-07-31 21:33:21,402:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:21,502:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "2c9c860b-eb2a-c033-9eb7-37b716b9a1d0", "deviceAttributeId": 1, "value": 100}]
+2021-07-31 21:33:21,502:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:21,803:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"34e64f13-3c72-d23f-bf5b-6d929b4b3816","DEVICE_UNICAST_ID":10,"PROPERTIES":[{"ID":1,"VALUE":100}]}}
+2021-07-31 21:33:21,804:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:21,904:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "34e64f13-3c72-d23f-bf5b-6d929b4b3816", "deviceAttributeId": 1, "value": 100}]
+2021-07-31 21:33:21,905:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:22,105:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"5817e6b0-8258-203d-bd37-c4a3b9d2cd26","DEVICE_UNICAST_ID":4,"PROPERTIES":[{"ID":1,"VALUE":100}]}}
+2021-07-31 21:33:22,105:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:22,206:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 1, "value": 100}]
+2021-07-31 21:33:22,206:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:22,507:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"ef6bd418-af94-8c32-8a62-de1627c59044","DEVICE_UNICAST_ID":2,"PROPERTIES":[{"ID":1,"VALUE":100}]}}
+2021-07-31 21:33:22,508:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:22,578:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:33:22,608:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "ef6bd418-af94-8c32-8a62-de1627c59044", "deviceAttributeId": 1, "value": 100}]
+2021-07-31 21:33:22,608:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:23,110:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"268f9df6-95df-c43c-bf52-bb4b2dac442e","DEVICE_UNICAST_ID":8,"PROPERTIES":[{"ID":2,"VALUE":100}]}}
+2021-07-31 21:33:23,111:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:23,211:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "268f9df6-95df-c43c-bf52-bb4b2dac442e", "deviceAttributeId": 2, "value": 100}]
+2021-07-31 21:33:23,212:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:23,514:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"2c9c860b-eb2a-c033-9eb7-37b716b9a1d0","DEVICE_UNICAST_ID":12,"PROPERTIES":[{"ID":2,"VALUE":100}]}}
+2021-07-31 21:33:23,514:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:23,615:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "2c9c860b-eb2a-c033-9eb7-37b716b9a1d0", "deviceAttributeId": 2, "value": 100}]
+2021-07-31 21:33:23,615:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:23,916:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"34e64f13-3c72-d23f-bf5b-6d929b4b3816","DEVICE_UNICAST_ID":10,"PROPERTIES":[{"ID":2,"VALUE":100}]}}
+2021-07-31 21:33:23,916:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:24,017:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "34e64f13-3c72-d23f-bf5b-6d929b4b3816", "deviceAttributeId": 2, "value": 100}]
+2021-07-31 21:33:24,017:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:24,621:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"5817e6b0-8258-203d-bd37-c4a3b9d2cd26","DEVICE_UNICAST_ID":4,"PROPERTIES":[{"ID":2,"VALUE":100}]}}
+2021-07-31 21:33:24,622:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:24,723:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 2, "value": 100}]
+2021-07-31 21:33:24,723:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:25,024:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"ef6bd418-af94-8c32-8a62-de1627c59044","DEVICE_UNICAST_ID":2,"PROPERTIES":[{"ID":2,"VALUE":100}]}}
+2021-07-31 21:33:25,024:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:25,125:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "ef6bd418-af94-8c32-8a62-de1627c59044", "deviceAttributeId": 2, "value": 100}]
+2021-07-31 21:33:25,125:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:43,488:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-07-31 21:33:43,875:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:33:54,670:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"268f9df6-95df-c43c-bf52-bb4b2dac442e","PROPERTIES":[{"ID":1,"VALUE":100}]}}
+2021-07-31 21:33:54,771:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {"CMD":"DEVICE","DATA":{"DEVICE_ID":"268f9df6-95df-c43c-bf52-bb4b2dac442e","PROPERTIES":[{"ID":1,"VALUE":100}]}}
+2021-07-31 21:33:54,771:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:33:54,972:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Mobile-Activity-Log is [{"id":"ec40b315-6e58-4f2b-8cce-9677d2328fe1","action":"{\"message\":\"activityLog.controlDeviceLuminance\",\"params\":{\"username\":\"0905\",\"luminance\":100,\"deviceName\":\"Đèn LED Downlight SMT\"}}","endUserId":10232,"inSync":0,"createdAt":"2021-07-31T14:33:54.000Z","updatedAt":"2021-07-31T14:33:54.000Z","deletedAt":null}]
+2021-07-31 21:33:54,972:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:58,209:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"268f9df6-95df-c43c-bf52-bb4b2dac442e","DEVICE_UNICAST_ID":8,"PROPERTIES":[{"ID":1,"VALUE":100}]}}
+2021-07-31 21:33:58,209:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:33:58,310:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "268f9df6-95df-c43c-bf52-bb4b2dac442e", "deviceAttributeId": 1, "value": 100}]
+2021-07-31 21:33:58,310:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:34:01,227:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-07-31 21:34:01,227:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():165	Allow change account
+2021-07-31 21:34:03,926:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:34:24,036:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:34:31,831:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "881efd8a-0b60-4ff3-9075-b436fae31f7f",
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2lnqbl3sZk+Uv/gjwvlmJNLhu1dycAYjDIGAt6PXW0KEI1AkAdWvsj/lnvB8D/c5m+WI+Wuk+OapvTTSjwSliKA9ZvaqRv4sUWqJdGiyRnV/bNa+vMMcajFlpZa1+tI/CtLe4bN5RwJTwNH7Gx2jylR+QDAc3sJeht3c/zStBusmTswgLAx7LBfw10/OeFsWxi+XlSRRXwY9xd1i9BxMABEoCWyY4Qfj0Kp2l51FRxPVX"
+  }
+}
+2021-07-31 21:34:31,994:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-07-31 21:34:44,179:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:35:04,266:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:38:23,650:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-07-31 21:38:24,017:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:38:44,264:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:39:28,440:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:39:34,832:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "881efd8a-0b60-4ff3-9075-b436fae31f7f",
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2lnqbl3sZk+Uv/gjwvlmJNLhu1dycAYjDIGAt6PXW0KEI1AkAdWvsj/lnvB8D/c5m+WI+Wuk+OapvTTSjwSliKA9ZvaqRv4sUWqJdGiyRnV/bNa+vMMcajFlpZa1+tI/CtLe4bN5RwJTwNH7Gx2jylR+QDAc3sJeht3c/zStBusmTswgLAx7LBfw10/OeFsWxi+XlSRRXwY9xd1i9BxMABEoCWyY4Qfj0Kp2l51FRxPVX"
+  }
+}
+2021-07-31 21:39:35,513:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-07-31 21:39:48,950:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:39:54,677:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-07-31 21:39:54,678:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():167	Allow change account
+2021-07-31 21:40:09,053:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:40:11,702:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "bd25cee0-3864-481b-ade9-c3408a812532",
+    "REFRESH_TOKEN": "yEj5jA1mfZQ2kLkdzap86PkcL0IuTv3y2/92TcwOCrehrBc02n8OvfQ5/jovFX4oJ4PL0qs6TB+5NOyBaGvr95uuvq/Pw1uWUEWWrIJAfFOOVNVf9VdvCX6Kn69UqTmcDbB1845S8f50FjQnBGhsVs0SXPVl1Ccvnw7Y/rZtOzNB/rVxJQR/iyxIXTbeZPLlC69/ZHjFF8i6+b+T1aL4SgGBxcBrILT4W/YJfoSwQ0A="
+  }
+}
+2021-07-31 21:40:15,000:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-07-31 21:40:18,411:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-07-31 21:40:18,412:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-07-31 21:40:19,258:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {"CMD":"GROUP","DATA":{"GROUP_ID":"07704197-8cc4-4b3c-9ae9-0af78d14f651","PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-07-31 21:40:19,360:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Mobile-Activity-Log is [{"id":"de5c6749-3505-46e2-afde-15647cdca1f5","action":"{\"message\":\"activityLog.controlGroupDevicesState\",\"params\":{\"username\":\"0905\",\"dormitoryName\":\"Nhà 31 01\",\"onOff\":\"tắt\",\"roomName\":\"Phòng mới\"}}","endUserId":10232,"inSync":0,"createdAt":"2021-07-31T14:40:18.000Z","updatedAt":"2021-07-31T14:40:18.000Z","deletedAt":null}]
+2021-07-31 21:40:19,361:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:19,361:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"07704197-8cc4-4b3c-9ae9-0af78d14f651","PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-07-31 21:40:19,362:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:40:20,971:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"5817e6b0-8258-203d-bd37-c4a3b9d2cd26","DEVICE_UNICAST_ID":4,"PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-07-31 21:40:20,971:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:21,072:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 0, "value": 0}]
+2021-07-31 21:40:21,072:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:21,375:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"34e64f13-3c72-d23f-bf5b-6d929b4b3816","DEVICE_UNICAST_ID":10,"PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-07-31 21:40:21,375:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:21,476:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "34e64f13-3c72-d23f-bf5b-6d929b4b3816", "deviceAttributeId": 0, "value": 0}]
+2021-07-31 21:40:21,476:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:21,779:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"2c9c860b-eb2a-c033-9eb7-37b716b9a1d0","DEVICE_UNICAST_ID":12,"PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-07-31 21:40:21,779:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:21,880:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "2c9c860b-eb2a-c033-9eb7-37b716b9a1d0", "deviceAttributeId": 0, "value": 0}]
+2021-07-31 21:40:21,881:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:22,082:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"ef6bd418-af94-8c32-8a62-de1627c59044","DEVICE_UNICAST_ID":2,"PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-07-31 21:40:22,083:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:22,184:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "ef6bd418-af94-8c32-8a62-de1627c59044", "deviceAttributeId": 0, "value": 0}]
+2021-07-31 21:40:22,184:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:22,587:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"268f9df6-95df-c43c-bf52-bb4b2dac442e","DEVICE_UNICAST_ID":8,"PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-07-31 21:40:22,588:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:22,689:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "268f9df6-95df-c43c-bf52-bb4b2dac442e", "deviceAttributeId": 0, "value": 0}]
+2021-07-31 21:40:22,689:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:22,790:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"7a0cc3c6-6e72-083f-a4e2-7821098fc392","DEVICE_UNICAST_ID":14,"PROPERTIES":[{"ID":0,"VALUE":0}]}}
+2021-07-31 21:40:22,790:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:22,891:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "7a0cc3c6-6e72-083f-a4e2-7821098fc392", "deviceAttributeId": 0, "value": 0}]
+2021-07-31 21:40:22,891:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:24,703:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {"CMD":"GROUP","DATA":{"GROUP_ID":"07704197-8cc4-4b3c-9ae9-0af78d14f651","PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-07-31 21:40:24,805:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"07704197-8cc4-4b3c-9ae9-0af78d14f651","PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-07-31 21:40:24,805:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:40:25,208:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Mobile-Activity-Log is [{"id":"fe29cc6b-0b60-47b4-8755-88a2ce14fbdc","action":"{\"message\":\"activityLog.controlGroupDevicesState\",\"params\":{\"username\":\"0905\",\"dormitoryName\":\"Nhà 31 01\",\"onOff\":\"bật\",\"roomName\":\"Phòng mới\"}}","endUserId":10232,"inSync":0,"createdAt":"2021-07-31T14:40:24.000Z","updatedAt":"2021-07-31T14:40:24.000Z","deletedAt":null}]
+2021-07-31 21:40:25,208:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:27,221:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"2c9c860b-eb2a-c033-9eb7-37b716b9a1d0","DEVICE_UNICAST_ID":12,"PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-07-31 21:40:27,221:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:27,322:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "2c9c860b-eb2a-c033-9eb7-37b716b9a1d0", "deviceAttributeId": 0, "value": 1}]
+2021-07-31 21:40:27,323:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:27,625:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"34e64f13-3c72-d23f-bf5b-6d929b4b3816","DEVICE_UNICAST_ID":10,"PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-07-31 21:40:27,625:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:27,725:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "34e64f13-3c72-d23f-bf5b-6d929b4b3816", "deviceAttributeId": 0, "value": 1}]
+2021-07-31 21:40:27,726:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:28,129:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"ef6bd418-af94-8c32-8a62-de1627c59044","DEVICE_UNICAST_ID":2,"PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-07-31 21:40:28,129:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:28,230:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "ef6bd418-af94-8c32-8a62-de1627c59044", "deviceAttributeId": 0, "value": 1}]
+2021-07-31 21:40:28,231:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:28,633:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"7a0cc3c6-6e72-083f-a4e2-7821098fc392","DEVICE_UNICAST_ID":14,"PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-07-31 21:40:28,633:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:28,734:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "7a0cc3c6-6e72-083f-a4e2-7821098fc392", "deviceAttributeId": 0, "value": 1}]
+2021-07-31 21:40:28,734:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:29,035:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"5817e6b0-8258-203d-bd37-c4a3b9d2cd26","DEVICE_UNICAST_ID":4,"PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-07-31 21:40:29,036:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:29,138:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 0, "value": 1}]
+2021-07-31 21:40:29,138:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:31,550:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"268f9df6-95df-c43c-bf52-bb4b2dac442e","DEVICE_UNICAST_ID":8,"PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-07-31 21:40:31,551:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:31,552:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:40:31,652:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "268f9df6-95df-c43c-bf52-bb4b2dac442e", "deviceAttributeId": 0, "value": 1}]
+2021-07-31 21:40:31,653:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:43,734:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"10a022f9-09b6-4c41-a698-83f997cd08ff"}}
+2021-07-31 21:40:43,837:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Mobile-Activity-Log is [{"id":"3a851edf-476c-4be7-b981-68079073209f","action":"{\"message\":\"activityLog.selectScene\",\"params\":{\"username\":\"0905\",\"dormitoryName\":\"Nhà 31 01\",\"roomName\":\"Phòng mới\",\"sceneName\":\"Buổi tối \"}}","endUserId":10232,"inSync":0,"createdAt":"2021-07-31T14:40:42.000Z","updatedAt":"2021-07-31T14:40:42.000Z","deletedAt":null}]
+2021-07-31 21:40:43,837:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:43,838:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"10a022f9-09b6-4c41-a698-83f997cd08ff"}}
+2021-07-31 21:40:43,838:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:40:46,762:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"10a022f9-09b6-4c41-a698-83f997cd08ff","DEVICE_ID":"34e64f13-3c72-d23f-bf5b-6d929b4b3816","DEVICE_UNICAST_ID":10}}
+2021-07-31 21:40:46,763:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:47,065:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"10a022f9-09b6-4c41-a698-83f997cd08ff","DEVICE_ID":"7a0cc3c6-6e72-083f-a4e2-7821098fc392","DEVICE_UNICAST_ID":14}}
+2021-07-31 21:40:47,066:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:47,267:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"10a022f9-09b6-4c41-a698-83f997cd08ff","DEVICE_ID":"2c9c860b-eb2a-c033-9eb7-37b716b9a1d0","DEVICE_UNICAST_ID":12}}
+2021-07-31 21:40:47,268:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:47,369:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"10a022f9-09b6-4c41-a698-83f997cd08ff","DEVICE_ID":"ef6bd418-af94-8c32-8a62-de1627c59044","DEVICE_UNICAST_ID":2}}
+2021-07-31 21:40:47,369:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:47,470:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"10a022f9-09b6-4c41-a698-83f997cd08ff","DEVICE_ID":"268f9df6-95df-c43c-bf52-bb4b2dac442e","DEVICE_UNICAST_ID":8}}
+2021-07-31 21:40:47,470:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:40:47,672:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"10a022f9-09b6-4c41-a698-83f997cd08ff","DEVICE_ID":"5817e6b0-8258-203d-bd37-c4a3b9d2cd26","DEVICE_UNICAST_ID":4}}
+2021-07-31 21:40:47,672:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:25,335:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-07-31 21:41:25,648:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:41:34,514:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-07-31 21:41:34,515:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():167	Allow change account
+2021-07-31 21:41:40,160:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "881efd8a-0b60-4ff3-9075-b436fae31f7f",
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2lnqbl3sZk+Uv/gjwvlmJNLhu1dycAYjDIGAt6PXW0KEI1AkAdWvsj/lnvB8D/c5m+WI+Wuk+OapvTTSjwSliKA9ZvaqRv4sUWqJdGiyRnV/bNa+vMMcajFlpZa1+tI/CtLe4bN5RwJTwNH7Gx2jylR+QDAc3sJeht3c/zStBusmTswgLAx7LBfw10/OeFsWxi+XlSRRXwY9xd1i9BxMABEoCWyY4Qfj0Kp2l51FRxPVX"
+  }
+}
+2021-07-31 21:41:41,979:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"5a468178-2662-457f-86f3-669a1e8a9969"}}
+2021-07-31 21:41:41,990:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"5a468178-2662-457f-86f3-669a1e8a9969"}}
+2021-07-31 21:41:41,990:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:41:42,181:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Mobile-Activity-Log is [{"id":"9684b4ce-6189-41ec-a177-53a6c367948d","action":"{\"message\":\"activityLog.selectScene\",\"params\":{\"username\":\"0905\",\"dormitoryName\":\"Nhà 31 01\",\"roomName\":\"Phòng mới\",\"sceneName\":\"Mùa đông\"}}","endUserId":10232,"inSync":0,"createdAt":"2021-07-31T14:41:41.000Z","updatedAt":"2021-07-31T14:41:41.000Z","deletedAt":null}]
+2021-07-31 21:41:42,182:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:45,517:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"5a468178-2662-457f-86f3-669a1e8a9969","DEVICE_ID":"2c9c860b-eb2a-c033-9eb7-37b716b9a1d0","DEVICE_UNICAST_ID":12}}
+2021-07-31 21:41:45,518:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:45,619:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"5a468178-2662-457f-86f3-669a1e8a9969","DEVICE_ID":"7a0cc3c6-6e72-083f-a4e2-7821098fc392","DEVICE_UNICAST_ID":14}}
+2021-07-31 21:41:45,619:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:45,792:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:41:45,821:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"5a468178-2662-457f-86f3-669a1e8a9969","DEVICE_ID":"34e64f13-3c72-d23f-bf5b-6d929b4b3816","DEVICE_UNICAST_ID":10}}
+2021-07-31 21:41:45,822:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:46,024:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"5a468178-2662-457f-86f3-669a1e8a9969","DEVICE_ID":"268f9df6-95df-c43c-bf52-bb4b2dac442e","DEVICE_UNICAST_ID":8}}
+2021-07-31 21:41:46,025:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:46,126:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"5a468178-2662-457f-86f3-669a1e8a9969","DEVICE_ID":"5817e6b0-8258-203d-bd37-c4a3b9d2cd26","DEVICE_UNICAST_ID":4}}
+2021-07-31 21:41:46,126:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:46,328:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"5a468178-2662-457f-86f3-669a1e8a9969","DEVICE_ID":"ef6bd418-af94-8c32-8a62-de1627c59044","DEVICE_UNICAST_ID":2}}
+2021-07-31 21:41:46,328:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:53,555:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {"CMD":"GROUP","DATA":{"GROUP_ID":"3413513d-b81c-4fd8-982f-216dffed91d7","PROPERTIES":[{"ID":1,"VALUE":22}]}}
+2021-07-31 21:41:53,657:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"3413513d-b81c-4fd8-982f-216dffed91d7","PROPERTIES":[{"ID":1,"VALUE":22}]}}
+2021-07-31 21:41:53,657:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:41:55,366:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Mobile-Activity-Log is [{"id":"1cce8c34-e643-4b81-a4c0-ce886652b740","action":"{\"message\":\"activityLog.controlGroupDimming\",\"params\":{\"username\":\"0905\",\"dormitoryName\":\"Nhà 31 01\",\"roomName\":\"Phòng mới\",\"luminance\":22,\"category\":12}}","endUserId":10232,"inSync":0,"createdAt":"2021-07-31T14:41:54.000Z","updatedAt":"2021-07-31T14:41:54.000Z","deletedAt":null}]
+2021-07-31 21:41:55,367:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:56,272:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"2c9c860b-eb2a-c033-9eb7-37b716b9a1d0","DEVICE_UNICAST_ID":12,"PROPERTIES":[{"ID":1,"VALUE":21}]}}
+2021-07-31 21:41:56,273:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:56,374:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "2c9c860b-eb2a-c033-9eb7-37b716b9a1d0", "deviceAttributeId": 1, "value": 21}]
+2021-07-31 21:41:56,374:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:56,575:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"268f9df6-95df-c43c-bf52-bb4b2dac442e","DEVICE_UNICAST_ID":8,"PROPERTIES":[{"ID":1,"VALUE":21}]}}
+2021-07-31 21:41:56,576:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:56,677:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "268f9df6-95df-c43c-bf52-bb4b2dac442e", "deviceAttributeId": 1, "value": 21}]
+2021-07-31 21:41:56,677:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:57,080:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"7a0cc3c6-6e72-083f-a4e2-7821098fc392","DEVICE_UNICAST_ID":14,"PROPERTIES":[{"ID":1,"VALUE":21}]}}
+2021-07-31 21:41:57,080:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:57,181:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "7a0cc3c6-6e72-083f-a4e2-7821098fc392", "deviceAttributeId": 1, "value": 21}]
+2021-07-31 21:41:57,182:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:57,484:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"34e64f13-3c72-d23f-bf5b-6d929b4b3816","DEVICE_UNICAST_ID":10,"PROPERTIES":[{"ID":1,"VALUE":21}]}}
+2021-07-31 21:41:57,484:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:57,585:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "34e64f13-3c72-d23f-bf5b-6d929b4b3816", "deviceAttributeId": 1, "value": 21}]
+2021-07-31 21:41:57,586:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:57,888:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"ef6bd418-af94-8c32-8a62-de1627c59044","DEVICE_UNICAST_ID":2,"PROPERTIES":[{"ID":1,"VALUE":21}]}}
+2021-07-31 21:41:57,889:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:57,990:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "ef6bd418-af94-8c32-8a62-de1627c59044", "deviceAttributeId": 1, "value": 21}]
+2021-07-31 21:41:57,990:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:41:59,299:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {"CMD":"GROUP","DATA":{"GROUP_ID":"f5a024fe-4a25-4bc0-b5bb-972cd699221d","PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-07-31 21:41:59,401:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {"CMD":"GROUP","DATA":{"GROUP_ID":"f5a024fe-4a25-4bc0-b5bb-972cd699221d","PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-07-31 21:41:59,401:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:41:59,804:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Mobile-Activity-Log is [{"id":"1f79eb12-7521-47a7-b3d2-b05b553c6a6f","action":"{\"message\":\"activityLog.controlGroupDevicesState\",\"params\":{\"username\":\"0905\",\"dormitoryName\":\"Nhà 31 01\",\"onOff\":\"bật\",\"roomName\":\"Phòng mới\"}}","endUserId":10232,"inSync":0,"createdAt":"2021-07-31T14:41:58.000Z","updatedAt":"2021-07-31T14:41:58.000Z","deletedAt":null}]
+2021-07-31 21:41:59,804:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:42:01,515:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-07-31 21:42:01,515:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():167	Allow change account
+2021-07-31 21:42:01,918:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"5817e6b0-8258-203d-bd37-c4a3b9d2cd26","PROPERTIES":[{"ID":3,"VALUE":4187},{"ID":4,"VALUE":65535},{"ID":5,"VALUE":22937}]}}
+2021-07-31 21:42:01,921:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {"CMD":"DEVICE","DATA":{"DEVICE_ID":"5817e6b0-8258-203d-bd37-c4a3b9d2cd26","PROPERTIES":[{"ID":3,"VALUE":4187},{"ID":4,"VALUE":65535},{"ID":5,"VALUE":22937}]}}
+2021-07-31 21:42:01,921:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:42:02,321:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Mobile-Activity-Log is [{"id":"6706e265-d323-4ee4-bd2a-4260f8a0b19e","action":"{\"message\":\"activityLog.controlGroupDimming\",\"params\":{\"username\":\"0905\",\"dormitoryName\":\"Nhà 31 01\",\"roomName\":\"Phòng mới\",\"luminance\":69,\"category\":14}}","endUserId":10232,"inSync":0,"createdAt":"2021-07-31T14:42:01.000Z","updatedAt":"2021-07-31T14:42:01.000Z","deletedAt":null}]
+2021-07-31 21:42:02,322:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:42:08,936:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"5817e6b0-8258-203d-bd37-c4a3b9d2cd26","DEVICE_UNICAST_ID":4,"PROPERTIES":[{"ID":0,"VALUE":1}]}}
+2021-07-31 21:42:08,937:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:42:09,038:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 0, "value": 1}]
+2021-07-31 21:42:09,038:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:42:09,139:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"5817e6b0-8258-203d-bd37-c4a3b9d2cd26","DEVICE_UNICAST_ID":4,"PROPERTIES":[{"ID":3,"VALUE":4187},{"ID":4,"VALUE":65535},{"ID":5,"VALUE":22937}]}}
+2021-07-31 21:42:09,139:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:42:09,240:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 3, "value": 4187}, {"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 4, "value": 65535}, {"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 5, "value": 22937}]
+2021-07-31 21:42:09,241:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:42:09,342:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"DEVICE","DATA":{"DEVICE_ID":"5817e6b0-8258-203d-bd37-c4a3b9d2cd26","DEVICE_UNICAST_ID":4,"PROPERTIES":[{"ID":3,"VALUE":4187},{"ID":4,"VALUE":65535},{"ID":5,"VALUE":22937}]}}
+2021-07-31 21:42:09,342:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:42:09,443:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 3, "value": 4187}, {"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 4, "value": 65535}, {"deviceId": "5817e6b0-8258-203d-bd37-c4a3b9d2cd26", "deviceAttributeId": 5, "value": 22937}]
+2021-07-31 21:42:09,443:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:42:10,060:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:42:14,070:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "881efd8a-0b60-4ff3-9075-b436fae31f7f",
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2lnqbl3sZk+Uv/gjwvlmJNLhu1dycAYjDIGAt6PXW0KEI1AkAdWvsj/lnvB8D/c5m+WI+Wuk+OapvTTSjwSliKA9ZvaqRv4sUWqJdGiyRnV/bNa+vMMcajFlpZa1+tI/CtLe4bN5RwJTwNH7Gx2jylR+QDAc3sJeht3c/zStBusmTswgLAx7LBfw10/OeFsWxi+XlSRRXwY9xd1i9BxMABEoCWyY4Qfj0Kp2l51FRxPVX"
+  }
+}
+2021-07-31 21:42:14,955:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-07-31 21:42:30,542:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:42:34,639:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-07-31 21:42:34,640:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():167	Allow change account
+2021-07-31 21:42:49,237:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "bd25cee0-3864-481b-ade9-c3408a812532",
+    "REFRESH_TOKEN": "yEj5jA1mfZQ2kLkdzap86PkcL0IuTv3y2/92TcwOCrehrBc02n8OvfQ5/jovFX4oJ4PL0qs6TB+5NOyBaGvr95uuvq/Pw1uWUEWWrIJAfFOOVNVf9VdvCX6Kn69UqTmcDbB1845S8f50FjQnBGhsVs0SXPVl1Ccvnw7Y/rZtOzNB/rVxJQR/iyxIXTbeZPLlC69/ZHjFF8i6+b+T1aL4SgGBxcBrILT4W/YJfoSwQ0A="
+  }
+}
+2021-07-31 21:42:49,736:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-07-31 21:42:51,159:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:43:02,319:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"67066bfe-65e1-4062-98a9-6784630dd005"}}
+2021-07-31 21:43:02,420:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"67066bfe-65e1-4062-98a9-6784630dd005"}}
+2021-07-31 21:43:02,420:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:43:02,421:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Mobile-Activity-Log is [{"id":"1aea8857-52ab-46eb-b791-8c6e065cf7db","action":"{\"message\":\"activityLog.selectScene\",\"params\":{\"username\":\"0905\",\"dormitoryName\":\"Nhà 31 01\",\"roomName\":\"Phòng mới\",\"sceneName\":\"Tiết kiệm\"}}","endUserId":10232,"inSync":0,"createdAt":"2021-07-31T14:43:01.000Z","updatedAt":"2021-07-31T14:43:01.000Z","deletedAt":null}]
+2021-07-31 21:43:02,421:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:43:05,236:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"67066bfe-65e1-4062-98a9-6784630dd005","DEVICE_ID":"2c9c860b-eb2a-c033-9eb7-37b716b9a1d0","DEVICE_UNICAST_ID":12}}
+2021-07-31 21:43:05,236:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:43:05,438:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"67066bfe-65e1-4062-98a9-6784630dd005","DEVICE_ID":"5817e6b0-8258-203d-bd37-c4a3b9d2cd26","DEVICE_UNICAST_ID":4}}
+2021-07-31 21:43:05,438:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:43:05,539:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"67066bfe-65e1-4062-98a9-6784630dd005","DEVICE_ID":"268f9df6-95df-c43c-bf52-bb4b2dac442e","DEVICE_UNICAST_ID":8}}
+2021-07-31 21:43:05,540:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:43:05,842:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"67066bfe-65e1-4062-98a9-6784630dd005","DEVICE_ID":"7a0cc3c6-6e72-083f-a4e2-7821098fc392","DEVICE_UNICAST_ID":14}}
+2021-07-31 21:43:05,842:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:43:05,943:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"67066bfe-65e1-4062-98a9-6784630dd005","DEVICE_ID":"34e64f13-3c72-d23f-bf5b-6d929b4b3816","DEVICE_UNICAST_ID":10}}
+2021-07-31 21:43:05,944:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:43:06,145:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"67066bfe-65e1-4062-98a9-6784630dd005","DEVICE_ID":"ef6bd418-af94-8c32-8a62-de1627c59044","DEVICE_UNICAST_ID":2}}
+2021-07-31 21:43:06,145:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:43:08,558:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:08,659:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:08,659:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:43:11,301:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:43:11,698:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:11,799:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:11,799:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:43:13,608:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:13,709:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:13,709:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:43:15,519:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"bee9d486-b032-401d-a6b9-8bb28ee99414"}}
+2021-07-31 21:43:15,620:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"bee9d486-b032-401d-a6b9-8bb28ee99414"}}
+2021-07-31 21:43:15,620:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:43:15,621:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Mobile-Activity-Log is [{"id":"88500d70-bb90-4cc5-bafc-8fbbc3b48bf0","action":"{\"message\":\"activityLog.selectScene\",\"params\":{\"username\":\"0905\",\"dormitoryName\":\"Nhà 31 01\",\"roomName\":\"Phòng mới\",\"sceneName\":\"Sinh nhật\"}}","endUserId":10232,"inSync":0,"createdAt":"2021-07-31T14:43:14.000Z","updatedAt":"2021-07-31T14:43:14.000Z","deletedAt":null}]
+2021-07-31 21:43:15,621:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:43:18,139:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"bee9d486-b032-401d-a6b9-8bb28ee99414","DEVICE_ID":"7a0cc3c6-6e72-083f-a4e2-7821098fc392","DEVICE_UNICAST_ID":14}}
+2021-07-31 21:43:18,139:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:43:18,441:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"bee9d486-b032-401d-a6b9-8bb28ee99414","DEVICE_ID":"268f9df6-95df-c43c-bf52-bb4b2dac442e","DEVICE_UNICAST_ID":8}}
+2021-07-31 21:43:18,442:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:43:18,543:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"bee9d486-b032-401d-a6b9-8bb28ee99414","DEVICE_ID":"34e64f13-3c72-d23f-bf5b-6d929b4b3816","DEVICE_UNICAST_ID":10}}
+2021-07-31 21:43:18,544:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:43:18,645:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:18,744:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:18,744:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:43:18,747:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"bee9d486-b032-401d-a6b9-8bb28ee99414","DEVICE_ID":"2c9c860b-eb2a-c033-9eb7-37b716b9a1d0","DEVICE_UNICAST_ID":12}}
+2021-07-31 21:43:18,748:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:43:18,950:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"bee9d486-b032-401d-a6b9-8bb28ee99414","DEVICE_ID":"ef6bd418-af94-8c32-8a62-de1627c59044","DEVICE_UNICAST_ID":2}}
+2021-07-31 21:43:18,950:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:43:19,051:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {"CMD":"EVENT_TRIGGER","DATA":{"EVENT_TRIGGER_ID":"bee9d486-b032-401d-a6b9-8bb28ee99414","DEVICE_ID":"5817e6b0-8258-203d-bd37-c4a3b9d2cd26","DEVICE_UNICAST_ID":4}}
+2021-07-31 21:43:19,052:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-07-31 21:43:23,582:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:23,683:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:23,683:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:43:28,309:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-07-31 21:43:28,309:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():167	Allow change account
+2021-07-31 21:43:28,519:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:28,619:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:28,620:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:43:31,401:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-07-31 21:43:31,419:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:43:38,582:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:38,683:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:38,683:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:43:43,613:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:43,714:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:43,715:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:43:48,657:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:48,758:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:48,758:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:43:51,596:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:43:53,589:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "881efd8a-0b60-4ff3-9075-b436fae31f7f",
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2lnqbl3sZk+Uv/gjwvlmJNLhu1dycAYjDIGAt6PXW0KEI1AkAdWvsj/lnvB8D/c5m+WI+Wuk+OapvTTSjwSliKA9ZvaqRv4sUWqJdGiyRnV/bNa+vMMcajFlpZa1+tI/CtLe4bN5RwJTwNH7Gx2jylR+QDAc3sJeht3c/zStBusmTswgLAx7LBfw10/OeFsWxi+XlSRRXwY9xd1i9BxMABEoCWyY4Qfj0Kp2l51FRxPVX"
+  }
+}
+2021-07-31 21:43:53,697:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:53,798:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:43:53,798:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-07-31 21:43:56,172:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-07-31 21:44:11,828:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:44:32,003:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:44:52,177:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-07-31 21:45:09,221:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:45:09,322:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-07-31 21:45:09,322:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid

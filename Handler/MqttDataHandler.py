@@ -118,6 +118,8 @@ class MqttDataHandler(IHandler):
         except:
             self.__logger.debug("data of cmd Device invalid")
             print("data of cmd Device invalid")
+            
+        print(signal_data)
 
         if signal_data:
             send_data = [const.SIGNALR_CLOUD_RESPONSE_ENTITY, json.dumps(signal_data)]
@@ -159,12 +161,12 @@ class MqttDataHandler(IHandler):
         if dt is None:
             db.Services.UserdataServices.AddNewUserData(newUserData=user_data)
             return
-        if self.__globalVariables.PingCloudSuccessFlag:
-            self.__globalVariables.ResetSignalrConnectFlag = True
+        
+        self.__globalVariables.ResetSignalrConnectFlag = True
 
     def __handler_cmd_hc_disconnect_with_app(self, data):
         print("Allow to change account")
-        self.__logger.info("Allow to change account")
+        self.__logger.info("Allow to change account, now new account can log in")
         db = Db()
         self.__globalVariables.AllowChangeCloudAccountFlag = True
 
@@ -178,3 +180,11 @@ class MqttDataHandler(IHandler):
                              allowChangeAccount=self.__globalVariables.AllowChangeCloudAccountFlag)
         db.Services.UserdataServices.UpdateUserDataById(id=1, newUserData=user_data)
 
+        logout_success_res = """{
+        "CMD": "HC_DISCONNECT_WITH_APP",
+        "DATA": {
+            "STATUS": "success"
+        }
+        }"""
+
+        self.__mqtt.send(const.MQTT_RESPONSE_TOPIC, logout_success_res)

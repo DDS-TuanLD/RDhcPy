@@ -34,8 +34,18 @@ class RdHc(IController):
         self.__signalrHandler = signalr_handler
 
     async def __hc_check_connect_with_internet(self):
+        google_disconnect_count = 0
         while True:
             self.__globalVariables.PingGoogleSuccessFlag = ping_google()
+            
+            if not self.__globalVariables.PingGoogleSuccessFlag:
+                google_disconnect_count = google_disconnect_count + 1
+            if self.__globalVariables.PingGoogleSuccessFlag:
+                google_disconnect_count = 0
+            if google_disconnect_count == 3:
+                self.__hc_update_disconnect_status_to_db()
+                eliminate_current_progress()
+                
             await asyncio.sleep(10)
 
     async def __hc_check_connect_with_cloud(self):
@@ -48,7 +58,7 @@ class RdHc(IController):
             print("Hc send heartbeat to cloud")
             self.__logger.info("Hc send heartbeat to cloud")
             
-            await asyncio.sleep(20)
+            await asyncio.sleep(60)
 
             request_time_count = datetime.datetime.now().timestamp()
             if self.__globalVariables.DisconnectTime is None:
