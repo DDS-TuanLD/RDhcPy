@@ -71,7 +71,8 @@ class MqttDataHandler(IHandler):
                     data = ""
 
                 switcher = {
-                    "DEVICE": self.__handler_cmd_device
+                    "DEVICE": self.__handler_cmd_device,
+                    "RESET_HC": self.__handler_cmd_hc_disconnect_with_app
                 }
                 func = switcher.get(cmd)
                 func(data)
@@ -98,7 +99,6 @@ class MqttDataHandler(IHandler):
 
             switcher = {
                 "HC_CONNECT_TO_CLOUD": self.__handler_cmd_hc_connect_to_cloud,
-                "HC_DISCONNECT_WITH_APP": self.__handler_cmd_hc_disconnect_with_app
             }
             func = switcher.get(cmd)
             func(data)
@@ -179,12 +179,3 @@ class MqttDataHandler(IHandler):
                              dormitoryId=self.__globalVariables.DormitoryId,
                              allowChangeAccount=self.__globalVariables.AllowChangeCloudAccountFlag)
         db.Services.UserdataServices.UpdateUserDataById(id=1, newUserData=user_data)
-
-        logout_success_res = """{
-        "CMD": "HC_DISCONNECT_WITH_APP",
-        "DATA": {
-            "STATUS": "success"
-        }
-        }"""
-
-        self.__mqtt.send(const.MQTT_RESPONSE_TOPIC, logout_success_res)
