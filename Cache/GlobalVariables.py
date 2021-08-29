@@ -33,6 +33,7 @@ class GlobalVariables(metaclass=MetaGlobalVariables):
         self.__pingCloudSuccess = None
         self.__pingGoogleStatus = False
         self.__allowChangeCloudAccount = False
+        self.__currentWifiName = ""
 
     @property
     def PingGoogleSuccessFlag(self):
@@ -113,3 +114,11 @@ class GlobalVariables(metaclass=MetaGlobalVariables):
     @AllowChangeCloudAccountFlag.setter
     def AllowChangeCloudAccountFlag(self, allowChangeCloudAccount: bool):
         self.__allowChangeCloudAccount = allowChangeCloudAccount
+
+    @property
+    def CurrentWifiName(self):
+        return self.__currentWifiName
+
+    @CurrentWifiName.setter
+    def CurrentWifiName(self, currentWifiName: str):
+        self.__currentWifiName = currentWifiName

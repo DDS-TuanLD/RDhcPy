@@ -138,16 +138,27 @@ class RdHc(IController):
             self.__globalVariables.DormitoryId = dt["DormitoryId"]
             self.__globalVariables.RefreshToken = dt["RefreshToken"]
             self.__globalVariables.AllowChangeCloudAccountFlag = dt["AllowChangeAccount"]
-            
+
+    def __hc_load_current_wifi_name(self):
+        s = System(self.__logger)
+        s.update_current_wifi_name()
+
+    async def __hc_check_wifi_change(self):
+        s = System(self.__logger)
+        while True:
+            await asyncio.sleep(2)
+            await s.check_wifi_change(self.__signalServices)
 
     async def run(self):
         check_and_kill_all_repeat_progress()
         self.__hc_load_user_data()
+        self.__hc_load_current_wifi_name()
         self.__mqttServices.connect()
         task0 = asyncio.create_task(self.__signalServices.connect())
         task1 = asyncio.create_task(self.__hc_handler_signalr_data())
         task2 = asyncio.create_task(self.__hc_check_connect_with_cloud())
         task3 = asyncio.create_task(self.__hc_handler_mqtt_data())
         task4 = asyncio.create_task(self.__hc_check_connect_with_internet())
+        task5 = asyncio.create_task(self.__hc_check_wifi_change())
         tasks = [task0, task1, task2, task3, task4]
         await asyncio.gather(*tasks)

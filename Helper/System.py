@@ -5,6 +5,7 @@ from Cache.GlobalVariables import GlobalVariables
 import datetime
 from HcServices.Mqtt import Mqtt
 from HcServices.Http import Http
+from Contracts.ITransport import ITransport
 from sqlalchemy import and_, or_
 from HcServices.Http import Http
 import aiohttp
@@ -75,6 +76,38 @@ class System:
 
     def __init__(self, logger: logging.Logger):
         self.__logger = logger
+
+    async def __check_and_reconnect_signalr_when_change_wifi(self, signalr: ITransport):
+        s = System(self.__logger)
+        while not ping_google():
+            await asyncio.sleep(2)
+        while not self.__globalVariables.PingCloudSuccessFlag:
+            await asyncio.sleep(2)
+        await signalr.disconnect()
+        signalr.reconnect()
+        self.__globalVariables.NeedReconnectSignalrServerFlag = False
+
+    def update_current_wifi_name(self):
+        s = execute_with_result('iwinfo')
+        dt = s[1].split("\n")
+        if str(dt[0]).find("RD_HC") == -1:
+            wifi_name_started_point = str(dt[0]).find('"') + 1
+            wifi_name_ended_point = str(dt[0]).find('"', wifi_name_started_point) - 1
+            self.__globalVariables.CurrentWifiName = str(dt[0])[wifi_name_started_point:wifi_name_ended_point+1]
+
+    async def check_wifi_change(self, signalr: ITransport):
+        s = execute_with_result('iwinfo')
+        dt = s[1].split("\n")
+        wifi_name = ""
+        if str(dt[0]).find("RD_HC") == -1:
+            wifi_name_started_point = str(dt[0]).find('"') + 1
+            wifi_name_ended_point = str(dt[0]).find('"', wifi_name_started_point) - 1
+            wifi_name = str(dt[0])[wifi_name_started_point:wifi_name_ended_point + 1]
+        if wifi_name != "" and wifi_name != self.__globalVariables.CurrentWifiName \
+                and self.__globalVariables.CurrentWifiName != "":
+            self.__logger.info(f"current wifi name change from {self.__globalVariables.CurrentWifiName} to {wifi_name}")
+            print(f"current wifi name change from {self.__globalVariables.CurrentWifiName} to {wifi_name}")
+            await self.__check_and_reconnect_signalr_when_change_wifi(signalr)
 
     async def update_reconnect_status_to_db(self, reconnect_time: datetime.datetime):
         rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)

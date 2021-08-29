@@ -393,3 +393,5 @@
   }
 }
 2021-08-03 18:28:15,735:	INFO:	RdHc.py:__hc_update_disconnect_status_to_db():110	Update cloud disconnect status to db
+2021-08-14 21:27:39,916:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-14 21:27:40,575:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud

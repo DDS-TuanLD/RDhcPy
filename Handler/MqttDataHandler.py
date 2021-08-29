@@ -28,7 +28,7 @@ class MqttDataHandler(IHandler):
         switcher = {
             const.MQTT_RESPONSE_TOPIC: self.__handler_topic_hc_control_response,
             const.MQTT_CONTROL_TOPIC: self.__handler_topic_hc_control,
-            "test": self.__test,
+            "aaabbbccc": self.__test,
         }
         func = switcher.get(topic)
         func(message)
@@ -55,6 +55,7 @@ class MqttDataHandler(IHandler):
         if self.__globalVariables.PingCloudSuccessFlag:
             send_data = [const.SIGNALR_APP_RESPONSE_ENTITY, data]
             self.__signalr.send(self.__globalVariables.DormitoryId, send_data)
+            
             cmd: str
             data: str
 
