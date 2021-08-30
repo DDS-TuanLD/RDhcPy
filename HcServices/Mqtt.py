@@ -54,7 +54,6 @@ class Mqtt(ITransport):
     def __on_connect(self, client, userdata, flags, rc):
         self.__client.subscribe(topic=const.MQTT_RESPONSE_TOPIC, qos=self.__mqttConfig.qos)
         self.__client.subscribe(topic=const.MQTT_CONTROL_TOPIC, qos=self.__mqttConfig.qos)
-        self.__client.subscribe(topic="test", qos=self.__mqttConfig.qos)
 
     def send(self, destination, send_data):
         self.__client.publish(destination, payload=send_data, qos=const.MQTT_QOS)
@@ -67,7 +66,7 @@ class Mqtt(ITransport):
         self.__client.on_connect = self.__on_connect
         self.__client.username_pw_set(username=self.__mqttConfig.username, password=self.__mqttConfig.password)
         try:
-            self.__client.connect(self.__mqttConfig.host, self.__mqttConfig.port)
+            self.__client.connect("broker.mqttdashboard.com", self.__mqttConfig.port)
             self.__client.loop_start()
         except Exception as err:
             self.__logger.error(f"Exception in connect to mqtt: {err}")

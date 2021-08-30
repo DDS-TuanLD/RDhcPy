@@ -58,7 +58,7 @@ class RdHc(IController):
             print("Hc send heartbeat to cloud")
             self.__logger.info("Hc send heartbeat to cloud")
             
-            await asyncio.sleep(60)
+            await asyncio.sleep(20)
 
             request_time_count = datetime.datetime.now().timestamp()
             if self.__globalVariables.DisconnectTime is None:

@@ -28,7 +28,6 @@ class MqttDataHandler(IHandler):
         switcher = {
             const.MQTT_RESPONSE_TOPIC: self.__handler_topic_hc_control_response,
             const.MQTT_CONTROL_TOPIC: self.__handler_topic_hc_control,
-            "aaabbbccc": self.__test,
         }
         func = switcher.get(topic)
         func(message)
@@ -49,34 +48,35 @@ class MqttDataHandler(IHandler):
         loop.create_task(self.__check_and_reconnect_signalr_when_have_internet())
 
     def __handler_topic_hc_control_response(self, data):
+        if self.__globalVariables.AllowChangeCloudAccountFlag:
+            return
         print("data from topic HC.CONTROL.RESPONSE: " + data)
         self.__logger.debug("data from topic HC.CONTROL.RESPONSE: " + data)
-
         if self.__globalVariables.PingCloudSuccessFlag:
             send_data = [const.SIGNALR_APP_RESPONSE_ENTITY, data]
             self.__signalr.send(self.__globalVariables.DormitoryId, send_data)
             
             cmd: str
-            data: str
+            dt: str
 
             try:
-                dt = json.loads(data)
+                json_data = json.loads(data)
                 try:
-                    cmd = dt["CMD"]
+                    cmd = json_data["CMD"]
                 except:
                     cmd = ""
 
                 try:
-                    data = dt["DATA"]
+                    dt = json_data["DATA"]
                 except:
-                    data = ""
+                    dt = ""
 
                 switcher = {
                     "DEVICE": self.__handler_cmd_device,
                     "RESET_HC": self.__handler_cmd_hc_disconnect_with_app
                 }
                 func = switcher.get(cmd)
-                func(data)
+                func(dt)
             except:
                 self.__logger.error("mqtt data receiver in topic HC.CONTROL.RESPONSE invalid")
 
@@ -84,29 +84,26 @@ class MqttDataHandler(IHandler):
         print("data from topic HC.CONTROL: " + data)
         self.__logger.debug("data from topic HC.CONTROL: " + data)
         cmd: str
-        data: str
+        dt: str
 
         try:
-            dt = json.loads(data)
-            try:
-                cmd = dt["CMD"]
-            except:
-                cmd = ""
+            json_data = json.loads(data)
+            cmd = json_data.get("CMD")
+            dt = json_data.get("DATA")
 
-            try:
-                data = dt["DATA"]
-            except:
-                data = ""
 
             switcher = {
                 "HC_CONNECT_TO_CLOUD": self.__handler_cmd_hc_connect_to_cloud,
             }
             func = switcher.get(cmd)
-            func(data)
+            func(dt)
         except:
             self.__logger.error("mqtt data receiver in topic HC.CONTROL invalid")
 
     def __handler_cmd_device(self, data):
+        print("aaaaa")
+        if self.__globalVariables.AllowChangeCloudAccountFlag:
+             return
         signal_data = []
         try:
             for i in range(len(data['PROPERTIES'])):

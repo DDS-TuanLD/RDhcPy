@@ -160,6 +160,7 @@ class System:
         session = aiohttp.ClientSession()
         res = await h.post(session, req)
         await session.close()
+        print(f"res: {res}")
         try:
             if (res != "") and (res.status == http.HTTPStatus.OK):
                 return True
