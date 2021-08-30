@@ -1,1 +1,1 @@
-Comnunicate ưith cloud via signalr
+Comnunicate with cloud via signalr
