@@ -77,8 +77,30 @@ class System:
     def __init__(self, logger: logging.Logger):
         self.__logger = logger
 
+    def get_gateway_mac(self):
+        mac_len = 17
+        s = execute_with_result('ifconfig')
+        dt = s[1].split("\n")
+        for i in dt:
+            if str(i).find("eth0") != -1:
+                last_mac_character = len(i) -2
+                self.__globalVariables.GatewayMac = i[last_mac_character-mac_len:last_mac_character]
+                break
+        return
+
+    async def gateway_report_online_status(self, h: Http):
+        heartbeat_url = const.SERVER_HOST + const.SIGNALR_GW_HEARTBEAT_URL
+        header = h.create_new_http_header(cookie="", domitory_id=self.__globalVariables.DormitoryId)
+        gw_report_body_data = {
+            "macAddress": self.__globalVariables.GatewayMac
+        }
+        req = h.create_new_http_request(url=heartbeat_url, header=header, body_data=gw_report_body_data)
+        session = aiohttp.ClientSession()
+        res = await h.post(session, req)
+        await session.close()
+        print(res)
+
     async def __check_and_reconnect_signalr_when_change_wifi(self, signalr: ITransport):
-        s = System(self.__logger)
         while not ping_google():
             await asyncio.sleep(2)
         while not self.__globalVariables.PingCloudSuccessFlag:
@@ -111,7 +133,7 @@ class System:
 
     async def update_reconnect_status_to_db(self, reconnect_time: datetime.datetime):
         rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
-        r = rel.first()
+        r = rel.fetchone()
         s = systemConfiguration(IsConnect=True, DisconnectTime=r['DisconnectTime'], ReconnectTime=reconnect_time,
                                 IsSync=r['IsSync'])
         self.__db.Services.SystemConfigurationServices.UpdateSysConfigurationById(id=1, sysConfig=s)
@@ -119,8 +141,10 @@ class System:
 
     def update_disconnect_status_to_db(self, disconnect_time: datetime.datetime):
         s = systemConfiguration(IsConnect=False, DisconnectTime=disconnect_time, ReconnectTime=None, IsSync=False)
+        if disconnect_time is None:
+            s.DisconnectTime = datetime.datetime.now()
         rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
-        r = rel.first()
+        r = rel.fetchone()
         if r is None:
             self.__db.Services.SystemConfigurationServices.AddNewSysConfiguration(s)
         if r is not None and r["IsSync"] != "False":
@@ -129,7 +153,7 @@ class System:
     async def recheck_reconnect_status_of_last_activation(self):
         if not self.__globalVariables.RecheckConnectionStatusInDbFlag:
             rel = self.__db.Services.SystemConfigurationServices.FindSysConfigurationById(id=1)
-            r = rel.first()
+            r = rel.fetchone()
 
             if r is None:
                 s = systemConfiguration(IsConnect=True, DisconnectTime=datetime.datetime.now(),
@@ -142,10 +166,17 @@ class System:
                                     ReconnectTime=r['ReconnectTime'], IsSync=r['IsSync'])
 
             if r["ReconnectTime"] is None:
-                await self.update_reconnect_status_to_db(datetime.datetime.now())
+                reconnectTime = datetime.datetime.now()
+                await self.update_reconnect_status_to_db(reconnectTime)
+                s.ReconnectTime = reconnectTime
+                s.IsConnect = True
+                ok = await self.__push_data_to_cloud(r["DisconnectTime"], s)
+                if ok:
+                    self.__globalVariables.RecheckConnectionStatusInDbFlag = True
                 return
 
             if r["ReconnectTime"] is not None and r["IsSync"] == "False":
+                s.IsConnect = True
                 ok = await self.__push_data_to_cloud(r["DisconnectTime"], s)
                 if ok:
                     self.__globalVariables.RecheckConnectionStatusInDbFlag = True
@@ -160,9 +191,8 @@ class System:
         session = aiohttp.ClientSession()
         res = await h.post(session, req)
         await session.close()
-        print(f"res: {res}")
         try:
-            if (res != "") and (res.status == http.HTTPStatus.OK):
+            if res.status == http.HTTPStatus.OK:
                 return True
         except:
             return False
@@ -217,7 +247,7 @@ class System:
         print(f"data push to cloud: {data_send_to_cloud}")
         self.__logger.info(f"data push to cloud: {data_send_to_cloud}")
         res = await self.__send_http_request_to_push_url(data=data_send_to_cloud)
-        print(f"pull data response: {res}")
+        print(f"push data response: {res}")
         self.__logger.info(f"pull data response: {res}")
         if res == "":
             print("Push data failure")

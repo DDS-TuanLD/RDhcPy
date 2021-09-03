@@ -52,31 +52,25 @@ class MqttDataHandler(IHandler):
             return
         print("data from topic HC.CONTROL.RESPONSE: " + data)
         self.__logger.debug("data from topic HC.CONTROL.RESPONSE: " + data)
+
         if self.__globalVariables.PingCloudSuccessFlag:
-            send_data = [const.SIGNALR_APP_RESPONSE_ENTITY, data]
-            self.__signalr.send(self.__globalVariables.DormitoryId, send_data)
-            
+
             cmd: str
             dt: str
 
             try:
                 json_data = json.loads(data)
-                try:
-                    cmd = json_data["CMD"]
-                except:
-                    cmd = ""
+                cmd = json_data.get("CMD")
+                dt = json_data.get("DATA")
 
-                try:
-                    dt = json_data["DATA"]
-                except:
-                    dt = ""
+                self.__hc_check_cmd_and_send_response_to_cloud(cmd, data)
 
                 switcher = {
                     "DEVICE": self.__handler_cmd_device,
-                    "RESET_HC": self.__handler_cmd_hc_disconnect_with_app
                 }
                 func = switcher.get(cmd)
                 func(dt)
+
             except:
                 self.__logger.error("mqtt data receiver in topic HC.CONTROL.RESPONSE invalid")
 
@@ -90,10 +84,9 @@ class MqttDataHandler(IHandler):
             json_data = json.loads(data)
             cmd = json_data.get("CMD")
             dt = json_data.get("DATA")
-
-
             switcher = {
                 "HC_CONNECT_TO_CLOUD": self.__handler_cmd_hc_connect_to_cloud,
+                "RESET_HC": self.__handler_cmd_hc_disconnect_with_app
             }
             func = switcher.get(cmd)
             func(dt)
@@ -101,9 +94,8 @@ class MqttDataHandler(IHandler):
             self.__logger.error("mqtt data receiver in topic HC.CONTROL invalid")
 
     def __handler_cmd_device(self, data):
-        print("aaaaa")
         if self.__globalVariables.AllowChangeCloudAccountFlag:
-             return
+            return
         signal_data = []
         try:
             for i in range(len(data['PROPERTIES'])):
@@ -116,8 +108,6 @@ class MqttDataHandler(IHandler):
         except:
             self.__logger.debug("data of cmd Device invalid")
             print("data of cmd Device invalid")
-            
-        print(signal_data)
 
         if signal_data:
             send_data = [const.SIGNALR_CLOUD_RESPONSE_ENTITY, json.dumps(signal_data)]
@@ -159,7 +149,7 @@ class MqttDataHandler(IHandler):
         if dt is None:
             db.Services.UserdataServices.AddNewUserData(newUserData=user_data)
             return
-        
+
         self.__globalVariables.ResetSignalrConnectFlag = True
 
     def __handler_cmd_hc_disconnect_with_app(self, data):
@@ -177,3 +167,21 @@ class MqttDataHandler(IHandler):
                              dormitoryId=self.__globalVariables.DormitoryId,
                              allowChangeAccount=self.__globalVariables.AllowChangeCloudAccountFlag)
         db.Services.UserdataServices.UpdateUserDataById(id=1, newUserData=user_data)
+
+    def __hc_check_cmd_and_send_response_to_cloud(self, cmd: str, data: str):
+        room_response_cmd = ["CREATE_ROOM", "ADD_DEVICE_TO_ROOM", "REMOVE_DEVICE_FROM_ROOM"]
+        scene_response_cmd = ["CREATE_SCENE", "EDIT_SCENE"]
+        if room_response_cmd.count(cmd) > 0:
+            send_data = [const.SIGNALR_APP_ROOM_RESPONSE_ENTITY, data]
+            self.__signalr.send(self.__globalVariables.DormitoryId, send_data)
+            return
+
+        if scene_response_cmd.count(cmd) > 0:
+            send_data = [const.SIGNALR_APP_SCENE_RESPONSE_ENTITY, data]
+            self.__signalr.send(self.__globalVariables.DormitoryId, send_data)
+            return
+
+        if (room_response_cmd + scene_response_cmd).count(cmd) == 0:
+            send_data = [const.SIGNALR_APP_DEVICE_RESPONSE_ENTITY, data]
+            self.__signalr.send(self.__globalVariables.DormitoryId, send_data)
+            return

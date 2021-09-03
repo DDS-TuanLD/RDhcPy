@@ -21,6 +21,8 @@ class GlobalVariables(metaclass=MetaGlobalVariables):
     __pingCloudSuccess: bool
     __pingGoogleStatus: bool
     __allowChangeCloudAccount: bool
+    __currentWifiName: str
+    __gatewayMac: str
 
     def __init__(self):
         self.__signalrConnectSuccess = False
@@ -34,6 +36,15 @@ class GlobalVariables(metaclass=MetaGlobalVariables):
         self.__pingGoogleStatus = False
         self.__allowChangeCloudAccount = False
         self.__currentWifiName = ""
+        self.__gatewayMac = ""
+
+    @property
+    def GatewayMac(self):
+        return self.__gatewayMac
+
+    @GatewayMac.setter
+    def GatewayMac(self, mac: str):
+        self.__gatewayMac = mac
 
     @property
     def PingGoogleSuccessFlag(self):

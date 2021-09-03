@@ -6,8 +6,11 @@ SERVER_HOST = "https://iot-dev.truesight.asia"
 # SignalR connection option
 SIGNALR_SERVER_URL = "/rpc/iot-ebe/signalr/sync"
 SIGNSLR_HEARDBEAT_URL = "/rpc/iot-ebe/sync/time"
+SIGNALR_GW_HEARTBEAT_URL = "/rpc/iot-ebe/sync/hc/ping"
 SIGNALR_APP_COMMAND_ENTITY = "Command"
-SIGNALR_APP_RESPONSE_ENTITY = "DeviceResponse"
+SIGNALR_APP_DEVICE_RESPONSE_ENTITY = "DeviceResponse"
+SIGNALR_APP_ROOM_RESPONSE_ENTITY = "RoomResponse"
+SIGNALR_APP_SCENE_RESPONSE_ENTITY = "SceneResponse"
 SIGNALR_CLOUD_RESPONSE_ENTITY = "HC-DeviceAttributeValue"
 
 # pull,push data url
