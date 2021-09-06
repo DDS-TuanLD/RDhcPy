@@ -88,9 +88,11 @@ class System:
                 break
         return
 
-    async def gateway_report_online_status(self, h: Http):
+    async def send_http_request_to_gw_online_status_url(self, h: Http):
+        token = await self.__get_token(h)
+        cookie = f"Token={token}"
         heartbeat_url = const.SERVER_HOST + const.SIGNALR_GW_HEARTBEAT_URL
-        header = h.create_new_http_header(cookie="", domitory_id=self.__globalVariables.DormitoryId)
+        header = h.create_new_http_header(cookie=cookie, domitory_id=self.__globalVariables.DormitoryId)
         gw_report_body_data = {
             "macAddress": self.__globalVariables.GatewayMac
         }
@@ -98,7 +100,6 @@ class System:
         session = aiohttp.ClientSession()
         res = await h.post(session, req)
         await session.close()
-        print(res)
 
     async def __check_and_reconnect_signalr_when_change_wifi(self, signalr: ITransport):
         while not ping_google():
@@ -186,7 +187,7 @@ class System:
 
     async def send_http_request_to_heartbeat_url(self, h: Http):
         heartbeat_url = const.SERVER_HOST + const.SIGNSLR_HEARDBEAT_URL
-        header = h.create_new_http_header(cookie="", domitory_id=self.__globalVariables.DormitoryId)
+        header = h.create_new_http_header(cookie='', domitory_id=self.__globalVariables.DormitoryId)
         req = h.create_new_http_request(url=heartbeat_url, header=header)
         session = aiohttp.ClientSession()
         res = await h.post(session, req)

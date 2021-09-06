@@ -6,13 +6,12 @@ import datetime
 import logging
 import threading
 from Contracts.ITransport import ITransport
-from Contracts.IController import IController
 from Helper.System import System, eliminate_current_progress, ping_google, check_and_kill_all_repeat_progress
 from Contracts.IHandler import IHandler
 from Helper.Terminal import execute_with_result, execute
 
 
-class RdHc(IController):
+class RdHc:
     __httpServices: Http
     __signalServices: ITransport
     __mqttServices: ITransport
@@ -106,14 +105,18 @@ class RdHc(IController):
                     eliminate_current_progress()
             await asyncio.sleep(55)
 
+    #check time of ping cloud request
+    #support to detect cloud disconnect fastly
     def __hc_check_request_timeout(self, request_time_count: float):
-        t = datetime.datetime.now().timestamp()
-        if 90 > t - request_time_count > 60:
+        current_timestamp = datetime.datetime.now().timestamp()
+        request_time_out_min = 60
+        request_time_out_max = 120
+        if request_time_out_max > current_timestamp - request_time_count > request_time_out_min:
             self.__globalVariables.PingCloudSuccessFlag = False
             self.__globalVariables.RecheckConnectionStatusInDbFlag = False
             self.__hc_update_disconnect_status_to_db()
             return
-        if t - request_time_count > 90:
+        if current_timestamp - request_time_count > request_time_out_max:
             self.__hc_update_disconnect_status_to_db()
             self.__logger.info("eliminate program")
             eliminate_current_progress()
@@ -155,13 +158,14 @@ class RdHc(IController):
         while True:
             await asyncio.sleep(0.1)
             if self.__globalVariables.PingCloudSuccessFlag:
-                await s.gateway_report_online_status(self.__httpServices)
+                await s.send_http_request_to_gw_online_status_url(self.__httpServices)
                 await asyncio.sleep(report_time_interval)
 
     def __hc_get_gateway_mac(self):
         s = System(self.__logger)
         s.get_gateway_mac()
 
+    #load refresh token and dormitoryId from db in runtime
     def __hc_load_user_data(self):
         db = Db()
         user_data = db.Services.UserdataServices.FindUserDataById(id=1)
@@ -171,10 +175,12 @@ class RdHc(IController):
             self.__globalVariables.RefreshToken = dt["RefreshToken"]
             self.__globalVariables.AllowChangeCloudAccountFlag = dt["AllowChangeAccount"]
 
+    #load current wifi SSID
     def __hc_load_current_wifi_name(self):
         s = System(self.__logger)
         s.update_current_wifi_name()
 
+    #checking when wifi is changed
     async def __hc_check_wifi_change(self):
         s = System(self.__logger)
         checking_waiting_time = 10

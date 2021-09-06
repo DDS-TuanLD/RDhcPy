@@ -59,24 +59,27 @@ class Signalr(ITransport):
         return self
 
     def __on_receive_event(self):
-        self.__hub.on("Receive", self.__data_pre_handler)
+        self.__hub.on("Receive", self.__receive_event_callback)
+        
+    def __receive_event_callback(self, data):
+        with self.__lock:
+            self.receive_data_queue.put(data)
 
     def __on_disconnect_event(self):
-        self.__hub.on_close(self.__disconnect)
+        self.__hub.on_close(self.__disconnect_event_callback)
 
-    def __disconnect(self):
+    def __disconnect_event_callback(self):
         print("disconnect to signalr server")
         self.__logger.debug("Disconnect to signalr server")
         self.__disconnectFlag = 0
         self.__disconnectRetryCount = 0
 
     def __on_connect_event(self):
-        self.__hub.on_open(lambda: print("Connect to signalr server"))
-        self.__logger.debug("Connect to signalr server")
+        self.__hub.on_open(self.__connect_event_callback())
 
-    def __data_pre_handler(self, data):
-        with self.__lock:
-            self.receive_data_queue.put(data)
+    def __connect_event_callback(self):
+        print("Connect to signalr server")
+        self.__logger.debug("Connect to signalr server")
 
     async def disconnect(self):
         self.__disconnectFlag = 1
@@ -115,7 +118,7 @@ class Signalr(ITransport):
         while True:
             if self.__globalVariables.ResetSignalrConnectFlag:
                 await self.disconnect()
-                self.reconnect()
+                self.__hub.start()
                 self.__globalVariables.ResetSignalrConnectFlag = False
                   
             try:

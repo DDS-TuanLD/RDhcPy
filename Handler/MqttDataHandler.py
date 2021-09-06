@@ -33,20 +33,6 @@ class MqttDataHandler(IHandler):
         func(message)
         return
 
-    async def __check_and_reconnect_signalr_when_have_internet(self):
-        s = System(self.__logger)
-        while not ping_google():
-            await asyncio.sleep(2)
-        while not self.__globalVariables.PingCloudSuccessFlag:
-            await asyncio.sleep(2)
-        await self.__signalr.disconnect()
-        self.__signalr.reconnect()
-        self.__globalVariables.NeedReconnectSignalrServerFlag = False
-
-    def __test(self, data):
-        loop = asyncio.get_running_loop()
-        loop.create_task(self.__check_and_reconnect_signalr_when_have_internet())
-
     def __handler_topic_hc_control_response(self, data):
         if self.__globalVariables.AllowChangeCloudAccountFlag:
             return
@@ -55,13 +41,10 @@ class MqttDataHandler(IHandler):
 
         if self.__globalVariables.PingCloudSuccessFlag:
 
-            cmd: str
-            dt: str
-
             try:
                 json_data = json.loads(data)
-                cmd = json_data.get("CMD")
-                dt = json_data.get("DATA")
+                cmd = json_data.get("CMD", "")
+                dt = json_data.get("DATA", "")
 
                 self.__hc_check_cmd_and_send_response_to_cloud(cmd, data)
 
@@ -77,16 +60,14 @@ class MqttDataHandler(IHandler):
     def __handler_topic_hc_control(self, data):
         print("data from topic HC.CONTROL: " + data)
         self.__logger.debug("data from topic HC.CONTROL: " + data)
-        cmd: str
-        dt: str
 
         try:
             json_data = json.loads(data)
-            cmd = json_data.get("CMD")
-            dt = json_data.get("DATA")
+            cmd = json_data.get("CMD", "")
+            dt = json_data.get("DATA", "")
             switcher = {
                 "HC_CONNECT_TO_CLOUD": self.__handler_cmd_hc_connect_to_cloud,
-                "RESET_HC": self.__handler_cmd_hc_disconnect_with_app
+                "RESET_HC": self.__handler_cmd_reset_hc
             }
             func = switcher.get(cmd)
             func(dt)
@@ -119,18 +100,8 @@ class MqttDataHandler(IHandler):
 
     def __handler_cmd_hc_connect_to_cloud(self, data):
         db = Db()
-        dormitory_id: str
-        refresh_token: str
-
-        try:
-            dormitory_id = data["DORMITORY_ID"]
-        except:
-            dormitory_id = ""
-
-        try:
-            refresh_token = data["REFRESH_TOKEN"]
-        except:
-            refresh_token = ""
+        dormitory_id = data.get("DORMITORY_ID", "")
+        refresh_token = data.get("REFRESH_TOKEN", "")
 
         if not self.__globalVariables.AllowChangeCloudAccountFlag and self.__globalVariables.DormitoryId != "":
             return
@@ -152,9 +123,10 @@ class MqttDataHandler(IHandler):
 
         self.__globalVariables.ResetSignalrConnectFlag = True
 
-    def __handler_cmd_hc_disconnect_with_app(self, data):
-        print("Allow to change account")
+    def __handler_cmd_reset_hc(self, data):
+        print("Allow to change account, now new account can log in")
         self.__logger.info("Allow to change account, now new account can log in")
+
         db = Db()
         self.__globalVariables.AllowChangeCloudAccountFlag = True
 
@@ -166,6 +138,7 @@ class MqttDataHandler(IHandler):
         user_data = userData(refreshToken=self.__globalVariables.RefreshToken,
                              dormitoryId=self.__globalVariables.DormitoryId,
                              allowChangeAccount=self.__globalVariables.AllowChangeCloudAccountFlag)
+
         db.Services.UserdataServices.UpdateUserDataById(id=1, newUserData=user_data)
 
     def __hc_check_cmd_and_send_response_to_cloud(self, cmd: str, data: str):

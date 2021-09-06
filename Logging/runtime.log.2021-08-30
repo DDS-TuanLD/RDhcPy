@@ -1,0 +1,1432 @@
+2021-08-03 09:35:56,920:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-03 09:35:57,160:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 09:36:17,221:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 09:36:37,305:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 09:36:53,993:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-03 09:36:54,098:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-03 09:36:54,099:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-03 09:36:57,370:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 09:37:17,425:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 09:37:34,539:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():53	data from topic HC.CONTROL.RESPONSE: {
+    "CMD": "DEVICE",
+    "DATA":
+        {
+        "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+        "PROPERTIES":[
+            {
+                "ID": 0,
+                "VALUE": 1
+            },
+            {
+                "ID": 0,
+                "VALUE": 1
+            }
+        ]
+    }
+}
+2021-08-03 09:37:34,640:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {
+    "CMD": "DEVICE",
+    "DATA":
+        {
+        "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+        "PROPERTIES":[
+            {
+                "ID": 0,
+                "VALUE": 1
+            },
+            {
+                "ID": 0,
+                "VALUE": 1
+            }
+        ]
+    }
+}
+2021-08-03 09:37:34,640:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-08-03 09:37:36,804:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "b717f8d8-6f18-43c0-ae46-69c32998f653", "deviceAttributeId": 0, "value": 1}, {"deviceId": "b717f8d8-6f18-43c0-ae46-69c32998f653", "deviceAttributeId": 0, "value": 1}]
+2021-08-03 09:37:36,805:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-08-03 09:37:37,481:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 09:37:57,533:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 09:38:08,077:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():53	data from topic HC.CONTROL.RESPONSE: {
+    "CMD": "DEVICE",
+    "DATA":
+        {
+        "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+        "PROPERTIES":[
+            {
+                "ID": 0,
+                "VALUE": 1
+            }
+        ]
+    }
+}
+2021-08-03 09:38:08,178:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {
+    "CMD": "DEVICE",
+    "DATA":
+        {
+        "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+        "PROPERTIES":[
+            {
+                "ID": 0,
+                "VALUE": 1
+            }
+        ]
+    }
+}
+2021-08-03 09:38:08,179:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-08-03 09:38:08,280:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "b717f8d8-6f18-43c0-ae46-69c32998f653", "deviceAttributeId": 0, "value": 1}]
+2021-08-03 09:38:08,281:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-08-03 09:38:17,663:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 13:50:28,256:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-03 13:50:28,510:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 13:52:08,522:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-08-03 13:52:08,523:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():169	Allow to change account, now new account can log in
+2021-08-03 13:52:08,635:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():53	data from topic HC.CONTROL.RESPONSE: {
+        "CMD": "HC_DISCONNECT_WITH_APP",
+        "DATA": {
+            "STATUS": "success"
+        }
+        }
+2021-08-03 13:52:28,565:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 13:52:57,607:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "bd25cee0-3864-481b-ade9-c3408a812532",
+    "REFRESH_TOKEN": "yEj5jA1mfZQ2kLkdzap86PkcL0IuTv3y2/92TcwOCrehrBc02n8OvfQ5/jovFX4oJ4PL0qs6TB+5NOyBaGvr95uuvq/Pw1uWUEWWrIJAfFOOVNVf9VdvCX6Kn69UqTmcDbB1845S8f50FjQnBGhsVs0SXPVl1Ccvnw7Y/rZtOzNB/rVxJQR/iyxIXTbeZPLlC69/ZHjFF8i6+b+T1aL4SgGBxcBrILT4W/YJfoSwQ0A="
+  }
+}
+2021-08-03 13:53:03,080:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-08-03 13:53:03,083:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-08-03 13:53:03,838:	ERROR:	Signalr.py:reconnect():135	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-08-03 13:54:28,716:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 13:56:28,758:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 13:58:28,825:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:00:07,724:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-03 14:00:08,089:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:00:18,007:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-03 14:00:18,110:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-03 14:00:18,110:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():106	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-03 14:00:32,506:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-08-03 14:00:32,506:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():169	Allow to change account, now new account can log in
+2021-08-03 14:00:32,625:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():53	data from topic HC.CONTROL.RESPONSE: {
+        "CMD": "HC_DISCONNECT_WITH_APP",
+        "DATA": {
+            "STATUS": "success"
+        }
+        }
+2021-08-03 14:02:13,273:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:02:45,987:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "881efd8a-0b60-4ff3-9075-b436fae31f7f",
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2lnqbl3sZk+Uv/gjwvlmJNLhu1dycAYjDIGAt6PXW0KEI1AkAdWvsj/lnvB8D/c5m+WI+Wuk+OapvTTSjwSliKA9ZvaqRv4sUWqJdGiyRnV/bNa+vMMcajFlpZa1+tI/CtLe4bN5RwJTwNH7Gx2jylR+QDAc3sJeht3c/zStBusmTswgLAx7LBfw10/OeFsWxi+XlSRRXwY9xd1i9BxMABEoCWyY4Qfj0Kp2l51FRxPVX"
+  }
+}
+2021-08-03 14:02:53,251:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-08-03 14:02:53,251:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-08-03 14:02:53,488:	ERROR:	Signalr.py:reconnect():136	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-08-03 14:04:13,430:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:04:57,084:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-03 14:04:57,286:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:05:11,067:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-08-03 14:05:11,068:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():169	Allow to change account, now new account can log in
+2021-08-03 14:05:11,191:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():53	data from topic HC.CONTROL.RESPONSE: {
+        "CMD": "HC_DISCONNECT_WITH_APP",
+        "DATA": {
+            "STATUS": "success"
+        }
+        }
+2021-08-03 14:05:57,812:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:06:17,781:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "bd25cee0-3864-481b-ade9-c3408a812532",
+    "REFRESH_TOKEN": "yEj5jA1mfZQ2kLkdzap86PkcL0IuTv3y2/92TcwOCrehrBc02n8OvfQ5/jovFX4oJ4PL0qs6TB+5NOyBaGvr95uuvq/Pw1uWUEWWrIJAfFOOVNVf9VdvCX6Kn69UqTmcDbB1845S8f50FjQnBGhsVs0SXPVl1Ccvnw7Y/rZtOzNB/rVxJQR/iyxIXTbeZPLlC69/ZHjFF8i6+b+T1aL4SgGBxcBrILT4W/YJfoSwQ0A="
+  }
+}
+2021-08-03 14:06:52,647:	ERROR:	Signalr.py:disconnect():92	Disconnect signalr timeout
+2021-08-03 14:10:16,280:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-03 14:10:16,517:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:11:16,675:	INFO:	System.py:__push_data_to_cloud():178	have no data to push
+2021-08-03 14:11:16,678:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:11:27,969:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-08-03 14:11:27,970:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():169	Allow to change account, now new account can log in
+2021-08-03 14:11:28,078:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():53	data from topic HC.CONTROL.RESPONSE: {
+        "CMD": "HC_DISCONNECT_WITH_APP",
+        "DATA": {
+            "STATUS": "success"
+        }
+        }
+2021-08-03 14:11:28,080:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control_response():79	mqtt data receiver in topic HC.CONTROL.RESPONSE invalid
+2021-08-03 14:11:52,518:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "881efd8a-0b60-4ff3-9075-b436fae31f7f",
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2lnqbl3sZk+Uv/gjwvlmJNLhu1dycAYjDIGAt6PXW0KEI1AkAdWvsj/lnvB8D/c5m+WI+Wuk+OapvTTSjwSliKA9ZvaqRv4sUWqJdGiyRnV/bNa+vMMcajFlpZa1+tI/CtLe4bN5RwJTwNH7Gx2jylR+QDAc3sJeht3c/zStBusmTswgLAx7LBfw10/OeFsWxi+XlSRRXwY9xd1i9BxMABEoCWyY4Qfj0Kp2l51FRxPVX"
+  }
+}
+2021-08-03 14:11:59,162:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-08-03 14:11:59,163:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-08-03 14:11:59,551:	ERROR:	Signalr.py:reconnect():139	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-08-03 14:12:16,679:	INFO:	RdHc.py:__hc_check_connect_with_cloud():65	can not ping to cloud
+2021-08-03 14:12:16,679:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:13:16,885:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:14:16,992:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:14:56,697:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-03 14:14:56,854:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:15:15,132:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-08-03 14:15:15,133:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():169	Allow to change account, now new account can log in
+2021-08-03 14:15:15,239:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():53	data from topic HC.CONTROL.RESPONSE: {
+        "CMD": "HC_DISCONNECT_WITH_APP",
+        "DATA": {
+            "STATUS": "success"
+        }
+        }
+2021-08-03 14:15:57,038:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:16:57,097:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:17:24,260:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "bd25cee0-3864-481b-ade9-c3408a812532",
+    "REFRESH_TOKEN": "yEj5jA1mfZQ2kLkdzap86PkcL0IuTv3y2/92TcwOCrehrBc02n8OvfQ5/jovFX4oJ4PL0qs6TB+5NOyBaGvr95uuvq/Pw1uWUEWWrIJAfFOOVNVf9VdvCX6Kn69UqTmcDbB1845S8f50FjQnBGhsVs0SXPVl1Ccvnw7Y/rZtOzNB/rVxJQR/iyxIXTbeZPLlC69/ZHjFF8i6+b+T1aL4SgGBxcBrILT4W/YJfoSwQ0A="
+  }
+}
+2021-08-03 14:17:27,897:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-08-03 14:17:28,901:	ERROR:	Signalr.py:reconnect():139	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-08-03 14:17:57,099:	INFO:	RdHc.py:__hc_check_connect_with_cloud():65	can not ping to cloud
+2021-08-03 14:17:57,102:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:18:11,199:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-03 14:18:11,375:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:18:18,926:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-08-03 14:18:18,927:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():169	Allow to change account, now new account can log in
+2021-08-03 14:18:19,036:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():53	data from topic HC.CONTROL.RESPONSE: {
+        "CMD": "HC_DISCONNECT_WITH_APP",
+        "DATA": {
+            "STATUS": "success"
+        }
+        }
+2021-08-03 14:19:11,596:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:19:36,144:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "881efd8a-0b60-4ff3-9075-b436fae31f7f",
+    "REFRESH_TOKEN": "OGj2Lo8elXRxCiOit9i2lnqbl3sZk+Uv/gjwvlmJNLhu1dycAYjDIGAt6PXW0KEI1AkAdWvsj/lnvB8D/c5m+WI+Wuk+OapvTTSjwSliKA9ZvaqRv4sUWqJdGiyRnV/bNa+vMMcajFlpZa1+tI/CtLe4bN5RwJTwNH7Gx2jylR+QDAc3sJeht3c/zStBusmTswgLAx7LBfw10/OeFsWxi+XlSRRXwY9xd1i9BxMABEoCWyY4Qfj0Kp2l51FRxPVX"
+  }
+}
+2021-08-03 14:19:44,183:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-08-03 14:19:44,183:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-08-03 14:19:44,905:	ERROR:	Signalr.py:reconnect():139	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-08-03 14:20:11,598:	INFO:	RdHc.py:__hc_check_connect_with_cloud():65	can not ping to cloud
+2021-08-03 14:20:11,598:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:21:11,599:	INFO:	RdHc.py:__hc_check_connect_with_cloud():65	can not ping to cloud
+2021-08-03 14:21:11,599:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:22:14,235:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-03 14:22:14,240:	ERROR:	Signalr.py:connect():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-08-03 14:22:14,240:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:22:17,243:	ERROR:	Signalr.py:connect():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-08-03 14:22:20,245:	ERROR:	Signalr.py:connect():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-08-03 14:22:23,249:	ERROR:	Signalr.py:connect():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-08-03 14:22:36,971:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-03 14:22:37,127:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:23:37,425:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:23:45,379:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-08-03 14:23:45,379:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():169	Allow to change account, now new account can log in
+2021-08-03 14:23:45,486:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():53	data from topic HC.CONTROL.RESPONSE: {
+        "CMD": "HC_DISCONNECT_WITH_APP",
+        "DATA": {
+            "STATUS": "success"
+        }
+        }
+2021-08-03 14:23:45,487:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control_response():79	mqtt data receiver in topic HC.CONTROL.RESPONSE invalid
+2021-08-03 14:24:31,985:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "bd25cee0-3864-481b-ade9-c3408a812532",
+    "REFRESH_TOKEN": "yEj5jA1mfZQ2kLkdzap86PkcL0IuTv3y2/92TcwOCrehrBc02n8OvfQ5/jovFX4oJ4PL0qs6TB+5NOyBaGvr95uuvq/Pw1uWUEWWrIJAfFOOVNVf9VdvCX6Kn69UqTmcDbB1845S8f50FjQnBGhsVs0SXPVl1Ccvnw7Y/rZtOzNB/rVxJQR/iyxIXTbeZPLlC69/ZHjFF8i6+b+T1aL4SgGBxcBrILT4W/YJfoSwQ0A="
+  }
+}
+2021-08-03 14:24:37,426:	INFO:	RdHc.py:__hc_check_connect_with_cloud():65	can not ping to cloud
+2021-08-03 14:24:37,426:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:24:40,138:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-08-03 14:24:40,139:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-08-03 14:24:40,561:	ERROR:	Signalr.py:reconnect():141	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-08-03 14:25:37,427:	INFO:	RdHc.py:__hc_check_connect_with_cloud():65	can not ping to cloud
+2021-08-03 14:25:37,427:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 14:26:37,568:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 18:06:48,004:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-03 18:06:49,072:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 18:06:56,410:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-08-03 18:06:56,410:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():169	Allow to change account, now new account can log in
+2021-08-03 18:06:56,522:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():53	data from topic HC.CONTROL.RESPONSE: {
+        "CMD": "HC_DISCONNECT_WITH_APP",
+        "DATA": {
+            "STATUS": "success"
+        }
+        }
+2021-08-03 18:07:47,488:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "bd25cee0-3864-481b-ade9-c3408a812532",
+    "REFRESH_TOKEN": "yEj5jA1mfZQ2kLkdzap86PkcL0IuTv3y2/92TcwOCrehrBc02n8OvfQ5/jovFX4oJ4PL0qs6TB+5NOyBaGvr95uuvq/Pw1uWUEWWrIJAfFOOVNVf9VdvCX6Kn69UqTmcDbB1845S8f50FjQnBGhsVs0SXPVl1Ccvnw7Y/rZtOzNB/rVxJQR/iyxIXTbeZPLlC69/ZHjFF8i6+b+T1aL4SgGBxcBrILT4W/YJfoSwQ0A="
+  }
+}
+2021-08-03 18:08:56,420:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-03 18:08:56,423:	ERROR:	Signalr.py:connect():132	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-08-03 18:08:56,424:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 18:09:11,029:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-03 18:09:11,165:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 18:09:19,971:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-08-03 18:09:19,971:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():169	Allow to change account, now new account can log in
+2021-08-03 18:09:20,078:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():53	data from topic HC.CONTROL.RESPONSE: {
+        "CMD": "HC_DISCONNECT_WITH_APP",
+        "DATA": {
+            "STATUS": "success"
+        }
+        }
+2021-08-03 18:09:42,228:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "bd25cee0-3864-481b-ade9-c3408a812532",
+    "REFRESH_TOKEN": "yEj5jA1mfZQ2kLkdzap86PkcL0IuTv3y2/92TcwOCrehrBc02n8OvfQ5/jovFX4oJ4PL0qs6TB+5NOyBaGvr95uuvq/Pw1uWUEWWrIJAfFOOVNVf9VdvCX6Kn69UqTmcDbB1845S8f50FjQnBGhsVs0SXPVl1Ccvnw7Y/rZtOzNB/rVxJQR/iyxIXTbeZPLlC69/ZHjFF8i6+b+T1aL4SgGBxcBrILT4W/YJfoSwQ0A="
+  }
+}
+2021-08-03 18:10:08,196:	ERROR:	Signalr.py:disconnect():92	Disconnect signalr timeout
+2021-08-03 18:11:41,731:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-03 18:11:41,737:	ERROR:	Signalr.py:connect():127	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-08-03 18:11:41,737:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 18:11:45,081:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-03 18:11:45,233:	INFO:	RdHc.py:__hc_check_connect_with_cloud():49	Hc send heartbeat to cloud
+2021-08-03 18:11:51,846:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-08-03 18:11:51,846:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():169	Allow to change account, now new account can log in
+2021-08-03 18:11:51,956:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():53	data from topic HC.CONTROL.RESPONSE: {
+        "CMD": "HC_DISCONNECT_WITH_APP",
+        "DATA": {
+            "STATUS": "success"
+        }
+        }
+2021-08-03 18:12:04,573:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "bd25cee0-3864-481b-ade9-c3408a812532",
+    "REFRESH_TOKEN": "yEj5jA1mfZQ2kLkdzap86PkcL0IuTv3y2/92TcwOCrehrBc02n8OvfQ5/jovFX4oJ4PL0qs6TB+5NOyBaGvr95uuvq/Pw1uWUEWWrIJAfFOOVNVf9VdvCX6Kn69UqTmcDbB1845S8f50FjQnBGhsVs0SXPVl1Ccvnw7Y/rZtOzNB/rVxJQR/iyxIXTbeZPLlC69/ZHjFF8i6+b+T1aL4SgGBxcBrILT4W/YJfoSwQ0A="
+  }
+}
+2021-08-03 18:12:04,675:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-08-03 18:12:16,345:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-08-03 18:12:16,345:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():169	Allow to change account, now new account can log in
+2021-08-03 18:12:16,452:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():53	data from topic HC.CONTROL.RESPONSE: {
+        "CMD": "HC_DISCONNECT_WITH_APP",
+        "DATA": {
+            "STATUS": "success"
+        }
+        }
+2021-08-03 18:12:23,091:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "bd25cee0-3864-481b-ade9-c3408a812532",
+    "REFRESH_TOKEN": "yEj5jA1mfZQ2kLkdzap86PkcL0IuTv3y2/92TcwOCrehrBc02n8OvfQ5/jovFX4oJ4PL0qs6TB+5NOyBaGvr95uuvq/Pw1uWUEWWrIJAfFOOVNVf9VdvCX6Kn69UqTmcDbB1845S8f50FjQnBGhsVs0SXPVl1Ccvnw7Y/rZtOzNB/rVxJQR/iyxIXTbeZPLlC69/ZHjFF8i6+b+T1aL4SgGBxcBrILT4W/YJfoSwQ0A="
+  }
+}
+2021-08-03 18:12:48,140:	ERROR:	Signalr.py:disconnect():92	Disconnect signalr timeout
+2021-08-03 18:27:43,406:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-03 18:27:43,600:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-03 18:27:48,130:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_DISCONNECT_WITH_APP"
+}
+2021-08-03 18:27:48,130:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():169	Allow to change account, now new account can log in
+2021-08-03 18:27:48,235:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():53	data from topic HC.CONTROL.RESPONSE: {
+        "CMD": "HC_DISCONNECT_WITH_APP",
+        "DATA": {
+            "STATUS": "success"
+        }
+        }
+2021-08-03 18:28:01,105:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():83	data from topic HC.CONTROL: {
+  "CMD": "HC_CONNECT_TO_CLOUD",
+  "DATA": {
+    "DORMITORY_ID": "bd25cee0-3864-481b-ade9-c3408a812532",
+    "REFRESH_TOKEN": "yEj5jA1mfZQ2kLkdzap86PkcL0IuTv3y2/92TcwOCrehrBc02n8OvfQ5/jovFX4oJ4PL0qs6TB+5NOyBaGvr95uuvq/Pw1uWUEWWrIJAfFOOVNVf9VdvCX6Kn69UqTmcDbB1845S8f50FjQnBGhsVs0SXPVl1Ccvnw7Y/rZtOzNB/rVxJQR/iyxIXTbeZPLlC69/ZHjFF8i6+b+T1aL4SgGBxcBrILT4W/YJfoSwQ0A="
+  }
+}
+2021-08-03 18:28:15,735:	INFO:	RdHc.py:__hc_update_disconnect_status_to_db():110	Update cloud disconnect status to db
+2021-08-14 21:27:39,916:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-14 21:27:40,575:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 19:48:50,077:	ERROR:	Mqtt.py:connect():73	Exception in connect to mqtt: [WinError 10061] No connection could be made because the target machine actively refused it
+2021-08-30 19:48:50,078:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-30 19:48:50,338:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 19:49:10,496:	INFO:	RdHc.py:__hc_update_disconnect_status_to_db():110	Update cloud disconnect status to db
+2021-08-30 19:49:37,208:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:49:42,151:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:49:47,052:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:49:50,347:	INFO:	RdHc.py:__hc_check_connect_with_cloud():75	can not ping to cloud
+2021-08-30 19:49:50,347:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 19:49:52,111:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:49:57,140:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:50:02,041:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-08-30 19:50:07,122:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:50:12,184:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:50:17,189:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:50:22,187:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:50:27,221:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:50:32,286:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:50:37,321:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:50:42,213:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:50:47,332:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:50:50,361:	INFO:	RdHc.py:__hc_check_connect_with_cloud():75	can not ping to cloud
+2021-08-30 19:50:50,361:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 19:50:52,253:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:50:57,364:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:51:02,398:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:51:07,533:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:51:12,388:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:51:17,382:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:51:22,375:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:51:27,296:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:51:32,409:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:51:37,386:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:51:42,324:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:51:47,405:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:51:50,344:	INFO:	RdHc.py:__hc_check_connect_with_cloud():75	can not ping to cloud
+2021-08-30 19:51:50,344:	INFO:	RdHc.py:__hc_update_disconnect_status_to_db():110	Update cloud disconnect status to db
+2021-08-30 19:51:50,354:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 19:51:52,452:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:51:57,471:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:52:02,377:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:52:07,396:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:52:12,529:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:52:17,550:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:52:22,435:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:52:27,446:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:07,323:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-30 19:53:07,585:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 19:53:12,493:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:13,041:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:13,041:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:53:17,546:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:18,096:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:18,097:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:53:22,554:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:23,103:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:23,104:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:53:27,508:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:27,794:	INFO:	RdHc.py:__hc_update_disconnect_status_to_db():110	Update cloud disconnect status to db
+2021-08-30 19:53:28,052:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:28,052:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:53:32,520:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:33,062:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:33,063:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:53:37,544:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:38,003:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:38,003:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:53:42,571:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:43,337:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:43,337:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:53:47,527:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:48,113:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:48,113:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:53:52,575:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:53,101:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:53,101:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:53:57,596:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:58,396:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:53:58,396:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:54:02,566:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:03,121:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:03,121:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:54:07,594:	INFO:	RdHc.py:__hc_check_connect_with_cloud():75	can not ping to cloud
+2021-08-30 19:54:07,594:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 19:54:07,594:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:08,138:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:08,138:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:54:12,855:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:13,519:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:13,519:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:54:17,792:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:18,336:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:18,336:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:54:22,833:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:23,378:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:23,378:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:54:27,740:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:28,281:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:28,282:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:54:32,739:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:33,394:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:33,394:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:54:37,766:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:38,420:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:38,420:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:54:42,758:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:43,300:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:43,300:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:54:47,766:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:48,322:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:48,322:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:54:52,713:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:53,372:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:53,373:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:54:57,730:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:58,281:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:54:58,282:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:55:02,751:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:03,412:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:03,412:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:55:07,613:	INFO:	RdHc.py:__hc_check_connect_with_cloud():75	can not ping to cloud
+2021-08-30 19:55:07,614:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 19:55:07,783:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:08,330:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:08,330:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:55:12,862:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:13,405:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:13,405:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:55:17,866:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:18,420:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:18,420:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:55:22,815:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:23,347:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:23,348:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:55:27,806:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:28,449:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:28,449:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:55:32,832:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:33,056:	DEBUG:	Signalr.py:__disconnect():69	Disconnect to signalr server
+2021-08-30 19:55:33,407:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:33,407:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:55:42,923:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:43,584:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:43,584:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:55:46,340:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE:  {
+   "CMD": "DEVICE",
+   "DATA": {
+      "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+      "PROPERTIES": [
+         {
+            "ID": 0,
+            "VALUE": 1
+         }
+      ]
+   }
+}
+2021-08-30 19:55:47,841:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:48,384:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:48,384:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:55:53,032:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:53,686:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:53,687:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:55:57,844:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:58,502:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:55:58,503:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:56:02,949:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:56:03,598:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:56:03,598:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:56:07,622:	INFO:	RdHc.py:__hc_check_connect_with_cloud():75	can not ping to cloud
+2021-08-30 19:56:07,623:	INFO:	RdHc.py:__hc_update_disconnect_status_to_db():110	Update cloud disconnect status to db
+2021-08-30 19:56:07,624:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 19:56:07,943:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:56:08,490:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():86	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-08-30 19:56:08,492:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():102	mqtt data receiver in topic HC.CONTROL invalid
+2021-08-30 19:56:11,755:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE:  {
+   "CMD": "DEVICE",
+   "DATA": {
+      "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+      "PROPERTIES": [
+         {
+            "ID": 0,
+            "VALUE": 1
+         }
+      ]
+   }
+}
+2021-08-30 19:56:35,419:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-30 19:56:35,727:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 19:56:37,356:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE:  {
+   "CMD": "DEVICE",
+   "DATA": {
+      "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+      "PROPERTIES": [
+         {
+            "ID": 0,
+            "VALUE": 1
+         }
+      ]
+   }
+}
+2021-08-30 19:56:55,918:	INFO:	RdHc.py:__hc_update_disconnect_status_to_db():110	Update cloud disconnect status to db
+2021-08-30 19:57:26,006:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+  "CMD": "DEVICE",
+  "DATA": {
+    "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+    "PROPERTIES": [
+        {
+          "ID": 0,
+          "VALUE": 1
+        }
+    ]
+  }
+}
+2021-08-30 19:57:35,744:	INFO:	RdHc.py:__hc_check_connect_with_cloud():75	can not ping to cloud
+2021-08-30 19:57:35,744:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 19:58:09,906:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-30 19:58:10,157:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 19:58:11,586:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+  "CMD": "DEVICE",
+  "DATA": {
+    "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+    "PROPERTIES": [
+        {
+          "ID": 0,
+          "VALUE": 1
+        }
+    ]
+  }
+}
+2021-08-30 19:58:30,387:	INFO:	RdHc.py:__hc_update_disconnect_status_to_db():110	Update cloud disconnect status to db
+2021-08-30 19:58:46,797:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-30 19:58:47,311:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 19:58:51,056:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+  "CMD": "DEVICE",
+  "DATA": {
+    "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+    "PROPERTIES": [
+        {
+          "ID": 0,
+          "VALUE": 1
+        }
+    ]
+  }
+}
+2021-08-30 19:59:07,495:	INFO:	RdHc.py:__hc_update_disconnect_status_to_db():110	Update cloud disconnect status to db
+2021-08-30 19:59:14,548:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-30 19:59:15,678:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 19:59:17,826:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+  "CMD": "DEVICE",
+  "DATA": {
+    "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+    "PROPERTIES": [
+        {
+          "ID": 0,
+          "VALUE": 1
+        }
+    ]
+  }
+}
+2021-08-30 19:59:35,909:	INFO:	RdHc.py:__hc_update_disconnect_status_to_db():110	Update cloud disconnect status to db
+2021-08-30 20:00:15,695:	INFO:	RdHc.py:__hc_check_connect_with_cloud():75	can not ping to cloud
+2021-08-30 20:00:15,695:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 20:00:20,504:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-30 20:00:21,962:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 20:00:27,329:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+  "CMD": "DEVICE",
+  "DATA": {
+    "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+    "PROPERTIES": [
+        {
+          "ID": 0,
+          "VALUE": 1
+        }
+    ]
+  }
+}
+2021-08-30 20:00:42,179:	INFO:	RdHc.py:__hc_update_disconnect_status_to_db():110	Update cloud disconnect status to db
+2021-08-30 20:00:52,809:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+  "CMD": "DEVICE",
+  "DATA": {
+    "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+    "PROPERTIES": [
+        {
+          "ID": 0,
+          "VALUE": 1
+        }
+    ]
+  }
+}
+2021-08-30 20:02:54,418:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-30 20:02:54,810:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 20:03:14,799:	INFO:	RdHc.py:__hc_check_connect_with_cloud():75	can not ping to cloud
+2021-08-30 20:03:14,799:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 20:03:15,013:	INFO:	RdHc.py:__hc_update_disconnect_status_to_db():110	Update cloud disconnect status to db
+2021-08-30 20:12:26,192:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-30 20:12:26,393:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 20:12:31,092:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+   "CMD": "DEVICE",
+   "DATA": {
+      "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+      "PROPERTIES": [
+         {
+            "ID": 0,
+            "VALUE": 1
+         }
+      ]
+   }
+}
+2021-08-30 20:12:36,455:	INFO:	System.py:__push_data_to_cloud():212	have no data to push
+2021-08-30 20:12:46,355:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+   "CMD": "DEVICE",
+   "DATA": {
+      "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+      "PROPERTIES": [
+         {
+            "ID": 0,
+            "VALUE": 1
+         }
+      ]
+   }
+}
+2021-08-30 20:12:46,457:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {
+   "CMD": "DEVICE",
+   "DATA": {
+      "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+      "PROPERTIES": [
+         {
+            "ID": 0,
+            "VALUE": 1
+         }
+      ]
+   }
+}
+2021-08-30 20:12:46,459:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-08-30 20:12:46,560:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "b717f8d8-6f18-43c0-ae46-69c32998f653", "deviceAttributeId": 0, "value": 1}]
+2021-08-30 20:12:46,560:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-08-30 20:14:41,985:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-30 20:14:42,184:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 20:14:56,421:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+   "CMD": "DEVICE",
+   "DATA": {
+      "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+      "PROPERTIES": [
+         {
+            "ID": 0,
+            "VALUE": 1
+         }
+      ]
+   }
+}
+2021-08-30 20:14:56,522:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {
+   "CMD": "DEVICE",
+   "DATA": {
+      "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+      "PROPERTIES": [
+         {
+            "ID": 0,
+            "VALUE": 1
+         }
+      ]
+   }
+}
+2021-08-30 20:14:56,523:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-08-30 20:14:56,624:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in HC-DeviceAttributeValue is [{"deviceId": "b717f8d8-6f18-43c0-ae46-69c32998f653", "deviceAttributeId": 0, "value": 1}]
+2021-08-30 20:14:56,625:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-08-30 20:15:39,841:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-30 20:15:40,173:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 20:16:09,789:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+   "CMD": "RESET_HC",
+   "DATA": {
+      "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+      "PROPERTIES": [
+         {
+            "ID": 0,
+            "VALUE": 1
+         }
+      ]
+   }
+}
+2021-08-30 20:16:09,792:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():164	Allow to change account, now new account can log in
+2021-08-30 20:16:09,990:	DEBUG:	SignalrDataHandler.py:handler():23	handler receive signal data in DeviceResponse is {
+   "CMD": "RESET_HC",
+   "DATA": {
+      "DEVICE_ID": "b717f8d8-6f18-43c0-ae46-69c32998f653",
+      "PROPERTIES": [
+         {
+            "ID": 0,
+            "VALUE": 1
+         }
+      ]
+   }
+}
+2021-08-30 20:16:09,991:	ERROR:	SignalrDataHandler.py:handler():32	data receive from signal invalid
+2021-08-30 20:16:40,235:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 20:17:37,184:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-08-30 20:17:37,546:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 20:40:41,864:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 20:40:54,756:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 20:41:13,808:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 20:43:03,881:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 21:08:12,854:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 21:09:11,651:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 21:13:30,158:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 21:14:30,343:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 21:15:30,500:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 21:16:30,627:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 21:24:21,272:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 21:25:39,915:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 21:25:54,078:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 21:26:29,109:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-08-30 21:27:32,258:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud

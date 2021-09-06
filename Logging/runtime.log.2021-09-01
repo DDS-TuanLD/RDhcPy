@@ -1,0 +1,127 @@
+2021-09-01 08:44:49,521:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:43:41,757:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:44:00,255:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:44:30,357:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:45:00,418:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:45:30,548:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:46:00,637:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:46:32,281:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:47:02,341:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:47:32,409:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:48:02,604:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:48:32,674:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:49:02,734:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:49:32,955:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:50:03,606:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:50:33,788:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:51:04,425:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:51:34,643:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:52:05,493:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:52:35,634:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:53:06,190:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:53:36,523:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:54:06,915:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:54:37,165:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:55:07,612:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:55:37,786:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:56:08,932:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:56:39,219:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:57:09,370:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:57:39,592:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:58:10,251:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:58:40,693:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:59:11,619:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 09:59:42,134:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:00:12,194:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:00:42,552:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:01:12,730:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:01:42,847:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:02:13,514:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:02:43,791:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:03:15,570:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:03:45,674:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:04:16,162:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:04:46,793:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:05:16,953:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:05:47,289:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:06:18,622:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:06:48,929:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:06:59,766:	INFO:	RdHc.py:__hc_check_connect_with_cloud():75	can not ping to cloud
+2021-09-01 10:07:19,767:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:07:57,300:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:08:48,495:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:09:19,150:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:12:10,319:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 10:13:46,630:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:22:39,710:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:23:10,616:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:23:22,007:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:23:32,008:	INFO:	RdHc.py:__hc_check_connect_with_cloud():75	can not ping to cloud
+2021-09-01 23:23:42,044:	INFO:	RdHc.py:__hc_update_disconnect_status_to_db():115	Update cloud disconnect status to db
+2021-09-01 23:24:05,929:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:24:15,931:	INFO:	RdHc.py:__hc_check_connect_with_cloud():75	can not ping to cloud
+2021-09-01 23:25:05,933:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:25:17,943:	INFO:	System.py:__push_data_to_cloud():238	have no data to push
+2021-09-01 23:25:17,948:	INFO:	System.py:__push_data_to_cloud():238	have no data to push
+2021-09-01 23:34:00,006:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:34:10,007:	INFO:	RdHc.py:__hc_check_connect_with_cloud():75	can not ping to cloud
+2021-09-01 23:34:50,077:	INFO:	RdHc.py:__hc_update_disconnect_status_to_db():115	Update cloud disconnect status to db
+2021-09-01 23:34:54,891:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:35:04,892:	INFO:	RdHc.py:__hc_check_connect_with_cloud():75	can not ping to cloud
+2021-09-01 23:35:54,894:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:36:06,668:	INFO:	System.py:__push_data_to_cloud():242	have no data to push
+2021-09-01 23:36:06,676:	INFO:	System.py:__push_data_to_cloud():242	have no data to push
+2021-09-01 23:36:56,681:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:37:56,810:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:38:57,943:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:40:06,045:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:41:06,133:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:42:06,306:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:42:39,720:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:42:42,983:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():85	data from topic HC.CONTROL:  {
+  "CMD" : "HC_CONNECT_TO_CLOUD",
+  "DATA" : {
+    "DORMITORY_ID" : "e733b3ff-18af-443d-9e50-bff2ca0eec57",
+    "REFRESH_TOKEN" : "OGj2Lo8elXRxCiOit9i2lrCNHt9kkNqkMIIJLOqQ54xPG/arO0CjE4mjQaM+KbeIaFEac/yVteAF55bawnaWwUafVDXzOzLDm0wdy+/APDl5B4bZVGN0xOf2IMlA8+El3K+nnhlEVdvsvvyb2ED65YRHjH757TjJ5P7R2SzA79HHKkrzSThKEuZI94QHeSG4DmMXB36JFfl1EN0ALg5nFsmhKGNPFx6atf0sHtiVK4jt0lfGXfgqtsDZhvCWqiOb"
+  }
+}
+2021-09-01 23:42:43,876:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-09-01 23:43:18,696:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():85	data from topic HC.CONTROL:  {
+  "CMD" : "RESET_HC"
+}
+2021-09-01 23:43:18,696:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():101	mqtt data receiver in topic HC.CONTROL invalid
+2021-09-01 23:43:30,890:	DEBUG:	SignalrDataHandler.py:handler():25	handler receive signal data in DeviceResponse is  {
+  "CMD" : "RESET_HC"
+}
+2021-09-01 23:43:30,891:	ERROR:	SignalrDataHandler.py:handler():34	data receive from signal invalid
+2021-09-01 23:43:30,891:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE:  {
+  "CMD" : "RESET_HC"
+}
+2021-09-01 23:43:30,893:	INFO:	MqttDataHandler.py:__handler_cmd_hc_disconnect_with_app():164	Allow to change account, now new account can log in
+2021-09-01 23:43:40,764:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:45:29,802:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:45:39,802:	INFO:	RdHc.py:__hc_check_connect_with_cloud():75	can not ping to cloud
+2021-09-01 23:45:44,793:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE:  {
+  "CMD" : "HC_CONNECT_TO_CLOUD",
+  "DATA" : {
+    "DORMITORY_ID" : "e733b3ff-18af-443d-9e50-bff2ca0eec57",
+    "REFRESH_TOKEN" : "OGj2Lo8elXRxCiOit9i2lrCNHt9kkNqkMIIJLOqQ54xPG/arO0CjE4mjQaM+KbeIaFEac/yVteAF55bawnaWwUafVDXzOzLDm0wdy+/APDl5B4bZVGN0xOf2IMlA8+El3K+nnhlEVdvsvvyb2ED65YRHjH757TjJ5P7R2SzA79HHKkrzSThKEuZI94QHeSG4DmMXB36JFfl1EN0ALg5nFsmhKGNPFx6atf0sHtiVK4jt0lfGXfgqtsDZhvCWqiOb"
+  }
+}
+2021-09-01 23:45:49,847:	INFO:	RdHc.py:__hc_update_disconnect_status_to_db():115	Update cloud disconnect status to db
+2021-09-01 23:46:06,226:	INFO:	RdHc.py:__hc_check_connect_with_cloud():59	Hc send heartbeat to cloud
+2021-09-01 23:46:12,562:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():85	data from topic HC.CONTROL:  {
+  "CMD" : "HC_CONNECT_TO_CLOUD",
+  "DATA" : {
+    "DORMITORY_ID" : "e733b3ff-18af-443d-9e50-bff2ca0eec57",
+    "REFRESH_TOKEN" : "OGj2Lo8elXRxCiOit9i2lrCNHt9kkNqkMIIJLOqQ54xPG/arO0CjE4mjQaM+KbeIaFEac/yVteAF55bawnaWwUafVDXzOzLDm0wdy+/APDl5B4bZVGN0xOf2IMlA8+El3K+nnhlEVdvsvvyb2ED65YRHjH757TjJ5P7R2SzA79HHKkrzSThKEuZI94QHeSG4DmMXB36JFfl1EN0ALg5nFsmhKGNPFx6atf0sHtiVK4jt0lfGXfgqtsDZhvCWqiOb"
+  }
+}
+2021-09-01 23:46:13,232:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-09-01 23:46:13,273:	ERROR:	Signalr.py:connect():127	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-09-01 23:46:16,228:	INFO:	RdHc.py:__hc_check_connect_with_cloud():75	can not ping to cloud
+2021-09-01 23:46:16,286:	ERROR:	Signalr.py:connect():127	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-09-01 23:46:19,296:	ERROR:	Signalr.py:connect():127	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-09-01 23:46:22,312:	ERROR:	Signalr.py:connect():127	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-09-01 23:46:25,326:	ERROR:	Signalr.py:connect():127	Exception when connect with signalr server: can only concatenate str (not "NoneType") to str
+2021-09-01 23:46:26,262:	INFO:	RdHc.py:__hc_update_disconnect_status_to_db():115	Update cloud disconnect status to db

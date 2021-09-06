@@ -1,0 +1,333 @@
+2021-09-03 08:12:45,766:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-09-03 08:12:46,183:	INFO:	RdHc.py:__hc_check_connect_with_cloud():62	Hc send heartbeat to cloud
+2021-09-03 08:28:54,614:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-09-03 08:28:55,218:	INFO:	RdHc.py:__hc_check_connect_with_cloud():62	Hc send heartbeat to cloud
+2021-09-03 08:39:27,209:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-09-03 08:39:27,853:	INFO:	RdHc.py:__hc_check_connect_with_cloud():62	Hc send heartbeat to cloud
+2021-09-03 08:39:38,318:	INFO:	System.py:__push_data_to_cloud():242	have no data to push
+2021-09-03 08:39:38,326:	INFO:	System.py:__push_data_to_cloud():242	have no data to push
+2021-09-03 08:40:28,332:	INFO:	RdHc.py:__hc_check_connect_with_cloud():62	Hc send heartbeat to cloud
+2021-09-03 08:41:28,524:	INFO:	RdHc.py:__hc_check_connect_with_cloud():62	Hc send heartbeat to cloud
+2021-09-03 08:41:30,796:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 08:41:30,800:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control_response():75	mqtt data receiver in topic HC.CONTROL.RESPONSE invalid
+2021-09-03 08:41:30,896:	DEBUG:	SignalrDataHandler.py:handler():25	handler receive signal data in DeviceResponse is {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 08:41:30,896:	ERROR:	SignalrDataHandler.py:handler():34	data receive from signal invalid
+2021-09-03 08:42:06,822:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-09-03 08:42:06,984:	INFO:	RdHc.py:__hc_check_connect_with_cloud():62	Hc send heartbeat to cloud
+2021-09-03 08:42:10,361:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 08:42:21,943:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 08:42:21,945:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control_response():76	mqtt data receiver in topic HC.CONTROL.RESPONSE invalid
+2021-09-03 08:42:22,044:	DEBUG:	SignalrDataHandler.py:handler():25	handler receive signal data in DeviceResponse is {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 08:42:22,044:	ERROR:	SignalrDataHandler.py:handler():34	data receive from signal invalid
+2021-09-03 08:44:36,859:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-09-03 08:44:37,291:	INFO:	RdHc.py:__hc_check_connect_with_cloud():62	Hc send heartbeat to cloud
+2021-09-03 08:44:43,989:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 08:44:58,691:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 08:44:58,693:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control_response():75	mqtt data receiver in topic HC.CONTROL.RESPONSE invalid
+2021-09-03 08:44:58,792:	DEBUG:	SignalrDataHandler.py:handler():25	handler receive signal data in DeviceResponse is {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 08:44:58,792:	ERROR:	SignalrDataHandler.py:handler():34	data receive from signal invalid
+2021-09-03 08:45:37,442:	INFO:	RdHc.py:__hc_check_connect_with_cloud():62	Hc send heartbeat to cloud
+2021-09-03 08:45:45,532:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-09-03 08:45:45,942:	INFO:	RdHc.py:__hc_check_connect_with_cloud():62	Hc send heartbeat to cloud
+2021-09-03 08:45:51,329:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 08:46:09,840:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 08:46:09,842:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control_response():76	mqtt data receiver in topic HC.CONTROL.RESPONSE invalid
+2021-09-03 08:46:09,941:	DEBUG:	SignalrDataHandler.py:handler():25	handler receive signal data in DeviceResponse is {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 08:46:09,942:	ERROR:	SignalrDataHandler.py:handler():34	data receive from signal invalid
+2021-09-03 08:46:46,006:	INFO:	RdHc.py:__hc_check_connect_with_cloud():62	Hc send heartbeat to cloud
+2021-09-03 08:47:46,239:	INFO:	RdHc.py:__hc_check_connect_with_cloud():62	Hc send heartbeat to cloud
+2021-09-03 08:48:08,731:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-09-03 08:48:09,319:	INFO:	RdHc.py:__hc_check_connect_with_cloud():62	Hc send heartbeat to cloud
+2021-09-03 08:48:23,573:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 08:48:23,575:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control_response():75	mqtt data receiver in topic HC.CONTROL.RESPONSE invalid
+2021-09-03 08:48:23,674:	DEBUG:	SignalrDataHandler.py:handler():25	handler receive signal data in DeviceResponse is {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 08:48:23,674:	ERROR:	SignalrDataHandler.py:handler():34	data receive from signal invalid
+2021-09-03 08:49:09,382:	INFO:	RdHc.py:__hc_check_connect_with_cloud():62	Hc send heartbeat to cloud
+2021-09-03 08:49:48,299:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-09-03 08:49:48,478:	INFO:	RdHc.py:__hc_check_connect_with_cloud():62	Hc send heartbeat to cloud
+2021-09-03 08:50:03,934:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 08:50:03,936:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control_response():75	mqtt data receiver in topic HC.CONTROL.RESPONSE invalid
+2021-09-03 08:50:04,035:	DEBUG:	SignalrDataHandler.py:handler():25	handler receive signal data in SceneResponse is {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 08:50:04,035:	ERROR:	SignalrDataHandler.py:handler():34	data receive from signal invalid
+2021-09-03 09:02:05,535:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-09-03 09:02:06,015:	INFO:	RdHc.py:__hc_check_connect_with_cloud():70	Hc send heartbeat to cloud
+2021-09-03 09:02:20,234:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 09:02:20,237:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control_response():75	mqtt data receiver in topic HC.CONTROL.RESPONSE invalid
+2021-09-03 09:02:20,335:	DEBUG:	SignalrDataHandler.py:handler():25	handler receive signal data in SceneResponse is {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 09:02:20,336:	ERROR:	SignalrDataHandler.py:handler():34	data receive from signal invalid
+2021-09-03 09:03:58,782:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-09-03 09:03:58,936:	INFO:	RdHc.py:__hc_check_connect_with_cloud():70	Hc send heartbeat to cloud
+2021-09-03 09:05:47,905:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-09-03 09:05:48,204:	INFO:	RdHc.py:__hc_check_connect_with_cloud():70	Hc send heartbeat to cloud
+2021-09-03 09:06:15,871:	DEBUG:	Signalr.py:__on_connect_event():75	Connect to signalr server
+2021-09-03 09:06:16,508:	INFO:	RdHc.py:__hc_check_connect_with_cloud():70	Hc send heartbeat to cloud
+2021-09-03 09:06:23,949:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control_response():54	data from topic HC.CONTROL.RESPONSE: {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 09:06:23,958:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control_response():75	mqtt data receiver in topic HC.CONTROL.RESPONSE invalid
+2021-09-03 09:06:24,049:	DEBUG:	SignalrDataHandler.py:handler():25	handler receive signal data in SceneResponse is {
+   "CMD": "CREATE_SCENE",
+   "DATA": {
+     "SCENE_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2",
+     "SCENE_UNICAST_ID": 2,
+     "SUCCESS": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ],
+     "FAILED": [
+       "b717f8d8-6f18-43c0-ae46-69c32998f653",
+       "b717f8d8-6f18-43c0-ae46-69c32998f654"
+     ]
+   }
+ }
+2021-09-03 09:06:24,052:	ERROR:	SignalrDataHandler.py:handler():34	data receive from signal invalid
