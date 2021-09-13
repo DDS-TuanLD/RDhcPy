@@ -79,13 +79,14 @@ class MqttDataHandler(IHandler):
             return
         signal_data = []
         try:
-            for i in range(len(data['PROPERTIES'])):
-                d = {
-                    "deviceId": data['DEVICE_ID'],
-                    "deviceAttributeId": data['PROPERTIES'][i]['ID'],
-                    "value": data['PROPERTIES'][i]['VALUE']
-                }
-                signal_data.append(d)
+            for d in data:
+                for i in d["PROPERTIES"]:
+                    data_send_to_cloud = {
+                        "deviceId": d['DEVICE_ID'],
+                        "deviceAttributeId": i['ID'],
+                        "value": i['VALUE']
+                    }
+                    signal_data.append(data_send_to_cloud)
         except:
             self.__logger.debug("data of cmd Device invalid")
             print("data of cmd Device invalid")

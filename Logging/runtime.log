@@ -1344,3 +1344,5 @@
     }
 }
 2021-09-06 15:08:38,964:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():75	mqtt data receiver in topic HC.CONTROL invalid
+2021-09-13 10:21:09,623:	DEBUG:	Signalr.py:__connect_event_callback():82	Connect to signalr server
+2021-09-13 10:21:09,984:	INFO:	RdHc.py:__hc_check_connect_with_cloud():69	Hc send heartbeat to cloud

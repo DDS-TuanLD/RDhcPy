@@ -20,8 +20,14 @@ class SignalrDataHandler(IHandler):
     def handler(self, item):
         if self.__globalVariables.AllowChangeCloudAccountFlag:
             return
-        entity = item[0]
-        data = item[1]
+        
+        dorId = item[0]
+        entity = item[1]
+        data = item[2]
+        
+        if dorId != self.__globalVariables.DormitoryId:
+            return
+        
         self.__logger.debug(f"handler receive signal data in {entity} is {data}")
         print(f"handler receive signal data in {entity} is {data}")
         try:
