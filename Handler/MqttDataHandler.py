@@ -122,8 +122,6 @@ class MqttDataHandler(IHandler):
             db.Services.UserdataServices.AddNewUserData(newUserData=user_data)
             return
 
-        self.__globalVariables.ResetSignalrConnectFlag = True
-
     def __handler_cmd_reset_hc(self, data):
         print("Allow to change account, now new account can log in")
         self.__logger.info("Allow to change account, now new account can log in")

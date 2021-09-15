@@ -1346,3 +1346,39 @@
 2021-09-06 15:08:38,964:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():75	mqtt data receiver in topic HC.CONTROL invalid
 2021-09-13 10:21:09,623:	DEBUG:	Signalr.py:__connect_event_callback():82	Connect to signalr server
 2021-09-13 10:21:09,984:	INFO:	RdHc.py:__hc_check_connect_with_cloud():69	Hc send heartbeat to cloud
+2021-09-15 15:08:25,913:	DEBUG:	Signalr.py:__connect_event_callback():83	Connect to signalr server
+2021-09-15 15:08:27,170:	INFO:	RdHc.py:__hc_check_connect_with_cloud():69	Hc send heartbeat to cloud
+2021-09-15 15:11:54,215:	DEBUG:	Signalr.py:__connect_event_callback():72	Connect to signalr server
+2021-09-15 15:11:54,584:	INFO:	RdHc.py:__hc_check_connect_with_cloud():69	Hc send heartbeat to cloud
+2021-09-15 15:15:49,114:	DEBUG:	Signalr.py:__connect_event_callback():72	Connect to signalr server
+2021-09-15 15:15:49,530:	INFO:	RdHc.py:__hc_check_connect_with_cloud():69	Hc send heartbeat to cloud
+2021-09-15 15:18:00,119:	DEBUG:	Signalr.py:__connect_event_callback():72	Connect to signalr server successfully
+2021-09-15 15:18:01,348:	INFO:	RdHc.py:__hc_check_connect_with_cloud():69	Hc send heartbeat to cloud
+2021-09-15 15:19:02,016:	INFO:	RdHc.py:__hc_check_connect_with_cloud():69	Hc send heartbeat to cloud
+2021-09-15 15:19:17,531:	DEBUG:	Signalr.py:__disconnect_event_callback():64	Disconnect to signalr server
+2021-09-15 15:19:37,782:	DEBUG:	Signalr.py:reconnect():107	reconnect to signalr server successfully
+2021-09-15 15:19:37,783:	DEBUG:	Signalr.py:__disconnect_event_callback():64	Disconnect to signalr server
+2021-09-15 15:19:58,123:	DEBUG:	Signalr.py:reconnect():107	reconnect to signalr server successfully
+2021-09-15 15:20:02,736:	INFO:	RdHc.py:__hc_check_connect_with_cloud():69	Hc send heartbeat to cloud
+2021-09-15 15:20:39,482:	DEBUG:	SignalrDataHandler.py:handler():31	handler receive signal data in Command is {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-09-15 15:20:39,584:	DEBUG:	MqttDataHandler.py:__handler_topic_hc_control():62	data from topic HC.CONTROL: {
+    "CMD": "EVENT_TRIGGER",
+    "DATA":
+    {
+        "EVENT_TRIGGER_ID": "aa3549d4-5471-4d75-b0b2- b70fa5c10fb2"
+    }
+}
+2021-09-15 15:20:39,584:	ERROR:	MqttDataHandler.py:__handler_topic_hc_control():75	mqtt data receiver in topic HC.CONTROL invalid
+2021-09-15 15:23:26,311:	DEBUG:	Signalr.py:__connect_event_callback():72	Connect to signalr server successfully
+2021-09-15 15:23:26,540:	INFO:	RdHc.py:__hc_check_connect_with_cloud():69	Hc send heartbeat to cloud
+2021-09-15 15:24:26,636:	INFO:	RdHc.py:__hc_check_connect_with_cloud():69	Hc send heartbeat to cloud
+2021-09-15 15:35:35,165:	DEBUG:	Signalr.py:__connect_event_callback():72	Connect to signalr server successfully
+2021-09-15 15:35:37,624:	INFO:	RdHc.py:__hc_check_connect_with_cloud():69	Hc send heartbeat to cloud
+2021-09-15 15:38:07,870:	DEBUG:	Signalr.py:__connect_event_callback():72	Connect to signalr server successfully
+2021-09-15 15:38:08,367:	INFO:	RdHc.py:__hc_check_connect_with_cloud():69	Hc send heartbeat to cloud

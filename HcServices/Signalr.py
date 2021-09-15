@@ -9,7 +9,7 @@ import threading
 from Contracts.ITransport import ITransport
 from Helper.System import System, eliminate_current_progress
 import datetime
-
+import time
 
 def get_token():
     cache = GlobalVariables()
@@ -30,17 +30,14 @@ class Signalr(ITransport):
     __globalVariables: GlobalVariables
     __logger: logging.Logger
     __lock: threading.Lock
-    __disconnectFlag: int
-    __disconnectRetryCount: int
+  
 
     def __init__(self, log: logging.Logger):
         super().__init__()
         self.__logger = log
         self.__globalVariables = GlobalVariables()
         self.__lock = threading.Lock()
-        self.__disconnectFlag = 1
-        self.__disconnectRetryCount = 0
-
+      
     def __build_connection(self):
         self.__hub = HubConnectionBuilder() \
             .with_url(const.SERVER_HOST + const.SIGNALR_SERVER_URL,
@@ -49,12 +46,6 @@ class Signalr(ITransport):
                           "headers": {
                           }
                       }) \
-            .with_automatic_reconnect({
-                "type": "raw",
-                "keep_alive_interval": 5,
-                "reconnect_interval": 5,
-                "max_attempts": 40
-            }) \
             .build()
         return self
 
@@ -71,38 +62,18 @@ class Signalr(ITransport):
     def __disconnect_event_callback(self):
         print("disconnect to signalr server")
         self.__logger.debug("Disconnect to signalr server")
-        self.__disconnectFlag = 0
-        self.__disconnectRetryCount = 0
         self.reconnect()
 
     def __on_connect_event(self):
         self.__hub.on_open(self.__connect_event_callback())
 
     def __connect_event_callback(self):
-        print("Connect to signalr server")
-        self.__logger.debug("Connect to signalr server")
+        print("Connect to signalr server successfully")
+        self.__logger.debug("Connect to signalr server successfully")
 
     async def disconnect(self):
-        self.__disconnectFlag = 1
-        try:
-            self.__hub.stop()
-        except Exception as err:
-            self.__logger.error(f"Exception when disconnect with signalr server: {err}")
-        await asyncio.sleep(5)
-        if self.__disconnectFlag == 1:
-            if self.__disconnectRetryCount == 10:
-                self.__disconnectRetryCount = 0
-                print("Disconnect signalr server timeout")
-                self.__logger.error("Disconnect signalr timeout")
-                t = datetime.datetime.now().timestamp() - 30
-                s = System(self.__logger)
-                s.update_disconnect_status_to_db(datetime.datetime.fromtimestamp(t))
-                eliminate_current_progress()
-
-            self.__disconnectRetryCount = self.__disconnectRetryCount + 1
-            print(f"Retry to disconnect signalr server {self.__disconnectRetryCount} times")
-            await self.disconnect()
-
+        self.__hub.stop()
+      
     def send(self, destination, data_send):
         entity = data_send[0]
         message = data_send[1]
@@ -117,11 +88,6 @@ class Signalr(ITransport):
         self.__on_disconnect_event()
         self.__on_receive_event()
         while True:
-            if self.__globalVariables.ResetSignalrConnectFlag:
-                await self.disconnect()
-                # self.__hub.start()
-                self.__globalVariables.ResetSignalrConnectFlag = False
-                  
             try:
                 if not self.__globalVariables.SignalrConnectSuccessFlag and not run_only_one:
                     self.__hub.start()
@@ -135,9 +101,14 @@ class Signalr(ITransport):
 
     def reconnect(self):
         try:
+            time.sleep(20)
             self.__hub.start()
-        except Exception as err:
-            self.__logger.error(f"Exception when connect with signalr server: {err}")
-
+            print("reconnect to signalr server successfully")
+            self.__logger.debug("reconnect to signalr server successfully")
+        except:
+            print("fail to reconnect to signalr server")
+            self.__logger.error("fail to reconnect to signalr server")
+            eliminate_current_progress()
+        
     def receive(self):
         pass

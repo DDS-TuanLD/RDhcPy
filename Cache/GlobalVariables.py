@@ -16,7 +16,6 @@ class GlobalVariables(metaclass=MetaGlobalVariables):
     __signalrDisconnectStatusUpdate: bool
     __disconnectTime: datetime.datetime
     __recheckConnectionStatusInDb: bool
-    __resetSignalrConnect: bool
     __signalrConnectSuccess: bool
     __pingCloudSuccess: bool
     __pingGoogleStatus: bool
@@ -31,7 +30,6 @@ class GlobalVariables(metaclass=MetaGlobalVariables):
         self.__dormitoryId = ""
         self.__disconnectTime = None
         self.__recheckConnectionStatusInDb = False
-        self.__resetSignalrConnect = False
         self.__pingCloudSuccess = None
         self.__pingGoogleStatus = False
         self.__allowChangeCloudAccount = False
@@ -69,14 +67,6 @@ class GlobalVariables(metaclass=MetaGlobalVariables):
     @SignalrConnectSuccessFlag.setter
     def SignalrConnectSuccessFlag(self, signalrConnectSuccess: bool):
         self.__signalrConnectSuccess = signalrConnectSuccess
-
-    @property
-    def ResetSignalrConnectFlag(self):
-        return self.__resetSignalrConnect
-
-    @ResetSignalrConnectFlag.setter
-    def ResetSignalrConnectFlag(self, resetSignalrConnect: bool):
-        self.__resetSignalrConnect = resetSignalrConnect
 
     @property
     def RecheckConnectionStatusInDbFlag(self):

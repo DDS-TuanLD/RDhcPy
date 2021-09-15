@@ -106,9 +106,10 @@ class System:
             await asyncio.sleep(2)
         while not self.__globalVariables.PingCloudSuccessFlag:
             await asyncio.sleep(2)
-        await signalr.disconnect()
-        # signalr.reconnect()
-        self.__globalVariables.NeedReconnectSignalrServerFlag = False
+        try:
+            signalr.disconnect()
+        except:
+            eliminate_current_progress()
 
     def update_current_wifi_name(self):
         s = execute_with_result('iwinfo')
@@ -126,8 +127,7 @@ class System:
             wifi_name_started_point = str(dt[0]).find('"') + 1
             wifi_name_ended_point = str(dt[0]).find('"', wifi_name_started_point) - 1
             wifi_name = str(dt[0])[wifi_name_started_point:wifi_name_ended_point + 1]
-        if wifi_name != "" and wifi_name != self.__globalVariables.CurrentWifiName \
-                and self.__globalVariables.CurrentWifiName != "":
+        if wifi_name != "" and wifi_name != self.__globalVariables.CurrentWifiName:
             self.__logger.info(f"current wifi name change from {self.__globalVariables.CurrentWifiName} to {wifi_name}")
             print(f"current wifi name change from {self.__globalVariables.CurrentWifiName} to {wifi_name}")
             await self.__check_and_reconnect_signalr_when_change_wifi(signalr)

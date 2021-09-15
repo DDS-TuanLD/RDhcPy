@@ -109,7 +109,7 @@ class RdHc:
     #support to detect cloud disconnect fastly
     def __hc_check_request_timeout(self, request_time_count: float):
         current_timestamp = datetime.datetime.now().timestamp()
-        request_time_out_min = 60
+        request_time_out_min = 90
         request_time_out_max = 120
         if request_time_out_max > current_timestamp - request_time_count > request_time_out_min:
             self.__globalVariables.PingCloudSuccessFlag = False
@@ -183,7 +183,7 @@ class RdHc:
     #checking when wifi is changed
     async def __hc_check_wifi_change(self):
         s = System(self.__logger)
-        checking_waiting_time = 10
+        checking_waiting_time = 5
         while True:
             await asyncio.sleep(checking_waiting_time)
             await s.check_wifi_change(self.__signalServices)
