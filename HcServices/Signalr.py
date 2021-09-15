@@ -73,6 +73,7 @@ class Signalr(ITransport):
         self.__logger.debug("Disconnect to signalr server")
         self.__disconnectFlag = 0
         self.__disconnectRetryCount = 0
+        self.reconnect()
 
     def __on_connect_event(self):
         self.__hub.on_open(self.__connect_event_callback())
@@ -87,9 +88,9 @@ class Signalr(ITransport):
             self.__hub.stop()
         except Exception as err:
             self.__logger.error(f"Exception when disconnect with signalr server: {err}")
-        await asyncio.sleep(1)
+        await asyncio.sleep(5)
         if self.__disconnectFlag == 1:
-            if self.__disconnectRetryCount == 15:
+            if self.__disconnectRetryCount == 10:
                 self.__disconnectRetryCount = 0
                 print("Disconnect signalr server timeout")
                 self.__logger.error("Disconnect signalr timeout")
@@ -118,7 +119,7 @@ class Signalr(ITransport):
         while True:
             if self.__globalVariables.ResetSignalrConnectFlag:
                 await self.disconnect()
-                self.__hub.start()
+                # self.__hub.start()
                 self.__globalVariables.ResetSignalrConnectFlag = False
                   
             try:

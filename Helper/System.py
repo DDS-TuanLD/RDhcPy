@@ -107,7 +107,7 @@ class System:
         while not self.__globalVariables.PingCloudSuccessFlag:
             await asyncio.sleep(2)
         await signalr.disconnect()
-        signalr.reconnect()
+        # signalr.reconnect()
         self.__globalVariables.NeedReconnectSignalrServerFlag = False
 
     def update_current_wifi_name(self):
