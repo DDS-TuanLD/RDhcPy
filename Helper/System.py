@@ -99,6 +99,11 @@ class System:
         req = h.create_new_http_request(url=heartbeat_url, header=header, body_data=gw_report_body_data)
         session = aiohttp.ClientSession()
         res = await h.post(session, req)
+        try:
+            data = await res.json()
+            self.__logger.info(f"ping hc status: {data}")
+        except: 
+            self.__logger.debug(f"fail to ping hc")
         await session.close()
 
     async def __check_and_reconnect_signalr_when_change_wifi(self, signalr: ITransport):

@@ -151,13 +151,13 @@ class RdHc:
                     self.__signalrHandler.handler(item)
                     self.__signalServices.receive_data_queue.task_done()
 
-    # report time interval is 3600s(FPT requirements)
+    # report time interval is 1800(FPT requirements)
     async def __hc_report_online_status_to_cloud(self):
-        report_time_interval = 3600
+        report_time_interval = 1800
         s = System(self.__logger)
         while True:
             await asyncio.sleep(0.1)
-            if self.__globalVariables.PingCloudSuccessFlag:
+            if self.__globalVariables.PingCloudSuccessFlag and not self.__globalVariables.AllowChangeCloudAccountFlag:
                 await s.send_http_request_to_gw_online_status_url(self.__httpServices)
                 await asyncio.sleep(report_time_interval)
 
