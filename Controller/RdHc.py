@@ -103,6 +103,7 @@ class RdHc:
                     self.__logger.info("program had been eliminated")
                     print("program had been eliminated")
                     eliminate_current_progress()
+                    
             await asyncio.sleep(55)
 
     #check time of ping cloud request
@@ -134,8 +135,9 @@ class RdHc:
         s.update_disconnect_status_to_db(self.__globalVariables.DisconnectTime)
 
     async def __hc_handler_mqtt_data(self):
+        mqtt_handler_delay_time = 1
         while True:
-            await asyncio.sleep(0.1)
+            await asyncio.sleep(mqtt_handler_delay_time)
             if not self.__mqttServices.receive_data_queue.empty():
                 with self.__lock:
                     item = self.__mqttServices.receive_data_queue.get()
@@ -143,8 +145,9 @@ class RdHc:
                     self.__mqttServices.receive_data_queue.task_done()
 
     async def __hc_handler_signalr_data(self):
+        signalr_handler_delay_time = 1
         while True:
-            await asyncio.sleep(0.1)
+            await asyncio.sleep(signalr_handler_delay_time)
             if not self.__signalServices.receive_data_queue.empty():
                 with self.__lock:
                     item = self.__signalServices.receive_data_queue.get()
@@ -156,7 +159,7 @@ class RdHc:
         report_time_interval = 1800
         s = System(self.__logger)
         while True:
-            await asyncio.sleep(0.1)
+            await asyncio.sleep(1)
             if self.__globalVariables.PingCloudSuccessFlag and not self.__globalVariables.AllowChangeCloudAccountFlag:
                 await s.send_http_request_to_gw_online_status_url(self.__httpServices)
                 await asyncio.sleep(report_time_interval)
@@ -183,7 +186,7 @@ class RdHc:
     #checking when wifi is changed
     async def __hc_check_wifi_change(self):
         s = System(self.__logger)
-        checking_waiting_time = 5
+        checking_waiting_time = 10
         while True:
             await asyncio.sleep(checking_waiting_time)
             await s.check_wifi_change(self.__signalServices)

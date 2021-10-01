@@ -80,19 +80,18 @@ class Signalr(ITransport):
         self.__hub.send("Send", [destination, entity, message])
 
     async def connect(self):
-        run_only_one = False
+        connect_success = False
         while self.__globalVariables.RefreshToken == "":
             await asyncio.sleep(1)
         self.__build_connection()
         self.__on_connect_event()
         self.__on_disconnect_event()
         self.__on_receive_event()
-        while True:
+        while not connect_success:
             try:
-                if not self.__globalVariables.SignalrConnectSuccessFlag and not run_only_one:
-                    self.__hub.start()
-                    self.__globalVariables.SignalrConnectSuccessFlag = True
-                    run_only_one = True
+                self.__hub.start()
+                self.__globalVariables.SignalrConnectSuccessFlag = True
+                connect_success = True
             except Exception as err:
                 self.__logger.error(f"Exception when connect with signalr server: {err}")
                 print(f"Exception when connect with signalr server: {err}")
