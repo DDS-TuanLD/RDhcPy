@@ -60,7 +60,6 @@ class RdHc:
     async def __hc_check_connect_with_cloud(self):
         s = System(self.__logger)
         signalr_disconnect_count = 0
-        request_time_count = 0
         first_success_ping_to_cloud_flag = False
         signalr_disconnect_count_limit = 3
 
@@ -70,7 +69,6 @@ class RdHc:
 
             await asyncio.sleep(5)
 
-            request_time_count = datetime.datetime.now().timestamp()
             if self.__globalVariables.DisconnectTime is None:
                 self.__globalVariables.DisconnectTime = datetime.datetime.now()
 
@@ -83,9 +81,6 @@ class RdHc:
             if not self.__globalVariables.PingCloudSuccessFlag:
                 print("can not ping to cloud")
                 self.__logger.info("can not ping to cloud")
-
-                self.__hc_check_request_timeout(request_time_count)
-                request_time_count = 0
                 signalr_disconnect_count = signalr_disconnect_count + 1
                 self.__globalVariables.SignalrConnectSuccessFlag = False
 
@@ -105,22 +100,6 @@ class RdHc:
                     eliminate_current_progress()
                     
             await asyncio.sleep(55)
-
-    #check time of ping cloud request
-    #support to detect cloud disconnect fastly
-    def __hc_check_request_timeout(self, request_time_count: float):
-        current_timestamp = datetime.datetime.now().timestamp()
-        request_time_out_min = 90
-        request_time_out_max = 120
-        if request_time_out_max > current_timestamp - request_time_count > request_time_out_min:
-            self.__globalVariables.PingCloudSuccessFlag = False
-            self.__globalVariables.RecheckConnectionStatusInDbFlag = False
-            self.__hc_update_disconnect_status_to_db()
-            return
-        if current_timestamp - request_time_count > request_time_out_max:
-            self.__hc_update_disconnect_status_to_db()
-            self.__logger.info("eliminate program")
-            eliminate_current_progress()
 
     async def __hc_update_reconnect_status_to_db(self):
         self.__logger.info("Update cloud reconnect status to db")
